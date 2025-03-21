@@ -9,6 +9,7 @@ export default {
       [
         'shelter-ui',
         'react',
+        'css',
         'deps',
         'release',
       ],
