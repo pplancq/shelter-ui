@@ -1,0 +1,75 @@
+{
+  "name": "@pplancq/shelter-ui-react",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Modular, scalable React components",
+  "author": "pplancq <paul.plancq@outlook.fr>",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pplancq/shelter-ui",
+    "directory": "packages/react"
+  },
+  "bugs": {
+    "url": "https://github.com/pplancq/shelter-ui/issues"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build --watch",
+    "lint": "concurrently --prefix-colors auto \"npm:eslint\" \"npm:tsc\"",
+    "eslint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
+    "eslint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
+    "tsc": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "engines": {
+    "node": ">= 22"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@pplancq/eslint-config": "^4.0.15",
+    "@pplancq/prettier-config": "^1.2.3",
+    "@rsbuild/plugin-react": "^1.1.1",
+    "@rslib/core": "^0.5.5",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19.0.12",
+    "@vitejs/plugin-react-swc": "^3.8.1",
+    "@vitest/coverage-v8": "^3.0.9",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.21.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "jsdom": "^26.0.0",
+    "prettier": "^3.5.3",
+    "react": "^19.0.0",
+    "typescript": "^5.8.2",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.0.9"
+  },
+  "prettier": "@pplancq/prettier-config",
+  "lint-staged": {
+    "*.(js|jsx|ts|tsx)": "eslint --fix",
+    "*.{ts,tsx}": "tsc-files --noEmit"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}
