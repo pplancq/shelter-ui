@@ -1,4 +1,4 @@
-# @pplancq/shelter-ui
+# @pplancq/shelter-ui-react
 
 ## Setup
 
