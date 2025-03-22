@@ -6,13 +6,7 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
+export const Button = ({ primary = false, size = 'medium', backgroundColor, label, ...props }: ButtonProps) => {
   const mode = primary ? 'demo-button--primary' : 'demo-button--secondary';
   return (
     <button

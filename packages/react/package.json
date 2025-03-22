@@ -67,7 +67,8 @@
   "prettier": "@pplancq/prettier-config",
   "lint-staged": {
     "*.(js|jsx|ts|tsx)": "eslint --fix",
-    "*.{ts,tsx}": "tsc-files --noEmit"
+    "*.{ts,tsx}": "tsc-files --noEmit",
+    "*.!(js|jsx|ts|tsx)": "prettier --write --ignore-unknow"
   },
   "volta": {
     "extends": "../../package.json"

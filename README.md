@@ -1,6 +1,6 @@
 # @pplancq/shelter-ui
 
-**In a world of chaos, a well-designed shelter is our refuge.**  
+**In a world of chaos, a well-designed shelter is our refuge.**
 
 **Welcome to ShelterUI, where everything is well stashed away.**
 

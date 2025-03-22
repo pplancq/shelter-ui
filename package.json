@@ -24,17 +24,21 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@pplancq/commitlint-config": "^2.2.2",
+    "@pplancq/prettier-config": "^1.2.3",
     "concurrently": "^9.1.2",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
     "tsc-files": "^1.1.4"
   },
   "workspaces": [
     "packages/*",
     "apps/*"
   ],
+  "prettier": "@pplancq/prettier-config",
   "lint-staged": {
-    "(package|package-lock).json": "npm run package:check"
+    "(package|package-lock).json": "npm run package:check",
+    "*": "prettier --write --ignore-unknow"
   },
   "volta": {
     "node": "22.14.0",

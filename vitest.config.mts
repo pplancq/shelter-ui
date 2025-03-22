@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
     test: {
       reporters: ['default', 'junit'],
       outputFile: {
-        'junit': 'junit-report.xml',
+        junit: 'junit-report.xml',
       },
       poolOptions: {
         forks: {
