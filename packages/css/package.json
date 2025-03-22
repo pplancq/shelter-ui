@@ -45,7 +45,7 @@
   "prettier": "@pplancq/prettier-config",
   "lint-staged": {
     "*.(scss|css)": "stylelint --fix",
-    "*.!(scss|css)": "prettier --write --ignore-unknow"
+    "*.!(scss|css)": "prettier --write --ignore-unknown"
   },
   "volta": {
     "extends": "../../package.json"

@@ -38,7 +38,7 @@
   "prettier": "@pplancq/prettier-config",
   "lint-staged": {
     "(package|package-lock).json": "npm run package:check",
-    "*": "prettier --write --ignore-unknow"
+    "*": "prettier --write --ignore-unknown"
   },
   "volta": {
     "node": "22.14.0",
