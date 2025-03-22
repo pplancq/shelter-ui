@@ -24,7 +24,6 @@
   ],
   "scripts": {
     "build": "rslib build",
-    "dev": "rslib build --watch",
     "lint": "concurrently --prefix-colors auto \"npm:stylelint\"",
     "stylelint": "stylelint \"sass/**/*.{scss,css}\"",
     "stylelint:fix": "stylelint \"sass/**/*.{scss,css}\" --fix"

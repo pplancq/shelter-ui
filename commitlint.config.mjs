@@ -10,6 +10,7 @@ export default {
         'shelter-ui',
         'react',
         'css',
+        'storybook',
         'deps',
         'release',
       ],

@@ -12,8 +12,11 @@
     "url": "https://github.com/pplancq/shelter-ui/issues"
   },
   "scripts": {
-    "build": "npm run build --workspace=packages",
-    "lint": "npm run lint --workspace=packages",
+    "dev": "concurrently --prefix-colors auto \"npm:dev:*\"",
+    "dev:react": "npm run dev --workspace=packages/react",
+    "dev:storybook": "npm run dev --workspace=apps/storybook",
+    "build": "npm run build --workspace=packages --workspace=apps",
+    "lint": "npm run lint --workspace=packages --workspace=apps",
     "test": "vitest run",
     "package:check": "npm exec --yes package-lock-utd@1.1.3",
     "prepare": "husky"
@@ -21,12 +24,14 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@pplancq/commitlint-config": "^2.2.2",
+    "concurrently": "^9.1.2",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
     "tsc-files": "^1.1.4"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "lint-staged": {
     "(package|package-lock).json": "npm run package:check"

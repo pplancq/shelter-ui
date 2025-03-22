@@ -1,0 +1,57 @@
+{
+  "name": "@pplancq/shelter-ui-storybook",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "storybook dev --port 8000 --no-open",
+    "build": "storybook build --output-dir build",
+    "prelint": "npm run build --workspace=@pplancq/shelter-ui-react",
+    "lint": "concurrently --prefix-colors auto \"npm:eslint\" \"npm:tsc\" \"npm:stylelint\"",
+    "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
+    "eslint:fix": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",
+    "stylelint": "stylelint \"**/*.{scss,css}\"",
+    "stylelint:fix": "stylelint \"**/*.{scss,css}\" --fix",
+    "tsc": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@pplancq/shelter-ui-css": "*",
+    "@pplancq/shelter-ui-react": "*"
+  },
+  "devDependencies": {
+    "@pplancq/eslint-config": "^4.0.15",
+    "@pplancq/prettier-config": "^1.2.3",
+    "@pplancq/stylelint-config": "^3.1.0",
+    "@rsbuild/core": "^1.2.19",
+    "@rsbuild/plugin-react": "^1.1.1",
+    "@rsbuild/plugin-sass": "^1.2.2",
+    "@rslib/core": "^0.5.5",
+    "@storybook/addon-essentials": "^8.6.7",
+    "@storybook/addon-interactions": "^8.6.7",
+    "@storybook/addon-links": "^8.6.7",
+    "@storybook/addon-onboarding": "^8.6.7",
+    "@storybook/blocks": "^8.6.7",
+    "@storybook/react": "^8.6.7",
+    "@storybook/test": "^8.6.7",
+    "@types/react": "^19.0.12",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.21.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.5.2",
+    "react": "^19.0.0",
+    "storybook": "^8.6.7",
+    "storybook-addon-rslib": "^1.0.0",
+    "storybook-react-rsbuild": "^1.0.0",
+    "typescript": "^5.8.2"
+  },
+  "prettier": "@pplancq/prettier-config",
+  "lint-staged": {
+    "*.(js|jsx|ts|tsx)": "eslint --fix",
+    "*.{ts,tsx}": "tsc-files --noEmit",
+    "*.(scss|css)": "stylelint --fix"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}
