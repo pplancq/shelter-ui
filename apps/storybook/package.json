@@ -38,7 +38,7 @@
     "concurrently": "^9.1.2",
     "eslint": "^9.21.0",
     "eslint-plugin-prettier": "^5.2.3",
-    "prettier": "^3.5.2",
+    "prettier": "^3.5.3",
     "react": "^19.0.0",
     "storybook": "^8.6.7",
     "storybook-addon-rslib": "^1.0.0",
