@@ -1,0 +1,51 @@
+@use 'sass:map';
+
+$breakpoints: (
+  mobile: 0,
+  tablet: px-to-rem(668),
+  desktop-small: px-to-rem(1024),
+  desktop-medium: px-to-rem(1280),
+  desktop-large: px-to-rem(1600),
+);
+
+@mixin media-exceeds-width($name) {
+  @if not map.has-key($breakpoints, $name) {
+    @error "The breakpoint #{$name} does not exist.";
+  }
+  $value: map.get($breakpoints, $name);
+
+  @media (width >= $value) {
+    @content;
+  }
+}
+
+@mixin media-less-than-width($name) {
+  @if not map.has-key($breakpoints, $name) {
+    @error "The breakpoint #{$name} does not exist.";
+  }
+  $value: map.get($breakpoints, $name);
+
+  @media (width < $value) {
+    @content;
+  }
+}
+
+@mixin media-between-widths($start, $end) {
+  @if not map.has-key($breakpoints, $start) {
+    @error "The breakpoint #{$start} does not exist.";
+  }
+  @if not map.has-key($breakpoints, $end) {
+    @error "The breakpoint #{$end} does not exist.";
+  }
+
+  $startValue: map.get($breakpoints, $start);
+  $endValue: map.get($breakpoints, $end);
+
+  @if $startValue > map.get($breakpoints, $endValue) {
+    @error "The start breakpoint (#{$startValue}) must be less than the end breakpoint (#{$endValue}).";
+  }
+
+  @media (width >= $startValue) and (width < $endValue) {
+    @content;
+  }
+}

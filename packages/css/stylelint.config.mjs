@@ -10,5 +10,7 @@ export default {
           `Expected class selector "${selectorValue.trim()}" to match BEM CSS pattern https://en.bem.info/methodology/css.`,
       },
     ],
+    // prettier will take care of this
+    'at-rule-empty-line-before': null,
   },
 };
