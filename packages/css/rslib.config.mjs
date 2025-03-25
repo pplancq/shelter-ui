@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [pluginSass()],
   source: {
     entry: {
-      index: ['./sass/**'],
+      index: ['./sass/*.scss', './sass/components/**/*.scss'],
     },
   },
   lib: [
