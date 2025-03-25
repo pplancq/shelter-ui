@@ -1,0 +1,14 @@
+@use 'sass:meta';
+@use 'sass:math';
+
+$root-font-size: 16px;
+
+@function px-to-rem($value) {
+  @if meta.type-of($value) != 'number' and meta.type-of($value) != 'dimension' {
+    @error "The value #{$value} is not a valid number or dimension.";
+  }
+
+  $number: if(meta.type-of($value) == 'dimension', $value / 1px, $value);
+
+  @return #{'#{math.div($number, math.div($root-font-size, 1px))}rem'};
+}
