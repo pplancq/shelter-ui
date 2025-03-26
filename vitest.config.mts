@@ -6,8 +6,9 @@ export default defineConfig(({ mode }) => {
 
   return {
     test: {
-      reporters: ['default', 'junit'],
+      reporters: ['default', 'junit', 'vitest-sonar-reporter'],
       outputFile: {
+        'vitest-sonar-reporter': 'sonar-report.xml',
         junit: 'junit-report.xml',
       },
       poolOptions: {
