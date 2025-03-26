@@ -1,11 +1,12 @@
 @use 'sass:map';
+@use '../mixins/helpers';
 
 $breakpoints: (
   mobile: 0,
-  tablet: px-to-rem(668),
-  desktop-small: px-to-rem(1024),
-  desktop-medium: px-to-rem(1280),
-  desktop-large: px-to-rem(1600),
+  tablet: helpers.px-to-rem(668),
+  desktop-small: helpers.px-to-rem(1024),
+  desktop-medium: helpers.px-to-rem(1280),
+  desktop-large: helpers.px-to-rem(1600),
 );
 
 @mixin media-exceeds-width($name) {
