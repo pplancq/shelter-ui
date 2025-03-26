@@ -62,7 +62,8 @@
     "react": "^19.0.0",
     "typescript": "^5.8.2",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.0.9"
+    "vitest": "^3.0.9",
+    "vitest-sonar-reporter": "^2.0.0"
   },
   "prettier": "@pplancq/prettier-config",
   "lint-staged": {

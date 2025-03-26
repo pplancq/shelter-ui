@@ -84,6 +84,7 @@ jobs:
           name: sonar-reports
           path: |
             coverage/lcov.info
+            sonar-report.xml
 
   sonarcloud:
     name: SonarCloud Scan
@@ -100,6 +101,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: sonar-reports
+
+      - run: ls -la
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v5.0.0
