@@ -13,8 +13,8 @@
   "bugs": {
     "url": "https://github.com/pplancq/shelter-ui/issues"
   },
-  "sass": "./sass/index.sass",
-  "style": "./css/index.css",
+  "sass": "./sass/shelter-ui.sass",
+  "style": "./css/shelter-ui.css",
   "files": [
     "sass",
     "css",
