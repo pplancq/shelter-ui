@@ -34,37 +34,13 @@ $responsive-grid: (
   }
 }
 
-@mixin generate-col-classes($start, $end, $breakpoint: '') {
-  @for $i from $start through $end {
-    $class: 'col-';
-    @if ($breakpoint != '') {
-      $class: '#{$class}#{$breakpoint}-';
+@mixin generate-grid-item-classes() {
+  @each $breakpoint, $value in responsive.$breakpoints {
+    @include responsive.media-exceeds-width($breakpoint) {
+      [class*='grid-item'] {
+        grid-column: var(--start-#{$breakpoint}, var(--start)) / span var(--col-#{$breakpoint}, var(--col, var(--cols)));
+      }
     }
-    .#{$class}#{$i} {
-      --cols: #{$i};
-    }
-  }
-}
-
-@mixin generate-responsive-col-classes($breakpoint, $start, $end) {
-  @include responsive.media-exceeds-width($breakpoint) {
-    @include generate-col-classes($start, $end);
-    @include generate-col-classes($start, $end, $breakpoint);
-  }
-}
-
-@mixin generate-start-classes($start, $end) {
-  @for $i from $start through $end {
-    $class: 'col-start-';
-    .#{$class}#{$i} {
-      --start: #{$i};
-    }
-  }
-}
-
-@mixin generate-responsive-start-classes($breakpoint, $start, $end) {
-  @include responsive.media-exceeds-width($breakpoint) {
-    @include generate-start-classes($start, $end);
   }
 }
 
@@ -91,13 +67,5 @@ $responsive-grid: (
     grid-column: var(--start) / span var(--cols);
   }
 
-  @include generate-responsive-col-classes(mobile, 1, 4);
-  @include generate-responsive-col-classes(tablet, 1, 8);
-  @include generate-responsive-col-classes(desktop-small, 1, 12);
-  @include generate-responsive-col-classes(desktop-medium, 1, 12);
-  @include generate-responsive-col-classes(desktop-large, 1, 12);
-
-  @include generate-responsive-start-classes(mobile, 1, 4);
-  @include generate-responsive-start-classes(tablet, 5, 8);
-  @include generate-responsive-start-classes(desktop-small, 9, 12);
+  @include generate-grid-item-classes();
 }
