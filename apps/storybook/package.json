@@ -42,7 +42,7 @@
     "react": "^19.0.0",
     "storybook": "^8.6.7",
     "storybook-addon-rslib": "^1.0.1",
-    "storybook-react-rsbuild": "^1.0.0",
+    "storybook-react-rsbuild": "^1.0.1",
     "typescript": "^5.8.2"
   },
   "prettier": "@pplancq/prettier-config",
