@@ -1,1 +1,1 @@
-export { Button } from './Button';
+export { Grid, type GridProps } from './Grid/Grid';
