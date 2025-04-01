@@ -6,6 +6,7 @@ import { defineConfig } from '@rslib/core';
 export default defineConfig({
   plugins: [pluginReact()],
   source: {
+    tsconfigPath: './tsconfig.build.json',
     entry: {
       index: ['./src/**'],
     },
