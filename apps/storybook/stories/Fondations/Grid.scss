@@ -1,0 +1,65 @@
+.grid {
+  & > * {
+    padding: 1rem 0;
+    text-align: center;
+    background-color: #ff000010;
+    outline: 1px solid red;
+  }
+
+  header {
+    padding: 1rem;
+    background-color: #00ff0010;
+    outline: 1px solid green;
+  }
+
+  main {
+    padding: 0;
+    background-color: #00ffff10;
+    outline: 1px solid cyan;
+  }
+
+  article {
+    padding: 1rem;
+    background-color: #0000ff20;
+    outline: 1px solid blue;
+
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    > * {
+      text-align: start;
+    }
+  }
+
+  footer {
+    padding: 1rem;
+    background-color: #ff00ff10;
+    outline: 1px solid purple;
+  }
+
+  section {
+    padding: 1rem;
+    background-color: #ffff0010;
+    outline: 1px solid yellow;
+  }
+}
+
+[data-name='Nesting'] > .grid > [class*='grid-item'] {
+  position: relative;
+  padding-top: 2rem;
+
+  &::before {
+    position: absolute;
+    top: 0.4rem;
+    right: 0;
+    left: 0;
+    content: 'colSpan={6}';
+  }
+}
+
+#grid-props pre code {
+  font-size: 0.85rem;
+  line-height: 1rem;
+}
