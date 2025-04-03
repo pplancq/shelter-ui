@@ -3,13 +3,13 @@ import type { Breakpoint, ColSpan, ColStart } from './types';
 
 const generateToken = (prefix: string, data: ColSpan | ColStart | Partial<Record<Breakpoint, ColSpan | ColStart>>) => {
   const tokens: Record<string, ColSpan | ColStart> = {};
-  if (typeof data === 'number') {
-    tokens[`--${prefix}`] = data as ColSpan | ColStart;
+  if (typeof data === 'number' || typeof data === 'string') {
+    tokens[`--${prefix}`] = data;
   } else {
     Object.entries(data).forEach(([key, value]) => {
       if (value) {
-        tokens[`--${prefix}`] = value as ColSpan | ColStart;
-        tokens[`--${prefix}-${key}`] = value as ColSpan | ColStart;
+        tokens[`--${prefix}`] = value;
+        tokens[`--${prefix}-${key}`] = value;
       }
     });
   }
