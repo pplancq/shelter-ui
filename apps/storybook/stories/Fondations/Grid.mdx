@@ -1,0 +1,200 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as GridStories from './Grid.stories.tsx';
+import React from 'react';
+
+<Meta of={GridStories} name="Grid" />
+
+# ShelterUI Design System grid
+
+The grids defined in ShelterUI enable content to be organized coherently and fluidly, adapting to different screen sizes.
+Grid configuration varies according to device type, to deliver an optimal user experience.
+
+## Grids
+
+<table>
+  <thead>
+    <tr>
+      <th>device</th>
+      <th>columns</th>
+      <th>spacing</th>
+      <th>margins</th>
+      <th>max width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mobile</td>
+      <td>4</td>
+      <td>16px</td>
+      <td>16px</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Tablet</td>
+      <td>8</td>
+      <td>24px</td>
+      <td>32px</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Small Desktop </td>
+      <td>12</td>
+      <td>32px</td>
+      <td>64px</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Medium Desktop</td>
+      <td>12</td>
+      <td>32px</td>
+      <td>80px</td>
+      <td>1440px</td>
+    </tr>
+    <tr>
+      <td>Large Desktop</td>
+      <td>12</td>
+      <td>32px</td>
+      <td>-</td>
+      <td>1440px</td>
+    </tr>
+  </tbody>
+</table>
+
+## Usage Component Grid
+
+```tsx
+import { Grid } from '@pplancq/shelter-ui';
+
+const MyComponent = () => {
+  return (
+    <Grid container>
+      <Grid colSpan={4}>1</Grid>
+      <Grid colSpan={4}>2</Grid>
+      <Grid colSpan={4}>3</Grid>
+    </Grid>
+  );
+};
+```
+
+## Grid Props
+
+<table id="grid-props">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>component</code>
+      </th>
+      <td>
+        <code>ElementType</code>
+      </td>
+      <td>
+        <code>'div'</code>
+      </td>
+      <td>The component used for the root node.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>container</code>
+      </th>
+      <td>
+        <code>boolean</code>
+      </td>
+      <td>
+        <code>false</code>
+      </td>
+      <td>Defines if the grid is a container.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>colSpan</code>
+      </th>
+      <td>
+        <pre>
+          <code>
+            {`
+1 | 2 | ... | 12 |
+{
+  mobile?: 1 | 2 | ... | 12,
+  tablet?: 1 | 2 | ... | 12,
+  'desktop-small'?: 1 | 2 | ... | 12,
+  'desktop-medium'?: 1 | 2 | ... | 12,
+  'desktop-large'?: 1 | 2 | ... | 12
+}
+          `}
+          </code>
+        </pre>
+      </td>
+      <td>-</td>
+      <td>Specifies the column span for the grid item.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>colStart</code>
+      </th>
+      <td>
+        <pre>
+          <code>
+            {`
+'auto' | 1 | 2 | ... | 12 |
+{
+  mobile?: 'auto' | 1 | 2 | ... | 12,
+  tablet?: 'auto' | 1 | 2 | ... | 12,
+  'desktop-small'?: 'auto' | 1 | 2 | ... | 12,
+  'desktop-medium'?: 'auto' | 1 | 2 | ... | 12,
+  'desktop-large'?: 'auto' | 1 | 2 | ... | 12
+}
+          `}
+          </code>
+        </pre>
+      </td>
+      <td>-</td>
+      <td>Specifies the starting column for the grid item.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Three Columns
+
+This example demonstrates a simple three-column layout. It is useful for displaying content in equal-width columns, which is common in many web designs.
+
+<Canvas of={GridStories.ThreeColumns} sourceState="shown" />
+
+### Responsive
+
+This example showcases the responsive capabilities of the grid system. The layout adjusts based on the screen size, ensuring optimal display on mobile, tablet, and desktop devices.
+
+<Canvas of={GridStories.Responsive} sourceState="shown" />
+
+### Wrapping
+
+This example illustrates how the grid handles content that exceeds the width of the container. The content wraps to the next line, maintaining a clean and organized layout.
+
+<Canvas of={GridStories.Wrapping} sourceState="shown" />
+
+### Starts
+
+This example shows how to start grid items at specific columns. This is useful for creating offset layouts where certain elements need to start at a specific position within the grid.
+
+<Canvas of={GridStories.Starts} sourceState="shown" />
+
+### Auto Columns
+
+This example demonstrates the use of auto-sizing columns. The columns automatically adjust their width based on the content, providing a flexible and dynamic layout.
+
+<Canvas of={GridStories.AutoColumns} sourceState="shown" />
+
+### Nesting
+
+This example highlights the ability to nest grids within each other. Nested grids allow for more complex layouts and can be used to create sophisticated designs.
+
+<Canvas of={GridStories.Nesting} sourceState="shown" />

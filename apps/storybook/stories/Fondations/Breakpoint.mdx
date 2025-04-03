@@ -1,0 +1,114 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Fondations/Breakpoint" />
+
+# ShelterUI Design System breakpoint
+
+The breakpoints defined in ShelterUI ensure a responsive layout that can be adapted to different screen sizes.
+They guarantee a consistent and optimal user experience on the most common devices, from smartphones to widescreen (4K) desktops.
+
+## Breakpoints
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>min size</th>
+      <th>max size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mobile</td>
+      <td>0px</td>
+      <td>667px</td>
+    </tr>
+    <tr>
+      <td>Tablet</td>
+      <td>668px</td>
+      <td>1023px</td>
+    </tr>
+    <tr>
+      <td>Small Desktop</td>
+      <td>1024px</td>
+      <td>1279px</td>
+    </tr>
+    <tr>
+      <td>Medium Desktop</td>
+      <td>1280px</td>
+      <td>1599px</td>
+    </tr>
+    <tr>
+      <td>Large Desktop</td>
+      <td>1600px</td>
+      <td>And more</td>
+    </tr>
+  </tbody>
+</table>
+
+> To account for the margins of the Edge browser, a tolerance of 8 px can be applied during implementation.
+
+## Breakpoints details
+
+1. **Mobile (0px -667px)**
+   - Description: This breakpoint covers most smartphones in portrait mode.
+   - Usage: To ensure that content is readable and navigable on small smartphone screens.
+2. **Tablet (668px - 1023px)**
+   - Description: Designed for portrait tablets and small laptops.
+   - Use: Adapt the layout to take advantage of the extra width of tablets while maintaining optimal readability.
+3. **Small Desktop (1024px - 1279px)**
+   - Description: Optimized for most laptops and large tablet screens in landscape mode.
+   - Use: Provide a flexible layout that adapts well to medium-sized screens.
+4. **Medium Desktop (1280px - 1599px)**
+   - Description: Suitable for standard desktop screens, offering a large, clear interface.
+   - Application: Maximize the use of available space on standard desktop screens while maintaining a clean aesthetic.
+5. **Large Desktop (1600px and more)**
+   - Description: For very wide screens such as 4K or ultra-wide.
+   - Application: Take full advantage of the extra screen space to offer an enriched user experience.
+
+## Good Practices
+
+- **Flexibility**: Use flexible breakpoints to ensure that content remains fluid and adapts naturally to different screen sizes.
+- **Legibility**: Prioritize content legibility, especially on small screens. Adjust font sizes and spacing accordingly.
+- **Navigation**: Check that navigation remains intuitive and accessible on all screen sizes, especially for mobile users.
+- **Testing**: Test designs on different devices to ensure consistency and functionality at every breakpoint.
+
+## Using SCSS Mixins
+
+ShelterUI provides three SCSS mixins to easily handle responsive media queries:
+
+### `media-exceeds-width`
+
+Use this mixin to target screens wider than a specific breakpoint.
+
+```scss
+@include media-exceeds-width(tablet) {
+  .my-element {
+    display: flex;
+  }
+}
+```
+
+### `media-less-than-width`
+
+Use this mixin to target screens smaller than a specific breakpoint.
+
+```scss
+@include media-less-than-width(desktop-small) {
+  .my-element {
+    flex-direction: column;
+  }
+}
+```
+
+### `media-between-widths`
+
+Use this mixin to target screens between two breakpoints.
+
+```scss
+@include media-between-widths(tablet, desktop-medium) {
+  .my-element {
+    margin: 2rem;
+  }
+}
+```
