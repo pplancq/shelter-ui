@@ -1,26 +1,27 @@
 @use '../mixins/helpers';
+@use '../mixins/spacing';
 @use 'responsive';
 
 $responsive-grid: (
   tablet: (
     cols: 8,
-    margin-h: var(--margin-4),
-    gap: var(--gap-3),
+    margin-h: spacing.get-margin-horizontal(4),
+    gap: spacing.get-gap(4),
   ),
   desktop-small: (
     cols: 12,
     margin-h: var(--margin-8),
-    gap: var(--gap-4),
+    gap: spacing.get-gap(4),
   ),
   desktop-medium: (
     cols: 12,
     margin-h: var(--margin-10),
-    gap: var(--gap-4),
+    gap: spacing.get-gap(4),
   ),
   desktop-large: (
     cols: 12,
     margin-h: auto,
-    gap: var(--gap-4),
+    gap: spacing.get-gap(4),
   ),
 );
 
@@ -47,21 +48,20 @@ $responsive-grid: (
 .grid {
   --cols: 4;
   --start: auto;
-  --margin-h: var(--margin-2);
-  --gap: var(--gap-2);
+
+  @include spacing.init-margin-horizontal('margin-h', 2);
+  @include spacing.init-gap('gap', 2);
 
   display: grid;
   max-width: helpers.px-to-rem(1440);
-  margin-inline: var(--margin-h);
   grid-template-columns: repeat(var(--cols), 1fr);
-  gap: var(--gap);
 
   @include generate-responsive-grid($responsive-grid);
 
   & > * {
     --start: auto;
     --cols: 1;
-    --margin-h: 0;
+    --margin-h: spacing.get-margin-horizontal(0);
 
     grid-template-columns: subgrid;
     grid-column: var(--start) / span var(--cols);
