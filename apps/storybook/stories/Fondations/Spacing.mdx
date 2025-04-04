@@ -1,0 +1,174 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Fondations/Spacing" />
+
+# ShelterUI Design System spacing
+
+ShelterUI uses an 8px grid to ensure consistency and uniformity of spacing throughout the design system.
+This grid maintains a harmonious, structured appearance, making interfaces easier to read and use.
+
+## Spacing rules
+
+ShelterUI's spacing rules are designed to ensure visual consistency and a smooth user experience.
+Spacing is used systematically to create clear visual hierarchies and organize content efficiently.
+
+- **8px grid**: All spacing is a multiple of 8px. This grid creates balanced, coherent designs. Standard spacing values range from --space-0: 0px to --space-16: 120px, including 4px, 8px, 16px, 24px, 32px, etc. For example, if you enter 2, you will get 16px (2 \* 8px).
+- **Consistency**: Use defined spacing values to maintain uniformity across all interfaces.
+- **Consistency**: Apply the same spacing principles in similar contexts to create a consistent visual experience.
+- **Flexibility**: Adapt spacing to specific needs, while respecting basic values to avoid visual imbalance.
+
+### Practical rules for use
+
+1. **Similar spacing**: Use small spaces for similar elements or content belonging to the same category. For example, for list items or form elements, use tighter spacing such as 4px or 8px.
+2. **Section separation**: Use wider spacing to clearly separate distinct sections or blocks of content. For example, to separate two main sections of a page, use wider spacing such as 24px or 32px.
+3. **Horizontal margins**: Horizontal margins should generally remain within a reasonable range and not exceed 48px, unless specifically required. This avoids excessive spacing and maintains visual harmony.
+4. **Internal margins and paddings**: Use paddings to create space inside elements and margins to create space between elements. Limit paddings and gaps to 32px maximum to avoid excessive spacing within elements.
+
+### Spacing primitives
+
+Spacing primitives in ShelterUI range from --space-0: 0px to --space-16: 120px, including 4px, 8px, 16px, 24px, 32px, etc.
+
+### Semantic tokens
+
+Semantic tokens are divided into three categories: space-margin, space-padding and space-gap.
+
+- **Space Margin**: Margins go up to 120px, but there's an additional rule for horizontal margins, which must not exceed 48px, unless there's a specific need.
+- **Space Padding**: Paddings stop at 32px.
+- **Space Gap**: Gaps also stop at 32px.
+
+## Spacing Functions and Mixins
+
+Functions provide access to global spacing tokens for direct use in SCSS/CSS properties.
+Mixins help create and apply component-specific spacing tokens, adhering to the design system rules.
+
+### Functions
+
+#### `get-margin-horizontal($value)`
+
+Returns the horizontal margin spacing based on the provided value.
+
+**Example:**
+
+```scss
+.element {
+  margin-inline: get-margin-horizontal(2);
+}
+/* CSS generated: */
+.element {
+  margin-inline: var(--margin-2); /* Assuming --margin-2 is defined as 16px */
+}
+```
+
+#### `get-margin-vertical($value)`
+
+Returns the vertical margin spacing based on the provided value.
+
+**Example:**
+
+```scss
+.element {
+  margin-block: get-margin-vertical(3);
+}
+/* CSS generated: */
+.element {
+  margin-block: var(--margin-3); /* Assuming --margin-3 is defined as 24px */
+}
+```
+
+#### `get-padding-horizontal($value)`
+
+Returns the horizontal padding spacing based on the provided value.
+
+**Example:**
+
+```scss
+.element {
+  padding-inline: get-padding-horizontal(1);
+}
+/* CSS generated: */
+.element {
+  padding-inline: var(--padding-1); /* Assuming --padding-1 is defined as 8px */
+}
+```
+
+#### `get-gap($value)`
+
+Returns the gap spacing based on the provided value.
+
+**Example:**
+
+```scss
+.element {
+  gap: get-gap(2);
+}
+/* CSS generated: */
+.element {
+  gap: var(--gap-2); /* Assuming --gap-2 is defined as 16px */
+}
+```
+
+### Mixins
+
+#### `init-margin-horizontal($component-token, $value)`
+
+Initializes horizontal margin spacing for a component.
+
+**Example:**
+
+```scss
+@include init-margin-horizontal('component-margin', 2);
+/* CSS generated: */
+.component {
+  --component-margin: var(--margin-2); /* Assuming --margin-2 is defined as 16px */
+
+  margin-inline: var(--component-margin);
+}
+```
+
+#### `init-margin-vertical($component-token, $value)`
+
+Initializes vertical margin spacing for a component.
+
+**Example:**
+
+```scss
+@include init-margin-vertical('component-margin', 3);
+/* CSS generated: */
+.component {
+  --component-margin: var(--margin-3); /* Assuming --margin-3 is defined as 24px */
+
+  margin-block: var(--component-margin);
+}
+```
+
+#### `init-padding-horizontal($component-token, $value)`
+
+Initializes horizontal padding spacing for a component.
+
+**Example:**
+
+```scss
+@include init-padding-horizontal('component-padding', 1);
+/* CSS generated: */
+.component {
+  --component-padding: var(--padding-1); /* Assuming --padding-1 is defined as 8px */
+
+  padding-inline: var(--component-padding);
+}
+```
+
+#### `init-gap($component-token, $value)`
+
+Initializes gap spacing for a component.
+
+**Example:**
+
+```scss
+@include init-gap('component-gap', 2);
+/* CSS generated: */
+.component {
+  --component-gap: var(--gap-2); /* Assuming --gap-2 is defined as 16px */
+
+  gap: var(--component-gap);
+}
+```
