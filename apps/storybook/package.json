@@ -38,7 +38,7 @@
     "@types/react": "^19.0.12",
     "concurrently": "^9.1.2",
     "eslint": "^9.23.0",
-    "eslint-plugin-prettier": "^5.2.5",
+    "eslint-plugin-prettier": "^5.2.6",
     "prettier": "^3.5.3",
     "react": "^19.0.0",
     "storybook": "^8.6.12",
