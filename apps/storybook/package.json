@@ -41,6 +41,7 @@
     "eslint-plugin-prettier": "^5.2.6",
     "prettier": "^3.5.3",
     "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "storybook": "^8.6.12",
     "storybook-addon-rslib": "^1.0.1",
     "storybook-react-rsbuild": "^1.0.1",
