@@ -1,0 +1,378 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+<Meta title="Fondations/Theme" />
+
+# ShelterUI Design System Theme Colors
+
+The ShelterUI design system provides a centralized and consistent approach to managing color schemes across components and contexts.
+This document explains the structure and usage of **theme colors**, emphasizing their contextual roles and adaptability for `light` and `dark` modes.
+
+## **Theme Colors Overview**
+
+Theme colors are organized into semantic categories to ensure clarity, reusability, and maintainability.
+Each theme color is defined with precise roles, allowing developers to focus on the **purpose** of a color rather than its appearance.
+
+The following key categories are available:
+
+- **Primary**: The main brand color used prominently across the system.
+- **Secondary**: A complementary color for accents and secondary emphasis.
+- **Tertiary**: Reserved for critical elements, such as danger zones or destructive actions (e.g., delete buttons).
+- **Signal**: Provides visual feedback for states like success, warning, or information.
+- **Disabled**: Represents states where an element is inactive or unavailable.
+- **Neutral/Background/Text**: Supports layout, typography, and accessibility.
+
+### Light and Dark Modes
+
+Each theme token is defined for both `light` and `dark` modes. The `light` theme is the default and is automatically applied
+unless the user's system preference is set to `dark`. The `dark` theme is activated using the `prefers-color-scheme: dark` media
+query or by applying the class `dark-theme` to the `<body>` element. Similarly, the `light-theme` class can be used to explicitly
+enforce the light theme.
+
+## **Color Palette**
+
+Here is the palette of colors available for both `light` and `dark` themes:
+
+### **Primary Color Palette**
+
+**Primary Main**
+
+<ColorPalette>
+  <ColorItem
+    title="Primary Main Light"
+    subtitle="$color-blue-500"
+    colors={{ '--color-primary-main-light': '#204ccf' }}
+  />
+  <ColorItem title="Primary Main On" subtitle="$color-neutral-00" colors={{ '--color-primary-main-on': '#ffffff' }} />
+  <ColorItem
+    title="Primary Main Medium"
+    subtitle="$color-blue-650"
+    colors={{ '--color-primary-main-medium': '#163591' }}
+  />
+  <ColorItem
+    title="Primary Main Strong"
+    subtitle="$color-blue-800"
+    colors={{ '--color-primary-main-strong': '#0d1e53' }}
+  />
+</ColorPalette>
+
+**Primary Alt**
+
+<ColorPalette>
+  <ColorItem title="Primary Alt Base" subtitle="$color-blue-50" colors={{ '--color-primary-alt-base': '#e9edfa' }} />
+  <ColorItem
+    title="Primary Alt On Base"
+    subtitle="$color-blue-600"
+    colors={{ '--color-primary-alt-onbase': '#1a3da6' }}
+  />
+  <ColorItem
+    title="Primary Alt On Strong"
+    subtitle="$color-blue-700"
+    colors={{ '--color-primary-alt-onstrong': '#132e7c' }}
+  />
+  <ColorItem
+    title="Primary Alt On Stronger"
+    subtitle="$color-blue-800"
+    colors={{ '--color-primary-alt-onstronger': '#0d1e53' }}
+  />
+</ColorPalette>
+
+### **Secondary Color Palette**
+
+**Secondary Main**
+
+<ColorPalette>
+  <ColorItem
+    title="Secondary Main Light"
+    subtitle="$color-purple-500"
+    colors={{ '--color-secondary-main-light': '#673ab7' }}
+  />
+  <ColorItem
+    title="Secondary Main On"
+    subtitle="$color-neutral-00"
+    colors={{ '--color-secondary-main-on': '#ffffff' }}
+  />
+  <ColorItem
+    title="Secondary Main Medium"
+    subtitle="$color-purple-650"
+    colors={{ '--color-secondary-main-medium': '#482980' }}
+  />
+  <ColorItem
+    title="Secondary Main Strong"
+    subtitle="$color-purple-800"
+    colors={{ '--color-secondary-main-strong': '#291749' }}
+  />
+</ColorPalette>
+
+**Secondary Alt**
+
+<ColorPalette>
+  <ColorItem
+    title="Secondary Alt Base"
+    subtitle="$color-purple-50"
+    colors={{ '--color-secondary-alt-base': '#f0ebf8' }}
+  />
+  <ColorItem
+    title="Secondary Alt On Base"
+    subtitle="$color-purple-550"
+    colors={{ '--color-secondary-alt-onbase': '#5d34a5' }}
+  />
+  <ColorItem
+    title="Secondary Alt On Strong"
+    subtitle="$color-purple-650"
+    colors={{ '--color-secondary-alt-onstrong': '#482980' }}
+  />
+  <ColorItem
+    title="Secondary Alt On Stronger"
+    subtitle="$color-purple-750"
+    colors={{ '--color-secondary-alt-onstronger': '#341d5c' }}
+  />
+</ColorPalette>
+
+### **Tertiary Color Palette**
+
+**Tertiary Main**
+
+<ColorPalette>
+  <ColorItem
+    title="Tertiary Main Light"
+    subtitle="$color-red-500"
+    colors={{ '--color-tertiary-main-light': '#b30000' }}
+  />
+  <ColorItem title="Tertiary Main On" subtitle="$color-neutral-00" colors={{ '--color-tertiary-main-on': '#ffffff' }} />
+  <ColorItem
+    title="Tertiary Main Medium"
+    subtitle="$color-red-650"
+    colors={{ '--color-tertiary-main-medium': '#7d0000' }}
+  />
+  <ColorItem
+    title="Tertiary Main Strong"
+    subtitle="$color-red-800"
+    colors={{ '--color-tertiary-main-strong': '#480000' }}
+  />
+</ColorPalette>
+
+**Tertiary Alt**
+
+<ColorPalette>
+  <ColorItem title="Tertiary Alt Base" subtitle="$color-red-50" colors={{ '--color-tertiary-alt-base': '#f7e6e6' }} />
+  <ColorItem
+    title="Tertiary Alt On Base"
+    subtitle="$color-red-600"
+    colors={{ '--color-tertiary-alt-onbase': '#8f0000' }}
+  />
+  <ColorItem
+    title="Tertiary Alt On Strong"
+    subtitle="$color-red-700"
+    colors={{ '--color-tertiary-alt-onstrong': '#6b0000' }}
+  />
+  <ColorItem
+    title="Tertiary Alt On Stronger"
+    subtitle="$color-red-800"
+    colors={{ '--color-tertiary-alt-onstronger': '#480000' }}
+  />
+</ColorPalette>
+
+### **Signal Color Palette**
+
+**Signal Info**
+
+<ColorPalette>
+  <ColorItem
+    title="Signal Info Background"
+    subtitle="$color-cyan-100"
+    colors={{ '--color-signal-info-background': '#D1EEF3' }}
+  />
+  <ColorItem
+    title="Signal Info Foreground"
+    subtitle="$color-cyan-800"
+    colors={{ '--color-signal-info-foreground': '#0A454E' }}
+  />
+</ColorPalette>
+
+**Signal Warning**
+
+<ColorPalette>
+  <ColorItem
+    title="Signal Warning Background"
+    subtitle="$color-orange-100"
+    colors={{ '--color-signal-warning-background': '#FFF3CD' }}
+  />
+  <ColorItem
+    title="Signal Warning Foreground"
+    subtitle="$color-orange-800"
+    colors={{ '--color-signal-warning-foreground': '#664D03' }}
+  />
+</ColorPalette>
+
+**Signal Success**
+
+<ColorPalette>
+  <ColorItem
+    title="Signal Success Background"
+    subtitle="$color-green-100"
+    colors={{ '--color-signal-success-background': '#D5F0DB' }}
+  />
+  <ColorItem
+    title="Signal Success Foreground"
+    subtitle="$color-green-800"
+    colors={{ '--color-signal-success-foreground': '#12481E' }}
+  />
+</ColorPalette>
+
+**Signal Critical**
+
+<ColorPalette>
+  <ColorItem
+    title="Signal Critical Background"
+    subtitle="$color-red-100"
+    colors={{ '--color-signal-critical-background': '#F0CCCC' }}
+  />
+  <ColorItem
+    title="Signal Critical Foreground"
+    subtitle="$color-red-700"
+    colors={{ '--color-signal-critical-foreground': '#6B0000' }}
+  />
+</ColorPalette>
+
+### **Background Color Palette**
+
+<ColorPalette>
+  <ColorItem title="Background Body" subtitle="$color-gray-50" colors={{ '--color-background-body': '#F0F1F3' }} />
+  <ColorItem
+    title="Background Surface"
+    subtitle="$color-gray-100"
+    colors={{ '--color-background-surface': '#E1E2E6' }}
+  />
+  <ColorItem title="Background Alt" subtitle="$color-gray-150" colors={{ '--color-background-alt': '#D2D4DB' }} />
+  <ColorItem
+    title="Background Overlay"
+    subtitle="$color-gray-A20"
+    colors={{ '--color-background-overlay': 'rgba(108, 114, 131, 0.2)' }}
+  />
+</ColorPalette>
+
+### **Text Color Palette**
+
+<ColorPalette>
+  <ColorItem title="Text Primary" subtitle="$color-gray-900" colors={{ '--color-text-primary': '#15161A' }} />
+  <ColorItem title="Text Secondary" subtitle="$color-gray-700" colors={{ '--color-text-secondary': '#525252' }} />
+  <ColorItem title="Text Hint" subtitle="$color-gray-550" colors={{ '--color-text-hint': '#7A7A7A' }} />
+  <ColorItem title="Text Disabled" subtitle="$color-gray-450" colors={{ '--color-text-disabled': '#949494' }} />
+</ColorPalette>
+
+### **Disabled Color Palette**
+
+<ColorPalette>
+  <ColorItem
+    title="Disabled Foreground"
+    subtitle="$color-gray-450"
+    colors={{ '--color-disabled-foreground': '#949494' }}
+  />
+  <ColorItem
+    title="Disabled Background"
+    subtitle="$color-gray-100"
+    colors={{ '--color-disabled-background': '#E1E2E6' }}
+  />
+</ColorPalette>
+
+### **Neutral Color Palette**
+
+<ColorPalette>
+  <ColorItem title="Neutral Light" subtitle="$color-neutral-00" colors={{ '--color-neutral-light': '#FFFFFF' }} />
+  <ColorItem title="Neutral Dark" subtitle="$color-neutral-1000" colors={{ '--color-neutral-dark': '#000000' }} />
+</ColorPalette>
+
+## **Structure of Theme Tokens**
+
+Tokens are further divided into:
+
+1. **Main Tokens** (`main`): Define primary usage for a color with different strengths (`light`, `medium`, `strong`). These variations are commonly used to create visual states like hover, focus, or active.
+2. **Alt Tokens** (`alt`): Used for alternative contexts, such as backgrounds or overlays. In this case, it is the type color (e.g., text) that varies based on the token.
+
+### **Example: Primary Color Tokens**
+
+In the `light` theme:
+
+- `--color-primary-main-light`: Primary color, lighter tone (used for default components).
+- `--color-primary-main-medium`: Primary color, medium tone (e.g., hover effects).
+- `--color-primary-main-strong`: Primary color, stronger tone (e.g., active states).
+- `--color-primary-main-on`: Text color used on top of the primary color.
+
+For alternative usage:
+
+- `--color-primary-alt-base`: Light background variation of the primary color.
+- `--color-primary-alt-onbase`: Text color for the alternative base background.
+- `--color-primary-alt-onstrong`: Text color for the stronger alternative background.
+
+## **Background Colors**
+
+Background colors ensure proper contrast and maintain clarity in different themes:
+
+- `--color-background-body`: The main background for body content.
+- `--color-background-surface`: Surfaces like cards or modals.
+- `--color-background-alt`: Secondary surface areas.
+- `--color-background-overlay`: Overlays with subtle transparency.
+
+## **Text Colors**
+
+Text colors adapt to the theme while ensuring proper contrast and accessibility:
+
+- `--color-text-primary`: Default text color.
+- `--color-text-secondary`: Slightly muted text for less emphasis.
+- `--color-text-hint`: Even softer text, often used for hints or placeholders.
+- `--color-text-disabled`: Text representing disabled states.
+
+## **Signal Colors**
+
+Signal colors provide visual cues for system feedback:
+
+- `--color-signal-info-background`: Background for informational alerts.
+- `--color-signal-info-foreground`: Text color on informational backgrounds.
+- `--color-signal-warning-background`: Warning-related backgrounds.
+- `--color-signal-success-background`: Success indicators.
+- `--color-signal-critical-background`: Critical or error states.
+
+Signal colors are adjusted for both `light` and `dark` themes to ensure readability.
+
+## **Disabled Colors**
+
+Disabled colors represent elements that are inactive or unavailable:
+
+- `--color-disabled-foreground`: Text or icon colors for disabled elements.
+- `--color-disabled-background`: Background color for disabled elements.
+
+## **Best Practices for Theme Tokens**
+
+1. **Avoid direct use of primitives**: Primitive colors (e.g., `color-blue-500`) are the foundation of the design system and should only be used indirectly via tokens.
+2. **Use semantic tokens**: Apply theme tokens (e.g., `primary-main-light`, `text-primary`) to ensure consistency and adapt to theme-specific contexts.
+3. **Maintain accessibility**: Ensure sufficient contrast ratios between text and background colors to meet WCAG standards.
+
+## **Variables Example in SCSS**
+
+Theme tokens are exposed as CSS variables. Below is an example for the `primary` color tokens in the `light` theme:
+
+```scss
+:root {
+  --color-primary-main-light: #{color.$color-blue-500};
+  --color-primary-main-medium: #{color.$color-blue-650};
+  --color-primary-main-strong: #{color.$color-blue-800};
+  --color-primary-main-on: #{color.$color-neutral-00};
+}
+```
+
+And in the `dark` theme:
+
+```scss
+.dark-theme {
+  --color-primary-main-light: #{color.$color-blue-700};
+  --color-primary-main-medium: #{color.$color-blue-650};
+  --color-primary-main-strong: #{color.$color-blue-600};
+  --color-primary-main-on: #{color.$color-blue-50};
+}
+```
+
+## **Conclusion**
+
+ShelterUI theme tokens offer a flexible and context-aware color system designed to adapt seamlessly to different themes and user preferences.
+By leveraging semantic tokens and maintaining a strict separation between primitives and tokens, the design system ensures scalability,
+consistency, and accessibility across all components.
