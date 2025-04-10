@@ -13,13 +13,15 @@
     "stylelint": "stylelint \"**/*.{scss,css}\"",
     "stylelint:fix": "stylelint \"**/*.{scss,css}\" --fix",
     "tsc": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "chromatic": "chromatic"
   },
   "dependencies": {
     "@pplancq/shelter-ui-css": "*",
     "@pplancq/shelter-ui-react": "*"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.6",
     "@pplancq/eslint-config": "^4.0.17",
     "@pplancq/prettier-config": "^1.2.3",
     "@pplancq/stylelint-config": "^3.1.0",
@@ -36,6 +38,7 @@
     "@storybook/react": "^8.6.12",
     "@storybook/test": "^8.6.12",
     "@types/react": "^19.1.0",
+    "chromatic": "^11.28.0",
     "concurrently": "^9.1.2",
     "eslint": "^9.23.0",
     "eslint-plugin-prettier": "^5.2.6",
