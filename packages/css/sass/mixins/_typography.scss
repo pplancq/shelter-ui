@@ -1,0 +1,234 @@
+@use 'sass:map';
+@use '../layout/responsive';
+
+$display: (
+  mobile: (
+    1: (
+      font-size: var(--font-size-48),
+      line-height: var(--line-height-48),
+    ),
+    2: (
+      font-size: var(--font-size-36),
+      line-height: var(--line-height-40),
+    ),
+    3: (
+      font-size: var(--font-size-24),
+      line-height: var(--line-height-32),
+    ),
+    4: (
+      font-size: var(--font-size-20),
+      line-height: var(--line-height-28),
+    ),
+    5: (
+      font-size: var(--font-size-18),
+      line-height: var(--line-height-28),
+    ),
+    6: (
+      font-size: var(--font-size-16),
+      line-height: var(--line-height-24),
+    ),
+  ),
+  desktop: (
+    1: (
+      font-size: var(--font-size-80),
+      line-height: var(--line-height-80),
+    ),
+    2: (
+      font-size: var(--font-size-60),
+      line-height: var(--line-height-60),
+    ),
+    3: (
+      font-size: var(--font-size-48),
+      line-height: var(--line-height-48),
+    ),
+    4: (
+      font-size: var(--font-size-36),
+      line-height: var(--line-height-40),
+    ),
+    5: (
+      font-size: var(--font-size-24),
+      line-height: var(--line-height-32),
+    ),
+    6: (
+      font-size: var(--font-size-20),
+      line-height: var(--line-height-28),
+    ),
+  ),
+);
+
+$heading: (
+  mobile: (
+    1: (
+      font-size: var(--font-size-24),
+      line-height: var(--line-height-32),
+    ),
+    2: (
+      font-size: var(--font-size-20),
+      line-height: var(--line-height-28),
+    ),
+    3: (
+      font-size: var(--font-size-18),
+      line-height: var(--line-height-28),
+    ),
+    4: (
+      font-size: var(--font-size-16),
+      line-height: var(--line-height-24),
+    ),
+    5: (
+      font-size: var(--font-size-14),
+      line-height: var(--line-height-20),
+    ),
+    6: (
+      font-size: var(--font-size-12),
+      line-height: var(--line-height-16),
+    ),
+  ),
+  desktop: (
+    1: (
+      font-size: var(--font-size-30),
+      line-height: var(--line-height-36),
+    ),
+    2: (
+      font-size: var(--font-size-24),
+      line-height: var(--line-height-32),
+    ),
+    3: (
+      font-size: var(--font-size-20),
+      line-height: var(--line-height-28),
+    ),
+    4: (
+      font-size: var(--font-size-18),
+      line-height: var(--line-height-28),
+    ),
+    5: (
+      font-size: var(--font-size-16),
+      line-height: var(--line-height-24),
+    ),
+    6: (
+      font-size: var(--font-size-14),
+      line-height: var(--line-height-20),
+    ),
+  ),
+);
+
+$text: (
+  large: (
+    font-size: var(--font-size-18),
+    line-height: var(--line-height-28),
+  ),
+  medium: (
+    font-size: var(--font-size-16),
+    line-height: var(--line-height-24),
+  ),
+  small: (
+    font-size: var(--font-size-14),
+    line-height: var(--line-height-20),
+  ),
+  smaller: (
+    font-size: var(--font-size-12),
+    line-height: var(--line-height-16),
+  ),
+  smallest: (
+    font-size: var(--font-size-10),
+    line-height: var(--line-height-13),
+  ),
+);
+
+$label: (
+  large: (
+    font-size: var(--font-size-18),
+    line-height: var(--line-height-28),
+  ),
+  medium: (
+    font-size: var(--font-size-16),
+    line-height: var(--line-height-24),
+  ),
+  small: (
+    font-size: var(--font-size-14),
+    line-height: var(--line-height-20),
+  ),
+);
+
+$code: (
+  large: (
+    font-size: var(--font-size-18),
+    line-height: var(--line-height-28),
+  ),
+  medium: (
+    font-size: var(--font-size-16),
+    line-height: var(--line-height-24),
+  ),
+  small: (
+    font-size: var(--font-size-14),
+    line-height: var(--line-height-20),
+  ),
+);
+
+@function _get-typography($map, $size, $property) {
+  @if not(map.has-key($map, $size)) {
+    @error "Invalid size: #{$size}.";
+  }
+  @return map.get(map.get($map, $size), $property);
+}
+
+@mixin _typography($map, $size, $font-family, $font-weight, $letter-spacing) {
+  font-family: $font-family;
+  font-size: _get-typography($map, $size, font-size);
+  font-weight: $font-weight;
+  letter-spacing: $letter-spacing;
+  line-height: _get-typography($map, $size, line-height);
+}
+
+@mixin display($size) {
+  @include _typography(
+    map.get($display, mobile),
+    $size,
+    var(--font-family-display),
+    if($size >= 1 and $size <= 3, var(--font-weight-bold), var(--font-weight-semi-bold)),
+    var(--letter-spacing-default)
+  );
+
+  @include responsive.media-exceeds-width(tablet) {
+    font-size: _get-typography(map.get($display, desktop), $size, font-size);
+    line-height: _get-typography(map.get($display, desktop), $size, line-height);
+  }
+}
+
+@mixin heading($size) {
+  @include _typography(
+    map.get($heading, mobile),
+    $size,
+    var(--font-family-heading),
+    if($size >= 1 and $size <= 3, var(--font-weight-bold), var(--font-weight-semi-bold)),
+    var(--letter-spacing-default)
+  );
+
+  @include responsive.media-exceeds-width(tablet) {
+    font-size: _get-typography(map.get($heading, desktop), $size, font-size);
+    line-height: _get-typography(map.get($heading, desktop), $size, line-height);
+  }
+}
+
+@mixin text($size, $bold: false) {
+  @include _typography(
+    $text,
+    $size,
+    var(--font-family-content),
+    if($bold, var(--font-weight-bold), var(--font-weight-regular)),
+    var(--letter-spacing-default)
+  );
+}
+
+@mixin label($size) {
+  @include _typography(
+    $label,
+    $size,
+    var(--font-family-label),
+    var(--font-weight-semi-bold),
+    var(--letter-spacing-low)
+  );
+}
+
+@mixin code($size) {
+  @include _typography($code, $size, var(--font-family-code), var(--font-weight-medium), var(--letter-spacing-default));
+}
