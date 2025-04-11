@@ -1,8 +1,8 @@
-import { type ElementType, type PropsWithChildren, useId } from 'react';
 import { clsx } from '@/utils/clsx';
 import type { ExtendableComponent } from '@/utils/types';
-import { useStyleInjection } from './useStyleInjection';
+import { type ElementType, type PropsWithChildren, useId } from 'react';
 import type { Breakpoint, ColSpan, ColStart } from './types';
+import { useStyleInjection } from './useStyleInjection';
 
 export type GridProps<C extends ElementType> = {
   container?: boolean;
@@ -30,3 +30,5 @@ export const Grid = <C extends ElementType = 'div'>({
     </Component>
   );
 };
+
+Grid.displayName = 'Grid';
