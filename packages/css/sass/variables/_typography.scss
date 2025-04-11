@@ -1,0 +1,46 @@
+@use '../mixins/helpers';
+
+:root {
+  // Font families
+  --font-family-display: 'Raleway', sans-serif;
+  --font-family-content: 'Nunito', sans-serif;
+  --font-family-label: 'Oswald', sans-serif;
+  --font-family-code: 'JetBrains Mono', monospace;
+
+  // Font sizes
+  --font-size-10: #{helpers.px-to-rem(10)};
+  --font-size-12: #{helpers.px-to-rem(12)};
+  --font-size-14: #{helpers.px-to-rem(14)};
+  --font-size-16: #{helpers.px-to-rem(16)};
+  --font-size-18: #{helpers.px-to-rem(18)};
+  --font-size-20: #{helpers.px-to-rem(20)};
+  --font-size-24: #{helpers.px-to-rem(24)};
+  --font-size-30: #{helpers.px-to-rem(30)};
+  --font-size-36: #{helpers.px-to-rem(36)};
+  --font-size-48: #{helpers.px-to-rem(48)};
+  --font-size-60: #{helpers.px-to-rem(60)};
+  --font-size-80: #{helpers.px-to-rem(80)};
+
+  // Line heights
+  --line-height-13: #{helpers.px-to-rem(13)};
+  --line-height-16: #{helpers.px-to-rem(16)};
+  --line-height-20: #{helpers.px-to-rem(20)};
+  --line-height-24: #{helpers.px-to-rem(24)};
+  --line-height-28: #{helpers.px-to-rem(28)};
+  --line-height-32: #{helpers.px-to-rem(32)};
+  --line-height-36: #{helpers.px-to-rem(36)};
+  --line-height-40: #{helpers.px-to-rem(40)};
+  --line-height-48: #{helpers.px-to-rem(48)};
+  --line-height-60: #{helpers.px-to-rem(60)};
+  --line-height-80: #{helpers.px-to-rem(80)};
+
+  // Font weights
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+
+  // Letter spacing
+  --letter-spacing-default: 0;
+  --letter-spacing-low: #{helpers.px-to-rem(0.5)};
+}

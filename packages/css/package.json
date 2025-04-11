@@ -48,5 +48,11 @@
   },
   "volta": {
     "extends": "../../package.json"
+  },
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.2.5",
+    "@fontsource/nunito": "^5.2.5",
+    "@fontsource/oswald": "^5.2.5",
+    "@fontsource/raleway": "^5.2.5"
   }
 }
