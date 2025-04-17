@@ -18,7 +18,7 @@ export default defineConfig({
     target: 'web',
     distPath: {
       root: 'css',
-      font: 'font',
+      font: '../font',
     },
   },
 });
