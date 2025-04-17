@@ -1,0 +1,38 @@
+@forward '@fontsource/raleway/600.css'; /* semi-bold */
+@forward '@fontsource/raleway/700.css'; /* bold */
+@forward '@fontsource/nunito/400.css'; /* regular */
+@forward '@fontsource/nunito/700.css'; /* bold */
+@forward '@fontsource/oswald/600.css'; /* semi-bold */
+@forward '@fontsource/jetbrains-mono/500.css'; /* medium */
+@forward '../variables/typography';
+
+@use '../mixins/typography';
+
+.typography {
+  @each $size in 1, 2, 3, 4, 5, 6 {
+    &.d#{$size} {
+      @include typography.display($size);
+    }
+    &.h#{$size} {
+      @include typography.heading($size);
+    }
+  }
+
+  @each $size in smallest, smaller, small, medium, large {
+    &.text-#{$size} {
+      @include typography.text($size);
+    }
+    &.text-bold-#{$size} {
+      @include typography.text($size, true);
+    }
+  }
+
+  @each $size in small, medium, large {
+    &.label-#{$size} {
+      @include typography.label($size);
+    }
+    &.code-#{$size} {
+      @include typography.code($size);
+    }
+  }
+}
