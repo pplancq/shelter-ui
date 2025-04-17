@@ -18,6 +18,7 @@
   "files": [
     "sass",
     "css",
+    "font",
     "README.md",
     "LICENSE",
     "CHANGELOG.md"
