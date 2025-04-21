@@ -39,7 +39,7 @@
     "@storybook/react": "^8.6.12",
     "@storybook/test": "^8.6.12",
     "@types/react": "^19.1.0",
-    "chromatic": "^11.28.0",
+    "chromatic": "^11.28.2",
     "concurrently": "^9.1.2",
     "eslint": "^9.24.0",
     "eslint-plugin-prettier": "^5.2.6",
