@@ -1,0 +1,166 @@
+import { Markdown, Meta } from '@storybook/blocks';
+import '@pplancq/shelter-ui-css/sass/variables/_shadow.scss';
+import '@pplancq/shelter-ui-css/sass/variables/_border.scss';
+
+<Meta title="Fondations/Shadow" />
+
+# ShelterUI Design System shadow
+
+Shadows create a perception of depth and enhance visual hierarchy by guiding the user's attention.
+
+# Description
+
+Shadows mimic lighting effects to give interfaces a three-dimensional appearance.
+Each shadow is defined by properties such as horizontal/vertical offset, blur, extent and color.
+Their use must remain subtle to ensure an elegant, accessible interface.
+
+# Rules of use
+
+- **Visual hierarchy**: Adjust the intensity of shadows according to the importance of the component.
+  - Light shadows (0px 2px 4px rgba(0, 0, 0, 0.1)) for buttons and small interactive elements.
+  - Medium shadows (0px 4px 8px rgba(0, 0, 0, 0.15)) for maps or content elements.
+  - High shadows (0px 8px 16px rgba(0, 0, 0, 0.2)) for highlighted elements such as modals.
+- **Theming**: In dark interfaces, use more diffuse and discreet shadows to respect aesthetics.
+- **Sobriety**: Limit the use of shadows to avoid visual overload and ensure a light interface.
+
+# Examples of use
+
+Below are examples of how to use the different shadow values in practice:
+
+## Light shadows
+
+<div
+  style={{
+    display: 'grid',
+    gap: '16px',
+    gridTemplateColumns: 'auto 1fr',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+>
+  <div
+    style={{
+      width: '300px',
+      height: '100px',
+      border: '1px solid black',
+      borderRadius: 'var(--border-radius-medium)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      margin: '25px 0px 40px',
+    }}
+  >
+    <div
+      style={{
+        width: '200px',
+        height: '25px',
+        boxShadow: 'var(--shadow-small)',
+        padding: 16,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      0px 2px 4px rgba(0, 0, 0, 0.1)
+    </div>
+  </div>
+  <Markdown>
+    {`\`\`\`html
+<div style="box-shadow: var(--shadow-small);">
+  Light shadows
+</div>
+  \`\`\``}
+  </Markdown>
+</div>
+
+## Medium shadows
+
+<div
+  style={{
+    display: 'grid',
+    gap: '16px',
+    gridTemplateColumns: 'auto 1fr',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+>
+  <div
+    style={{
+      width: '300px',
+      height: '100px',
+      border: '1px solid black',
+      borderRadius: 'var(--border-radius-medium)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      margin: '25px 0px 40px',
+    }}
+  >
+    <div
+      style={{
+        width: '200px',
+        height: '25px',
+        boxShadow: 'var(--shadow-medium)',
+        padding: 16,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      0px 4px 8px rgba(0, 0, 0, 0.15)
+    </div>
+  </div>
+  <Markdown>
+    {`\`\`\`html
+<div style="box-shadow: var(--shadow-medium);">
+  Medium shadows
+</div>
+  \`\`\``}
+  </Markdown>
+</div>
+
+## High shadows
+
+<div
+  style={{
+    display: 'grid',
+    gap: '16px',
+    gridTemplateColumns: 'auto 1fr',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+>
+  <div
+    style={{
+      width: '300px',
+      height: '100px',
+      border: '1px solid black',
+      borderRadius: 'var(--border-radius-medium)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      margin: '25px 0px 40px',
+    }}
+  >
+    <div
+      style={{
+        width: '200px',
+        height: '25px',
+        boxShadow: 'var(--shadow-large)',
+        padding: 16,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      0px 8px 16px rgba(0, 0, 0, 0.2)
+    </div>
+  </div>
+  <Markdown>
+    {`\`\`\`html
+<div style="box-shadow: var(--shadow-large);">
+  High shadows
+</div>
+  \`\`\``}
+  </Markdown>
+</div>
