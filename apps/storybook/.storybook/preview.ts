@@ -14,7 +14,11 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ['Fondations', ['Breakpoint', 'Grid', 'Spacing', 'Color', 'Theme', 'Border'], 'Components'],
+        order: [
+          'Fondations',
+          ['Breakpoint', 'Grid', 'Spacing', 'Color', 'Theme', 'Typography', 'Border'],
+          'Components',
+        ],
       },
     },
   },
