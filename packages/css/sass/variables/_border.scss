@@ -1,0 +1,9 @@
+@use '../mixins/helpers';
+
+:root {
+  --border-radius-none: #{helpers.px-to-rem(0 * 8)};
+  --border-radius-small: #{helpers.px-to-rem(0.5 * 8)};
+  --border-radius-medium: #{helpers.px-to-rem(1 * 8)};
+  --border-radius-large: #{helpers.px-to-rem(2 * 8)};
+  --border-radius-circle: 50%;
+}

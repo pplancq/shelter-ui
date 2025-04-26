@@ -1,0 +1,199 @@
+import { Markdown, Meta } from '@storybook/blocks';
+import '@pplancq/shelter-ui-css/sass/variables/_border.scss';
+
+<Meta title="Fondations/Border" />
+
+# ShelterUI Design System border
+
+The border radius defines the roundness of the corners of the elements and reinforces the visual identity of an interface.
+
+# Description
+
+A border radius brings softness or rigidity to the corners of interface elements.
+It is essential for harmonizing visuals while giving a modern, engaging feel.
+Values should be consistent across all components to reinforce visual unity and create an aesthetic hierarchy.
+
+# Rules of use
+
+- **Standardization**: Use a progressive scale to adapt to different contexts.
+  - 0px: No rounding (clean edges, tables).
+  - 4px: Light rounding for classic forms or buttons.
+  - 8px: Intermediate rounding for cards and panels.
+  - 16px: Strong rounding for elements such as modals and large sections.
+  - 50%: Fully rounded corners for circular elements (avatars, badges).
+- **Visual consistency**: Avoid using arbitrary or non-standardized values.
+- **Context of use**: Adapt the degree of rounding to the role of the component (e.g. 4px for utility elements and 16px for calls to action).
+
+# Examples of use
+
+Below are examples of how to use the different border radius values in practice:
+
+## No rounding (0px)
+
+<div
+  style={{
+    display: 'grid',
+    gap: '16px',
+    gridTemplateColumns: 'auto 1fr',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+>
+  <div
+    style={{
+      width: '100px',
+      height: '100px',
+      border: '1px solid black',
+      borderRadius: 'var(--border-radius-none)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      margin: '25px 0px 40px',
+    }}
+  >
+    0px
+  </div>
+  <Markdown>
+    {`\`\`\`html
+<div style="border-radius: var(--border-radius-none);">
+  No rounding
+</div>
+  \`\`\``}
+  </Markdown>
+</div>
+
+## Light rounding (4px)
+
+<div
+  style={{
+    display: 'grid',
+    gap: '16px',
+    gridTemplateColumns: 'auto 1fr',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+>
+  <div
+    style={{
+      width: '100px',
+      height: '100px',
+      border: '1px solid black',
+      borderRadius: 'var(--border-radius-small)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      margin: '25px 0px 40px',
+    }}
+  >
+    4px
+  </div>
+  <Markdown>
+    {`\`\`\`html
+<div style="border-radius: var(--border-radius-none);">
+  Light rounding
+</div>
+  \`\`\``}
+  </Markdown>
+</div>
+
+## Intermediate rounding (8px)
+
+<div
+  style={{
+    display: 'grid',
+    gap: '16px',
+    gridTemplateColumns: 'auto 1fr',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+>
+  <div
+    style={{
+      width: '100px',
+      height: '100px',
+      border: '1px solid black',
+      borderRadius: 'var(--border-radius-medium)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      margin: '25px 0px 40px',
+    }}
+  >
+    8px
+  </div>
+  <Markdown>
+    {`\`\`\`html
+<div style="border-radius: var(--border-radius-none);">
+  Intermediate rounding
+</div>
+  \`\`\``}
+  </Markdown>
+</div>
+
+## Strong rounding (16px)
+
+<div
+  style={{
+    display: 'grid',
+    gap: '16px',
+    gridTemplateColumns: 'auto 1fr',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+>
+  <div
+    style={{
+      width: '100px',
+      height: '100px',
+      border: '1px solid black',
+      borderRadius: 'var(--border-radius-large)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      margin: '25px 0px 40px',
+    }}
+  >
+    16px
+  </div>
+  <Markdown>
+    {`\`\`\`html
+<div style="border-radius: var(--border-radius-none);">
+  Strong rounding
+</div>
+  \`\`\``}
+  </Markdown>
+</div>
+
+## Fully rounded (50%)
+
+<div
+  style={{
+    display: 'grid',
+    gap: '16px',
+    gridTemplateColumns: 'auto 1fr',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+>
+  <div
+    style={{
+      width: '100px',
+      height: '100px',
+      border: '1px solid black',
+      borderRadius: 'var(--border-radius-circle)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      margin: '25px 0px 40px',
+    }}
+  >
+    50%
+  </div>
+  <Markdown>
+    {`\`\`\`html
+<div style="border-radius: var(--border-radius-none);">
+  Fully rounded
+</div>
+  \`\`\``}
+  </Markdown>
+</div>
