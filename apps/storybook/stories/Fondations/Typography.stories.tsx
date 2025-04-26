@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import '@pplancq/shelter-ui-css/sass/components/typography.scss';
 
 const meta = {
-  title: 'Components/Typography',
+  title: 'Fondations/Typography',
   component: Typography,
 
   parameters: {
