@@ -1,0 +1,208 @@
+import { Canvas, Controls, Meta, Typeset } from '@storybook/blocks';
+import React from 'react';
+import * as TypographyStories from './Typography.stories';
+
+<Meta of={TypographyStories} name="Typography" />
+
+# ShelterUI Design System Typography
+
+Typography is a key element of ShelterUI's visual identity. It defines the character and tone of the user interface.
+This typography guide describes the styles used for display texts, headings, and general texts, as well as their variants for mobile and desktop.
+
+## Usage of the Typography Component
+
+```tsx
+import { Typography } from '@pplancq/shelter-ui-react';
+
+const MyComponent = () => {
+  return (
+    <Typography variant="heading" size={2}>
+      Example Heading
+    </Typography>
+  );
+};
+```
+
+## Typography Props
+
+<table id="typography-props">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>variant</code>
+      </th>
+      <td>
+        <code>'display' | 'heading' | 'text' | 'label' | 'code'</code>
+      </td>
+      <td>
+        <code>'text'</code>
+      </td>
+      <td>Defines the typography style.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>size</code>
+      </th>
+      <td>
+        <pre>
+          <code style={{ fontSize: 14 }}>
+            {`for 'display' or 'heading':
+1 | 2 | 3 | 4 | 5 | 6
+
+for 'text':
+'smallest' | 'smaller' |
+'small' | 'medium' | 'large'
+
+for 'label' or 'code':
+'small' | 'medium' | 'large'
+`}
+          </code>
+        </pre>
+      </td>
+      <td>
+        <code>'medium'</code>
+      </td>
+      <td>Specifies the size of the typography.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>bold</code>
+      </th>
+      <td>
+        <code>boolean</code>
+      </td>
+      <td>
+        <code>false</code>
+      </td>
+      <td>Applies bold styling (only for the 'text' variant).</td>
+    </tr>
+    <tr>
+      <th>
+        <code>component</code>
+      </th>
+      <td>
+        <code>ElementType</code>
+      </td>
+      <td>
+        <pre>
+          <code style={{ fontSize: 14 }}>
+            {`'display': 'span'
+'heading': 'h1' to 'h6'
+'text': 'p'
+'label': 'span'
+'code': 'code'`}
+</code>
+</pre>
+</td>
+<td>Overrides the default HTML element used.</td>
+</tr>
+<tr>
+<th>
+<code>className</code>
+</th>
+<td>
+<code>string</code>
+</td>
+<td>-</td>
+<td>Additional CSS classes to apply.</td>
+</tr>
+
+  </tbody>
+</table>
+
+## Demo
+
+This example demonstrates the use of the `Typography` component with different variants and sizes.
+
+<Canvas of={TypographyStories.ExampleLayout} sourceState="shown" />
+
+<Controls of={TypographyStories.ExampleLayout} />
+
+## Using the `component` Prop
+
+The `component` prop allows you to override the default HTML element used by the `Typography` component.
+This is particularly useful when integrating `Typography` into other components.
+
+For example, here is how you can use the `Typography` component with the `label` variant inside a custom `Button` component:
+
+```tsx
+import { Typography } from '@pplancq/shelter-ui-react';
+
+const Button = ({ children, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
+  return (
+    <Typography component="button" variant="label" size="medium" {...props} className="custom-button">
+      {children}
+    </Typography>
+  );
+};
+
+// Usage
+<Button onClick={() => alert('Clicked!')}>Click Me</Button>;
+```
+
+In this example:
+
+- The `Typography` component is used with the `label` variant.
+- The `component` prop is set to `button` to ensure proper semantics inside the `button` element.
+
+## Typography Variants
+
+### Display
+
+**Font:** Raleway\
+**Weights:** 700 (bold), 600 (semi-bold)
+
+#### Desktop
+
+<Typeset fontSizes={[80, 60, 48]} fontWeight={700} sampleText="Display Variant Example" fontFamily="Raleway" />
+<Typeset fontSizes={[36, 24, 20]} fontWeight={600} sampleText="Display Variant Example" fontFamily="Raleway" />
+
+#### Mobile
+
+<Typeset fontSizes={[48, 36, 24]} fontWeight={700} sampleText="Display Variant Example" fontFamily="Raleway" />
+<Typeset fontSizes={[20, 18, 16]} fontWeight={600} sampleText="Display Variant Example" fontFamily="Raleway" />
+
+### Heading
+
+**Font:** Raleway\
+**Weights:** 700 (bold), 600 (semi-bold)
+
+#### Desktop
+
+<Typeset fontSizes={[30, 24, 20]} fontWeight={700} sampleText="Heading Variant Example" fontFamily="Raleway" />
+<Typeset fontSizes={[18, 16, 14]} fontWeight={600} sampleText="Heading Variant Example" fontFamily="Raleway" />
+
+#### Mobile
+
+<Typeset fontSizes={[24, 20, 18]} fontWeight={700} sampleText="Heading Variant Example" fontFamily="Raleway" />
+<Typeset fontSizes={[16, 14, 12]} fontWeight={600} sampleText="Heading Variant Example" fontFamily="Raleway" />
+
+### Text
+
+**Font:** Nunito  
+**Weights:** 400 (regular), 700 (bold)
+
+<Typeset fontSizes={[18, 16, 14, 12, 10]} fontWeight={400} sampleText="Text Variant Example" fontFamily="Nunito" />
+<Typeset fontSizes={[18, 16, 14, 12, 10]} fontWeight={500} sampleText="Text Bold Variant Example" fontFamily="Nunito" />
+
+### Label
+
+**Font:** Nunito  
+**Weights:** 400 (regular)
+
+<Typeset fontSizes={[18, 16, 14]} fontWeight={400} sampleText="Label Variant Example" fontFamily="Nunito" />
+
+### Code
+
+**Font:** JetBrains Mono  
+**Weights:** 500 (medium)
+
+<Typeset fontSizes={[18, 16, 14]} fontWeight={500} sampleText="Code Variant Example" fontFamily="JetBrains Mono" />
