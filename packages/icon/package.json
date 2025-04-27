@@ -1,0 +1,30 @@
+{
+  "name": "@pplancq/shelter-ui-icon",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Global styles and tokens",
+  "author": "pplancq <paul.plancq@outlook.fr>",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pplancq/shelter-ui",
+    "directory": "packages/icon"
+  },
+  "bugs": {
+    "url": "https://github.com/pplancq/shelter-ui/issues"
+  },
+  "files": [
+    "icon",
+    "flag",
+    "logo",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">= 22"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}
