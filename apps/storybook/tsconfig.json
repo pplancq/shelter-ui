@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["DOM", "ES2021"],
+    "types": ["@rsbuild/core/types", "node"],
     "module": "ESNext",
     "jsx": "react-jsx",
     "strict": true,

@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@pplancq/shelter-ui-css": "*",
+    "@pplancq/shelter-ui-icon": "*",
     "@pplancq/shelter-ui-react": "*"
   },
   "devDependencies": {
@@ -38,6 +39,7 @@
     "@storybook/blocks": "^8.6.12",
     "@storybook/react": "^8.6.12",
     "@storybook/test": "^8.6.12",
+    "@types/node": "^22.15.3",
     "@types/react": "^19.1.2",
     "chromatic": "^11.28.2",
     "concurrently": "^9.1.2",
