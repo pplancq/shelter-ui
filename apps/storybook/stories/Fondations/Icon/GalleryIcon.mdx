@@ -1,0 +1,16 @@
+import { Icon } from '@pplancq/shelter-ui-react';
+import { IconGallery, IconItem, Meta } from '@storybook/blocks';
+import { iconList } from './allIcons';
+import * as IconStories from './Icon.stories';
+
+<Meta of={IconStories} name="Gallery Icon" />
+
+# Icon gallery
+
+<IconGallery>
+  {Object.keys(iconList).map(icon => (
+    <IconItem name={icon}>
+      <Icon icon={iconList[icon]} />
+    </IconItem>
+  ))}
+</IconGallery>

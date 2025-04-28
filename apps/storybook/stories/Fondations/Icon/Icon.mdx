@@ -1,0 +1,86 @@
+import { Canvas, Controls, Meta } from '@storybook/blocks';
+import * as IconStories from './Icon.stories';
+
+<Meta of={IconStories} name="Icon" />
+
+# ShelterUI Design System Icon
+
+The `Icon` component is used to display SVG icons in various sizes and styles.
+It supports customization through props like `size`, `isCircle`, and `className`.
+By default, the `Icon` component has the `role` attribute set to `presentation`.
+
+## Usage of the Icon Component
+
+```tsx
+import { Icon } from '@pplancq/shelter-ui-react';
+import homeIcon from '@pplancq/shelter-ui-icon/icon/home.svg';
+
+const MyComponent = () => {
+  return <Icon icon={homeIcon} size="large" />;
+};
+```
+
+## Icon Props
+
+<table id="icon-props">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>icon</code>
+      </th>
+      <td>
+        <code>string</code>
+      </td>
+      <td>-</td>
+      <td>
+        The name or path of the SVG icon to display. This can either be:
+        <ul>
+          <li>
+            A relative path to the SVG file (e.g., <code>import homeIcon from 'path/to/icon.svg';</code>).
+          </li>
+          <li>An inline SVG string.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <code>size</code>
+      </th>
+      <td>
+        <code>'small' | 'medium' | 'large'</code>
+      </td>
+      <td>
+        <code>'medium'</code>
+      </td>
+      <td>Specifies the size of the icon.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>isCircle</code>
+      </th>
+      <td>
+        <code>boolean</code>
+      </td>
+      <td>
+        <code>false</code>
+      </td>
+      <td>If true, displays the icon inside a circular container. This prop should only be used for flag icons.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Demo
+
+This example demonstrates the use of the `Icon` component with different sizes and the `isCircle` prop.
+
+<Canvas of={IconStories.ExampleLayout} sourceState="shown" />
+
+<Controls of={IconStories.ExampleLayout} />
