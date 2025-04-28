@@ -1,0 +1,26 @@
+@forward '../variables/dimension';
+@forward '../variables/border';
+
+.icon {
+  --icon-border-radius: var(--border-radius-none);
+
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border-radius: var(--icon-border-radius);
+
+  &--small {
+    --icon-size: var(--margin-2-5);
+  }
+
+  &--medium {
+    --icon-size: var(--margin-3);
+  }
+
+  &--large {
+    --icon-size: var(--margin-3-5);
+  }
+
+  &--circle {
+    --icon-border-radius: var(--border-radius-circle);
+  }
+}
