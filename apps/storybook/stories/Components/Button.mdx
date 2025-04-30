@@ -1,0 +1,168 @@
+import { Canvas, Controls, Meta } from '@storybook/blocks';
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} name="Button" />
+
+# ShelterUI Design System Button
+
+The `Button` component is a versatile UI element that supports various styles, sizes, and configurations. It can include icons, be circular, or adapt to different themes.
+
+## Usage of the Button Component
+
+```tsx
+import { Button } from '@pplancq/shelter-ui-react';
+
+const MyComponent = () => {
+  return (
+    <Button variant="default" color="primary" size="medium" onClick={() => alert('Clicked!')}>
+      Click Me
+    </Button>
+  );
+};
+```
+
+## Button Props
+
+<table id="button-props">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>variant</code>
+      </th>
+      <td>
+        <code>'default' | 'reverse' | 'ghost'</code>
+      </td>
+      <td>
+        <code>'default'</code>
+      </td>
+      <td>Specifies the style variant of the button.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>color</code>
+      </th>
+      <td>
+        <code>'primary' | 'secondary' | 'danger'</code>
+      </td>
+      <td>
+        <code>'primary'</code>
+      </td>
+      <td>Defines the color theme of the button.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>size</code>
+      </th>
+      <td>
+        <code>'small' | 'medium' | 'large'</code>
+      </td>
+      <td>
+        <code>'medium'</code>
+      </td>
+      <td>Specifies the size of the button.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>isCircle</code>
+      </th>
+      <td>
+        <code>boolean</code>
+      </td>
+      <td>
+        <code>false</code>
+      </td>
+      <td>If true, renders the button in a circular shape.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>startIcon</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>Icon displayed at the start of the button.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>endIcon</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>Icon displayed at the end of the button.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>component</code>
+      </th>
+      <td>
+        <code>ElementType</code>
+      </td>
+      <td>
+        <code>'button'</code>
+      </td>
+      <td>Overrides the default HTML element used for the button.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Demo
+
+This example demonstrates the use of the `Button` component with different props.
+
+<Canvas of={ButtonStories.Playground} sourceState="shown" />
+
+<Controls of={ButtonStories.Playground} />
+
+## Using the `component` Prop
+
+The `component` prop allows you to override the default HTML element used by the `Button` component. This is useful for integrating the `Button` into other components or for semantic purposes.
+
+For example, here is how you can use the `Button` component with the `component` prop set to `a`:
+
+```tsx
+import { Button } from '@pplancq/shelter-ui-react';
+
+const MyComponent = () => {
+  return (
+    <Button component="a" href="https://example.com" target="_blank" rel="noopener noreferrer">
+      Go to Example
+    </Button>
+  );
+};
+```
+
+In this example:
+
+- The `Button` component is rendered as an `<a>` element.
+- The `href`, `target`, and `rel` attributes are passed directly to the `<a>` element.
+
+## Usage Rules
+
+To ensure proper consistent usage of the `Button` component, the following rules must be respected:
+
+1. **Button without Label (Children):**
+
+- If the `Button` does not have a `children` prop (label), it must include a `startIcon` prop.
+- The `aria-label` prop must be provided to describe the purpose of the button.
+
+<Canvas of={ButtonStories.IconOnly} sourceState="shown" />
+
+2. **Using the `isCircle` Prop:**
+
+- The `isCircle` prop can only be used when the `Button` does not have a `children` prop.
+- This ensures that the button is visually circular and used for icon-only buttons.
+
+<Canvas of={ButtonStories.CircularIconOnly} sourceState="shown" />
+
+Failure to follow these rules may result in accessibility issues or inconsistent UI behavior.
