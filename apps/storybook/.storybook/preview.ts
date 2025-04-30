@@ -6,6 +6,13 @@ const preview: Preview = {
     viewport: {
       viewports: viewPorts,
     },
+    backgrounds: {
+      values: [
+        { name: 'Dark', value: '#202228' },
+        { name: 'Light', value: '#F0F1F3' },
+      ],
+      default: 'Light',
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -18,6 +25,7 @@ const preview: Preview = {
           'Fondations',
           ['Breakpoint', 'Grid', 'Spacing', 'Color', 'Theme', 'Typography', 'Border', 'Shadow', 'Icon'],
           'Components',
+          ['Button'],
         ],
       },
     },
