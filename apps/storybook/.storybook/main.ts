@@ -32,7 +32,7 @@ const config: StorybookConfig = {
       ...rsbuildConfig,
       output: {
         ...rsbuildConfig.output,
-        assetPrefix: publicPath,
+        assetPrefix: process.env.RELEASE ? publicPath : rsbuildConfig.output?.assetPrefix,
       },
     };
   },
