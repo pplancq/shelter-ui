@@ -17,6 +17,7 @@
     "test": "vitest run",
     "chromatic": "chromatic"
   },
+  "homepage": "https://pplancq.github.io/shelter-ui/",
   "dependencies": {
     "@pplancq/shelter-ui-css": "*",
     "@pplancq/shelter-ui-icon": "*",

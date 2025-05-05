@@ -1,5 +1,6 @@
 import { dirname, join } from 'node:path';
 import type { StorybookConfig } from 'storybook-react-rsbuild';
+import packageJson from '../package.json';
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -8,6 +9,9 @@ import type { StorybookConfig } from 'storybook-react-rsbuild';
 function getAbsolutePath<T extends string>(value: T): T {
   return dirname(require.resolve(join(value, 'package.json'))) as T;
 }
+
+const publicUrl = packageJson.homepage ?? '/';
+const publicPath = new URL(publicUrl.endsWith('/') ? publicUrl : `${publicUrl}/`, 'http://localhost').pathname;
 
 const config: StorybookConfig = {
   stories: ['../stories/**/*.mdx', '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -22,6 +26,15 @@ const config: StorybookConfig = {
   framework: {
     name: getAbsolutePath('storybook-react-rsbuild'),
     options: {},
+  },
+  rsbuildFinal: rsbuildConfig => {
+    return {
+      ...rsbuildConfig,
+      output: {
+        ...rsbuildConfig.output,
+        assetPrefix: publicPath,
+      },
+    };
   },
   // typescript: {
   //   reactDocgen: 'react-docgen-typescript',
