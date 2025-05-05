@@ -51,7 +51,7 @@ export const Typography = <C extends ElementType = 'p'>(props: PropsWithChildren
       code: 'code',
     } as Record<string, ElementType>;
 
-    return component || defaultComponent[variant];
+    return component ?? defaultComponent[variant];
   }, [component, variant, size]);
 
   const typographyClassName = clsx(
