@@ -53,6 +53,10 @@
     "storybook-react-rsbuild": "^1.0.1",
     "typescript": "^5.8.3"
   },
+  "optionalDependencies": {
+    "@rspack/binding-linux-x64-gnu": "^1.3.8",
+    "sass-embedded-linux-x64": "^1.87.0"
+  },
   "prettier": "@pplancq/prettier-config",
   "lint-staged": {
     "*.(js|jsx|ts|tsx)": "eslint --fix",
