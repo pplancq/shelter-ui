@@ -1,31 +1,41 @@
 # @pplancq/shelter-ui-css
 
-## Setup
+This package provides CSS styles for the Shelter UI design system.
 
-Install the dependencies:
+## Installation
 
-```bash
-npm install
-```
-
-## Get started
-
-Build the library:
+Use npm to install the package:
 
 ```bash
-npm build
+npm install @pplancq/shelter-ui-css
 ```
 
-Build the library in watch mode:
+## Example of usage in a project
 
-```bash
-npm dev
+Include the CSS file in your project:
+
+```html
+<link rel="stylesheet" href="node_modules/@pplancq/shelter-ui-css/css/shelter-ui.css" />
 ```
 
----
+Or import it in your JavaScript/TypeScript project:
 
-### 🚧 Under Construction
+```javascript
+import '@pplancq/shelter-ui-css/css/shelter-ui.css';
+```
 
-This repository is currently under active development.
-While the foundation is being laid, please note that certain features and components may still be incomplete.
-Stay tuned for updates as we build a robust and cohesive design system.
+## Css package structure
+
+- `shelter-ui.css`: Global styles for the Shelter UI design system.
+- `shelter-ui.grid.css`: Grid system styles.
+- `shelter-ui.token.css`: Token styles for colors, typography, and spacing.
+- `components/*.css`: Contains styles for various components.
+
+## Credits
+
+This package is part of the Shelter UI design system, built to provide a cohesive and accessible user interface.  
+For more information, visit the [Shelter UI GitHub repository](https://github.com/pplancq/shelter-ui).
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
