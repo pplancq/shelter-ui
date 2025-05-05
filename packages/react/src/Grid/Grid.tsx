@@ -1,8 +1,8 @@
 import { clsx } from '@/utils/clsx';
 import type { ExtendableComponent } from '@/utils/types';
-import { type ElementType, type PropsWithChildren, useId } from 'react';
+import { type ElementType, type PropsWithChildren } from 'react';
+import { getGridItemToken } from './getGridItemToken';
 import type { Breakpoint, ColSpan, ColStart } from './types';
-import { useStyleInjection } from './useStyleInjection';
 
 export type GridProps<C extends ElementType> = {
   container?: boolean;
@@ -17,15 +17,21 @@ export const Grid = <C extends ElementType = 'div'>({
   children,
   colSpan,
   colStart,
+  style,
   ...props
 }: PropsWithChildren<GridProps<C>>) => {
-  const itemId = useId().replaceAll(':', '-');
-  const itemClassName = `grid-item-${itemId}`;
-
-  useStyleInjection(itemClassName, colSpan, colStart);
-
   return (
-    <Component className={clsx(container && 'grid', (colSpan || colStart) && itemClassName, className)} {...props}>
+    <Component
+      className={clsx(container && 'grid', (colSpan || colStart) && 'grid-item', className)}
+      style={{
+        ...{
+          ...getGridItemToken('col', colSpan ?? {}),
+          ...getGridItemToken('start', colStart ?? {}),
+        },
+        ...style,
+      }}
+      {...props}
+    >
       {children}
     </Component>
   );
