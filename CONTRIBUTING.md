@@ -57,9 +57,21 @@ We follow the conventions of [Conventional Commits](https://www.conventionalcomm
 For example:
 
 ```
-feat(react-template): add a new feature
-fix(webpack-config): fix a bug
+feat(react): add a new feature
+fix(css): fix a bug in SCSS rules
 ```
+
+### Allowed Scopes
+
+The following scopes are allowed in commit messages:
+
+- `shelter-ui`: General changes to the design system.
+- `react`: Changes related to React components.
+- `css`: Changes related to SCSS rules.
+- `icon`: Changes related to SVG icons.
+- `storybook`: Changes related to Storybook documentation.
+
+> **Note:** The scopes `deps` and `release` are reserved for maintainers and should not be used in regular contributions.
 
 ## Branch naming
 
