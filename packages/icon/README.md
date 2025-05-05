@@ -32,6 +32,9 @@ export const App = () => {
 
 ## Credits
 
+This package is part of the Shelter UI design system, built to provide a cohesive and accessible user interface.  
+For more information, visit the [Shelter UI GitHub repository](https://github.com/pplancq/shelter-ui).
+
 The SVGs used in this package come from the following sources:
 
 - **Icons**: [Unicons 4.2.0 Line](https://github.com/iconscout/unicons)
