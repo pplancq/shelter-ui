@@ -15,8 +15,7 @@
     "stylelint:fix": "stylelint \"**/*.{scss,css}\" --fix",
     "tsc": "tsc --noEmit",
     "test": "vitest run",
-    "chromatic": "chromatic",
-    "release": "semantic-release"
+    "chromatic": "chromatic"
   },
   "dependencies": {
     "@pplancq/shelter-ui-css": "*",

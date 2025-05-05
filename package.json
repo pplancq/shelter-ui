@@ -20,7 +20,8 @@
     "lint": "npm run lint --workspace=packages/css --workspace=packages/react --workspace=apps",
     "test": "vitest run",
     "package:check": "npm exec --yes package-lock-utd@1.1.3",
-    "prepare": "husky"
+    "prepare": "husky",
+    "release": "semantic-release"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
