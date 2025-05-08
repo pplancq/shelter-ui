@@ -3,6 +3,12 @@ import { viewPorts } from './viewPort';
 
 const preview: Preview = {
   parameters: {
+    docs: {
+      toc: {
+        title: 'On this page',
+        headingSelector: 'h2, h3',
+      },
+    },
     viewport: {
       viewports: viewPorts,
     },
