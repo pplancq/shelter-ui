@@ -22,6 +22,8 @@ const preview: Preview = {
     options: {
       storySort: {
         order: [
+          'Welcome',
+          'GetStarted',
           'Fondations',
           ['Breakpoint', 'Grid', 'Spacing', 'Color', 'Theme', 'Typography', 'Border', 'Shadow', 'Icon'],
           'Components',
