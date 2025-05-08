@@ -39,14 +39,56 @@ Whether applied to real-world projects or simply used as an evolving reference, 
 
 ---
 
-## Repository Structure
+## **Package Details**
 
-ShelterUI is organized into distinct packages to ensure modularity and ease of maintenance:
+ShelterUI is divided into multiple packages to provide modularity and flexibility in UI development.
 
-- **`package/css`** – Houses the SCSS rules for styling, ensuring a flexible and structured approach to theme management.
-- **`package/icon`** – Contains scalable SVG assets for icons, optimized for various use cases.
-- **`package/react`** – The core React components of the design system, designed for reusability and consistency.
-- **`apps/storybook`** – An interactive documentation space powered by Storybook, allowing developers to explore and test UI components in isolation.
+| Package Name                                                                           | Version                                                                                                                    | Documentation                        | Description                                                   |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------- |
+| [`@pplancq/shelter-ui-react`](https://www.npmjs.com/package/@pplancq/shelter-ui-react) | [![](https://img.shields.io/npm/v/%40pplancq%2Fshelter-ui-react)](https://www.npmjs.com/package/@pplancq/shelter-ui-react) | [README](./packages/react/README.md) | A React component library for UI development.                 |
+| [`@pplancq/shelter-ui-css`](https://www.npmjs.com/package/@pplancq/shelter-ui-css)     | [![](https://img.shields.io/npm/v/%40pplancq%2Fshelter-ui-css)](https://www.npmjs.com/package/@pplancq/shelter-ui-css)     | [README](./packages/css/README.md)   | Provides predefined styles and theme variables for ShelterUI. |
+| [`@pplancq/shelter-ui-icon`](https://www.npmjs.com/package/@pplancq/shelter-ui-icon)   | [![](https://img.shields.io/npm/v/%40pplancq%2Fshelter-ui-icon)](https://www.npmjs.com/package/@pplancq/shelter-ui-icon)   | [README](./packages/icon/README.md)  | Contains scalable SVG assets for UI icons.                    |
+
+### **Changelog**
+
+For version updates and detailed changes, see the **[CHANGELOG.md](./CHANGELOG.md)**.
+
+## **Storybook Documentation**
+
+ShelterUI features **interactive documentation** powered by Storybook, allowing developers to explore and test components in isolation.
+
+[![Storybook](https://img.shields.io/badge/Storybook-docs-FF4785?logo=storybook&logoColor=white)](https://pplancq.github.io/shelter-ui/)
+
+---
+
+## **Installation & Usage**
+
+ShelterUI is structured as multiple packages, allowing flexible integration based on your needs.
+
+### **Installation**
+
+```bash
+npm install @pplancq/shelter-ui-react @pplancq/shelter-ui-icon @pplancq/shelter-ui-css
+```
+
+### **Using ShelterUI React**
+
+The **React package (`@pplancq/shelter-ui-react`)** is designed to work independently, which means it **does not include default styles**.
+If you choose to use it without the `@pplancq/shelter-ui-css` package, you'll need to implement the styling manually.
+
+For a smoother experience with ready-to-use, predefined styles and theme tokens, it is **recommended** to install `@pplancq/shelter-ui-css`.
+For details on how the default styles are applied in practice, please refer to our Storybook documentation.
+
+### **Example Usage**
+
+```tsx
+import '@pplancq/shelter-ui-css/css/shelter-ui.css';
+import { Button } from '@pplancq/shelter-ui-react';
+
+export default function App() {
+  return <Button>Click Me</Button>;
+}
+```
 
 ## Development & Future Plans
 
@@ -56,9 +98,6 @@ ShelterUI is actively evolving, with planned improvements including:
 - Enhanced theme customization and accessibility considerations.
 - Storybook refinements for better interactivity and documentation.
 - Performance optimizations for styling and asset handling.
-
-Although the package is **not yet published to NPM**, it is structured with future scalability in mind.  
-Once stabilized, ShelterUI will be made available for broader use.
 
 ## Contributions & Feedback
 
