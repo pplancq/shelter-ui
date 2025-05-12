@@ -76,7 +76,7 @@
     "*.!(js|jsx|ts|tsx)": "prettier --write --ignore-unknown"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.40.1",
+    "@rollup/rollup-linux-x64-gnu": "^4.40.2",
     "@rspack/binding-linux-x64-gnu": "^1.3.9",
     "sass-embedded-linux-x64": "^1.87.0"
   },
