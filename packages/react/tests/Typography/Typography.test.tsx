@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import type { ComponentProps } from 'react';
 import { describe, expect, it } from 'vitest';
 import { Typography } from '../../src/Typography/Typography';
 
@@ -57,4 +58,22 @@ describe('Typography component', () => {
     expect(element).toHaveAttribute('href', '/test-link');
     expect(element).toHaveClass('typography', 'text-medium');
   });
+
+  it.each([
+    ['primary', '--color-text-primary'],
+    ['secondary', '--color-text-secondary'],
+    ['hint', '--color-text-hint'],
+    ['disabled', '--color-text-disabled'],
+  ])(
+    'should apply the correct color class for the "%s" color',
+    (color: ComponentProps<typeof Typography>['color'], expectedVar) => {
+      render(
+        <Typography variant="text" size="medium" color={color}>
+          {`${color.charAt(0).toUpperCase() + color.slice(1)} color text`}
+        </Typography>,
+      );
+      const element = screen.getByText(`${color.charAt(0).toUpperCase() + color.slice(1)} color text`);
+      expect(element).toHaveStyle(`--typography-color: var(${expectedVar})`);
+    },
+  );
 });

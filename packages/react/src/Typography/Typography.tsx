@@ -4,7 +4,10 @@ import { type ElementType, type PropsWithChildren, useMemo } from 'react';
 
 type SizeTitle = 1 | 2 | 3 | 4 | 5 | 6;
 type SizeText = 'small' | 'medium' | 'large';
-type TypographyPropsBase<C extends ElementType> = ExtendableComponent<C>;
+type Color = 'primary' | 'secondary' | 'hint' | 'disabled';
+type TypographyPropsBase<C extends ElementType> = ExtendableComponent<C> & {
+  color?: Color;
+};
 type TypographyPropsTitle<C extends ElementType> = TypographyPropsBase<C> & {
   variant: 'display' | 'heading';
   size?: SizeTitle;
@@ -36,6 +39,7 @@ export const Typography = <C extends ElementType = 'p'>(props: PropsWithChildren
   const {
     variant = 'text',
     size = 'medium',
+    color = 'primary',
     component,
     className,
     bold,
@@ -68,6 +72,9 @@ export const Typography = <C extends ElementType = 'p'>(props: PropsWithChildren
     <Component
       className={typographyClassName}
       {...typographyProps}
+      style={{
+        '--typography-color': `var(--color-text-${color})`,
+      }}
       role={variant === 'display' ? 'heading' : typographyProps.role}
       aria-level={['display', 'heading'].includes(variant) ? size : typographyProps['aria-level']}
     />

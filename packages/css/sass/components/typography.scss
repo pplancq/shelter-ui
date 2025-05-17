@@ -9,6 +9,8 @@
 @use '../mixins/typography';
 
 .typography {
+  color: var(--typography-color, inherit);
+
   @each $size in 1, 2, 3, 4, 5, 6 {
     &.d#{$size} {
       @include typography.display($size);
