@@ -2,6 +2,7 @@ import { Typography, type TypographyProps } from '@pplancq/shelter-ui-react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import '@pplancq/shelter-ui-css/sass/components/typography.scss';
+import '@pplancq/shelter-ui-css/sass/themes/_theme.scss';
 
 const meta = {
   title: 'Fondations/Typography',
@@ -13,6 +14,7 @@ const meta = {
   tags: ['!autodocs', 'dev'],
   args: {
     variant: 'text',
+    color: 'primary',
     sizeHeading: 1,
     sizeDisplay: 1,
     sizeText: 'medium',
@@ -23,6 +25,10 @@ const meta = {
     variant: {
       control: 'select',
       options: ['display', 'heading', 'text', 'label', 'code'],
+    },
+    color: {
+      control: 'select',
+      options: ['primary', 'secondary', 'hint', 'disabled'],
     },
     sizeHeading: {
       name: 'size',
