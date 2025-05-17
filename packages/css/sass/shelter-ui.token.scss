@@ -1,8 +1,2 @@
 @use 'variables/tokens';
 @use 'themes/theme';
-
-@use 'mixins/typography';
-
-.foo {
-  @include typography.heading(1);
-}
