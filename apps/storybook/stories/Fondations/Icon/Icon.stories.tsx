@@ -2,7 +2,7 @@ import frFlag from '@pplancq/shelter-ui-icon/flag/fr.svg';
 import homeIcon from '@pplancq/shelter-ui-icon/icon/home.svg';
 import reactLogo from '@pplancq/shelter-ui-icon/logo/react-original.svg';
 import { Icon, type IconProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import '@pplancq/shelter-ui-css/sass/components/icon.scss';
 

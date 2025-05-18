@@ -1,4 +1,4 @@
-import type { ViewportMap } from '@storybook/addon-viewport';
+import type { ViewportMap } from 'storybook/viewport';
 
 export const viewPorts: ViewportMap = {
   mobile: {

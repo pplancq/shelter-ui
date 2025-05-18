@@ -3,11 +3,11 @@ import arrowLeftIcon from '@pplancq/shelter-ui-icon/icon/arrow-left.svg';
 import arrowRightIcon from '@pplancq/shelter-ui-icon/icon/arrow-right.svg';
 import editIcon from '@pplancq/shelter-ui-icon/icon/edit-alt.svg';
 import { Button, type ButtonProps, Icon } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { JSX } from 'react';
 
 import '@pplancq/shelter-ui-css/sass/components/icon.scss';
+import { fn } from 'storybook/test';
 import '@pplancq/shelter-ui-css/sass/components/button.scss';
 
 const iconList: Record<string, JSX.Element | undefined> = {

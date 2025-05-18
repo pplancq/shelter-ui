@@ -2,30 +2,29 @@ export const iconList: Record<string, string> = {};
 export const flagList: Record<string, string> = {};
 export const logoList: Record<string, string> = {};
 
-require
-  .context(`@pplancq/shelter-ui-icon/icon`, false, /\.svg$/)
-  .keys()
-  .forEach((key: string) => {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports,global-require,import/no-dynamic-require
-    iconList[(key.split('/').pop() as string).replace('.svg', '')] = require(
-      `@pplancq/shelter-ui-icon/icon${key.replace('./', '/')}`,
-    );
-  });
-require
-  .context(`@pplancq/shelter-ui-icon/flag`, false, /\.svg$/)
-  .keys()
-  .forEach((key: string) => {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports,global-require,import/no-dynamic-require
-    flagList[(key.split('/').pop() as string).replace('.svg', '')] = require(
-      `@pplancq/shelter-ui-icon/flag${key.replace('./', '/')}`,
-    );
-  });
-require
-  .context(`@pplancq/shelter-ui-icon/logo`, false, /\.svg$/)
-  .keys()
-  .forEach((key: string) => {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports,global-require,import/no-dynamic-require
-    logoList[(key.split('/').pop() as string).replace('.svg', '')] = require(
-      `@pplancq/shelter-ui-icon/logo${key.replace('./', '/')}`,
-    );
-  });
+const icons = import.meta.glob('../../../../../packages/icon/icon/*.svg', {
+  import: 'default',
+  eager: true,
+});
+
+Object.keys(icons).forEach((key: string) => {
+  iconList[(key.split('/').pop() ?? '').replace('.svg', '')] = icons[key] as string;
+});
+
+const flags = import.meta.glob('../../../../../packages/icon/flag/*.svg', {
+  import: 'default',
+  eager: true,
+});
+
+Object.keys(flags).forEach((key: string) => {
+  flagList[(key.split('/').pop() ?? '').replace('.svg', '')] = flags[key] as string;
+});
+
+const logos = import.meta.glob('../../../../../packages/icon/logo/*.svg', {
+  import: 'default',
+  eager: true,
+});
+
+Object.keys(logos).forEach((key: string) => {
+  logoList[(key.split('/').pop() ?? '').replace('.svg', '')] = logos[key] as string;
+});
