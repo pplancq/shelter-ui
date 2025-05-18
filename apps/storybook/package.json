@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "storybook dev --port 8000 --no-open",
     "build": "storybook build --output-dir build",
-    "prelint": "npm run build --workspace=@pplancq/shelter-ui-react",
+    "prelint": "npm run build --workspace=@pplancq/shelter-ui-react --workspace=@pplancq/shelter-ui-css",
     "lint": "concurrently --prefix-colors auto \"npm:eslint\" \"npm:tsc\" \"npm:stylelint\"",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "eslint:fix": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",

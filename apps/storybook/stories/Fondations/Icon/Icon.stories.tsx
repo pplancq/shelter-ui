@@ -4,8 +4,6 @@ import reactLogo from '@pplancq/shelter-ui-icon/logo/react-original.svg';
 import { Icon, type IconProps } from '@pplancq/shelter-ui-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import '@pplancq/shelter-ui-css/sass/components/icon.scss';
-
 const demoIconList: Record<string, string> = {
   'fr.svg': frFlag,
   'home.svg': homeIcon,
