@@ -27,6 +27,7 @@
     "LICENSE",
     "CHANGELOG.md"
   ],
+  "homepage": "https://pplancq.github.io/shelter-ui/",
   "scripts": {
     "build": "rslib build",
     "dev": "rslib build --watch",

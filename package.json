@@ -12,6 +12,7 @@
   "bugs": {
     "url": "https://github.com/pplancq/shelter-ui/issues"
   },
+  "homepage": "https://pplancq.github.io/shelter-ui/",
   "scripts": {
     "dev": "concurrently --prefix-colors auto \"npm:dev:*\"",
     "dev:react": "npm run dev --workspace=packages/react",
