@@ -29,7 +29,7 @@ const preview: Preview = {
           'Welcome',
           'Getting Started',
           'ChangeLog',
-          'Fondations',
+          'Foundations',
           [
             'Breakpoint',
             'Grid',
