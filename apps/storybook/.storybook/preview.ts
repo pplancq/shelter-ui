@@ -1,9 +1,14 @@
 import type { Preview } from '@storybook/react-vite';
+import { light } from './theme';
 import { viewPorts } from './viewPort';
+
+import '@pplancq/shelter-ui-css/css/shelter-ui.css';
 
 const preview: Preview = {
   parameters: {
+    backgrounds: { disable: true },
     docs: {
+      theme: light,
       toc: {
         title: 'On this page',
         headingSelector: 'h2, h3',
@@ -11,13 +16,6 @@ const preview: Preview = {
     },
     viewport: {
       viewports: viewPorts,
-    },
-    backgrounds: {
-      values: [
-        { name: 'Dark', value: '#202228' },
-        { name: 'Light', value: '#F0F1F3' },
-      ],
-      default: 'Light',
     },
     controls: {
       matchers: {
