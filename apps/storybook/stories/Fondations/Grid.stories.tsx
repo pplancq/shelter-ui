@@ -1,5 +1,5 @@
 import { Grid } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import '@pplancq/shelter-ui-css/sass/variables/_tokens.scss';
 import '@pplancq/shelter-ui-css/sass/layout/_grid.scss';
@@ -8,7 +8,6 @@ import './Grid.scss';
 const meta = {
   title: 'Fondations/Grid',
   component: Grid,
-  subcomponents: { Grid },
   parameters: {
     layout: 'padded',
   },

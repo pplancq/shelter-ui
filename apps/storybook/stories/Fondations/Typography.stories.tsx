@@ -1,5 +1,5 @@
 import { Typography, type TypographyProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import '@pplancq/shelter-ui-css/sass/components/typography.scss';
 import '@pplancq/shelter-ui-css/sass/themes/_theme.scss';
