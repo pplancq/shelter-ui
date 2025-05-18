@@ -1,0 +1,26 @@
+@mixin focus-outline($focus: true, $focus-visible: true, $focus-within: true) {
+  $outline: 2px solid var(--color-primary-main-light);
+  $outline-offset: 2px;
+
+  @if $focus {
+    &:focus {
+      outline: $outline;
+      outline-offset: $outline-offset;
+      @content;
+    }
+  }
+  @if $focus-visible {
+    &:focus-visible {
+      outline: $outline;
+      outline-offset: $outline-offset;
+      @content;
+    }
+  }
+  @if $focus-within {
+    &:focus-within {
+      outline: $outline;
+      outline-offset: $outline-offset;
+      @content;
+    }
+  }
+}
