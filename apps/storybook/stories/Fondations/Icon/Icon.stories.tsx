@@ -11,7 +11,7 @@ const demoIconList: Record<string, string> = {
 };
 
 const meta = {
-  title: 'Fondations/Icon',
+  title: 'Foundations/Icon',
   component: Icon,
   parameters: {
     layout: 'padded',

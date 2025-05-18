@@ -2,7 +2,7 @@ import { Typography, type TypographyProps } from '@pplancq/shelter-ui-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 const meta = {
-  title: 'Fondations/Typography',
+  title: 'Foundations/Typography',
   component: Typography,
 
   parameters: {

@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import './Grid.scss';
 
 const meta = {
-  title: 'Fondations/Grid',
+  title: 'Foundations/Grid',
   component: Grid,
   parameters: {
     layout: 'padded',
