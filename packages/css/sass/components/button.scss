@@ -6,6 +6,7 @@
 @forward '../themes/dark';
 
 @use '../mixins/typography';
+@use '../mixins/focus-outline';
 
 .button {
   --button-padding-vertical: var(--padding-1);
@@ -25,6 +26,8 @@
   color: var(--button-color-on);
   background-color: var(--button-color-background);
   cursor: pointer;
+
+  @include focus-outline.focus-outline();
 
   & svg {
     width: var(--button-height);
