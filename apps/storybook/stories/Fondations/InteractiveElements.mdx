@@ -1,0 +1,99 @@
+import icons from '@pplancq/shelter-ui-icon/icon/align-center.svg';
+import { Button, Icon } from '@pplancq/shelter-ui-react';
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundations/Interactive Elements" />
+
+# ShelterUI Design System Interactive Elements
+
+Interactive elements are essential to ensure a smooth and accessible user experience. In our design system, this mainly includes:
+
+- **Buttons** (`<button>`)
+- **Links** (`<a>`)
+- **Form fields** (`<input>`, `<select>`, `<textarea>`)
+
+## Focus and Accessibility
+
+### Why is focus important?
+
+The visual focus allows users navigating with the keyboard or using assistive technologies to know which element is currently selected. A clear and consistent focus greatly improves accessibility and user experience.
+
+### Our focus rule
+
+For all interactive elements, we apply a uniform focus style:
+
+- **Outline**: `2px solid`
+- **Color**: `#204CCF` `(--color-primary-main-light)`
+- **Offset**: `2px`
+
+This ensures optimal focus visibility without compromising the overall aesthetics.
+
+#### CSS Example
+
+```css
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--color-primary-main-light);
+  outline-offset: 2px;
+}
+```
+
+> 💡 **Accessibility tip**: Never remove the focus style without replacing it with an equivalent! Focus is essential for keyboard navigation.
+
+## Demonstration
+
+Here is an example of a button, link, and input field with the focus style applied:
+
+<div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+  <Button
+    className="sb-unstyled"
+    style={{
+      outline: '2px solid var(--color-primary-main-light)',
+      outlineOffset: '2px',
+    }}
+  >
+    {'Button'}
+  </Button>
+  <Button
+    className="sb-unstyled"
+    component="a"
+    variant="ghost"
+    href="#"
+    style={{
+      outline: '2px solid var(--color-primary-main-light)',
+      outlineOffset: '2px',
+    }}
+    onClick={e => e.preventDefault()}
+  >
+    {'Link'}
+  </Button>
+  <Button
+    className="sb-unstyled"
+    variant="reverse"
+    color="secondary"
+    isCircle
+    startIcon={<Icon icon={icons} />}
+    style={{
+      outline: '2px solid var(--color-primary-main-light)',
+      outlineOffset: '2px',
+    }}
+  />
+</div>
+
+## Best Practices
+
+- **Always** keep a visible focus style on all interactive elements.
+- Use the CSS variable `--color-primary-main-light` to ensure consistency with the graphic charter.
+- Test keyboard navigation (Tab, Shift+Tab) to check focus visibility.
+
+## To go further
+
+- [WCAG 2.2 - Criterion 2.4.7: Focus visible](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html)
+- [MDN Web Docs - Focus visible](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
+
+> 🎯 **Summary**:  
+> A clear, accessible, and consistent focus is the foundation of an inclusive user experience.  
+> Our design system applies a 2px solid outline, color `--color-primary-main-light`, with a 2px offset on all interactive elements.
