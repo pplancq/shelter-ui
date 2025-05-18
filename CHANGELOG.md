@@ -1,3 +1,17 @@
+## [1.0.0-alpha.2](https://github.com/pplancq/shelter-ui/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2025-05-18)
+
+### Features
+
+* **css,react:** add color prop to Typography component for dynamic styling ([bc0a584](https://github.com/pplancq/shelter-ui/commit/bc0a5848a749c7ff403659bb374e77b676483602))
+* **css:** add focus outline mixin and apply to button styles ([f9941cf](https://github.com/pplancq/shelter-ui/commit/f9941cf064f33a63b604925cf63ef84755cd13c0))
+
+### Bug Fixes
+
+* **css:** addm missing heading font family variable for typography ([17e9214](https://github.com/pplancq/shelter-ui/commit/17e92148c3d9697231785d1715112924ae1d5f4f))
+* **css:** forward missing dimension and border variables in button styles ([6534ae2](https://github.com/pplancq/shelter-ui/commit/6534ae29dff90911af51b1347c6a6310ec3561ed))
+* **css:** remove unused typography mixin from shelter-ui token styles ([b4bb344](https://github.com/pplancq/shelter-ui/commit/b4bb344fbf29c4568d08f1bb87e26caf0ebe4f93))
+* **deps:** update dependency @pplancq/svg-react to ^1.3.5 ([b7971dc](https://github.com/pplancq/shelter-ui/commit/b7971dc0141e05031a0c5c7c9d1e628c45e78320))
+
 ## 1.0.0-alpha.1 (2025-05-05)
 
 ### Features
