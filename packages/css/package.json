@@ -25,6 +25,7 @@
   ],
   "homepage": "https://pplancq.github.io/shelter-ui/",
   "scripts": {
+    "dev": "rslib build --watch",
     "build": "rslib build",
     "lint": "concurrently --prefix-colors auto \"npm:stylelint\"",
     "stylelint": "stylelint \"sass/**/*.{scss,css}\"",
