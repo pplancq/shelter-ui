@@ -25,7 +25,7 @@
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.0-next.6",
     "@pplancq/eslint-config": "^4.0.21",
-    "@pplancq/prettier-config": "^1.2.4",
+    "@pplancq/prettier-config": "^1.2.5",
     "@pplancq/stylelint-config": "^4.0.0",
     "@storybook/addon-a11y": "^9.0.0-rc.2",
     "@storybook/addon-docs": "^9.0.0-rc.2",
