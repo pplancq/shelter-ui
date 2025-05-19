@@ -49,7 +49,7 @@ export default {
       '@semantic-release/exec',
       {
         prepareCmd: 'npm version ${nextRelease.version} --workspace packages',
-        publishCmd: 'npm publish --workspace packages',
+        publishCmd: 'npm publish --workspace packages --tag ${nextRelease.channel}',
       },
     ],
     [
