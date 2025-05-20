@@ -27,11 +27,11 @@
     "@pplancq/eslint-config": "^4.0.22",
     "@pplancq/prettier-config": "^1.2.5",
     "@pplancq/stylelint-config": "^4.0.0",
-    "@storybook/addon-a11y": "^9.0.0-rc.2",
-    "@storybook/addon-docs": "^9.0.0-rc.2",
-    "@storybook/addon-links": "^9.0.0-rc.2",
-    "@storybook/addon-onboarding": "^9.0.0-rc.2",
-    "@storybook/react-vite": "^9.0.0-rc.2",
+    "@storybook/addon-a11y": "^9.0.0-rc.3",
+    "@storybook/addon-docs": "^9.0.0-rc.3",
+    "@storybook/addon-links": "^9.0.0-rc.3",
+    "@storybook/addon-onboarding": "^9.0.0-rc.3",
+    "@storybook/react-vite": "^9.0.0-rc.3",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.5",
     "@vitejs/plugin-react-swc": "^3.9.0",
@@ -39,13 +39,13 @@
     "concurrently": "^9.1.2",
     "eslint": "^9.26.0",
     "eslint-plugin-prettier": "^5.4.0",
-    "eslint-plugin-storybook": "^9.0.0-rc.2",
+    "eslint-plugin-storybook": "^9.0.0-rc.3",
     "prettier": "^3.5.3",
     "react": "^19.1.0",
     "react-docgen-typescript": "^2.2.2",
     "react-dom": "^19.1.0",
     "remark-gfm": "^4.0.1",
-    "storybook": "^9.0.0-rc.2",
+    "storybook": "^9.0.0-rc.3",
     "stylelint": "^16.19.1",
     "stylelint-prettier": "^5.0.3",
     "typescript": "~5.8.3",
@@ -64,5 +64,8 @@
   },
   "volta": {
     "extends": "../../package.json"
+  },
+  "overrides": {
+    "storybook": "$storybook"
   }
 }
