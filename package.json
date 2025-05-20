@@ -19,6 +19,8 @@
     "dev:react": "npm run dev --workspace=packages/react",
     "dev:storybook": "npm run dev --workspace=apps/storybook",
     "build": "npm run build --workspace=packages/css --workspace=packages/react --workspace=apps",
+    "build:packages": "npm run build --workspace=packages/css --workspace=packages/react",
+    "build:storybook": "npm run build --workspace=apps",
     "lint": "npm run lint --workspace=packages/css --workspace=packages/react --workspace=apps",
     "test": "vitest run",
     "package:check": "npm exec --yes package-lock-utd@1.1.3",
