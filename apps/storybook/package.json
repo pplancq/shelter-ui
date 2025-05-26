@@ -37,7 +37,7 @@
     "@vitejs/plugin-react-swc": "^3.9.0",
     "chromatic": "^11.28.2",
     "concurrently": "^9.1.2",
-    "eslint": "^9.26.0",
+    "eslint": "^9.27.0",
     "eslint-plugin-prettier": "^5.4.0",
     "eslint-plugin-storybook": "^9.0.0-rc.4",
     "prettier": "^3.5.3",
