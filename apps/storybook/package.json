@@ -33,7 +33,7 @@
     "@storybook/addon-onboarding": "^9.0.5",
     "@storybook/react-vite": "^9.0.5",
     "@types/react": "^19.1.6",
-    "@types/react-dom": "^19.1.5",
+    "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react-swc": "^3.10.0",
     "chromatic": "^12.1.0",
     "concurrently": "^9.1.2",
