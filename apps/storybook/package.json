@@ -42,7 +42,7 @@
     "eslint-plugin-storybook": "^9.0.5",
     "prettier": "^3.5.3",
     "react": "^19.1.0",
-    "react-docgen-typescript": "^2.2.2",
+    "react-docgen-typescript": "^2.4.0",
     "react-dom": "^19.1.0",
     "remark-gfm": "^4.0.1",
     "storybook": "^9.0.5",
