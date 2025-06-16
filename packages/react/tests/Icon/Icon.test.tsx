@@ -1,5 +1,6 @@
 import { Icon } from '@/Icon/Icon';
-import { render, screen } from '@testing-library/react';
+import { renderSuspense } from '@pplancq/svg-react/tests';
+import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const CONTENT_TYPE = 'content-type';
@@ -20,35 +21,35 @@ describe('Icon', () => {
     });
   });
 
-  it('renders correctly with required props', () => {
-    render(<Icon icon="test-icon" />);
+  it('renders correctly with required props', async () => {
+    await renderSuspense(<Icon icon="test-icon" />);
 
     const icon = screen.getByRole('presentation');
     expect(icon).toBeInTheDocument();
     expect(icon).toHaveClass('icon icon--medium');
   });
 
-  it('applies the correct size class', () => {
-    render(<Icon icon="test-icon" size="large" />);
+  it('applies the correct size class', async () => {
+    await renderSuspense(<Icon icon="test-icon" size="large" />);
     const icon = screen.getByRole('presentation');
     expect(icon).toHaveClass('icon--large');
   });
 
-  it('applies the circle class when isCircle is true', () => {
-    render(<Icon icon="test-icon" isCircle />);
+  it('applies the circle class when isCircle is true', async () => {
+    await renderSuspense(<Icon icon="test-icon" isCircle />);
     const icon = screen.getByRole('presentation');
     expect(icon).toHaveClass('icon--circle');
   });
 
-  it('applies additional classes passed via className', () => {
-    render(<Icon icon="test-icon" className="custom-class" />);
+  it('applies additional classes passed via className', async () => {
+    await renderSuspense(<Icon icon="test-icon" className="custom-class" />);
     const icon = screen.getByRole('presentation');
     expect(icon).toHaveClass('icon');
     expect(icon).toHaveClass('custom-class');
   });
 
-  it('passes additional props to the Svg component', () => {
-    render(<Icon icon="test-icon" aria-label="icon-label" />);
+  it('passes additional props to the Svg component', async () => {
+    await renderSuspense(<Icon icon="test-icon" aria-label="icon-label" />);
     const icon = screen.getByRole('presentation');
     expect(icon).toHaveAttribute('aria-label', 'icon-label');
   });
