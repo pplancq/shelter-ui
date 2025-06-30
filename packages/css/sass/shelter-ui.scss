@@ -1,10 +1,3 @@
-@forward '@fontsource/raleway/600.css'; /* semi-bold */
-@forward '@fontsource/raleway/700.css'; /* bold */
-@forward '@fontsource/nunito/400.css'; /* regular */
-@forward '@fontsource/nunito/700.css'; /* bold */
-@forward '@fontsource/oswald/600.css'; /* semi-bold */
-@forward '@fontsource/jetbrains-mono/500.css'; /* medium */
-
 @use 'variables/tokens';
 @use 'themes/theme';
 
@@ -13,3 +6,10 @@
 @use 'components/typography';
 @use 'components/icon';
 @use 'components/button';
+
+@import '@fontsource/raleway/600.css'; /* semi-bold */
+@import '@fontsource/raleway/700.css'; /* bold */
+@import '@fontsource/nunito/400.css'; /* regular */
+@import '@fontsource/nunito/700.css'; /* bold */
+@import '@fontsource/oswald/600.css'; /* semi-bold */
+@import '@fontsource/jetbrains-mono/500.css'; /* medium */
