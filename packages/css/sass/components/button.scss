@@ -1,4 +1,3 @@
-@forward '@fontsource/oswald/600.css'; /* semi-bold */
 @forward '../variables/typography';
 @forward '../variables/dimension';
 @forward '../variables/border';
@@ -7,6 +6,8 @@
 
 @use '../mixins/typography';
 @use '../mixins/focus-outline';
+
+@import '@fontsource/oswald/600.css'; /* semi-bold */
 
 .button {
   --button-padding-vertical: var(--padding-1);
