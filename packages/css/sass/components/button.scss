@@ -5,7 +5,7 @@
 @forward '../themes/dark';
 
 @use '../mixins/typography';
-@use '../mixins/focus-outline';
+@use '../mixins/outline-on-focus-visible';
 
 @import '@fontsource/oswald/600.css'; /* semi-bold */
 
@@ -28,7 +28,7 @@
   background-color: var(--button-color-background);
   cursor: pointer;
 
-  @include focus-outline.focus-outline();
+  @include outline-on-focus-visible.outline-on-focus-visible();
 
   & svg {
     width: var(--button-height);
