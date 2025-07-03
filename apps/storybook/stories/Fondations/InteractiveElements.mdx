@@ -20,22 +20,22 @@ The visual focus allows users navigating with the keyboard or using assistive te
 
 ### Our focus rule
 
-For all interactive elements, we apply a uniform focus style:
+For all interactive elements, we apply a consistent focus style **only on the `:focus-visible` state**:
 
 - **Outline**: `2px solid`
-- **Color**: `#204CCF` `(--color-primary-main-light)`
+- **Color**: `#204CCF` (`--color-primary-main-light`)
 - **Offset**: `2px`
 
-This ensures optimal focus visibility without compromising the overall aesthetics.
+This ensures optimal visibility of the focus indicator without compromising the overall aesthetics, and prevents showing focus when interacting with the mouse.
 
 #### CSS Example
 
 ```css
-button:focus,
-a:focus,
-input:focus,
-select:focus,
-textarea:focus {
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
   outline: 2px solid var(--color-primary-main-light);
   outline-offset: 2px;
 }
@@ -85,9 +85,32 @@ Here is an example of a button, link, and input field with the focus style appli
 
 ## Best Practices
 
-- **Always** keep a visible focus style on all interactive elements.
-- Use the CSS variable `--color-primary-main-light` to ensure consistency with the graphic charter.
-- Test keyboard navigation (Tab, Shift+Tab) to check focus visibility.
+- **Always** keep a visible focus style on all interactive elements (using `:focus-visible`).
+- Use the CSS variable `--color-primary-main-light` to ensure consistency with the design system.
+- Test keyboard navigation (Tab, Shift+Tab) to verify focus visibility.
+
+## Using the `outline-on-focus-visible` mixin
+
+To easily apply the focus style in your Sass components, use the provided mixin:
+
+```scss
+@use '@pplancq/shelter-ui-css/sass/mixins/outline-on-focus-visible';
+
+@include outline-on-focus-visible.outline-on-focus-visible();
+```
+
+You can also add additional styles inside the mixin using `@content`:
+
+```scss
+.my-button {
+  @include outline-on-focus-visible.outline-on-focus-visible() {
+    // Additional styles on focus-visible
+    box-shadow: 0 0 0 4px rgba(32, 76, 207, 0.15);
+  }
+}
+```
+
+This mixin automatically applies the outline only on focus-visible, following accessibility best practices.
 
 ## To go further
 
