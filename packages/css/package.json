@@ -34,7 +34,7 @@
     "node": ">= 22"
   },
   "devDependencies": {
-    "@pplancq/prettier-config": "^1.2.6",
+    "@pplancq/prettier-config": "^1.2.7",
     "@pplancq/stylelint-config": "^4.0.1",
     "@rsbuild/plugin-sass": "^1.3.2",
     "@rslib/core": "^0.10.4",
