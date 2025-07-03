@@ -45,6 +45,10 @@
     &:active {
       text-decoration: underline;
     }
+
+    &:hover.button--only-icon {
+      --button-color-background: var(--color-background-overlay);
+    }
   }
 
   &--primary {
