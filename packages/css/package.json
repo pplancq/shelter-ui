@@ -40,7 +40,7 @@
     "@rslib/core": "^0.10.4",
     "concurrently": "^9.2.0",
     "prettier": "^3.6.2",
-    "stylelint": "^16.21.0",
+    "stylelint": "^16.21.1",
     "stylelint-prettier": "^5.0.3"
   },
   "prettier": "@pplancq/prettier-config",
