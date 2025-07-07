@@ -1,0 +1,82 @@
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
+import * as InputStories from './Input.stories';
+
+<Meta of={InputStories} name="Input" />
+
+# ShelterUI Design System Input
+
+The `Input` component provides a customizable text field, with error state management and optional icons or elements before/after the field.
+
+## Usage
+
+```tsx
+import { Input } from '@pplancq/shelter-ui-react';
+
+const MyComponent = () => {
+  return (
+    <Input
+      placeholder="Your text here"
+      error={false}
+      startAdornment={<Icon icon={searchIcon} />}
+      endAdornment={<Icon icon={eyeIcon} />}
+    />
+  );
+};
+```
+
+## Input Props
+
+The `Input` component inherits all native `<input>` element props.
+
+<table id="input-props">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>error</code>
+      </th>
+      <td>
+        <code>boolean</code>
+      </td>
+      <td>
+        <code>false</code>
+      </td>
+      <td>Displays the input in an error state.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>startAdornment</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>Element displayed before the input (e.g. icon).</td>
+    </tr>
+    <tr>
+      <th>
+        <code>endAdornment</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>Element displayed after the input (e.g. icon).</td>
+    </tr>
+  </tbody>
+</table>
+
+## Demo
+
+Example usage of the `Input` component with different props.
+
+<Canvas of={InputStories.Playground} sourceState="shown" />
+
+<Controls of={InputStories.Playground} />
