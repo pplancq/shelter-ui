@@ -1,0 +1,22 @@
+@forward '../variables/dimension';
+@forward '../variables/typography';
+@forward '../themes/light';
+@forward '../themes/dark';
+
+@use '../mixins/typography';
+
+@import '@fontsource/nunito/400.css'; /* regular */
+
+.label {
+  --label-color-asterisk: var(--color-tertiary-main-light);
+
+  all: unset;
+  display: inline-flex;
+  gap: var(--gap-1);
+
+  @include typography.text(medium);
+
+  span {
+    color: var(--label-color-asterisk);
+  }
+}
