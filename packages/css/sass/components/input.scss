@@ -1,0 +1,80 @@
+@forward '../variables/dimension';
+@forward '../variables/border';
+@forward '../variables/typography';
+@forward '../themes/light';
+@forward '../themes/dark';
+
+@use '../mixins/typography';
+@use '../mixins/helpers';
+
+@import '@fontsource/nunito/400.css'; /* regular */
+
+.input {
+  --input-padding-vertical: var(--padding-1);
+  --input-padding-horizontal: var(--padding-2);
+  --input-border-radius: var(--border-radius-small);
+  --input-border-color: var(--color-background-alt);
+  --input-border-width: #{helpers.px-to-rem(1)};
+  --input-color: var(--color-text-primary);
+  --input-background-color: var(--color-neutral-light);
+  --input-color-icon: var(--color-text-secondary);
+
+  input {
+    all: unset;
+  }
+
+  all: unset;
+  display: inline-flex;
+  min-width: helpers.px-to-rem(150);
+  padding: var(--input-padding-vertical) var(--input-padding-horizontal);
+  border: var(--input-border-width) solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
+  align-items: center;
+  gap: var(--gap-1);
+  color: var(--input-color);
+  background-color: var(--input-background-color);
+
+  @include typography.text(medium);
+
+  svg {
+    fill: var(--input-color-icon);
+  }
+
+  &:has(> input::placeholder) {
+    --input-color: var(--color-text-hint);
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 1px var(--input-border-color) inset;
+  }
+
+  &:hover,
+  &:has(> input:not(:placeholder-shown, :disabled)) {
+    --input-border-color: var(--color-primary-main-light);
+  }
+
+  &:has(> input:focus-visible) {
+    outline: 2px solid var(--color-primary-main-light);
+    outline-offset: 2px;
+  }
+
+  &:has(> input:disabled) {
+    --input-border-color: var(--color-disabled-foreground);
+    --input-color: var(--color-text-disabled);
+    --input-background-color: var(--color-disabled-background);
+    --input-color-icon: var(--color-text-disabled);
+
+    box-shadow: unset;
+    cursor: not-allowed;
+  }
+
+  &--error {
+    --input-color: var(--color-tertiary-main-light);
+
+    &:hover,
+    &:focus,
+    &:has(> input:not(:disabled)) {
+      --input-border-color: var(--color-tertiary-main-light);
+    }
+  }
+}
