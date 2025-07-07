@@ -1,0 +1,59 @@
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
+import * as LabelStories from './Label.stories';
+
+<Meta of={LabelStories} name="Label" />
+
+# ShelterUI Design System Label
+
+The `Label` component provides an accessible label for form fields, with support for required state indication.
+
+## Usage
+
+```tsx
+import { Label } from '@pplancq/shelter-ui-react';
+
+const MyComponent = () => {
+  return (
+    <Label htmlFor="my-input" required>
+      Username
+    </Label>
+  );
+};
+```
+
+## Label Props
+
+The `Label` component inherits all native `<label>` element props.
+
+<table id="label-props">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>required</code>
+      </th>
+      <td>
+        <code>boolean</code>
+      </td>
+      <td>
+        <code>false</code>
+      </td>
+      <td>Displays an asterisk to indicate the field is required.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Demo
+
+Example usage of the `Label` component with different props.
+
+<Canvas of={LabelStories.Playground} sourceState="shown" />
+
+<Controls of={LabelStories.Playground} />
