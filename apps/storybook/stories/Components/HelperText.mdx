@@ -1,0 +1,60 @@
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
+import * as HelperTextStories from './HelperText.stories';
+
+<Meta of={HelperTextStories} name="HelperText" />
+
+# ShelterUI Design System HelperText
+
+The `HelperText` component provides additional context or feedback for form fields, supporting both informational and error states.
+
+## Usage
+
+```tsx
+import { HelperText } from '@pplancq/shelter-ui-react';
+
+const MyComponent = () => {
+  return (
+    <>
+      <HelperText>This is some helpful information.</HelperText>
+      <HelperText error>This is an error message.</HelperText>
+    </>
+  );
+};
+```
+
+## HelperText Props
+
+The `HelperText` component inherits all native `<small>` element props.
+
+<table id="helpertext-props">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>error</code>
+      </th>
+      <td>
+        <code>boolean</code>
+      </td>
+      <td>
+        <code>false</code>
+      </td>
+      <td>Displays the error state and icon.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Demo
+
+Example usage of the `HelperText` component with different props.
+
+<Canvas of={HelperTextStories.Playground} sourceState="shown" />
+
+<Controls of={HelperTextStories.Playground} />
