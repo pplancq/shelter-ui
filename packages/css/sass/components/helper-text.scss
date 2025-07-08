@@ -1,0 +1,31 @@
+@forward '../variables/dimension';
+@forward '../variables/typography';
+@forward '../themes/light';
+@forward '../themes/dark';
+
+@use '../mixins/typography';
+@use '../mixins/helpers';
+
+@import '@fontsource/nunito/400.css'; /* regular */
+
+.helper-text {
+  --helper-text-color: var(--color-text-hint);
+
+  all: unset;
+  display: inline-flex;
+  align-items: end;
+  gap: var(--gap-0-5);
+  color: var(--helper-text-color);
+
+  @include typography.text(smallest);
+
+  svg {
+    --icon-size: #{helpers.px-to-rem(14)};
+
+    fill: var(--helper-text-color);
+  }
+
+  &--error {
+    --helper-text-color: var(--color-tertiary-main-light);
+  }
+}
