@@ -5,3 +5,4 @@ export { Button, type ButtonProps } from './Button/Button';
 export { Input, type InputProps } from './Input/Input';
 export { Label, type LabelProps } from './Label/Label';
 export { HelperText, type HelperTextProps } from './HelperText/HelperText';
+export { InputField, type InputFieldProps } from './InputField/InputField';

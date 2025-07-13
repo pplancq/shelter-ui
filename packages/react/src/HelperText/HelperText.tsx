@@ -10,7 +10,11 @@ export type HelperTextProps = {
 
 export const HelperText = ({ className, error, children, ...props }: HelperTextProps) => {
   return (
-    <small className={clsx('helper-text', error && 'helper-text--error', className)} {...props}>
+    <small
+      className={clsx('helper-text', error && 'helper-text--error', className)}
+      role={error ? 'alert' : undefined}
+      {...props}
+    >
       <Icon icon={error ? exclamationCircleIcon : infoCircleIcon} size="small" />
       {children}
     </small>
