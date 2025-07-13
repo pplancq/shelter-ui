@@ -1,0 +1,104 @@
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
+import * as InputFieldStories from './InputText.stories';
+
+<Meta of={InputFieldStories} name="InputField" />
+
+# ShelterUI Design System InputField
+
+The `InputField` component extends the `Input` component by adding label and helper text capabilities, enabling richer form field interactions and validations.
+
+## Usage
+
+```tsx
+import { InputField } from '@pplancq/shelter-ui-react';
+
+const MyComponent = () => {
+  return (
+    <InputField
+      placeholder="Your text here"
+      label="Input Label"
+      textHelper="Helper text"
+      errorMessage="Error message"
+      required={true}
+      layout="inline"
+    />
+  );
+};
+```
+
+## InputField Props
+
+The InputField component inherits all [`<Input/>`](?path=/docs/components-input--input) component props and extends them with the following props:
+
+<table id="inputfield-props">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>layout</code>
+      </th>
+      <td>
+        <code>'stacked' | 'inline'</code>
+      </td>
+      <td>
+        <code>'stacked'</code>
+      </td>
+      <td>Layout of the label and input.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>required</code>
+      </th>
+      <td>
+        <code>boolean</code>
+      </td>
+      <td>
+        <code>false</code>
+      </td>
+      <td>Marks the field as required.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>label</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>Label displayed above the input field.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>textHelper</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>Helper text displayed below the input field.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>errorMessage</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>Error message displayed below the input field.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Demo Example usage of the `InputField` component with different props.
+
+<Canvas of={InputFieldStories.Playground} sourceState="shown" />
+
+<Controls of={InputFieldStories.Playground} />

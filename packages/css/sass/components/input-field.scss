@@ -1,0 +1,32 @@
+.input-field {
+  all: unset;
+  display: grid;
+  grid-template-areas:
+    'label'
+    'input'
+    'helper-text';
+  align-items: center;
+  gap: 6px;
+
+  &--inline {
+    grid-template-areas:
+      'label input'
+      'null helper-text';
+
+    & .label {
+      min-width: 100px;
+    }
+  }
+
+  & .label {
+    grid-area: label;
+  }
+
+  & .input {
+    grid-area: input;
+  }
+
+  & .helper-text {
+    grid-area: helper-text;
+  }
+}
