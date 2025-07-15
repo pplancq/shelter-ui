@@ -1,0 +1,141 @@
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
+import * as AlertStories from './Alert.stories';
+
+<Meta of={AlertStories} name="Alert" />
+
+# ShelterUI Design System Alert
+
+The `Alert` component is a versatile UI element used to display important messages to users. It supports different severity levels, customizable titles, optional messages, and dismissible functionality with proper accessibility features.
+
+## Usage of the Alert Component
+
+```tsx
+import { Alert } from '@pplancq/shelter-ui-react';
+
+const MyComponent = () => {
+  return (
+    <Alert variant="info" title="Information" onClose={() => console.log('Alert closed')}>
+      This is an informational message for the user.
+    </Alert>
+  );
+};
+```
+
+## Alert Props
+
+The `Alert` component extends all standard HTML `section` attributes and includes the following specific props:
+
+<table id="alert-props">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>variant</code>
+      </th>
+      <td>
+        <code>'info' | 'warning' | 'error' | 'success'</code>
+      </td>
+      <td>
+        <code>'info'</code>
+      </td>
+      <td>Specifies the semantic type and visual style of the alert.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>title</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>The main title/heading of the alert. Required prop.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>titleLevel</code>
+      </th>
+      <td>
+        <code>1 | 2 | 3 | 4 | 5 | 6</code>
+      </td>
+      <td>
+        <code>4</code>
+      </td>
+      <td>Specifies the heading level (h1-h6) for proper document outline.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>onClose</code>
+      </th>
+      <td>
+        <code>ButtonProps['onClick']</code>
+      </td>
+      <td>-</td>
+      <td>Callback function when the close button is clicked. If provided, renders a close button.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>buttonLabel</code>
+      </th>
+      <td>
+        <code>string</code>
+      </td>
+      <td>
+        <code>'Close alert'</code>
+      </td>
+      <td>Accessible label for the close button. Used for aria-label attribute.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>children</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>Optional message content. Supports rich HTML content including lists and paragraphs.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Demo
+
+This example demonstrates the use of the `Alert` component with different props.
+
+<Canvas of={AlertStories.Playground} sourceState="shown" />
+
+<Controls of={AlertStories.Playground} />
+
+## Alert Variants
+
+The `Alert` component supports four different variants, each with specific semantic meaning and visual styling:
+
+### Info Alert
+
+Used for general informational messages that don't require immediate action.
+
+<Canvas of={AlertStories.Info} sourceState="shown" />
+
+### Warning Alert
+
+Used to warn users about potential issues or important information that requires attention.
+
+<Canvas of={AlertStories.Warning} sourceState="shown" />
+
+### Error Alert
+
+Used to communicate critical errors or problems that need immediate user attention.
+
+<Canvas of={AlertStories.Error} sourceState="shown" />
+
+### Success Alert
+
+Used to confirm successful actions or positive feedback to users.
+
+<Canvas of={AlertStories.Success} sourceState="shown" />
