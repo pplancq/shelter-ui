@@ -34,11 +34,11 @@ export const Title = <C extends ElementType>({
         <HeadingTag className="title__title" id={headingIdFinal}>
           {title}
         </HeadingTag>
-        {subtitle && (
+        {subtitle ? (
           <p className="title__subtitle" aria-describedby={headingIdFinal}>
             {subtitle}
           </p>
-        )}
+        ) : null}
       </hgroup>
     </Component>
   );
