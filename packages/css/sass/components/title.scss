@@ -1,0 +1,94 @@
+@forward '../variables/typography';
+@forward '../variables/dimension';
+@forward '../variables/border';
+@forward '../themes/light';
+@forward '../themes/dark';
+
+@use '../mixins/typography';
+@use '../mixins/helpers';
+@use '../layout/responsive';
+
+@import '@fontsource/raleway/600.css'; /* semi-bold */
+@import '@fontsource/raleway/700.css'; /* bold */
+@import '@fontsource/nunito/700.css'; /* bold */
+
+@mixin title-group-heading($level, $subtitle-size) {
+  &:has(h#{$level}) {
+    .title__title {
+      @include typography.heading($level);
+    }
+
+    .title__subtitle {
+      @include typography.text($subtitle-size, true);
+    }
+  }
+}
+
+.title {
+  --title-color: var(--color-text-primary);
+  --title-subtitle-color: var(--color-text-secondary);
+  --title-border-color: var(--color-primary-main-medium);
+  --title-padding-v: var(--padding-0-5);
+  --title-padding-h: var(--padding-2);
+  --title-gap: var(--gap-1);
+  --title-icon-size: #{helpers.px-to-rem(24)};
+
+  all: unset;
+  display: flex;
+  min-width: 100%;
+  padding-inline: var(--title-padding-h);
+  padding-block: var(--title-padding-v);
+  border-bottom: 1px solid var(--title-border-color);
+  align-items: end;
+  gap: var(--title-gap);
+
+  @include responsive.media-exceeds-width(tablet) {
+    min-width: helpers.px-to-rem(500);
+  }
+
+  &__group {
+    all: unset;
+    display: flex;
+    align-items: end;
+    gap: var(--gap-2);
+
+    @include title-group-heading(1, large);
+    @include title-group-heading(2, medium);
+    @include title-group-heading(3, small);
+    @include title-group-heading(4, small);
+    @include title-group-heading(5, smaller);
+    @include title-group-heading(6, smallest);
+  }
+
+  & svg {
+    width: var(--title-icon-size);
+    height: var(--title-icon-size);
+    fill: var(--title-color);
+  }
+
+  &:has(h4, h5, h6) {
+    & svg {
+      --title-icon-size: #{helpers.px-to-rem(20)};
+    }
+  }
+
+  &__title {
+    all: unset;
+    color: var(--title-color);
+  }
+
+  &__subtitle {
+    all: unset;
+    color: var(--title-subtitle-color);
+  }
+
+  &--stacked {
+    align-items: start;
+
+    .title__group {
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+    }
+  }
+}

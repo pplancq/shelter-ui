@@ -6,8 +6,8 @@
 
 @use '../mixins/typography';
 
-@import '@fontsource/nunito/400.css'; /* regular - pour le message */
-@import '@fontsource/nunito/700.css'; /* bold - pour le titre */
+@import '@fontsource/nunito/400.css'; /* regular */
+@import '@fontsource/nunito/700.css'; /* bold */
 
 .alert {
   --alert-color: var(--color-signal-info-foreground);
