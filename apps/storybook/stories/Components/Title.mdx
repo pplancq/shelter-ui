@@ -1,0 +1,117 @@
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
+import * as TitleStories from './Title.stories';
+
+<Meta of={TitleStories} name="Title" />
+
+# ShelterUI Design System Title
+
+The `Title` component displays a section or page title with a customizable heading level, optional subtitle, icon, and different layouts.
+
+## Usage of the Title Component
+
+```tsx
+import { Title } from '@pplancq/shelter-ui-react';
+
+const MyComponent = () => {
+  return <Title title="Main title" subtitle="Subtitle" level={2} layout="stacked" />;
+};
+```
+
+## Title Props
+
+The `Title` component inherits all props from a `div` by default, or from the component passed via the `component` prop.
+
+<table id="title-props">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>title</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>The main title (required).</td>
+    </tr>
+    <tr>
+      <th>
+        <code>subtitle</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>The subtitle displayed below the main title.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>level</code>
+      </th>
+      <td>
+        <code>1 | 2 | 3 | 4 | 5 | 6</code>
+      </td>
+      <td>
+        <code>1</code>
+      </td>
+      <td>HTML heading level (h1 to h6) used for the title.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>layout</code>
+      </th>
+      <td>
+        <code>'inline' | 'stacked'</code>
+      </td>
+      <td>
+        <code>'inline'</code>
+      </td>
+      <td>Layout of the title and subtitle: side by side or stacked.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>icon</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>
+        Icon displayed to the left of the title.
+        <br />
+        <strong>Tip:</strong> Use the <code>Icon</code> component for best results.
+        <br />
+        <em>Example:</em> <code>{'<Icon icon={bookmarkIcon} />'}</code>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <code>component</code>
+      </th>
+      <td>
+        <code>ElementType</code>
+      </td>
+      <td>
+        <code>'div'</code>
+      </td>
+      <td>
+        Allows changing the root element (e.g., <code>section</code>).
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Demo
+
+Example usage of the `Title` component with different props.
+
+<Canvas of={TitleStories.Playground} sourceState="shown" />
+
+<Controls of={TitleStories.Playground} />
