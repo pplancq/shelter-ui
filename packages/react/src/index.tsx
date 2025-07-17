@@ -7,3 +7,4 @@ export { Label, type LabelProps } from './Label/Label';
 export { HelperText, type HelperTextProps } from './HelperText/HelperText';
 export { InputField, type InputFieldProps } from './InputField/InputField';
 export { Alert, type AlertProps } from './Alert/Alert';
+export { Title, type TitleProps } from './Title/Title';
