@@ -15,7 +15,9 @@ const preview: Preview = {
       },
     },
     viewport: {
-      viewports: viewPorts,
+      options: {
+        ...viewPorts,
+      },
     },
     controls: {
       matchers: {
