@@ -9,7 +9,7 @@ export const Label = ({ required, children, className, htmlFor, ...props }: Labe
   return (
     <label className={clsx('label', className)} htmlFor={htmlFor} {...props}>
       {children}
-      {required && <span aria-hidden>*</span>}
+      {required ? <span aria-hidden>*</span> : null}
     </label>
   );
 };

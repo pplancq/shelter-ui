@@ -38,12 +38,12 @@ export const Button = <C extends ElementType = 'button'>({
       {...(Component === 'button' ? { type } : {})}
     >
       {startIcon}
-      {children && (
+      {children ? (
         <>
           {children}
           {endIcon}
         </>
-      )}
+      ) : null}
     </Component>
   );
 };

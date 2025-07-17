@@ -51,7 +51,7 @@ export const Alert = ({
       <Icon icon={signalIcon(variant)} size="large" className="alert__icon" />
       <Title className="alert__title">{title}</Title>
       {Boolean(children) && <div className="alert__message">{children}</div>}
-      {onClose && (
+      {onClose ? (
         <Button
           variant="ghost"
           size="large"
@@ -61,7 +61,7 @@ export const Alert = ({
           onClick={onClose}
           aria-label={buttonLabel ?? 'Close alert'}
         />
-      )}
+      ) : null}
     </section>
   );
 };
