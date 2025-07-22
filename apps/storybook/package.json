@@ -38,7 +38,7 @@
     "chromatic": "^13.1.2",
     "concurrently": "^9.2.0",
     "eslint": "^9.31.0",
-    "eslint-plugin-prettier": "^5.5.1",
+    "eslint-plugin-prettier": "^5.5.3",
     "eslint-plugin-storybook": "^9.0.17",
     "prettier": "^3.6.2",
     "react": "^19.1.0",
