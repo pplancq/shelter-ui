@@ -1,0 +1,70 @@
+@use '../mixins/outline-on-focus-visible';
+@use '../mixins/helpers';
+
+.radio-input {
+  --radio-input-background-color: var(--color-neutral-light);
+  --radio-input-checked-background-color: transparent;
+  --radio-input-border-color: var(--color-background-alt);
+  --radio-input-border-radius: var(--border-radius-circle);
+  --radio-input-border-width: 1px;
+
+  all: unset;
+  display: flex;
+  width: helpers.px-to-rem(24);
+  height: helpers.px-to-rem(24);
+  border-radius: var(--radio-input-border-radius);
+  align-items: center;
+  justify-content: center;
+  background-color: var(--radio-input-background-color);
+  box-shadow: 0 0 0 var(--radio-input-border-width) var(--radio-input-border-color) inset;
+  cursor: pointer;
+
+  @include outline-on-focus-visible.outline-on-focus-visible();
+
+  &:hover {
+    --radio-input-border-width: 2px;
+    --radio-input-border-color: var(--color-primary-main-light);
+  }
+
+  &::before {
+    width: helpers.px-to-rem(14);
+    height: helpers.px-to-rem(14);
+    border-radius: var(--radio-input-border-radius);
+    background-color: var(--radio-input-checked-background-color);
+    content: '';
+  }
+
+  &:checked {
+    --radio-input-border-color: var(--color-primary-main-light);
+
+    &::before {
+      --radio-input-checked-background-color: var(--color-primary-main-light);
+    }
+  }
+
+  &:not(:checked)::before {
+    --radio-input-checked-background-color: transparent;
+  }
+
+  &--invalid,
+  &--invalid:hover,
+  &--invalid:checked {
+    --radio-input-border-color: var(--color-tertiary-main-light);
+  }
+
+  &--invalid:is(:checked)::before {
+    --radio-input-checked-background-color: var(--color-tertiary-main-light);
+  }
+
+  &:disabled {
+    --radio-input-background-color: var(--color-disabled-background);
+    --radio-input-border-color: var(--color-disabled-foreground);
+    --radio-input-border-width: 1px;
+
+    cursor: not-allowed;
+
+    &:is(:checked)::before {
+      --radio-input-checked-background-color: var(--color-disabled-foreground);
+    }
+  }
+}
