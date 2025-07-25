@@ -1,0 +1,55 @@
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
+import * as RadioInputStories from './RadioInput.stories';
+
+<Meta of={RadioInputStories} name="RadioInput" />
+
+# ShelterUI Design System RadioInput
+
+The `RadioInput` component provides a customizable radio button with error state management. It is used to allow the user to select a single option from multiple choices.
+
+## Usage
+
+```tsx
+import { RadioInput } from '@pplancq/shelter-ui-react';
+
+const MyComponent = () => {
+  return <RadioInput name="option" value="option1" checked isInvalid />;
+};
+```
+
+## RadioInput Props
+
+The `RadioInput` component inherits all native `<input type="radio">` element props.
+
+<table id="radio-input-props">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>isInvalid</code>
+      </th>
+      <td>
+        <code>boolean</code>
+      </td>
+      <td>
+        <code>false</code>
+      </td>
+      <td>Displays the radio button in an error state.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Demo
+
+Example usage of the `RadioInput` component with different props.
+
+<Canvas of={RadioInputStories.Playground} sourceState="shown" />
+
+<Controls of={RadioInputStories.Playground} />
