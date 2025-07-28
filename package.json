@@ -56,5 +56,9 @@
   "volta": {
     "node": "22.17.1",
     "npm": "11.5.1"
+  },
+  "optionalDependencies": {
+    "sass-embedded-darwin-arm64": "^1.89.2",
+    "sass-embedded-linux-x64": "^1.89.2"
   }
 }
