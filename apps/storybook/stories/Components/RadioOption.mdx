@@ -1,0 +1,65 @@
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
+import * as RadioOptionStories from './RadioOption.stories';
+
+<Meta of={RadioOptionStories} name="RadioOption" />
+
+# ShelterUI Design System RadioOption
+
+The `RadioOption` component extends the `RadioInput` component by adding integrated label capabilities, positioning and styling.
+
+## Usage of the RadioOption Component
+
+```tsx
+import { RadioOption } from '@pplancq/shelter-ui-react';
+
+const MyComponent = () => {
+  return <RadioOption id="option1" name="choice" value="option1" label="Option 1" labelPosition="right" />;
+};
+```
+
+## RadioOption Props
+
+The `RadioOption` component inherits all `<RadioInput/>` component props.
+
+<table id="radiooption-props">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>label</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>The label content to display alongside the radio input.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>labelPosition</code>
+      </th>
+      <td>
+        <code>'left' | 'right' | 'top' | 'bottom'</code>
+      </td>
+      <td>
+        <code>'left'</code>
+      </td>
+      <td>Determines the position of the label relative to the radio input.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Demo
+
+This example demonstrates the use of the `RadioOption` component with different configurations.
+
+<Canvas of={RadioOptionStories.Playground} sourceState="shown" />
+
+<Controls of={RadioOptionStories.Playground} />
