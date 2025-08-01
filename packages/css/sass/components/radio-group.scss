@@ -1,0 +1,49 @@
+@forward '../base/label';
+@forward '../variables/dimension';
+
+.radio-group {
+  all: unset;
+  display: grid;
+  grid-template-areas:
+    'legend'
+    'input-options';
+  align-items: center;
+  gap: 6px;
+
+  &:has(.helper-text) {
+    grid-template-areas:
+      'legend'
+      'input-options'
+      'helper-text';
+  }
+
+  &__legend {
+    @extend %label;
+
+    grid-area: legend;
+  }
+
+  &__options {
+    display: flex;
+    grid-area: input-options;
+    gap: var(--gap-2);
+  }
+
+  & .helper-text {
+    grid-area: helper-text;
+  }
+
+  &--inline {
+    grid-template-areas: 'legend input-options';
+
+    &:has(.helper-text) {
+      grid-template-areas:
+        'legend input-options'
+        'empty helper-text';
+    }
+
+    & .radio-group__legend {
+      min-width: 100px;
+    }
+  }
+}
