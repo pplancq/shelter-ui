@@ -1,0 +1,133 @@
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
+import * as RadioGroupStories from './RadioGroup.stories';
+
+<Meta of={RadioGroupStories} name="RadioGroup" />
+
+# ShelterUI Design System RadioGroup
+
+The `RadioGroup` component provides a container for radio options, allowing users to select one option from a group. It includes proper accessibility features, labeling, error states, and helper text support.
+
+## Usage
+
+```tsx
+import { RadioGroup, RadioOption } from '@pplancq/shelter-ui-react';
+
+const MyComponent = () => {
+  return (
+    <RadioGroup label="Choose an option" name="my-radio-group" layout="stacked" labelPosition="left">
+      <RadioOption label="Option 1" value="option1" />
+      <RadioOption label="Option 2" value="option2" />
+      <RadioOption label="Option 3" value="option3" />
+    </RadioGroup>
+  );
+};
+```
+
+## RadioGroup Props
+
+The `RadioGroup` component inherits all native `<div>` element props except `role`.
+
+<table id="radiogroup-props">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>label</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>The label for the radio group (required).</td>
+    </tr>
+    <tr>
+      <th>
+        <code>name</code>
+      </th>
+      <td>
+        <code>string</code>
+      </td>
+      <td>-</td>
+      <td>The name attribute passed to all radio options in the group.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>layout</code>
+      </th>
+      <td>
+        <code>'stacked' | 'inline'</code>
+      </td>
+      <td>
+        <code>'stacked'</code>
+      </td>
+      <td>Layout arrangement of the radio options.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>labelPosition</code>
+      </th>
+      <td>
+        <code>'left' | 'right' | 'top' | 'bottom'</code>
+      </td>
+      <td>
+        <code>'left'</code>
+      </td>
+      <td>Position of labels relative to radio inputs.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>required</code>
+      </th>
+      <td>
+        <code>boolean</code>
+      </td>
+      <td>
+        <code>false</code>
+      </td>
+      <td>If true, indicates that a selection is required.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>textHelper</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>Helper text displayed below the radio group.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>errorMessage</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>Error message displayed when validation fails.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>children</code>
+      </th>
+      <td>
+        <code>ReactElement&lt;RadioOptionProps&gt;[]</code>
+      </td>
+      <td>-</td>
+      <td>Array of RadioOption components (required).</td>
+    </tr>
+  </tbody>
+</table>
+
+## Demo
+
+<Canvas of={RadioGroupStories.Playground} sourceState="shown" />
+
+<Controls of={RadioGroupStories.Playground} />
