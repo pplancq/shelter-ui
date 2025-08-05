@@ -11,3 +11,4 @@ export { Title, type TitleProps } from './Title/Title';
 export { RadioInput, type RadioInputProps } from './RadioInput/RadioInput';
 export { RadioOption, type RadioOptionProps } from './RadioOption/RadioOption';
 export { RadioGroup, type RadioGroupProps } from './RadioGroup/RadioGroup';
+export { CheckboxInput, type CheckboxInputProps } from './CheckboxInput/CheckboxInput';
