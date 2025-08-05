@@ -1,3 +1,7 @@
+@forward '../variables/border';
+@forward '../themes/light';
+@forward '../themes/dark';
+
 @use '../mixins/outline-on-focus-visible';
 @use '../mixins/helpers';
 
