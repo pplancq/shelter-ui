@@ -1,0 +1,58 @@
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
+import * as CheckboxInputStories from './CheckboxInput.stories';
+
+<Meta of={CheckboxInputStories} name="CheckboxInput" />
+
+# ShelterUI Design System CheckboxInput
+
+The `CheckboxInput` component provides a customizable checkbox input with consistent styling. It is used to allow the user to select one or more options from multiple choices.
+
+## Usage
+
+```tsx
+import { CheckboxInput } from '@pplancq/shelter-ui-react';
+
+const MyComponent = () => {
+  return <CheckboxInput name="options" value="option1" checked />;
+};
+```
+
+## CheckboxInput Props
+
+The `CheckboxInput` component inherits all native `<input type="checkbox">` element props.
+
+<table id="checkboxinput-props">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>indeterminate</code>
+      </th>
+      <td>
+        <code>boolean</code>
+      </td>
+      <td>
+        <code>false</code>
+      </td>
+      <td>
+        If true, the checkbox displays an indeterminate state (mixed state) typically used for "select all"
+        functionality when some but not all items are selected.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Demo
+
+Example usage of the `CheckboxInput` component with different props.
+
+<Canvas of={CheckboxInputStories.Playground} sourceState="shown" />
+
+<Controls of={CheckboxInputStories.Playground} />
