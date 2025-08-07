@@ -12,7 +12,7 @@
 
   all: unset;
   display: inline-flex;
-  gap: var(--gap-1);
+  gap: var(--gap-0-5);
 
   @include typography.text(medium);
 
