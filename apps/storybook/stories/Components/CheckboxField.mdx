@@ -1,0 +1,82 @@
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
+import * as CheckboxFieldStories from './CheckboxField.stories';
+
+<Meta of={CheckboxFieldStories} name="CheckboxField" />
+
+# ShelterUI Design System CheckboxField
+
+The `CheckboxField` component extends the `CheckboxInput` component by adding label and helper text capabilities, enabling richer form field interactions and validations.
+
+## Usage
+
+```tsx
+import { CheckboxField } from '@pplancq/shelter-ui-react';
+
+const MyComponent = () => {
+  return (
+    <CheckboxField
+      label="Accept terms and conditions"
+      name="terms"
+      value="accepted"
+      textHelper="Please read our terms and conditions"
+      errorMessage="You must accept the terms to continue"
+      required={true}
+    />
+  );
+};
+```
+
+## CheckboxField Props
+
+The CheckboxField component inherits all [`<CheckboxInput/>`](?path=/docs/components-checkboxinput--checkboxinput) component props (except `indeterminate`) and extends them with the following props:
+
+<table id="checkboxfield-props">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>label</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>Label displayed next to the checkbox input.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>textHelper</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>Helper text displayed below the checkbox field.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>errorMessage</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>Error message displayed below the checkbox field. Takes priority over textHelper when both are provided.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Demo
+
+Example usage of the `CheckboxField` component with different props.
+
+<Canvas of={CheckboxFieldStories.Playground} sourceState="shown" />
+
+<Controls of={CheckboxFieldStories.Playground} />
