@@ -13,3 +13,4 @@ export { RadioOption, type RadioOptionProps } from './RadioOption/RadioOption';
 export { RadioGroup, type RadioGroupProps } from './RadioGroup/RadioGroup';
 export { CheckboxInput, type CheckboxInputProps } from './CheckboxInput/CheckboxInput';
 export { CheckboxField, type CheckboxFieldProps } from './CheckboxField/CheckboxField';
+export { CheckboxGroup, type CheckboxGroupProps } from './CheckboxGroup/CheckboxGroup';
