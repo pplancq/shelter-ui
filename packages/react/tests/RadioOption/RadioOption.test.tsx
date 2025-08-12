@@ -17,21 +17,6 @@ describe('RadioOption', () => {
     expect(label).toHaveClass('radio-option');
   });
 
-  it('should apply label position classes correctly', () => {
-    render(<RadioOption label="Test Option" value="test" labelPosition="right" />);
-
-    const label = screen.getByText('Test Option');
-    expect(label).toHaveClass('radio-option radio-option--right');
-  });
-
-  it('should not apply position class when labelPosition is left (default)', () => {
-    render(<RadioOption label="Test Option" value="test" labelPosition="left" />);
-
-    const label = screen.getByText('Test Option');
-    expect(label).toHaveClass('radio-option');
-    expect(label).not.toHaveClass('radio-option--left');
-  });
-
   it('should merge custom className with radio-option class', () => {
     render(<RadioOption label="Test Option" value="test" className="custom-class" />);
 

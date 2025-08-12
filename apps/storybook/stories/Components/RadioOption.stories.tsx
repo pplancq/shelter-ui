@@ -10,16 +10,9 @@ const meta = {
   tags: ['!autodocs', '!dev'],
   args: {
     label: 'Radio Option',
-    labelPosition: 'left',
     checked: false,
     isInvalid: false,
     disabled: false,
-  },
-  argTypes: {
-    labelPosition: {
-      control: 'select',
-      options: ['left', 'right', 'top', 'bottom'],
-    },
   },
 } satisfies Meta<RadioOptionProps>;
 
