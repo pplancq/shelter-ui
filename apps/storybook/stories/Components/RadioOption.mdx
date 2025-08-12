@@ -5,7 +5,7 @@ import * as RadioOptionStories from './RadioOption.stories';
 
 # ShelterUI Design System RadioOption
 
-The `RadioOption` component extends the `RadioInput` component by adding integrated label capabilities, positioning and styling.
+The `RadioOption` component extends the `RadioInput` component by adding integrated label capabilities and styling.
 
 ## Usage of the RadioOption Component
 
@@ -13,7 +13,7 @@ The `RadioOption` component extends the `RadioInput` component by adding integra
 import { RadioOption } from '@pplancq/shelter-ui-react';
 
 const MyComponent = () => {
-  return <RadioOption id="option1" name="choice" value="option1" label="Option 1" labelPosition="right" />;
+  return <RadioOption id="option1" name="choice" value="option1" label="Option 1" />;
 };
 ```
 
@@ -40,18 +40,6 @@ The `RadioOption` component inherits all `<RadioInput/>` component props.
       </td>
       <td>-</td>
       <td>The label content to display alongside the radio input.</td>
-    </tr>
-    <tr>
-      <th>
-        <code>labelPosition</code>
-      </th>
-      <td>
-        <code>'left' | 'right' | 'top' | 'bottom'</code>
-      </td>
-      <td>
-        <code>'left'</code>
-      </td>
-      <td>Determines the position of the label relative to the radio input.</td>
     </tr>
   </tbody>
 </table>

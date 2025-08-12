@@ -1,17 +1,13 @@
+@forward '../variables/dimension';
+
 .radio-option {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: var(--gap-1);
+  cursor: pointer;
 
-  &--right {
-    flex-direction: row-reverse;
-  }
-
-  &--top {
-    flex-direction: column;
-  }
-
-  &--bottom {
-    flex-direction: column-reverse;
+  &:has(.radio-input:disabled) {
+    cursor: not-allowed;
   }
 }
