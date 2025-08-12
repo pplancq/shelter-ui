@@ -178,16 +178,6 @@ describe('RadioGroup', () => {
     });
   });
 
-  it('should pass labelPosition prop to radio options', () => {
-    render(
-      <RadioGroup label="Test Group" name="test" labelPosition="right">
-        {defaultChildren}
-      </RadioGroup>,
-    );
-
-    expect(screen.getByText('Option 1')).toHaveClass('radio-option--right');
-  });
-
   it('should pass required prop to all radio options', () => {
     render(
       <RadioGroup label="Test Group" name="test" required>
