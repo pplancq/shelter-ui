@@ -1,0 +1,140 @@
+import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
+import * as CheckboxGroupStories from './CheckboxGroup.stories';
+
+<Meta of={CheckboxGroupStories} name="CheckboxGroup" />
+
+# ShelterUI Design System CheckboxGroup
+
+The `CheckboxGroup` component provides a container for multiple checkbox options, allowing users to select one or more options from a group. It includes accessibility features, labeling, error states, and helper text support.
+
+## Usage
+
+```tsx
+import { CheckboxGroup, CheckboxField } from '@pplancq/shelter-ui-react';
+
+const MyComponent = () => {
+  return (
+    <CheckboxGroup label="Choose options" name="my-checkbox-group" layout="stacked" itemsLayout="inline">
+      <CheckboxField label="Option 1" value="option1" />
+      <CheckboxField label="Option 2" value="option2" />
+      <CheckboxField label="Option 3" value="option3" />
+    </CheckboxGroup>
+  );
+};
+```
+
+## CheckboxGroup Props
+
+The `CheckboxGroup` component inherits all native `<div>` element props except `role` and `children`.
+
+<table id="checkboxgroup-props">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <code>label</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>The label for the checkbox group (required).</td>
+    </tr>
+    <tr>
+      <th>
+        <code>name</code>
+      </th>
+      <td>
+        <code>string</code>
+      </td>
+      <td>-</td>
+      <td>The name attribute passed to all checkbox fields in the group.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>layout</code>
+      </th>
+      <td>
+        <code>'stacked' | 'inline'</code>
+      </td>
+      <td>
+        <code>'stacked'</code>
+      </td>
+      <td>Layout arrangement of the group label and options.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>itemsLayout</code>
+      </th>
+      <td>
+        <code>'stacked' | 'inline'</code>
+      </td>
+      <td>
+        <code>'inline'</code>
+      </td>
+      <td>Layout arrangement of the checkbox options.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>required</code>
+      </th>
+      <td>
+        <code>boolean</code>
+      </td>
+      <td>
+        <code>false</code>
+      </td>
+      <td>If true, at least one option must be selected.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>textHelper</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>Helper text displayed below the checkbox group.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>errorMessage</code>
+      </th>
+      <td>
+        <code>ReactNode</code>
+      </td>
+      <td>-</td>
+      <td>Error message displayed when validation fails.</td>
+    </tr>
+    <tr>
+      <th>
+        <code>children</code>
+      </th>
+      <td>
+        <code>
+          ReactElement&lt;&#123; name, value, required, aria-invalid, aria-errormessage, aria-describedby, id, onChange
+          &#125;&gt;[]
+        </code>
+      </td>
+      <td>-</td>
+      <td>
+        Array of CheckboxField components (required). Each child must have props: <code>name</code>, <code>value</code>,{' '}
+        <code>required</code>, <code>aria-invalid</code>, <code>aria-errormessage</code>, <code>aria-describedby</code>,{' '}
+        <code>id</code>, <code>onChange</code>.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Demo
+
+<Canvas of={CheckboxGroupStories.Playground} sourceState="shown" />
+
+<Controls of={CheckboxGroupStories.Playground} />
