@@ -14,7 +14,7 @@ import { RadioGroup, RadioOption } from '@pplancq/shelter-ui-react';
 
 const MyComponent = () => {
   return (
-    <RadioGroup label="Choose an option" name="my-radio-group" layout="stacked" labelPosition="left">
+    <RadioGroup label="Choose an option" name="my-radio-group" layout="stacked" itemsLayout="inline">
       <RadioOption label="Option 1" value="option1" />
       <RadioOption label="Option 2" value="option2" />
       <RadioOption label="Option 3" value="option3" />
@@ -25,7 +25,7 @@ const MyComponent = () => {
 
 ## RadioGroup Props
 
-The `RadioGroup` component inherits all native `<div>` element props except `role`.
+The `RadioGroup` component inherits all native `<div>` element props except `role` and `children`.
 
 <table id="radiogroup-props">
   <thead>
@@ -67,19 +67,19 @@ The `RadioGroup` component inherits all native `<div>` element props except `rol
       <td>
         <code>'stacked'</code>
       </td>
-      <td>Layout arrangement of the radio options.</td>
+      <td>Layout arrangement of the group label and options.</td>
     </tr>
     <tr>
       <th>
-        <code>labelPosition</code>
+        <code>itemsLayout</code>
       </th>
       <td>
-        <code>'left' | 'right' | 'top' | 'bottom'</code>
+        <code>'stacked' | 'inline'</code>
       </td>
       <td>
-        <code>'left'</code>
+        <code>'inline'</code>
       </td>
-      <td>Position of labels relative to radio inputs.</td>
+      <td>Layout arrangement of the radio options.</td>
     </tr>
     <tr>
       <th>
@@ -91,7 +91,7 @@ The `RadioGroup` component inherits all native `<div>` element props except `rol
       <td>
         <code>false</code>
       </td>
-      <td>If true, indicates that a selection is required.</td>
+      <td>If true, a selection is required.</td>
     </tr>
     <tr>
       <th>
@@ -118,10 +118,13 @@ The `RadioGroup` component inherits all native `<div>` element props except `rol
         <code>children</code>
       </th>
       <td>
-        <code>ReactElement&lt;RadioOptionProps&gt;[]</code>
+        <code>ReactElement&#60;{(name, value, required, isInvalid, id)}&#62;[]</code>
       </td>
       <td>-</td>
-      <td>Array of RadioOption components (required).</td>
+      <td>
+        Array of RadioOption components (required). Each child must have props: <code>name</code>, <code>value</code>,{' '}
+        <code>required</code>, <code>isInvalid</code>, <code>id</code>.
+      </td>
     </tr>
   </tbody>
 </table>

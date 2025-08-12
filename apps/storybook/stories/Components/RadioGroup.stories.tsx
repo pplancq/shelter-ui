@@ -20,7 +20,7 @@ const meta = {
     errorMessage: '',
     textHelper: 'Text helper',
     layout: 'stacked',
-    labelPosition: 'left',
+    itemsLayout: 'inline',
   },
   argTypes: {
     layout: {
@@ -28,10 +28,10 @@ const meta = {
       options: ['stacked', 'inline'],
       description: 'Layout of the radio options',
     },
-    labelPosition: {
+    itemsLayout: {
       control: 'select',
-      options: ['left', 'right', 'top', 'bottom'],
-      description: 'Position of the label relative to the radio option',
+      options: ['stacked', 'inline'],
+      description: 'Layout of the radio options',
     },
   },
 } satisfies Meta<RadioGroupProps>;
@@ -42,11 +42,11 @@ type Story = StoryObj<RadioGroupProps>;
 
 export const Playground: Story = {
   tags: ['dev'],
-  render: ({ layout, labelPosition, errorMessage, textHelper, ...args }) => {
+  render: ({ layout, itemsLayout, errorMessage, textHelper, ...args }) => {
     return (
       <RadioGroup
         layout={layout === 'inline' ? layout : undefined}
-        labelPosition={labelPosition !== 'left' ? labelPosition : undefined}
+        itemsLayout={itemsLayout === 'stacked' ? itemsLayout : undefined}
         errorMessage={errorMessage || undefined}
         textHelper={textHelper || undefined}
         {...args}

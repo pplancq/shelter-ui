@@ -3,46 +3,48 @@ import type { RadioOptionProps } from '@/RadioOption/RadioOption';
 import { clsx } from '@/utils/clsx';
 import { Children, cloneElement, type ComponentProps, type ReactElement, type ReactNode, useId, useMemo } from 'react';
 
+type ChildrenProps = Pick<RadioOptionProps, 'name' | 'value' | 'required' | 'isInvalid' | 'id'>;
+
 export type RadioGroupProps = Omit<ComponentProps<'div'>, 'role' | 'children'> & {
   layout?: 'stacked' | 'inline';
+  itemsLayout?: 'stacked' | 'inline';
   required?: boolean;
   label: ReactNode;
   textHelper?: ReactNode;
   errorMessage?: ReactNode;
-  children: ReactElement<RadioOptionProps>[];
-} & Pick<RadioOptionProps, 'name' | 'labelPosition'>;
+  children: ReactElement<ChildrenProps>[];
+} & Pick<RadioOptionProps, 'name'>;
 
 export const RadioGroup = ({
   children,
   label,
   className,
   layout,
+  itemsLayout,
   required,
   errorMessage,
   textHelper,
   id,
   name,
-  labelPosition,
   ...props
 }: RadioGroupProps) => {
   const genericId = useId();
   const groupId = id ?? genericId;
-  const helperTextId = `${id ?? genericId}-helper-text`;
-  const legendId = `${id ?? genericId}-legend`;
+  const helperTextId = `${groupId}-helper-text`;
+  const legendId = `${groupId}-legend`;
 
   const radioOptions = useMemo(
     () =>
       Children.map(children, child =>
         cloneElement(child, {
           name,
-          labelPosition,
           required,
           isInvalid: Boolean(errorMessage),
           id: `${groupId}-${child.props.value}`,
           ...child.props,
         }),
       ),
-    [children, errorMessage, groupId, labelPosition, name, required],
+    [children, errorMessage, groupId, name, required],
   );
 
   return (
@@ -61,7 +63,9 @@ export const RadioGroup = ({
         {label}
         {required ? <span aria-hidden>*</span> : null}
       </div>
-      <div className="radio-group__options">{radioOptions}</div>
+      <div className={clsx('radio-group__options', itemsLayout === 'stacked' && 'radio-group__options--stacked')}>
+        {radioOptions}
+      </div>
       {Boolean(errorMessage || textHelper) && (
         <HelperText id={helperTextId} error={Boolean(errorMessage)}>
           {errorMessage || textHelper}

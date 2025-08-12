@@ -1,6 +1,8 @@
 @forward '../base/label';
 @forward '../variables/dimension';
 
+@use '../mixins/helpers';
+
 .radio-group {
   all: unset;
   display: grid;
@@ -8,7 +10,7 @@
     'legend'
     'input-options';
   align-items: center;
-  gap: 6px;
+  gap: helpers.px-to-rem(6);
 
   &:has(.helper-text) {
     grid-template-areas:
@@ -26,7 +28,12 @@
   &__options {
     display: flex;
     grid-area: input-options;
-    gap: var(--gap-2);
+    gap: helpers.px-to-rem(6);
+
+    &--stacked {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   & .helper-text {
@@ -43,7 +50,13 @@
     }
 
     & .radio-group__legend {
-      min-width: 100px;
+      min-width: helpers.px-to-rem(100);
+    }
+
+    &:has(.radio-group__options--stacked) {
+      .radio-group__legend {
+        align-self: flex-start;
+      }
     }
   }
 }
