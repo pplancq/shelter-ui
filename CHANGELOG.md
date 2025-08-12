@@ -1,3 +1,38 @@
+## [1.0.0-alpha.3](https://github.com/pplancq/shelter-ui/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2025-08-12)
+
+### Features
+
+* **css:** add alert component with customizable styles and themes ([75225f0](https://github.com/pplancq/shelter-ui/commit/75225f0ecf9324366017f70f7c7979cb0c00292c))
+* **react:** add Alert component with customizable variants and close button ([56c2a19](https://github.com/pplancq/shelter-ui/commit/56c2a195886b55974b088e91e0a6c20575d9aa50))
+* **css:** add checkbox component styles for layout and accessibility ([d64f5ba](https://github.com/pplancq/shelter-ui/commit/d64f5bad7d1fda300ddbd09f66160c6cb89a5ab8))
+* **css:** add checkbox field styles for layout and accessibility ([d536c94](https://github.com/pplancq/shelter-ui/commit/d536c94d4e3371ad68d72b1c708b016e961e8f68))
+* **css:** add checkbox group styles for layout and accessibility ([72e9ab8](https://github.com/pplancq/shelter-ui/commit/72e9ab8bb12600322abdcb641636471961db62a8))
+* **react:** add CheckboxField component for enhanced checkbox usage ([b74222b](https://github.com/pplancq/shelter-ui/commit/b74222bf100a111428c677b6964695df25118437))
+* **react:** add CheckboxGroup component for managing checkbox fields ([045b0e4](https://github.com/pplancq/shelter-ui/commit/045b0e4cde1c25f80800f68c6e9520702ef294dc))
+* **react:** add CheckboxInput component for checkbox functionality ([70bfa80](https://github.com/pplancq/shelter-ui/commit/70bfa801cf9943905ad0094e04600ee5b3454791))
+* **storybook:** add documentation and stories for CheckboxField component ([42b3f08](https://github.com/pplancq/shelter-ui/commit/42b3f082d8b190035800d5d7b4723d52129ed7d3))
+* **css,react:** add HelperText component for displaying contextual hints ([aee7590](https://github.com/pplancq/shelter-ui/commit/aee75902f5f9dc7f06208973bc64cce575e50291))
+* **css,react:** add Input component with customizable props and styles ([08de727](https://github.com/pplancq/shelter-ui/commit/08de7275ff40922f936a776fd8809ee5cbaeae48))
+* **css,react:** add InputField component with customizable props and styles ([81f1ede](https://github.com/pplancq/shelter-ui/commit/81f1ede67e8cf6221dbd072ff50adcb7857bd7b9))
+* **css,react:** add Label component with accessibility features ([a5e5e2b](https://github.com/pplancq/shelter-ui/commit/a5e5e2b19df2c9f6ce669b8559140db696101d87))
+* **css:** add radio group styles for layout and accessibility ([2ffc813](https://github.com/pplancq/shelter-ui/commit/2ffc8137cfd4826593fc5ae6799849c6bb3f63ee))
+* **react:** add radio input component with error handling ([fa6ce22](https://github.com/pplancq/shelter-ui/commit/fa6ce224829d45cbae042366b323a4826427dce7))
+* **css:** add radio input component with styles and states ([06e90dc](https://github.com/pplancq/shelter-ui/commit/06e90dc1430b1e79e26d86a615ca80a5256aca98))
+* **css:** add radio option styles for layout variations ([f610c63](https://github.com/pplancq/shelter-ui/commit/f610c6370609b86db3c917cf7c2ee57481839144))
+* **react:** add RadioGroup component for managing radio options ([7f262f2](https://github.com/pplancq/shelter-ui/commit/7f262f2530e43ccc4a223a3583f6518f3e252014))
+* **react:** add RadioOption component for enhanced radio input usage ([2007e89](https://github.com/pplancq/shelter-ui/commit/2007e8979cda08a3a505dbd2a70148eb6869b28e))
+* **react:** add Title component with customizable props and layouts ([be7a76f](https://github.com/pplancq/shelter-ui/commit/be7a76f1dbde49d0591acd2719ce6bd7fcaa8338))
+* **css:** add title component with customizable styles and responsive design ([fbdeb14](https://github.com/pplancq/shelter-ui/commit/fbdeb1448972d55c96125686d3ebf88854e10708))
+
+### Bug Fixes
+
+* **deps:** update dependency @pplancq/svg-react to ^1.4.1 ([0263ced](https://github.com/pplancq/shelter-ui/commit/0263ced5f4b07e4f4acf92bdab7bece33fc92c55))
+* **deps:** update dependency @pplancq/svg-react to ^2.1.0 ([1ea9a26](https://github.com/pplancq/shelter-ui/commit/1ea9a26ed65f0fbe872f24b5baf771652e0e84aa))
+* **deps:** update dependency @pplancq/svg-react to ^2.1.1 ([e36b586](https://github.com/pplancq/shelter-ui/commit/e36b5862ce88ee75d02f3c12e0c7f60e4e176262))
+* **deps:** update dependency @pplancq/svg-react to v2 ([2fcd9ec](https://github.com/pplancq/shelter-ui/commit/2fcd9ec9c39e787c6dffc6f9d57fad6b7e4fe6fd))
+* **deps:** update fontsource monorepo to ^5.2.6 ([b251682](https://github.com/pplancq/shelter-ui/commit/b2516826a57160f52fc66750e6654dd99b082508))
+* **css:** update hover styles for button with only icon ([f025eb5](https://github.com/pplancq/shelter-ui/commit/f025eb545f9833b656165ae4ff759e0e62c12a45))
+
 ## [1.0.0-alpha.2](https://github.com/pplancq/shelter-ui/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2025-05-18)
 
 ### Features
