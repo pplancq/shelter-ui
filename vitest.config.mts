@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     test: {
-      projects: ['./packages/react/vitest.config.mts'],
+      projects: ['./packages/react/vitest.config.mts', './packages/css/vitest.config.mts'],
       reporters: ['default', 'junit', 'vitest-sonar-reporter'],
       outputFile: {
         'vitest-sonar-reporter': 'sonar-report.xml',

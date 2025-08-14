@@ -26,23 +26,39 @@
   "scripts": {
     "dev": "rslib build --watch",
     "build": "rslib build",
-    "lint": "concurrently --prefix-colors auto \"npm:stylelint\"",
-    "stylelint": "stylelint \"sass/**/*.{scss,css}\"",
-    "stylelint:fix": "stylelint \"sass/**/*.{scss,css}\" --fix"
+    "lint": "concurrently --prefix-colors auto \"npm:stylelint\" \"npm:eslint\"",
+    "eslint": "eslint \"tests/**/*.{js,jsx,ts,tsx}\"",
+    "eslint:fix": "eslint \"tests/**/*.{js,jsx,ts,tsx}\" --fix",
+    "stylelint": "stylelint \"{sass,tests}/**/*.{scss,css}\"",
+    "stylelint:fix": "stylelint \"{sass,tests}/**/*.{scss,css}\" --fix",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "engines": {
     "node": ">= 22"
   },
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.2.6",
+    "@fontsource/nunito": "^5.2.6",
+    "@fontsource/oswald": "^5.2.6",
+    "@fontsource/raleway": "^5.2.6"
+  },
   "devDependencies": {
+    "@pplancq/eslint-config": "^5.0.4",
     "@pplancq/postcss-config": "^2.1.14",
     "@pplancq/prettier-config": "^1.2.7",
     "@pplancq/stylelint-config": "^4.0.3",
     "@rsbuild/plugin-sass": "^1.3.5",
     "@rslib/core": "^0.12.1",
     "concurrently": "^9.2.0",
+    "eslint": "^9.33.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "postcss-discard-duplicates": "^7.0.2",
     "prettier": "^3.6.2",
+    "sass-true": "^7.0.0",
     "stylelint": "^16.23.1",
-    "stylelint-prettier": "^5.0.3"
+    "stylelint-prettier": "^5.0.3",
+    "vitest": "^3.2.4"
   },
   "prettier": "@pplancq/prettier-config",
   "lint-staged": {
@@ -51,12 +67,5 @@
   },
   "volta": {
     "extends": "../../package.json"
-  },
-  "dependencies": {
-    "@fontsource/jetbrains-mono": "^5.2.6",
-    "@fontsource/nunito": "^5.2.6",
-    "@fontsource/oswald": "^5.2.6",
-    "@fontsource/raleway": "^5.2.6",
-    "postcss-discard-duplicates": "^7.0.2"
   }
 }
