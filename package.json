@@ -60,5 +60,8 @@
   "optionalDependencies": {
     "sass-embedded-darwin-arm64": "^1.90.0",
     "sass-embedded-linux-x64": "^1.90.0"
+  },
+  "overrides": {
+    "@rsbuild/core": "1.4.15"
   }
 }
