@@ -1,0 +1,63 @@
+/* stylelint-disable order/properties-order */
+@use 'true' as *;
+@use '../../sass/mixins/outline-on-focus-visible' as outline;
+
+@include describe('outline-on-focus-visible') {
+  @include it('should generate :focus-visible selector with outline styles') {
+    @include assert {
+      @include output {
+        .test-button {
+          @include outline.outline-on-focus-visible();
+        }
+      }
+      @include expect {
+        .test-button :focus-visible {
+          outline: 2px solid var(--color-primary-main-light);
+          outline-offset: 2px;
+        }
+      }
+    }
+  }
+
+  @include it('should inject @content inside :focus-visible selector') {
+    @include assert {
+      @include output {
+        .test-input {
+          @include outline.outline-on-focus-visible() {
+            border-color: var(--color-primary-main);
+            background-color: var(--color-background-light);
+          }
+        }
+      }
+      @include expect {
+        .test-input :focus-visible {
+          outline: 2px solid var(--color-primary-main-light);
+          outline-offset: 2px;
+          border-color: var(--color-primary-main);
+          background-color: var(--color-background-light);
+        }
+      }
+    }
+  }
+
+  @include it('should work with nested selectors') {
+    @include assert {
+      @include output {
+        .form-group {
+          input {
+            @include outline.outline-on-focus-visible() {
+              box-shadow: 0 0 0 3px rgb(0 123 255 / 25%);
+            }
+          }
+        }
+      }
+      @include expect {
+        .form-group input :focus-visible {
+          outline: 2px solid var(--color-primary-main-light);
+          outline-offset: 2px;
+          box-shadow: 0 0 0 3px rgb(0 123 255 / 25%);
+        }
+      }
+    }
+  }
+}

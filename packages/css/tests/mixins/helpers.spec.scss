@@ -1,0 +1,53 @@
+@use 'true' as *;
+@use 'sass:meta';
+@use '../../sass/mixins/helpers';
+
+@include describe('px-to-rem') {
+  @include it('should convert px to rem') {
+    @include assert {
+      @include output {
+        .rem-16 {
+          font-size: helpers.px-to-rem(16px);
+        }
+      }
+      @include expect {
+        .rem-16 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  @include it('should convert number to rem') {
+    @include assert {
+      @include output {
+        .rem-32 {
+          font-size: helpers.px-to-rem(32);
+        }
+      }
+      @include expect {
+        .rem-32 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@include describe('split-list') {
+  @include it('should split a list up to the limit') {
+    @include assert {
+      @include output {
+        $result: helpers.split-list((a, b, c, d), 2);
+
+        .split-list {
+          content: meta.inspect($result);
+        }
+      }
+      @include expect {
+        .split-list {
+          content: a b;
+        }
+      }
+    }
+  }
+}
