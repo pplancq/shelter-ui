@@ -9,9 +9,9 @@ $root-font-size: 16px;
     @error "The value #{$value} is not a valid number or dimension.";
   }
 
-  $number: if(meta.type-of($value) == 'dimension', $value / 1px, $value);
+  $number: if(math.unit($value) == 'px', math.div($value, 1px), $value);
 
-  @return #{'#{math.div($number, math.div($root-font-size, 1px))}rem'};
+  @return #{math.div($number, math.div($root-font-size, 1px))}rem;
 }
 
 @function split-list($list, $limit) {

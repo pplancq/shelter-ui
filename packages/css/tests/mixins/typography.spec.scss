@@ -1,0 +1,628 @@
+@use 'true' as *;
+@use '../../sass/mixins/typography';
+
+@include describe('display mixins') {
+  @include it('should apply correct styles for display mixin, D1') {
+    @include assert {
+      @include output {
+        .display-large {
+          @include typography.display(1);
+        }
+      }
+      @include expect {
+        .display-large {
+          font-family: var(--font-family-display);
+          font-size: var(--font-size-48);
+          font-weight: var(--font-weight-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-48);
+        }
+
+        @media (width >= 41.75rem) {
+          .display-large {
+            font-size: var(--font-size-80);
+            line-height: var(--line-height-80);
+          }
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for display mixin, D2') {
+    @include assert {
+      @include output {
+        .display-medium {
+          @include typography.display(2);
+        }
+      }
+      @include expect {
+        .display-medium {
+          font-family: var(--font-family-display);
+          font-size: var(--font-size-36);
+          font-weight: var(--font-weight-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-40);
+        }
+
+        @media (width >= 41.75rem) {
+          .display-medium {
+            font-size: var(--font-size-60);
+            line-height: var(--line-height-60);
+          }
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for display mixin, D3') {
+    @include assert {
+      @include output {
+        .display-small {
+          @include typography.display(3);
+        }
+      }
+      @include expect {
+        .display-small {
+          font-family: var(--font-family-display);
+          font-size: var(--font-size-24);
+          font-weight: var(--font-weight-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-32);
+        }
+
+        @media (width >= 41.75rem) {
+          .display-small {
+            font-size: var(--font-size-48);
+            line-height: var(--line-height-48);
+          }
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for display mixin, D4') {
+    @include assert {
+      @include output {
+        .display-smaller {
+          @include typography.display(4);
+        }
+      }
+      @include expect {
+        .display-smaller {
+          font-family: var(--font-family-display);
+          font-size: var(--font-size-20);
+          font-weight: var(--font-weight-semi-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-28);
+        }
+
+        @media (width >= 41.75rem) {
+          .display-smaller {
+            font-size: var(--font-size-36);
+            line-height: var(--line-height-40);
+          }
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for display mixin, D5') {
+    @include assert {
+      @include output {
+        .display-smallest {
+          @include typography.display(5);
+        }
+      }
+      @include expect {
+        .display-smallest {
+          font-family: var(--font-family-display);
+          font-size: var(--font-size-18);
+          font-weight: var(--font-weight-semi-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-28);
+        }
+
+        @media (width >= 41.75rem) {
+          .display-smallest {
+            font-size: var(--font-size-24);
+            line-height: var(--line-height-32);
+          }
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for display mixin, D6') {
+    @include assert {
+      @include output {
+        .display-tiny {
+          @include typography.display(6);
+        }
+      }
+      @include expect {
+        .display-tiny {
+          font-family: var(--font-family-display);
+          font-size: var(--font-size-16);
+          font-weight: var(--font-weight-semi-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-24);
+        }
+
+        @media (width >= 41.75rem) {
+          .display-tiny {
+            font-size: var(--font-size-20);
+            line-height: var(--line-height-28);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('heading mixins') {
+  @include it('should apply correct styles for heading mixin, H1') {
+    @include assert {
+      @include output {
+        .heading-large {
+          @include typography.heading(1);
+        }
+      }
+      @include expect {
+        .heading-large {
+          font-family: var(--font-family-heading);
+          font-size: var(--font-size-24);
+          font-weight: var(--font-weight-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-32);
+        }
+
+        @media (width >= 41.75rem) {
+          .heading-large {
+            font-size: var(--font-size-30);
+            line-height: var(--line-height-36);
+          }
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for heading mixin, H2') {
+    @include assert {
+      @include output {
+        .heading-medium {
+          @include typography.heading(2);
+        }
+      }
+      @include expect {
+        .heading-medium {
+          font-family: var(--font-family-heading);
+          font-size: var(--font-size-20);
+          font-weight: var(--font-weight-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-28);
+        }
+
+        @media (width >= 41.75rem) {
+          .heading-medium {
+            font-size: var(--font-size-24);
+            line-height: var(--line-height-32);
+          }
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for heading mixin, H3') {
+    @include assert {
+      @include output {
+        .heading-small {
+          @include typography.heading(3);
+        }
+      }
+      @include expect {
+        .heading-small {
+          font-family: var(--font-family-heading);
+          font-size: var(--font-size-18);
+          font-weight: var(--font-weight-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-28);
+        }
+
+        @media (width >= 41.75rem) {
+          .heading-small {
+            font-size: var(--font-size-20);
+            line-height: var(--line-height-28);
+          }
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for heading mixin, H4') {
+    @include assert {
+      @include output {
+        .heading-smaller {
+          @include typography.heading(4);
+        }
+      }
+      @include expect {
+        .heading-smaller {
+          font-family: var(--font-family-heading);
+          font-size: var(--font-size-16);
+          font-weight: var(--font-weight-semi-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-24);
+        }
+
+        @media (width >= 41.75rem) {
+          .heading-smaller {
+            font-size: var(--font-size-18);
+            line-height: var(--line-height-28);
+          }
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for heading mixin, H5') {
+    @include assert {
+      @include output {
+        .heading-smallest {
+          @include typography.heading(5);
+        }
+      }
+      @include expect {
+        .heading-smallest {
+          font-family: var(--font-family-heading);
+          font-size: var(--font-size-14);
+          font-weight: var(--font-weight-semi-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-20);
+        }
+
+        @media (width >= 41.75rem) {
+          .heading-smallest {
+            font-size: var(--font-size-16);
+            line-height: var(--line-height-24);
+          }
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for heading mixin, H6') {
+    @include assert {
+      @include output {
+        .heading-tiny {
+          @include typography.heading(6);
+        }
+      }
+      @include expect {
+        .heading-tiny {
+          font-family: var(--font-family-heading);
+          font-size: var(--font-size-12);
+          font-weight: var(--font-weight-semi-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-16);
+        }
+
+        @media (width >= 41.75rem) {
+          .heading-tiny {
+            font-size: var(--font-size-14);
+            line-height: var(--line-height-20);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('text mixins') {
+  @include it('should apply correct styles for text mixin, large regular') {
+    @include assert {
+      @include output {
+        .text-regular {
+          @include typography.text(large);
+        }
+      }
+      @include expect {
+        .text-regular {
+          font-family: var(--font-family-content);
+          font-size: var(--font-size-18);
+          font-weight: var(--font-weight-regular);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-28);
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for text mixin, large bold') {
+    @include assert {
+      @include output {
+        .text-bold {
+          @include typography.text(large, true);
+        }
+      }
+      @include expect {
+        .text-bold {
+          font-family: var(--font-family-content);
+          font-size: var(--font-size-18);
+          font-weight: var(--font-weight-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-28);
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for text mixin, medium regular') {
+    @include assert {
+      @include output {
+        .text-regular {
+          @include typography.text(medium);
+        }
+      }
+      @include expect {
+        .text-regular {
+          font-family: var(--font-family-content);
+          font-size: var(--font-size-16);
+          font-weight: var(--font-weight-regular);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-24);
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for text mixin, medium bold') {
+    @include assert {
+      @include output {
+        .text-bold {
+          @include typography.text(medium, true);
+        }
+      }
+      @include expect {
+        .text-bold {
+          font-family: var(--font-family-content);
+          font-size: var(--font-size-16);
+          font-weight: var(--font-weight-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-24);
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for text mixin, small regular') {
+    @include assert {
+      @include output {
+        .text-regular {
+          @include typography.text(small);
+        }
+      }
+      @include expect {
+        .text-regular {
+          font-family: var(--font-family-content);
+          font-size: var(--font-size-14);
+          font-weight: var(--font-weight-regular);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-20);
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for text mixin, small bold') {
+    @include assert {
+      @include output {
+        .text-bold {
+          @include typography.text(small, true);
+        }
+      }
+      @include expect {
+        .text-bold {
+          font-family: var(--font-family-content);
+          font-size: var(--font-size-14);
+          font-weight: var(--font-weight-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-20);
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for text mixin, smaller regular') {
+    @include assert {
+      @include output {
+        .text-regular {
+          @include typography.text(smaller);
+        }
+      }
+      @include expect {
+        .text-regular {
+          font-family: var(--font-family-content);
+          font-size: var(--font-size-12);
+          font-weight: var(--font-weight-regular);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-16);
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for text mixin, smaller bold') {
+    @include assert {
+      @include output {
+        .text-bold {
+          @include typography.text(smaller, true);
+        }
+      }
+      @include expect {
+        .text-bold {
+          font-family: var(--font-family-content);
+          font-size: var(--font-size-12);
+          font-weight: var(--font-weight-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-16);
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for text mixin, smallest regular') {
+    @include assert {
+      @include output {
+        .text-regular {
+          @include typography.text(smallest);
+        }
+      }
+      @include expect {
+        .text-regular {
+          font-family: var(--font-family-content);
+          font-size: var(--font-size-10);
+          font-weight: var(--font-weight-regular);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-13);
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for text mixin, smallest bold') {
+    @include assert {
+      @include output {
+        .text-bold {
+          @include typography.text(smallest, true);
+        }
+      }
+      @include expect {
+        .text-bold {
+          font-family: var(--font-family-content);
+          font-size: var(--font-size-10);
+          font-weight: var(--font-weight-bold);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-13);
+        }
+      }
+    }
+  }
+}
+
+@include describe('label mixins') {
+  @include it('should apply correct styles for label mixin') {
+    @include assert {
+      @include output {
+        .label {
+          @include typography.label(large);
+        }
+      }
+      @include expect {
+        .label {
+          font-family: var(--font-family-label);
+          font-size: var(--font-size-18);
+          font-weight: var(--font-weight-semi-bold);
+          letter-spacing: var(--letter-spacing-low);
+          line-height: var(--line-height-28);
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for label mixin, medium') {
+    @include assert {
+      @include output {
+        .label {
+          @include typography.label(medium);
+        }
+      }
+      @include expect {
+        .label {
+          font-family: var(--font-family-label);
+          font-size: var(--font-size-16);
+          font-weight: var(--font-weight-semi-bold);
+          letter-spacing: var(--letter-spacing-low);
+          line-height: var(--line-height-24);
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for label mixin, small') {
+    @include assert {
+      @include output {
+        .label {
+          @include typography.label(small);
+        }
+      }
+      @include expect {
+        .label {
+          font-family: var(--font-family-label);
+          font-size: var(--font-size-14);
+          font-weight: var(--font-weight-semi-bold);
+          letter-spacing: var(--letter-spacing-low);
+          line-height: var(--line-height-20);
+        }
+      }
+    }
+  }
+}
+
+@include describe('code mixins') {
+  @include it('should apply correct styles for code mixin') {
+    @include assert {
+      @include output {
+        .code {
+          @include typography.code(large);
+        }
+      }
+      @include expect {
+        .code {
+          font-family: var(--font-family-code);
+          font-size: var(--font-size-18);
+          font-weight: var(--font-weight-medium);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-28);
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for code mixin, medium') {
+    @include assert {
+      @include output {
+        .code {
+          @include typography.code(medium);
+        }
+      }
+      @include expect {
+        .code {
+          font-family: var(--font-family-code);
+          font-size: var(--font-size-16);
+          font-weight: var(--font-weight-medium);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-24);
+        }
+      }
+    }
+  }
+
+  @include it('should apply correct styles for code mixin, small') {
+    @include assert {
+      @include output {
+        .code {
+          @include typography.code(small);
+        }
+      }
+      @include expect {
+        .code {
+          font-family: var(--font-family-code);
+          font-size: var(--font-size-14);
+          font-weight: var(--font-weight-medium);
+          letter-spacing: var(--letter-spacing-default);
+          line-height: var(--line-height-20);
+        }
+      }
+    }
+  }
+}

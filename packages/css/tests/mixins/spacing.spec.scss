@@ -1,0 +1,134 @@
+@use 'true' as *;
+@use '../../sass/mixins/spacing';
+
+@include describe('functions') {
+  @include it('should return expected var token for get-margin-horizontal') {
+    @include assert {
+      @include output {
+        .fn-margin-h {
+          margin-inline: spacing.get-margin-horizontal(2);
+        }
+      }
+      @include expect {
+        .fn-margin-h {
+          margin-inline: var(--margin-2);
+        }
+      }
+    }
+  }
+
+  @include it('should return expected var token for get-margin-vertical') {
+    @include assert {
+      @include output {
+        .fn-margin-v {
+          margin-block: spacing.get-margin-vertical(3);
+        }
+      }
+      @include expect {
+        .fn-margin-v {
+          margin-block: var(--margin-3);
+        }
+      }
+    }
+  }
+
+  @include it('should return expected var token for get-padding-horizontal') {
+    @include assert {
+      @include output {
+        .fn-padding-h {
+          padding-inline: spacing.get-padding-horizontal(2);
+        }
+      }
+      @include expect {
+        .fn-padding-h {
+          padding-inline: var(--padding-2);
+        }
+      }
+    }
+  }
+
+  @include it('should return expected var token for get-gap') {
+    @include assert {
+      @include output {
+        .fn-gap {
+          gap: spacing.get-gap(1);
+        }
+      }
+      @include expect {
+        .fn-gap {
+          gap: var(--gap-1);
+        }
+      }
+    }
+  }
+}
+
+@include describe('mixins') {
+  @include it('should generate custom property and margin-inline for init-margin-horizontal') {
+    @include assert {
+      @include output {
+        .mixin-margin-h {
+          @include spacing.init-margin-horizontal('component-spacing', 2);
+        }
+      }
+      @include expect {
+        .mixin-margin-h {
+          --component-spacing: var(--margin-2);
+
+          margin-inline: var(--component-spacing);
+        }
+      }
+    }
+  }
+
+  @include it('should generate custom property and margin-block for init-margin-vertical') {
+    @include assert {
+      @include output {
+        .mixin-margin-v {
+          @include spacing.init-margin-vertical('component-margin-v', 4);
+        }
+      }
+      @include expect {
+        .mixin-margin-v {
+          --component-margin-v: var(--margin-4);
+
+          margin-block: var(--component-margin-v);
+        }
+      }
+    }
+  }
+
+  @include it('should generate custom property and padding-inline for init-padding-horizontal') {
+    @include assert {
+      @include output {
+        .mixin-padding-h {
+          @include spacing.init-padding-horizontal('component-padding', 3);
+        }
+      }
+      @include expect {
+        .mixin-padding-h {
+          --component-padding: var(--padding-3);
+
+          padding-inline: var(--component-padding);
+        }
+      }
+    }
+  }
+
+  @include it('should generate custom property and gap for init-gap') {
+    @include assert {
+      @include output {
+        .mixin-gap {
+          @include spacing.init-gap('component-gap', 1);
+        }
+      }
+      @include expect {
+        .mixin-gap {
+          --component-gap: var(--gap-1);
+
+          gap: var(--component-gap);
+        }
+      }
+    }
+  }
+}
