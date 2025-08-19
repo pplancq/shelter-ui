@@ -1,0 +1,75 @@
+@use 'true' as *;
+@use '../../sass/layout/grid';
+@use '../../sass/layout/responsive';
+
+@include describe('generate-responsive-grid') {
+  @include it('should generate CSS variables for tablet breakpoint') {
+    @include assert {
+      @include output {
+        .test-grid {
+          @include grid.generate-responsive-grid(
+            (
+              tablet: (
+                cols: 8,
+                margin-h: 2rem,
+                gap: 1rem,
+              ),
+            )
+          );
+        }
+      }
+      @include expect {
+        @media (width >= 41.75rem) {
+          .test-grid {
+            --cols: 8;
+            --margin-h: 2rem;
+            --gap: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('generate-grid-item-classes') {
+  @include it('should generate grid-column for grid-item at all breakpoints') {
+    @include assert {
+      @include output {
+        .test-output {
+          @include grid.generate-grid-item-classes();
+        }
+      }
+      @include expect {
+        // stylelint-disable-next-line length-zero-no-unit
+        @media (width >= 0rem) {
+          .test-output [class*='grid-item'] {
+            grid-column: var(--start-mobile, var(--start)) / span var(--col-mobile, var(--col, var(--cols)));
+          }
+        }
+        @media (width >= 41.75rem) {
+          .test-output [class*='grid-item'] {
+            grid-column: var(--start-tablet, var(--start)) / span var(--col-tablet, var(--col, var(--cols)));
+          }
+        }
+        @media (width >= 64rem) {
+          .test-output [class*='grid-item'] {
+            grid-column: var(--start-desktop-small, var(--start)) / span
+              var(--col-desktop-small, var(--col, var(--cols)));
+          }
+        }
+        @media (width >= 80rem) {
+          .test-output [class*='grid-item'] {
+            grid-column: var(--start-desktop-medium, var(--start)) / span
+              var(--col-desktop-medium, var(--col, var(--cols)));
+          }
+        }
+        @media (width >= 100rem) {
+          .test-output [class*='grid-item'] {
+            grid-column: var(--start-desktop-large, var(--start)) / span
+              var(--col-desktop-large, var(--col, var(--cols)));
+          }
+        }
+      }
+    }
+  }
+}

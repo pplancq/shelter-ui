@@ -1,0 +1,65 @@
+@use 'true' as *;
+@use '../../sass/layout/responsive';
+
+@include describe('media-exceeds-width') {
+  @include it('should apply styles for width >= breakpoint') {
+    @include assert {
+      @include output {
+        @include responsive.media-exceeds-width(tablet) {
+          .test {
+            color: red;
+          }
+        }
+      }
+      @include expect {
+        @media (width >= 41.75rem) {
+          .test {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('media-less-than-width') {
+  @include it('should apply styles for width < breakpoint') {
+    @include assert {
+      @include output {
+        @include responsive.media-less-than-width(desktop-small) {
+          .test {
+            color: blue;
+          }
+        }
+      }
+      @include expect {
+        @media (width < 64rem) {
+          .test {
+            color: blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include describe('media-between-widths') {
+  @include it('should apply styles between two breakpoints') {
+    @include assert {
+      @include output {
+        @include responsive.media-between-widths(tablet, desktop-small) {
+          .test {
+            color: green;
+          }
+        }
+      }
+      @include expect {
+        @media (width >= 41.75rem) and (width < 64rem) {
+          .test {
+            color: green;
+          }
+        }
+      }
+    }
+  }
+}
