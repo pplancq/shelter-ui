@@ -10,7 +10,7 @@ All instructions and prompts in this repository must be written in English. This
 
 ## Development code generation
 
-When working with typescript, C# code, follow these instructions very carefully.
+When working with typescript, follow these instructions very carefully.
 
 It is **EXTREMELY important that you follow the instructions in the rule files very carefully.**
 
