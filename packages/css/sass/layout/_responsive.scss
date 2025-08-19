@@ -3,10 +3,10 @@
 
 $breakpoints: (
   mobile: 0,
-  tablet: helpers.px-to-rem(668),
-  desktop-small: helpers.px-to-rem(1024),
-  desktop-medium: helpers.px-to-rem(1280),
-  desktop-large: helpers.px-to-rem(1600),
+  tablet: 668,
+  desktop-small: 1024,
+  desktop-medium: 1280,
+  desktop-large: 1600,
 );
 
 @mixin media-exceeds-width($name) {
@@ -15,7 +15,7 @@ $breakpoints: (
   }
   $value: map.get($breakpoints, $name);
 
-  @media (width >= $value) {
+  @media (width >= #{helpers.px-to-rem($value)}) {
     @content;
   }
 }
@@ -26,7 +26,7 @@ $breakpoints: (
   }
   $value: map.get($breakpoints, $name);
 
-  @media (width < $value) {
+  @media (width < #{helpers.px-to-rem($value)}) {
     @content;
   }
 }
@@ -42,11 +42,11 @@ $breakpoints: (
   $startValue: map.get($breakpoints, $start);
   $endValue: map.get($breakpoints, $end);
 
-  @if $startValue > map.get($breakpoints, $endValue) {
+  @if $startValue > $endValue {
     @error "The start breakpoint (#{$startValue}) must be less than the end breakpoint (#{$endValue}).";
   }
 
-  @media (width >= $startValue) and (width < $endValue) {
+  @media (width >= #{helpers.px-to-rem($startValue)}) and (width < #{helpers.px-to-rem($endValue)}) {
     @content;
   }
 }
