@@ -11,7 +11,7 @@ Ensure the quality, readability, maintainability, and accessibility of unit and 
 
 ## Structure and Organization
 
-- Tests must be placed in a `__tests__` folder next to the component or function under test.
+- Tests must be placed in the `tests` folder at the same level as `src`, following the same directory structure as the source code. For example, if a component is located at `src/components/Button.tsx`, its test must be placed at `tests/components/Button.test.tsx`.
 - The test file name must follow the format: `<ComponentOrFunctionName>.test.ts(x)`.
 - Tests must always be grouped in a `describe`, with sub-`describe` blocks if needed (maximum 2 levels).
 - Each test must use the format: `it('should ...', () => { ... })`.

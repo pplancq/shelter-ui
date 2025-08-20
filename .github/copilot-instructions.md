@@ -1,4 +1,4 @@
-# Copilot instructions
+# Copilot Instructions
 
 ## Language Policy
 
@@ -8,20 +8,43 @@ All instructions and prompts in this repository must be written in English. This
 - All prompt files in `.github/prompts/`
 - All documentation and code comments intended for contributors
 
-## Development code generation
+## Development Code Generation
 
-When working with typescript, follow these instructions very carefully.
+When working with TypeScript, React, and other technologies in this project, follow these instructions very carefully.
 
 It is **EXTREMELY important that you follow the instructions in the rule files very carefully.**
 
-### Workflow implementation
+### Workflow Implementation
 
-**IMPORTANT:** Always follow these steps when implementing new features:
+**IMPORTANT:** Always follow these steps when implementing new features or making changes:
 
-1. Consult any relevant instructions files listed below and start by listing which rule files have been used to guide the implementation (e.g. `Instructions used: [a11y.instructions.md, vitest.instructions.md]`).
+1. **Instruction Selection**: Consult any relevant instruction files listed in `.github/instructions/` and start by listing which rule files have been used to guide the implementation (e.g., `Instructions used: [a11y.instructions.md, vitest.instructions.md]`).
 
-2. Fix any compiler warnings and errors before going to the next step.
+2. **Prompt Execution**: If the user requests execution of a specific prompt from `.github/prompts/`, read the prompt file and execute EXCLUSIVELY what it contains. Start by indicating which prompt is being used (e.g., `Prompt used: [open_pull_request.prompt.md]`).
 
-## Best practices
+3. **Error Resolution**: Fix any compiler warnings and errors after each file modification using the `get_errors` tool.
 
-- always use english for code, documentation, tests, and more.
+4. **Test Execution**: Always run tests via the command `npm run test` to ensure code quality and functionality.
+
+5. **Code Quality**: Ensure all changes follow the established coding standards and accessibility guidelines.
+
+## Rule Priority
+
+- When executing a prompt from `.github/prompts/`, the prompt instructions take precedence over general instructions
+- For all other development work, strictly follow the instructions in `.github/instructions/`
+- Always indicate which instructions or prompt is being used at the beginning of your response
+
+## Error Handling and Testing Workflow
+
+After every file modification:
+
+1. Run `get_errors` to check for compilation issues
+2. Fix any warnings or errors immediately
+3. Run `npm run test` to ensure all tests pass
+4. Verify accessibility compliance if UI components are involved
+
+## Best Practices
+
+- Always use English for code, documentation, tests, and comments
+- Follow the established file and directory structure
+- Maintain consistency with existing codebase patterns
