@@ -50,7 +50,7 @@
     "@pplancq/stylelint-config": "^4.0.3",
     "@rsbuild/plugin-sass": "^1.3.5",
     "@rslib/core": "^0.12.2",
-    "concurrently": "^9.2.0",
+    "concurrently": "^9.2.1",
     "eslint": "^9.34.0",
     "eslint-plugin-prettier": "^5.5.4",
     "postcss-discard-duplicates": "^7.0.2",
