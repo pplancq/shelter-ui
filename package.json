@@ -58,6 +58,8 @@
     "npm": "11.6.0"
   },
   "optionalDependencies": {
+    "@rspack/binding-darwin-arm64": "^1.5.3",
+    "@rspack/binding-linux-x64-gnu": "^1.5.3",
     "sass-embedded-darwin-arm64": "^1.92.1",
     "sass-embedded-linux-x64": "^1.92.1"
   }
