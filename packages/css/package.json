@@ -38,10 +38,10 @@
     "node": ">= 22"
   },
   "dependencies": {
-    "@fontsource/jetbrains-mono": "^5.2.6",
+    "@fontsource/jetbrains-mono": "^5.2.7",
     "@fontsource/nunito": "^5.2.6",
-    "@fontsource/oswald": "^5.2.6",
-    "@fontsource/raleway": "^5.2.6"
+    "@fontsource/oswald": "^5.2.7",
+    "@fontsource/raleway": "^5.2.7"
   },
   "devDependencies": {
     "@pplancq/eslint-config": "^5.0.4",
