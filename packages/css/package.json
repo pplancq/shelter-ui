@@ -47,7 +47,7 @@
     "@pplancq/eslint-config": "^5.0.5",
     "@pplancq/postcss-config": "^2.1.15",
     "@pplancq/prettier-config": "^1.2.7",
-    "@pplancq/stylelint-config": "^4.0.3",
+    "@pplancq/stylelint-config": "^4.0.4",
     "@rsbuild/plugin-sass": "^1.4.0",
     "@rslib/core": "^0.13.2",
     "concurrently": "^9.2.1",
