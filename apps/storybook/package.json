@@ -34,7 +34,7 @@
     "@storybook/react-vite": "^9.1.6",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
-    "@vitejs/plugin-react-swc": "^4.0.1",
+    "@vitejs/plugin-react-swc": "^4.1.0",
     "chromatic": "^13.1.5",
     "concurrently": "^9.2.1",
     "eslint": "^9.35.0",
