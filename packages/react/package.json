@@ -50,7 +50,7 @@
     "@pplancq/svg-react": "^2.1.2"
   },
   "devDependencies": {
-    "@pplancq/eslint-config": "^5.0.5",
+    "@pplancq/eslint-config": "^5.0.6",
     "@pplancq/prettier-config": "^1.2.7",
     "@rsbuild/plugin-react": "^1.4.0",
     "@rslib/core": "^0.13.3",
