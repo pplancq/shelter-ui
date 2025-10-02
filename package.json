@@ -3,6 +3,7 @@
   "version": "1.0.0-alpha.3",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "description": "In a world of chaos, a well-designed shelter is our refuge",
   "author": "pplancq <paul.plancq@outlook.fr>",
   "repository": {
@@ -21,7 +22,7 @@
     "build": "npm run build --workspace=packages/css --workspace=packages/react --workspace=apps",
     "lint": "npm run lint --workspace=packages/css --workspace=packages/react --workspace=apps",
     "test": "vitest run",
-    "package:check": "npm exec --yes package-lock-utd@1.1.3",
+    "package:check": "node ./script/package-check.mjs",
     "prepare": "husky",
     "release": "semantic-release"
   },
