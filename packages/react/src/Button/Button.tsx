@@ -1,18 +1,21 @@
 import { clsx } from '@/utils/clsx';
-import type { ExtendableComponent } from '@/utils/types';
+import type { PolymorphicComponent } from '@/utils/types';
 import type { ElementType, ReactNode } from 'react';
 
-export type ButtonProps<C extends ElementType = 'button'> = ExtendableComponent<C> & {
-  variant?: 'default' | 'reverse' | 'ghost';
-  color?: 'primary' | 'secondary' | 'danger';
-  size?: 'small' | 'medium' | 'large';
-  isCircle?: boolean;
-  startIcon?: ReactNode;
-  endIcon?: ReactNode;
-};
+export type ButtonProps<C extends ElementType = 'button'> = PolymorphicComponent<
+  C,
+  {
+    variant?: 'default' | 'reverse' | 'ghost';
+    color?: 'primary' | 'secondary' | 'danger';
+    size?: 'small' | 'medium' | 'large';
+    isCircle?: boolean;
+    startIcon?: ReactNode;
+    endIcon?: ReactNode;
+  }
+>;
 
 export const Button = <C extends ElementType = 'button'>({
-  component: Component = 'button',
+  as,
   color = 'primary',
   size = 'medium',
   variant = 'default',
@@ -24,6 +27,8 @@ export const Button = <C extends ElementType = 'button'>({
   children,
   ...props
 }: ButtonProps<C>) => {
+  const Component = as || 'button';
+
   return (
     <Component
       className={clsx(
@@ -31,7 +36,7 @@ export const Button = <C extends ElementType = 'button'>({
         variant === 'default' ? `button--${color}` : `button--${color}-${variant}`,
         `button--${size}`,
         isCircle && 'button--circle',
-        startIcon && !children && 'button--only-icon',
+        Boolean(startIcon && !children) && 'button--only-icon',
         className,
       )}
       {...props}

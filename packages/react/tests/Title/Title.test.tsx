@@ -67,7 +67,7 @@ describe('Title', () => {
   });
 
   it('should render with custom component', async () => {
-    await renderSuspense(<Title title="Custom component" component="section" data-testid="test-id" />);
+    await renderSuspense(<Title title="Custom component" as="section" data-testid="test-id" />);
     const container = screen.getByTestId('test-id');
 
     expect(container).toBeInTheDocument();

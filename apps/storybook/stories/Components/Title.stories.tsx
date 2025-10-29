@@ -30,7 +30,7 @@ const meta = {
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<TitleProps>;
 
 export const Playground: Story = {
   tags: ['dev'],

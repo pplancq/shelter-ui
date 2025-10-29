@@ -45,7 +45,7 @@ describe('Button', () => {
 
   it('should render with a custom component', () => {
     render(
-      <Button component="a" href="/test">
+      <Button as="a" href="/test">
         Click me
       </Button>,
     );
@@ -67,7 +67,7 @@ describe('Button', () => {
 
   it('should not have type="button" when rendered as a custom component', () => {
     render(
-      <Button component="a" href="/test">
+      <Button as="a" href="/test">
         Click me
       </Button>,
     );

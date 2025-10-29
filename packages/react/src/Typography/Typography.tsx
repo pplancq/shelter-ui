@@ -1,50 +1,41 @@
 import { clsx } from '@/utils/clsx';
-import type { ExtendableComponent } from '@/utils/types';
+import type { PolymorphicComponent } from '@/utils/types';
 import { type ElementType, type PropsWithChildren, useMemo } from 'react';
 
 type SizeTitle = 1 | 2 | 3 | 4 | 5 | 6;
 type SizeText = 'small' | 'medium' | 'large';
-type Color = 'primary' | 'secondary' | 'hint' | 'disabled';
-type TypographyPropsBase<C extends ElementType> = ExtendableComponent<C> & {
+export type Color = 'primary' | 'secondary' | 'hint' | 'disabled';
+type TypographyPropsBase = {
   color?: Color;
 };
-type TypographyPropsTitle<C extends ElementType> = TypographyPropsBase<C> & {
+type TypographyPropsTitle = {
   variant: 'display' | 'heading';
   size?: SizeTitle;
   bold?: false;
 };
-type TypographyPropsText<C extends ElementType> = TypographyPropsBase<C> & {
+type TypographyPropsText = {
   variant?: 'text';
   size?: 'smallest' | 'smaller' | SizeText;
   bold?: true;
 };
-type TypographyPropsLabel<C extends ElementType> = TypographyPropsBase<C> & {
+type TypographyPropsLabel = {
   variant: 'label';
   size?: SizeText;
   bold?: false;
 };
-type TypographyPropsCode<C extends ElementType> = TypographyPropsBase<C> & {
+type TypographyPropsCode = {
   variant: 'code';
   size?: SizeText;
   bold?: false;
 };
 
-export type TypographyProps<C extends ElementType> =
-  | TypographyPropsTitle<C>
-  | TypographyPropsText<C>
-  | TypographyPropsLabel<C>
-  | TypographyPropsCode<C>;
+export type TypographyProps<C extends ElementType> = PolymorphicComponent<
+  C,
+  TypographyPropsBase & (TypographyPropsTitle | TypographyPropsText | TypographyPropsLabel | TypographyPropsCode)
+>;
 
 export const Typography = <C extends ElementType = 'p'>(props: PropsWithChildren<TypographyProps<C>>) => {
-  const {
-    variant = 'text',
-    size = 'medium',
-    color = 'primary',
-    component,
-    className,
-    bold,
-    ...typographyProps
-  } = props as TypographyPropsBase<C>;
+  const { variant = 'text', size = 'medium', color = 'primary', as, className, bold, ...typographyProps } = props;
 
   const Component = useMemo(() => {
     const defaultComponent = {
@@ -55,8 +46,8 @@ export const Typography = <C extends ElementType = 'p'>(props: PropsWithChildren
       code: 'code',
     } as Record<string, ElementType>;
 
-    return component ?? defaultComponent[variant];
-  }, [component, variant, size]);
+    return as ?? defaultComponent[variant];
+  }, [as, variant, size]);
 
   const typographyClassName = clsx(
     'typography',

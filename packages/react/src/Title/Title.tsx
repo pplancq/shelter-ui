@@ -1,17 +1,23 @@
 import { clsx } from '@/utils/clsx';
-import type { ExtendableComponent } from '@/utils/types';
+import type { PolymorphicComponent } from '@/utils/types';
 import { type ElementType, JSX, type ReactNode, useId } from 'react';
 
-export type TitleProps<C extends ElementType = 'div'> = Omit<ExtendableComponent<C>, 'children'> & {
-  icon?: ReactNode;
-  level?: 1 | 2 | 3 | 4 | 5 | 6;
-  title: ReactNode;
-  subtitle?: ReactNode;
-  layout?: 'inline' | 'stacked';
-};
+export type TitleProps<C extends ElementType = 'div'> = Omit<
+  PolymorphicComponent<
+    C,
+    {
+      icon?: ReactNode;
+      level?: 1 | 2 | 3 | 4 | 5 | 6;
+      title: ReactNode;
+      subtitle?: ReactNode;
+      layout?: 'inline' | 'stacked';
+    }
+  >,
+  'children'
+>;
 
-export const Title = <C extends ElementType>({
-  component,
+export const Title = <C extends ElementType = 'div'>({
+  as,
   icon,
   level = 1,
   title,
@@ -21,7 +27,7 @@ export const Title = <C extends ElementType>({
   id,
   ...props
 }: TitleProps<C>) => {
-  const Component = (component || 'div') as keyof JSX.IntrinsicElements;
+  const Component = (as || 'div') as ElementType;
   const HeadingTag = `h${level}` as keyof JSX.IntrinsicElements;
   const headingId = useId();
 

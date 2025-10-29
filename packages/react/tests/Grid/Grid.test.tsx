@@ -51,7 +51,7 @@ describe('Grid component', () => {
 
   it('should renders with custom component', () => {
     render(
-      <Grid component="section" container>
+      <Grid as="section" container>
         Test Content
       </Grid>,
     );

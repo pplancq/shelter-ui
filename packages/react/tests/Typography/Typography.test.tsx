@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import type { ComponentProps } from 'react';
 import { describe, expect, it } from 'vitest';
-import { Typography } from '../../src/Typography/Typography';
+import { type Color, Typography } from '../../src/Typography/Typography';
 
 describe('Typography component', () => {
   it('should render the correct tag for the "heading" variant', () => {
@@ -47,9 +46,9 @@ describe('Typography component', () => {
     expect(element).toHaveAttribute('aria-label', 'Custom Label');
   });
 
-  it('should render with a custom component (e.g., Link) when the "component" prop is provided', () => {
+  it('should render with a custom component (e.g., Link) when the "as" prop is provided', () => {
     render(
-      <Typography variant="text" size="medium" component="a" href="/test-link">
+      <Typography variant="text" size="medium" as="a" href="/test-link">
         Demo link text
       </Typography>,
     );
@@ -64,16 +63,13 @@ describe('Typography component', () => {
     ['secondary', '--color-text-secondary'],
     ['hint', '--color-text-hint'],
     ['disabled', '--color-text-disabled'],
-  ])(
-    'should apply the correct color class for the "%s" color',
-    (color: ComponentProps<typeof Typography>['color'], expectedVar) => {
-      render(
-        <Typography variant="text" size="medium" color={color}>
-          {`${color.charAt(0).toUpperCase() + color.slice(1)} color text`}
-        </Typography>,
-      );
-      const element = screen.getByText(`${color.charAt(0).toUpperCase() + color.slice(1)} color text`);
-      expect(element).toHaveStyle(`--typography-color: var(${expectedVar})`);
-    },
-  );
+  ])('should apply the correct color class for the "%s" color', (color: string, expectedVar: string) => {
+    render(
+      <Typography variant="text" size="medium" color={color as Color}>
+        {`${color.charAt(0).toUpperCase() + color.slice(1)} color text`}
+      </Typography>,
+    );
+    const element = screen.getByText(`${color.charAt(0).toUpperCase() + color.slice(1)} color text`);
+    expect(element).toHaveStyle(`--typography-color: var(${expectedVar})`);
+  });
 });

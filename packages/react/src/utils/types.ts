@@ -1,7 +1,10 @@
-import type { ComponentProps, CSSProperties, ElementType } from 'react';
+import type { ComponentPropsWithRef, ElementType } from 'react';
 
-export type ExtendableComponent<C extends ElementType> = {
-  component?: C;
-  className?: string;
-  style?: CSSProperties;
-} & ComponentProps<C>;
+type PolymorphicRef<C extends ElementType> = ComponentPropsWithRef<C>['ref'];
+
+export type PolymorphicComponent<C extends ElementType, Props = object> = Props &
+  Omit<ComponentPropsWithRef<C>, keyof Props | 'as'> & {
+    as?: C;
+  } & {
+    ref?: PolymorphicRef<C>;
+  };
