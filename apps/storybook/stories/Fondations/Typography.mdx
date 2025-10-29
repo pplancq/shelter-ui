@@ -97,7 +97,7 @@ for 'label' or 'code':
     </tr>
     <tr>
       <th>
-        <code>component</code>
+        <code>as</code>
       </th>
       <td>
         <code>ElementType</code>
@@ -138,9 +138,9 @@ This example demonstrates the use of the `Typography` component with different v
 
 <Controls of={TypographyStories.ExampleLayout} />
 
-## Using the `component` Prop
+## Using the `as` Prop
 
-The `component` prop allows you to override the default HTML element used by the `Typography` component.
+The `as` prop allows you to override the default HTML element used by the `Typography` component.
 This is particularly useful when integrating `Typography` into other components.
 
 For example, here is how you can use the `Typography` component with the `label` variant inside a custom `Button` component:
@@ -150,7 +150,7 @@ import { Typography } from '@pplancq/shelter-ui-react';
 
 const Button = ({ children, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
-    <Typography component="button" variant="label" size="medium" {...props} className="custom-button">
+    <Typography as="button" variant="label" size="medium" {...props} className="custom-button">
       {children}
     </Typography>
   );
@@ -163,7 +163,7 @@ const Button = ({ children, ...props }: React.ButtonHTMLAttributes<HTMLButtonEle
 In this example:
 
 - The `Typography` component is used with the `label` variant.
-- The `component` prop is set to `button` to ensure proper semantics inside the `button` element.
+- The `as` prop is set to `button` to ensure proper semantics inside the `button` element.
 
 ## Typography Variants
 
