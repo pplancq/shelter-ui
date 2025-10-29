@@ -1,0 +1,428 @@
+import { Button, Typography } from '@pplancq/shelter-ui-react';
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundations/Polymorphic Components" />
+
+# ShelterUI Design System Polymorphic Components
+
+Polymorphic components are one of the most powerful features of ShelterUI. They allow you to create flexible, reusable components that can render as different HTML elements while maintaining consistent styling and behavior.
+
+## What is a Polymorphic Component?
+
+A polymorphic component is a component that can change its underlying HTML element through a prop, typically called `as`. This means the same component can render as a `button`, an `a` (link), a `div`, or even another React component, while keeping all its styling and functionality intact.
+
+### The Problem It Solves
+
+Without polymorphic components, you might need to create multiple versions of the same component:
+
+```tsx
+// ❌ Without polymorphism - repetitive code
+<ButtonAsButton onClick={handleClick}>Click me</ButtonAsButton>
+<ButtonAsLink href="/home">Go home</ButtonAsLink>
+<ButtonAsDiv>Static button</ButtonAsDiv>
+```
+
+With polymorphic components:
+
+```tsx
+// ✅ With polymorphism - one component, multiple uses
+<Button onClick={handleClick}>Click me</Button>
+<Button as="a" href="/home">Go home</Button>
+<Button as="div">Static button</Button>
+```
+
+## Components Supporting Polymorphism
+
+ShelterUI provides polymorphic capabilities in the following components:
+
+- **Button** - Default: `button`
+- **Typography** - Default: varies by variant
+- **Title** - Default: `div`
+- **Grid** - Default: `div`
+
+## Using the `as` Prop
+
+The `as` prop is the key to polymorphism. It accepts:
+
+- **HTML element names** as strings (e.g., `"a"`, `"section"`, `"span"`)
+- **React components** (e.g., `Link` from React Router)
+
+### Example 1: Button as a Link
+
+When you need a button that looks like a button but behaves like a link:
+
+<div style={{ marginBottom: '2rem' }}>
+  <Button as="a" href="https://github.com" target="_blank" rel="noopener noreferrer">
+    Visit GitHub
+  </Button>
+</div>
+
+```tsx
+import { Button } from '@pplancq/shelter-ui-react';
+
+function MyComponent() {
+  return (
+    <Button as="a" href="https://github.com" target="_blank" rel="noopener noreferrer">
+      Visit GitHub
+    </Button>
+  );
+}
+```
+
+### Example 2: Button with React Router
+
+Integrate seamlessly with routing libraries:
+
+```tsx
+import { Button } from '@pplancq/shelter-ui-react';
+import { Link } from 'react-router';
+
+function Navigation() {
+  return (
+    <Button as={Link} to="/dashboard">
+      Go to Dashboard
+    </Button>
+  );
+}
+```
+
+### Example 3: Typography as a Button
+
+Create a styled button using Typography component:
+
+<div style={{ marginBottom: '2rem' }}>
+  <Typography
+    as="button"
+    variant="label"
+    size="large"
+    onClick={() => alert('Clicked!')}
+    style={{
+      padding: '0.5rem 1rem',
+      border: '1px solid currentColor',
+      borderRadius: '4px',
+      cursor: 'pointer',
+      background: 'transparent',
+    }}
+  >
+    Custom Button
+  </Typography>
+</div>
+
+```tsx
+import { Typography } from '@pplancq/shelter-ui-react';
+
+function CustomButton() {
+  return (
+    <Typography as="button" variant="label" size="large" onClick={() => alert('Clicked!')}>
+      Custom Button
+    </Typography>
+  );
+}
+```
+
+### Example 4: Title as a Section
+
+Use semantic HTML while keeping Title styling:
+
+```tsx
+import { Title } from '@pplancq/shelter-ui-react';
+
+function PageSection() {
+  return <Title as="section" title="About Us" subtitle="Learn more about our company" level={2} />;
+}
+```
+
+## TypeScript Support
+
+One of the major advantages of polymorphic components in ShelterUI is **full TypeScript support**. When you change the `as` prop, TypeScript automatically infers the correct props for that element.
+
+### Example: Type Safety with `as="a"`
+
+```tsx
+// ✅ Correct - TypeScript knows about href, target, rel
+<Button as="a" href="/home" target="_blank" rel="noopener noreferrer">
+  Link
+</Button>
+
+// ❌ Error - TypeScript knows 'href' is not valid for buttons
+<Button href="/home">Link</Button>
+
+// ❌ Error - TypeScript knows 'onClick' is not valid for links... wait, it is!
+// Actually, both button and anchor support onClick, so this works:
+<Button as="a" href="/home" onClick={(e) => console.log('clicked')}>
+  Link
+</Button>
+```
+
+### Example: Type Safety with Custom Components
+
+```tsx
+import { Link, LinkProps } from 'react-router-dom';
+
+// ✅ TypeScript knows about React Router's 'to' prop
+<Button as={Link} to="/dashboard">
+  Dashboard
+</Button>
+
+// ❌ Error - 'to' requires 'as={Link}'
+<Button to="/dashboard">
+  Dashboard
+</Button>
+```
+
+## Best Practices
+
+### ✅ Do's
+
+1. **Use semantic HTML**: Choose the right element for the job
+
+   ```tsx
+   // Good - semantic link
+   <Button as="a" href="/contact">Contact Us</Button>
+
+   // Good - semantic button
+   <Button onClick={handleSubmit}>Submit Form</Button>
+   ```
+
+2. **Leverage TypeScript**: Let types guide you to correct usage
+
+   ```tsx
+   // TypeScript will suggest href, target, rel for as="a"
+   <Button as="a" /* <- hover here to see available props */ />
+   ```
+
+3. **Keep accessibility in mind**: Ensure the rendered element makes sense
+
+   ```tsx
+   // Good - navigates to a page
+   <Button as="a" href="/help">Help</Button>
+
+   // Good - performs an action
+   <Button onClick={handleDelete}>Delete</Button>
+   ```
+
+### ❌ Don'ts
+
+1. **Don't use `as` when the default is appropriate**
+
+   ```tsx
+   // ❌ Unnecessary
+   <Button as="button" onClick={handleClick}>Click</Button>
+
+   // ✅ Better
+   <Button onClick={handleClick}>Click</Button>
+   ```
+
+2. **Don't break semantic meaning**
+
+   ```tsx
+   // ❌ Bad - div cannot be in tab order properly
+   <Button as="div" onClick={handleClick}>Click</Button>
+
+   // ✅ Better - use default button
+   <Button onClick={handleClick}>Click</Button>
+   ```
+
+3. **Don't mix incompatible behaviors**
+
+   ```tsx
+   // ❌ Bad - links shouldn't have onClick without href
+   <Button as="a" onClick={handleClick}>Click</Button>
+
+   // ✅ Better - use button for actions
+   <Button onClick={handleClick}>Click</Button>
+   ```
+
+## Common Use Cases
+
+### Navigation Buttons
+
+When you need buttons that navigate:
+
+```tsx
+import { Button } from '@pplancq/shelter-ui-react';
+
+function Header() {
+  return (
+    <nav>
+      <Button as="a" href="/" variant="ghost">
+        Home
+      </Button>
+      <Button as="a" href="/about" variant="ghost">
+        About
+      </Button>
+      <Button as="a" href="/contact" variant="default">
+        Contact
+      </Button>
+    </nav>
+  );
+}
+```
+
+### Call-to-Action Links
+
+When you need links that look like prominent buttons:
+
+```tsx
+function Hero() {
+  return (
+    <div>
+      <Title title="Welcome to ShelterUI" subtitle="Build accessible UIs" />
+      <Button as="a" href="/get-started" size="large" color="primary">
+        Get Started
+      </Button>
+    </div>
+  );
+}
+```
+
+### Integration with Routing
+
+For single-page applications:
+
+```tsx
+import { Button } from '@pplancq/shelter-ui-react';
+import { Link } from 'react-router-dom';
+
+function Sidebar() {
+  return (
+    <aside>
+      <Button as={Link} to="/dashboard" variant="ghost">
+        Dashboard
+      </Button>
+      <Button as={Link} to="/settings" variant="ghost">
+        Settings
+      </Button>
+      <Button as={Link} to="/profile" variant="ghost">
+        Profile
+      </Button>
+    </aside>
+  );
+}
+```
+
+## Accessibility Considerations
+
+Polymorphic components maintain accessibility, but you must use them correctly:
+
+### Focus Management
+
+All interactive polymorphic components support proper focus styles:
+
+<div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
+  <Button style={{ outline: '2px solid var(--color-primary-main-light)', outlineOffset: '2px' }}>Button Focus</Button>
+  <Button
+    as="a"
+    href="#"
+    onClick={e => e.preventDefault()}
+    style={{ outline: '2px solid var(--color-primary-main-light)', outlineOffset: '2px' }}
+  >
+    Link Focus
+  </Button>
+</div>
+
+```css
+/* Focus styles are automatically applied via :focus-visible */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-primary-main-light);
+  outline-offset: 2px;
+}
+```
+
+### ARIA Support
+
+Polymorphic components preserve ARIA attributes:
+
+```tsx
+// ✅ All ARIA attributes work correctly
+<Button as="a" href="/search" aria-label="Search the website" aria-describedby="search-help">
+  Search
+</Button>
+```
+
+### Screen Reader Support
+
+The component will be announced correctly based on its rendered element:
+
+- `<Button>` → Announced as "button"
+- `<Button as="a">` → Announced as "link"
+- Accessible names are preserved regardless of the element type
+
+## Performance
+
+Polymorphic components have **minimal performance overhead**. The `as` prop is resolved at render time, and the component efficiently renders the correct element without unnecessary re-renders.
+
+## Advanced: Creating Your Own Polymorphic Component
+
+Want to create your own polymorphic component? ShelterUI exports the `PolymorphicComponent` type to make this easy!
+
+### Using the Exported Type
+
+ShelterUI provides a `PolymorphicComponent` type that handles all the TypeScript complexity for you:
+
+```tsx
+import { type PolymorphicComponent } from '@pplancq/shelter-ui-react';
+import { type ElementType } from 'react';
+
+// Define your component's specific props
+type MyComponentProps<T extends ElementType> = PolymorphicComponent<
+  T,
+  {
+    variant?: 'primary' | 'secondary';
+    size?: 'small' | 'medium' | 'large';
+    children: React.ReactNode;
+  }
+>;
+
+// Create your component
+function MyComponent<T extends ElementType = 'div'>({
+  as,
+  variant = 'primary',
+  size = 'medium',
+  children,
+  className,
+  ...props
+}: MyComponentProps<T>) {
+  const Component = as || 'div';
+
+  const componentClassName = `my-component my-component--${variant} my-component--${size} ${className || ''}`;
+
+  return (
+    <Component className={componentClassName} {...props}>
+      {children}
+    </Component>
+  );
+}
+
+export default MyComponent;
+```
+
+### Benefits of Using `PolymorphicComponent`
+
+✅ **No boilerplate** - The type handles all TypeScript complexity\
+✅ **Full type inference** - Automatically infers props based on the `as` prop\
+✅ **Ref support** - Built-in ref forwarding support\
+✅ **Consistent API** - Same pattern as all ShelterUI components\
+✅ **Type safety** - Catches errors at compile time
+
+## Summary
+
+Polymorphic components are a powerful feature that:
+
+✅ **Reduce code duplication** - One component, many uses\
+✅ **Maintain consistency** - Same styling and behavior everywhere\
+✅ **Improve type safety** - Full TypeScript inference\
+✅ **Preserve accessibility** - Correct semantics and ARIA support\
+✅ **Enable flexibility** - Integrate with any framework or library
+
+By mastering polymorphic components, you can build more maintainable, accessible, and flexible user interfaces.
+
+## Further Reading
+
+- [React TypeScript Cheatsheet - Polymorphic Components](https://react-typescript-cheatsheet.netlify.app/docs/advanced/patterns_by_usecase/#polymorphic-components)
+- [MDN - HTML Elements Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+- [WCAG 2.2 - Semantic HTML](https://www.w3.org/WAI/WCAG22/quickref/)
+
+> 🎯 **Key Takeaway**:
+> The `as` prop transforms a single component into a Swiss Army knife of UI building—use the right tool for the right job, with the guarantee of consistency and accessibility.
