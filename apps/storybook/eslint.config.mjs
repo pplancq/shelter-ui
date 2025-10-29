@@ -19,5 +19,8 @@ export default defineConfig({
         'import/no-unresolved': ['error', { ignore: ['@pplancq/shelter-ui-react'] }],
       },
     },
+    {
+      ignores: ['build'],
+    },
   ],
 });
