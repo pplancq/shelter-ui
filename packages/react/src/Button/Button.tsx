@@ -52,3 +52,7 @@ export const Button = <C extends ElementType = 'button'>({
     </Component>
   );
 };
+
+if (process.env.NODE_ENV !== 'production') {
+  Button.displayName = 'Button';
+}

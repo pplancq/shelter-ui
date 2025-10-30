@@ -65,3 +65,7 @@ export const Alert = ({
     </section>
   );
 };
+
+if (process.env.NODE_ENV !== 'production') {
+  Alert.displayName = 'Alert';
+}

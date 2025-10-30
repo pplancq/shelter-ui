@@ -20,3 +20,7 @@ export const HelperText = ({ className, error, children, ...props }: HelperTextP
     </small>
   );
 };
+
+if (process.env.NODE_ENV !== 'production') {
+  HelperText.displayName = 'HelperText';
+}

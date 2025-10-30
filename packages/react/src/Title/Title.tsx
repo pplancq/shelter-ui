@@ -49,3 +49,7 @@ export const Title = <C extends ElementType = 'div'>({
     </Component>
   );
 };
+
+if (process.env.NODE_ENV !== 'production') {
+  Title.displayName = 'Title';
+}

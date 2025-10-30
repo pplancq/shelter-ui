@@ -10,3 +10,7 @@ export const RadioInput = ({ className, isInvalid, ...props }: RadioInputProps) 
     <input type="radio" className={clsx('radio-input', isInvalid && 'radio-input--invalid', className)} {...props} />
   );
 };
+
+if (process.env.NODE_ENV !== 'production') {
+  RadioInput.displayName = 'RadioInput';
+}

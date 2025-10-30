@@ -47,3 +47,7 @@ export const InputField = ({
     </div>
   );
 };
+
+if (process.env.NODE_ENV !== 'production') {
+  InputField.displayName = 'InputField';
+}
