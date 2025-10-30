@@ -5,6 +5,7 @@ export const logoList: Record<string, string> = {};
 const icons = import.meta.glob('../../../../../packages/icon/icon/*.svg', {
   import: 'default',
   eager: true,
+  query: 'inline',
 });
 
 Object.keys(icons).forEach((key: string) => {
@@ -14,6 +15,7 @@ Object.keys(icons).forEach((key: string) => {
 const flags = import.meta.glob('../../../../../packages/icon/flag/*.svg', {
   import: 'default',
   eager: true,
+  query: 'inline',
 });
 
 Object.keys(flags).forEach((key: string) => {
@@ -23,6 +25,7 @@ Object.keys(flags).forEach((key: string) => {
 const logos = import.meta.glob('../../../../../packages/icon/logo/*.svg', {
   import: 'default',
   eager: true,
+  query: 'inline',
 });
 
 Object.keys(logos).forEach((key: string) => {
