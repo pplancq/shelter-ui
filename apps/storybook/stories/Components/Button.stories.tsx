@@ -1,7 +1,7 @@
-import alignLeftIcon from '@pplancq/shelter-ui-icon/icon/align-left.svg';
-import arrowLeftIcon from '@pplancq/shelter-ui-icon/icon/arrow-left.svg';
-import arrowRightIcon from '@pplancq/shelter-ui-icon/icon/arrow-right.svg';
-import editIcon from '@pplancq/shelter-ui-icon/icon/edit-alt.svg';
+import alignLeftIcon from '@pplancq/shelter-ui-icon/icon/align-left.svg?no-inline';
+import arrowLeftIcon from '@pplancq/shelter-ui-icon/icon/arrow-left.svg?no-inline';
+import arrowRightIcon from '@pplancq/shelter-ui-icon/icon/arrow-right.svg?no-inline';
+import editIcon from '@pplancq/shelter-ui-icon/icon/edit-alt.svg?no-inline';
 import { Button, type ButtonProps, Icon } from '@pplancq/shelter-ui-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { JSX } from 'react';

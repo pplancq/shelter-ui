@@ -1,6 +1,6 @@
-import eyeIcon from '@pplancq/shelter-ui-icon/icon/eye.svg';
-import searchIcon from '@pplancq/shelter-ui-icon/icon/search.svg';
-import timesIcon from '@pplancq/shelter-ui-icon/icon/times.svg';
+import eyeIcon from '@pplancq/shelter-ui-icon/icon/eye.svg?no-inline';
+import searchIcon from '@pplancq/shelter-ui-icon/icon/search.svg?no-inline';
+import timesIcon from '@pplancq/shelter-ui-icon/icon/times.svg?no-inline';
 import { Icon, Input, type InputProps } from '@pplancq/shelter-ui-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { JSX } from 'react';

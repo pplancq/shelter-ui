@@ -1,6 +1,6 @@
-import frFlag from '@pplancq/shelter-ui-icon/flag/fr.svg';
-import homeIcon from '@pplancq/shelter-ui-icon/icon/home.svg';
-import reactLogo from '@pplancq/shelter-ui-icon/logo/react-original.svg';
+import frFlag from '@pplancq/shelter-ui-icon/flag/fr.svg?no-inline';
+import homeIcon from '@pplancq/shelter-ui-icon/icon/home.svg?no-inline';
+import reactLogo from '@pplancq/shelter-ui-icon/logo/react-original.svg?no-inline';
 import { Icon, type IconProps } from '@pplancq/shelter-ui-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
