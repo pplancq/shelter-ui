@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import './Grid.scss';
 
+Grid.displayName = 'Grid';
+
 const meta = {
   title: 'Foundations/Grid',
   component: Grid,

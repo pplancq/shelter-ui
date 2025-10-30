@@ -5,6 +5,9 @@ import { Icon, InputField, type InputFieldProps } from '@pplancq/shelter-ui-reac
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { JSX } from 'react';
 
+Icon.displayName = 'Icon';
+InputField.displayName = 'InputField';
+
 const iconList: Record<string, JSX.Element | undefined> = {
   'search.svg': <Icon icon={searchIcon} />,
   'eye.svg': <Icon icon={eyeIcon} />,

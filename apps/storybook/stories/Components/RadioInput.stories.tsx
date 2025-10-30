@@ -1,6 +1,8 @@
 import { RadioInput, type RadioInputProps } from '@pplancq/shelter-ui-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+RadioInput.displayName = 'RadioInput';
+
 const meta = {
   title: 'Components/RadioInput',
   component: RadioInput,

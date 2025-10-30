@@ -1,6 +1,8 @@
 import { CheckboxField, type CheckboxFieldProps } from '@pplancq/shelter-ui-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+CheckboxField.displayName = 'CheckboxField';
+
 const meta = {
   title: 'Components/CheckboxField',
   component: CheckboxField,

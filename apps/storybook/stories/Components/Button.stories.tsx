@@ -7,6 +7,9 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { JSX } from 'react';
 import { fn } from 'storybook/test';
 
+Button.displayName = 'Button';
+Icon.displayName = 'Icon';
+
 const iconList: Record<string, JSX.Element | undefined> = {
   'align-left.svg': <Icon icon={alignLeftIcon} />,
   'arrow-left.svg': <Icon icon={arrowLeftIcon} />,

@@ -2,6 +2,8 @@ import { Alert, type AlertProps } from '@pplancq/shelter-ui-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
 
+Alert.displayName = 'Alert';
+
 const meta = {
   title: 'Components/Alert',
   component: Alert,

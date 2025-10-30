@@ -1,6 +1,8 @@
 import { RadioOption, type RadioOptionProps } from '@pplancq/shelter-ui-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+RadioOption.displayName = 'RadioOption';
+
 const meta = {
   title: 'Components/RadioOption',
   component: RadioOption,

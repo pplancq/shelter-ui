@@ -6,6 +6,9 @@ import {
 } from '@pplancq/shelter-ui-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+CheckboxGroup.displayName = 'CheckboxGroup';
+CheckboxField.displayName = 'CheckboxField';
+
 const checkboxOptions: CheckboxFieldProps[] = [
   { label: 'Option 1', value: 'option1' },
   { label: 'Option 2', value: 'option2' },

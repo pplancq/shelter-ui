@@ -1,6 +1,9 @@
 import { RadioGroup, type RadioGroupProps, RadioOption, type RadioOptionProps } from '@pplancq/shelter-ui-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+RadioGroup.displayName = 'RadioGroup';
+RadioOption.displayName = 'RadioOption';
+
 const radioOptions: RadioOptionProps[] = [
   { label: 'Yes', value: 'yes' },
   { label: 'No', value: 'no' },
