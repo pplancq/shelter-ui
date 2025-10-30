@@ -1,6 +1,8 @@
 import { Label, type LabelProps } from '@pplancq/shelter-ui-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+Label.displayName = 'Label';
+
 const meta = {
   title: 'Components/Label',
   component: Label,

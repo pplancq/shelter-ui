@@ -1,6 +1,8 @@
 import { HelperText, type HelperTextProps } from '@pplancq/shelter-ui-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+HelperText.displayName = 'HelperText';
+
 const meta = {
   title: 'Components/HelperText',
   component: HelperText,

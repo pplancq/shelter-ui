@@ -2,6 +2,9 @@ import bookmarkIcon from '@pplancq/shelter-ui-icon/icon/bookmark.svg?no-inline';
 import { Icon, Title, type TitleProps } from '@pplancq/shelter-ui-react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+Title.displayName = 'Title';
+Icon.displayName = 'Icon';
+
 const meta = {
   title: 'Components/Title',
   component: Title,
