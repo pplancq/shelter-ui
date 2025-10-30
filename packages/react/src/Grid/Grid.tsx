@@ -42,4 +42,6 @@ export const Grid = <C extends ElementType = 'div'>({
   );
 };
 
-Grid.displayName = 'Grid';
+if (process.env.NODE_ENV !== 'production') {
+  Grid.displayName = 'Grid';
+}

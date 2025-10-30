@@ -13,3 +13,7 @@ export const Label = ({ required, children, className, htmlFor, ...props }: Labe
     </label>
   );
 };
+
+if (process.env.NODE_ENV !== 'production') {
+  Label.displayName = 'Label';
+}

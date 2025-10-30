@@ -72,4 +72,6 @@ export const Typography = <C extends ElementType = 'p'>(props: PropsWithChildren
   );
 };
 
-Typography.displayName = 'Typography';
+if (process.env.NODE_ENV !== 'production') {
+  Typography.displayName = 'Typography';
+}

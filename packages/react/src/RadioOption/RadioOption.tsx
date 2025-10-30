@@ -18,3 +18,7 @@ export const RadioOption = ({ id, label, className, ...radioInputProps }: RadioO
     </Label>
   );
 };
+
+if (process.env.NODE_ENV !== 'production') {
+  RadioOption.displayName = 'RadioOption';
+}

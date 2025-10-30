@@ -16,3 +16,7 @@ export const Input = ({ className, error, startAdornment, endAdornment, ...props
     </div>
   );
 };
+
+if (process.env.NODE_ENV !== 'production') {
+  Input.displayName = 'Input';
+}

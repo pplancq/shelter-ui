@@ -44,3 +44,7 @@ export const CheckboxField = ({
     </div>
   );
 };
+
+if (process.env.NODE_ENV !== 'production') {
+  CheckboxField.displayName = 'CheckboxField';
+}

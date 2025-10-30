@@ -19,4 +19,6 @@ export const Icon = ({ size = 'medium', className, icon, isCircle, ...iconProps 
   );
 };
 
-Icon.displayName = 'Icon';
+if (process.env.NODE_ENV !== 'production') {
+  Icon.displayName = 'Icon';
+}

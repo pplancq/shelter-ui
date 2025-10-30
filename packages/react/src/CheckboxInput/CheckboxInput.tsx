@@ -55,3 +55,7 @@ export const CheckboxInput = ({
     />
   );
 };
+
+if (process.env.NODE_ENV !== 'production') {
+  CheckboxInput.displayName = 'CheckboxInput';
+}
