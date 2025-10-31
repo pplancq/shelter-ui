@@ -1,3 +1,20 @@
+## [1.0.0-alpha.4](https://github.com/pplancq/shelter-ui/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2025-10-31)
+
+### Features
+
+* **react:** changes prop names from 'component' to 'as' ([cfc8594](https://github.com/pplancq/shelter-ui/commit/cfc859496b6aa02f9bc162c15507c11782ea806b))
+
+### Bug Fixes
+
+* **react:** sort Grid colSpan breakpoints by semantic priority ([#469](https://github.com/pplancq/shelter-ui/issues/469)) ([7b29d6f](https://github.com/pplancq/shelter-ui/commit/7b29d6f86ee1048521ebd30b786c305b59d8299a))
+* **deps:** update dependency @pplancq/svg-react to ^2.1.2 ([96778a8](https://github.com/pplancq/shelter-ui/commit/96778a88110374d07f27cae8bae73e29a38a21ad))
+* **deps:** update dependency @pplancq/svg-react to ^2.1.3 ([0f19468](https://github.com/pplancq/shelter-ui/commit/0f1946868e026e757a8d3c5968843127696b03f9))
+* **deps:** update dependency @pplancq/svg-react to ^2.1.4 ([2f7b49a](https://github.com/pplancq/shelter-ui/commit/2f7b49acf94fa64870ae41786019bbbbe24728f9))
+* **deps:** update dependency @pplancq/svg-react to ^2.1.5 ([548c5bb](https://github.com/pplancq/shelter-ui/commit/548c5bbc6ff72a353e46b547987ed9c14a64f1ba))
+* **deps:** update dependency @pplancq/svg-react to ^2.2.0 ([5caf199](https://github.com/pplancq/shelter-ui/commit/5caf1998bdd17e66b37454fca0d3fb1cbccb6746))
+* **deps:** update fontsource monorepo to ^5.2.7 ([a8d38ee](https://github.com/pplancq/shelter-ui/commit/a8d38eea1e261acffb9bd791da45c8165851574c))
+* **deps:** update fontsource monorepo ([4830f29](https://github.com/pplancq/shelter-ui/commit/4830f29bdcab4d0f4e6b532682c4a67ba2eb55ea))
+
 ## [1.0.0-alpha.3](https://github.com/pplancq/shelter-ui/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2025-08-12)
 
 ### Features
