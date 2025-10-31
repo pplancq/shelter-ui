@@ -16,19 +16,18 @@ export const getGridItemToken = (
   if (typeof data === 'number' || typeof data === 'string') {
     tokens[`--${prefix}`] = data;
   } else {
-    // Sort the breakpoints in the correct order before processing
-    const sortedEntries = Object.entries(data).sort(([keyA], [keyB]) => {
-      const indexA = BREAKPOINT_ORDER.indexOf(keyA as Breakpoint);
-      const indexB = BREAKPOINT_ORDER.indexOf(keyB as Breakpoint);
-      return indexA - indexB;
-    });
-
-    sortedEntries.forEach(([key, value]) => {
-      if (value) {
-        tokens[`--${prefix}`] = value;
-        tokens[`--${prefix}-${key}`] = value;
-      }
-    });
+    Object.entries(data)
+      .sort(([keyA], [keyB]) => {
+        const indexA = BREAKPOINT_ORDER.indexOf(keyA as Breakpoint);
+        const indexB = BREAKPOINT_ORDER.indexOf(keyB as Breakpoint);
+        return indexA - indexB;
+      })
+      .forEach(([key, value]) => {
+        if (value) {
+          tokens[`--${prefix}`] = value;
+          tokens[`--${prefix}-${key}`] = value;
+        }
+      });
   }
 
   return tokens;
