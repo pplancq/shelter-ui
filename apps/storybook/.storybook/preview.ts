@@ -6,7 +6,7 @@ import '@pplancq/shelter-ui-css/css/shelter-ui.css';
 
 const preview: Preview = {
   parameters: {
-    backgrounds: { disable: true },
+    backgrounds: { disabled: true },
     docs: {
       theme: light,
       toc: {
