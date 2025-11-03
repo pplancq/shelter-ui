@@ -61,7 +61,7 @@
   "optionalDependencies": {
     "@rspack/binding-darwin-arm64": "^1.6.0",
     "@rspack/binding-linux-x64-gnu": "^1.6.0",
-    "sass-embedded-darwin-arm64": "^1.93.2",
+    "sass-embedded-darwin-arm64": "^1.93.3",
     "sass-embedded-linux-x64": "^1.93.2"
   }
 }
