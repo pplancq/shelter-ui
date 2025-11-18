@@ -20,5 +20,8 @@ export default defineConfig({
   ],
   output: {
     target: 'web',
+    copy: {
+      patterns: [{ from: '**/*.d.ts', context: 'src' }],
+    },
   },
 });
