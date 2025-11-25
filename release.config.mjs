@@ -62,4 +62,5 @@ export default {
     ],
     ['@semantic-release/github'],
   ],
+  repositoryUrl: 'https://github.com/pplancq/shelter-ui',
 };
