@@ -68,7 +68,7 @@
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "typescript": "^5.9.3",
-    "vite-tsconfig-paths": "^5.1.4",
+    "vite-tsconfig-paths": "^6.0.1",
     "vitest": "^4.0.15",
     "vitest-sonar-reporter": "^3.0.0"
   },
