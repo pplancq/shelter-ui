@@ -58,7 +58,7 @@
     "sass-true": "^10.1.0",
     "stylelint": "^16.26.1",
     "stylelint-prettier": "^5.0.3",
-    "vitest": "^4.0.15"
+    "vitest": "^4.0.16"
   },
   "prettier": "@pplancq/prettier-config",
   "lint-staged": {
