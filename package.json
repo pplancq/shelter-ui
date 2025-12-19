@@ -53,9 +53,5 @@
   "lint-staged": {
     "(package|package-lock).json": "npm run package:check",
     "*": "prettier --write --ignore-unknown"
-  },
-  "volta": {
-    "node": "24.12.0",
-    "npm": "11.7.0"
   }
 }

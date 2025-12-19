@@ -77,8 +77,5 @@
     "*.(js|jsx|ts|tsx)": "eslint --fix",
     "*.{ts,tsx}": "tsc-files --noEmit",
     "*.!(js|jsx|ts|tsx)": "prettier --write --ignore-unknown"
-  },
-  "volta": {
-    "extends": "../../package.json"
   }
 }

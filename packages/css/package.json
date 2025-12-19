@@ -64,8 +64,5 @@
   "lint-staged": {
     "*.(scss|css)": "stylelint --fix",
     "*.!(scss|css)": "prettier --write --ignore-unknown"
-  },
-  "volta": {
-    "extends": "../../package.json"
   }
 }
