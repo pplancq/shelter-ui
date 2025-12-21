@@ -49,7 +49,7 @@
     "@pplancq/prettier-config": "^1.2.8",
     "@pplancq/stylelint-config": "^4.0.6",
     "@rsbuild/plugin-sass": "^1.4.0",
-    "@rslib/core": "^0.18.4",
+    "@rslib/core": "^0.18.5",
     "concurrently": "^9.2.1",
     "eslint": "^9.39.2",
     "eslint-plugin-prettier": "^5.5.4",
