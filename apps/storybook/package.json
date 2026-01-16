@@ -23,7 +23,7 @@
     "@pplancq/shelter-ui-react": "*"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^4.1.3",
+    "@chromatic-com/storybook": "^5.0.0",
     "@pplancq/eslint-config": "^5.0.21",
     "@pplancq/prettier-config": "^1.2.9",
     "@pplancq/stylelint-config": "^4.0.6",
