@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@pplancq/eslint-config": "^5.0.22",
-    "@pplancq/prettier-config": "^1.2.9",
+    "@pplancq/prettier-config": "^2.0.0",
     "@rsbuild/plugin-react": "^1.4.3",
     "@rslib/core": "^0.19.3",
     "@testing-library/jest-dom": "^6.9.1",
