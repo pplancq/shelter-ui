@@ -46,7 +46,7 @@
   "devDependencies": {
     "@pplancq/eslint-config": "^5.0.22",
     "@pplancq/postcss-config": "^3.0.1",
-    "@pplancq/prettier-config": "^1.2.9",
+    "@pplancq/prettier-config": "^2.0.0",
     "@pplancq/stylelint-config": "^4.1.0",
     "@rsbuild/plugin-sass": "^1.5.0",
     "@rslib/core": "^0.19.3",
