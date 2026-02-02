@@ -44,7 +44,7 @@
     "@fontsource/raleway": "^5.2.8"
   },
   "devDependencies": {
-    "@pplancq/eslint-config": "^5.0.22",
+    "@pplancq/eslint-config": "^6.0.0",
     "@pplancq/postcss-config": "^3.0.1",
     "@pplancq/prettier-config": "^2.0.0",
     "@pplancq/stylelint-config": "^4.1.0",
