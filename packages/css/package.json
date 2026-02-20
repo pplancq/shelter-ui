@@ -51,7 +51,7 @@
     "@rsbuild/plugin-sass": "^1.5.0",
     "@rslib/core": "^0.19.6",
     "concurrently": "^9.2.1",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.0",
     "eslint-plugin-prettier": "^5.5.5",
     "postcss-discard-duplicates": "^7.0.2",
     "prettier": "^3.8.1",
