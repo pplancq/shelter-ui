@@ -1,6 +1,6 @@
 import { clsx } from '@/utils/clsx';
 import type { PolymorphicComponent } from '@/utils/types';
-import { type ElementType, type PropsWithChildren, useMemo } from 'react';
+import { type CSSProperties, type ElementType, type PropsWithChildren, useMemo } from 'react';
 
 type SizeTitle = 1 | 2 | 3 | 4 | 5 | 6;
 type SizeText = 'small' | 'medium' | 'large';
@@ -34,9 +34,16 @@ export type TypographyProps<C extends ElementType> = PolymorphicComponent<
   TypographyPropsBase & (TypographyPropsTitle | TypographyPropsText | TypographyPropsLabel | TypographyPropsCode)
 >;
 
-export const Typography = <C extends ElementType = 'p'>(props: PropsWithChildren<TypographyProps<C>>) => {
-  const { variant = 'text', size = 'medium', color = 'primary', as, className, bold, ...typographyProps } = props;
-
+export const Typography = <C extends ElementType = 'p'>({
+  variant = 'text',
+  size = 'medium',
+  color = 'primary',
+  as,
+  className,
+  bold,
+  style: userStyle,
+  ...typographyProps
+}: PropsWithChildren<TypographyProps<C>>) => {
   const Component = useMemo(() => {
     const defaultComponent = {
       display: 'span',
@@ -59,13 +66,16 @@ export const Typography = <C extends ElementType = 'p'>(props: PropsWithChildren
     className,
   );
 
+  const mergedStyle = {
+    ...(userStyle as CSSProperties),
+    '--typography-color': `var(--color-text-${color})`,
+  } as CSSProperties;
+
   return (
     <Component
       className={typographyClassName}
       {...typographyProps}
-      style={{
-        '--typography-color': `var(--color-text-${color})`,
-      }}
+      style={mergedStyle}
       role={variant === 'display' ? 'heading' : typographyProps.role}
       aria-level={['display', 'heading'].includes(variant) ? size : typographyProps['aria-level']}
     />

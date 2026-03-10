@@ -72,4 +72,31 @@ describe('Typography component', () => {
     const element = screen.getByText(`${color.charAt(0).toUpperCase() + color.slice(1)} color text`);
     expect(element).toHaveStyle(`--typography-color: var(${expectedVar})`);
   });
+
+  describe('Typography style merging', () => {
+    it('preserves user-provided style and merges internal styles', () => {
+      render(
+        <Typography variant="text" size="medium" style={{ marginTop: '10px' }}>
+          Styled text
+        </Typography>,
+      );
+
+      const el = screen.getByText('Styled text');
+      expect(el).toHaveStyle('margin-top: 10px');
+      expect(el).toHaveStyle('--typography-color: var(--color-text-primary)');
+    });
+
+    it('preserves user-provided style when using the polymorphic "as" prop', () => {
+      render(
+        <Typography as="button" variant="label" size="medium" style={{ paddingLeft: '4px' }}>
+          Button text
+        </Typography>,
+      );
+
+      const el = screen.getByText('Button text');
+      expect(el.tagName).toBe('BUTTON');
+      expect(el).toHaveStyle('padding-left: 4px');
+      expect(el).toHaveStyle('--typography-color: var(--color-text-primary)');
+    });
+  });
 });
