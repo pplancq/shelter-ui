@@ -24,6 +24,37 @@ export const App = () => {
 };
 ```
 
+## Usage with Vite or Vitest
+
+This package is published as **ESM-only** and its built output contains `.svg` imports (from `@pplancq/shelter-ui-icon`).
+Because Vite's dependency pre-bundler (esbuild) does not handle `.svg` imports natively, you need to add the following to your Vite or Vitest configuration:
+
+```ts
+// vite.config.ts
+export default defineConfig({
+  server: {
+    deps: {
+      inline: ['@pplancq/shelter-ui-react'],
+    },
+  },
+});
+```
+
+```ts
+// vitest.config.ts
+export default defineConfig({
+  test: {
+    server: {
+      deps: {
+        inline: ['@pplancq/shelter-ui-react'],
+      },
+    },
+  },
+});
+```
+
+> This forces Vite to process the package through its full transform pipeline instead of pre-bundling it with esbuild.
+
 ## Credits
 
 This package is part of the Shelter UI design system, built to provide a cohesive and accessible user interface.  

@@ -34,6 +34,35 @@ export default function App() {
 }
 ```
 
+## Usage with Vite or Vitest
+
+This package is published as **ESM-only** and its built output contains `.svg` imports.
+Because Vite's dependency pre-bundler (esbuild) does not handle `.svg` imports natively, add the following to your Vite or Vitest configuration:
+
+```ts
+// vite.config.ts
+export default defineConfig({
+  server: {
+    deps: {
+      inline: ['@pplancq/shelter-ui-react'],
+    },
+  },
+});
+```
+
+```ts
+// vitest.config.ts
+export default defineConfig({
+  test: {
+    server: {
+      deps: {
+        inline: ['@pplancq/shelter-ui-react'],
+      },
+    },
+  },
+});
+```
+
 ## Explore
 
 Explore the other component pages in the sidebar for detailed documentation, usage examples, and customization options.
