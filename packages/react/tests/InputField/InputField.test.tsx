@@ -1,5 +1,4 @@
 import { InputField } from '@/InputField/InputField';
-import { renderSuspense } from '@pplancq/svg-react/tests';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
@@ -19,14 +18,14 @@ describe('InputField', () => {
     expect(label).toHaveAttribute('for', input.id);
   });
 
-  it('should display the helper text when textHelper is provided', async () => {
-    await renderSuspense(<InputField label="Test Label" textHelper="Helper text" />);
+  it('should display the helper text when textHelper is provided', () => {
+    render(<InputField label="Test Label" textHelper="Helper text" />);
 
     expect(screen.getByText('Helper text')).toBeInTheDocument();
   });
 
-  it('should display the error message when errorMessage is provided', async () => {
-    await renderSuspense(<InputField label="Test Label" errorMessage="Error message" />);
+  it('should display the error message when errorMessage is provided', () => {
+    render(<InputField label="Test Label" errorMessage="Error message" />);
 
     expect(screen.getByText('Error message')).toBeInTheDocument();
   });
