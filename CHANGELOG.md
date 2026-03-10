@@ -1,3 +1,9 @@
+## [1.0.0-alpha.6](https://github.com/pplancq/shelter-ui/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2026-03-10)
+
+### Bug Fixes
+
+* **deps:** update dependency @pplancq/svg-react to v3 ([#700](https://github.com/pplancq/shelter-ui/issues/700)) ([dfadd3e](https://github.com/pplancq/shelter-ui/commit/dfadd3e69dbdfdf9e875d43c95210464e4e0d0c9))
+
 ## [1.0.0-alpha.5](https://github.com/pplancq/shelter-ui/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2026-03-10)
 
 ### Bug Fixes
