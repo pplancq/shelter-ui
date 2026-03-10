@@ -1,3 +1,12 @@
+## [1.0.0-alpha.5](https://github.com/pplancq/shelter-ui/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2026-03-10)
+
+### Bug Fixes
+
+* **css:** allow InputField input to expand so endAdornment aligns right ([#698](https://github.com/pplancq/shelter-ui/issues/698)) ([d0ea458](https://github.com/pplancq/shelter-ui/commit/d0ea4589377cbd56637297bce7609086a61966b2)), closes [#667](https://github.com/pplancq/shelter-ui/issues/667)
+* **react:** prevent Typography from overwriting style prop ([#699](https://github.com/pplancq/shelter-ui/issues/699)) ([b9de776](https://github.com/pplancq/shelter-ui/commit/b9de77614334faf5e83c45efc013d114ee122d93))
+* **deps:** update dependency @pplancq/svg-react to ^2.2.1 ([ad0e84f](https://github.com/pplancq/shelter-ui/commit/ad0e84f502001fa8ca2e8bfaeb42c00e929272c8))
+* **deps:** update dependency @pplancq/svg-react to ^2.2.2 ([06ba010](https://github.com/pplancq/shelter-ui/commit/06ba0101ec7794300f4e2965179f130408c3e2bb))
+
 ## [1.0.0-alpha.4](https://github.com/pplancq/shelter-ui/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2025-10-31)
 
 ### Features
