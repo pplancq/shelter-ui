@@ -184,7 +184,7 @@ $code: (
     map.get($display, mobile),
     $size,
     var(--font-family-display),
-    if($size >= 1 and $size <= 3, var(--font-weight-bold), var(--font-weight-semi-bold)),
+    if(sass($size >= 1 and $size <= 3): var(--font-weight-bold) ; else: var(--font-weight-semi-bold)),
     var(--letter-spacing-default)
   );
 
@@ -199,7 +199,7 @@ $code: (
     map.get($heading, mobile),
     $size,
     var(--font-family-heading),
-    if($size >= 1 and $size <= 3, var(--font-weight-bold), var(--font-weight-semi-bold)),
+    if(sass($size >= 1 and $size <= 3): var(--font-weight-bold) ; else: var(--font-weight-semi-bold)),
     var(--letter-spacing-default)
   );
 
@@ -214,7 +214,7 @@ $code: (
     $text,
     $size,
     var(--font-family-content),
-    if($bold, var(--font-weight-bold), var(--font-weight-regular)),
+    if(sass($bold): var(--font-weight-bold) ; else: var(--font-weight-regular)),
     var(--letter-spacing-default)
   );
 }
