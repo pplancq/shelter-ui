@@ -21,10 +21,13 @@
 
   input {
     all: unset;
+    min-width: 0;
+    flex: 1 1 auto;
   }
 
   all: unset;
-  display: inline-flex;
+  display: flex;
+  width: 100%;
   min-width: helpers.px-to-rem(150);
   padding: var(--input-padding-vertical) var(--input-padding-horizontal);
   border: var(--input-border-width) solid var(--input-border-color);
