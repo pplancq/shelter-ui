@@ -1,5 +1,4 @@
 import { CheckboxField } from '@/CheckboxField/CheckboxField';
-import { renderSuspense } from '@pplancq/svg-react/tests';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createRef } from 'react';
@@ -19,14 +18,14 @@ describe('CheckboxField', () => {
     expect(checkbox).toHaveAttribute('id', 'custom-id');
   });
 
-  it('should display the helper text when textHelper is provided', async () => {
-    await renderSuspense(<CheckboxField label="Test Label" textHelper="Helper text" />);
+  it('should display the helper text when textHelper is provided', () => {
+    render(<CheckboxField label="Test Label" textHelper="Helper text" />);
 
     expect(screen.getByRole('checkbox', { name: 'Test Label' })).toHaveAccessibleDescription('Helper text');
   });
 
-  it('should display the error message when errorMessage is provided', async () => {
-    await renderSuspense(<CheckboxField label="Test Label" errorMessage="Error message" />);
+  it('should display the error message when errorMessage is provided', () => {
+    render(<CheckboxField label="Test Label" errorMessage="Error message" />);
 
     expect(screen.getByRole('checkbox', { name: 'Test Label' })).toHaveAccessibleErrorMessage('Error message');
   });

@@ -1,6 +1,5 @@
 import { CheckboxField } from '@/CheckboxField/CheckboxField';
 import { CheckboxGroup } from '@/CheckboxGroup/CheckboxGroup';
-import { renderSuspense } from '@pplancq/svg-react/tests';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
@@ -117,8 +116,8 @@ describe('CheckboxGroup', () => {
     expect(screen.queryByText('*')).not.toBeInTheDocument();
   });
 
-  it('should render helper text when textHelper is provided', async () => {
-    await renderSuspense(
+  it('should render helper text when textHelper is provided', () => {
+    render(
       <CheckboxGroup label="Test Group" name="test" textHelper="This is helper text">
         {defaultChildren}
       </CheckboxGroup>,
@@ -131,8 +130,8 @@ describe('CheckboxGroup', () => {
     });
   });
 
-  it('should render error message when errorMessage is provided', async () => {
-    await renderSuspense(
+  it('should render error message when errorMessage is provided', () => {
+    render(
       <CheckboxGroup label="Test Group" name="test" errorMessage="This is an error">
         {defaultChildren}
       </CheckboxGroup>,
@@ -172,8 +171,8 @@ describe('CheckboxGroup', () => {
     });
   });
 
-  it('should set aria-invalid on all checkbox fields when errorMessage is present', async () => {
-    await renderSuspense(
+  it('should set aria-invalid on all checkbox fields when errorMessage is present', () => {
+    render(
       <CheckboxGroup label="Test Group" name="test" errorMessage="Error">
         {defaultChildren}
       </CheckboxGroup>,

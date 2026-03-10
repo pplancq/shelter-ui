@@ -1,11 +1,10 @@
 import { Title } from '@/Title/Title';
-import { renderSuspense } from '@pplancq/svg-react/tests';
-import { screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 describe('Title', () => {
-  it('should render with default props', async () => {
-    await renderSuspense(<Title title="Title text" data-testid="test-id" />);
+  it('should render with default props', () => {
+    render(<Title title="Title text" data-testid="test-id" />);
     const heading = screen.getByRole('heading', { level: 1, name: /title text/i });
     const titleElement = screen.getByTestId('test-id');
 
@@ -23,8 +22,8 @@ describe('Title', () => {
     { level: 4 as const, description: 'level 4 heading' },
     { level: 5 as const, description: 'level 5 heading' },
     { level: 6 as const, description: 'level 6 heading' },
-  ])('should render with $description', async ({ level }) => {
-    await renderSuspense(<Title title={`Title ${level}`} level={level} />);
+  ])('should render with $description', ({ level }) => {
+    render(<Title title={`Title ${level}`} level={level} />);
     const heading = screen.getByRole('heading', { level, name: new RegExp(`title ${level}`, 'i') });
 
     expect(heading.tagName).toStrictEqual(`H${level}`);
@@ -33,16 +32,16 @@ describe('Title', () => {
   it.each([
     { layout: 'inline' as const, expectedClass: 'title', description: 'inline layout (default)' },
     { layout: 'stacked' as const, expectedClass: 'title title--stacked', description: 'stacked layout' },
-  ])('should render with $description', async ({ layout, expectedClass }) => {
-    await renderSuspense(<Title title="Layout test" layout={layout} data-testid="test-id" />);
+  ])('should render with $description', ({ layout, expectedClass }) => {
+    render(<Title title="Layout test" layout={layout} data-testid="test-id" />);
     const container = screen.getByTestId('test-id');
 
     expect(container).toHaveClass('title');
     expect(container).toHaveClass(expectedClass);
   });
 
-  it('should render with subtitle', async () => {
-    await renderSuspense(<Title title="Main title" subtitle="Subtitle text" />);
+  it('should render with subtitle', () => {
+    render(<Title title="Main title" subtitle="Subtitle text" />);
     const subtitle = screen.getByText(/subtitle text/i);
     const heading = screen.getByRole('heading', { name: /main title/i });
 
@@ -51,23 +50,23 @@ describe('Title', () => {
     expect(subtitle).toHaveAttribute('aria-describedby', heading.id);
   });
 
-  it('should not render subtitle when not provided', async () => {
-    await renderSuspense(<Title title="Title only" />);
+  it('should not render subtitle when not provided', () => {
+    render(<Title title="Title only" />);
     const subtitle = screen.queryByText(/subtitle/i);
 
     expect(subtitle).not.toBeInTheDocument();
   });
 
-  it('should render with icon', async () => {
+  it('should render with icon', () => {
     const iconElement = <svg role="presentation" />;
-    await renderSuspense(<Title title="Title with icon" icon={iconElement} />);
+    render(<Title title="Title with icon" icon={iconElement} />);
     const icon = screen.getByRole('presentation');
 
     expect(icon).toBeInTheDocument();
   });
 
-  it('should render with custom component', async () => {
-    await renderSuspense(<Title title="Custom component" as="section" data-testid="test-id" />);
+  it('should render with custom component', () => {
+    render(<Title title="Custom component" as="section" data-testid="test-id" />);
     const container = screen.getByTestId('test-id');
 
     expect(container).toBeInTheDocument();
@@ -75,38 +74,38 @@ describe('Title', () => {
     expect(container.tagName).toStrictEqual('SECTION');
   });
 
-  it('should apply additional class names', async () => {
-    await renderSuspense(<Title title="Custom class" className="custom-class" data-testid="test-id" />);
+  it('should apply additional class names', () => {
+    render(<Title title="Custom class" className="custom-class" data-testid="test-id" />);
     const container = screen.getByTestId('test-id');
 
     expect(container).toHaveClass('title');
     expect(container).toHaveClass('custom-class');
   });
 
-  it('should forward additional props to the container element', async () => {
-    await renderSuspense(<Title title="Props test" data-testid="custom-title" id="title-1" />);
+  it('should forward additional props to the container element', () => {
+    render(<Title title="Props test" data-testid="custom-title" id="title-1" />);
     const container = screen.getByTestId('custom-title');
 
     expect(container).toHaveAttribute('id', 'title-1');
   });
 
-  it('should generate unique heading ID when no id is provided', async () => {
-    await renderSuspense(<Title title="Auto ID test" />);
+  it('should generate unique heading ID when no id is provided', () => {
+    render(<Title title="Auto ID test" />);
     const heading = screen.getByRole('heading', { name: /auto id test/i });
 
     expect(heading).toHaveAttribute('id');
   });
 
-  it('should use custom heading ID when id is provided', async () => {
-    await renderSuspense(<Title title="Custom ID test" id="custom-title" />);
+  it('should use custom heading ID when id is provided', () => {
+    render(<Title title="Custom ID test" id="custom-title" />);
     const heading = screen.getByRole('heading', { name: /custom id test/i });
 
     expect(heading).toHaveAttribute('id', 'custom-title-heading');
   });
 
-  it('should render complete title with all props', async () => {
+  it('should render complete title with all props', () => {
     const iconElement = <svg data-testid="complete-icon" />;
-    await renderSuspense(
+    render(
       <Title
         title="Complete title"
         subtitle="Complete subtitle"

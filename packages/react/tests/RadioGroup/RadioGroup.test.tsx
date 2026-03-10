@@ -1,6 +1,5 @@
 import { RadioGroup } from '@/RadioGroup/RadioGroup';
 import { RadioOption } from '@/RadioOption/RadioOption';
-import { renderSuspense } from '@pplancq/svg-react/tests';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
@@ -114,8 +113,8 @@ describe('RadioGroup', () => {
     expect(screen.getByRole('radiogroup')).not.toBeRequired();
   });
 
-  it('should render helper text when textHelper is provided', async () => {
-    await renderSuspense(
+  it('should render helper text when textHelper is provided', () => {
+    render(
       <RadioGroup label="Test Group" name="test" textHelper="This is helper text">
         {defaultChildren}
       </RadioGroup>,
@@ -124,8 +123,8 @@ describe('RadioGroup', () => {
     expect(screen.getByText('This is helper text')).toBeInTheDocument();
   });
 
-  it('should render error message when errorMessage is provided', async () => {
-    await renderSuspense(
+  it('should render error message when errorMessage is provided', () => {
+    render(
       <RadioGroup label="Test Group" name="test" errorMessage="This is an error">
         {defaultChildren}
       </RadioGroup>,
@@ -134,8 +133,8 @@ describe('RadioGroup', () => {
     expect(screen.getByText('This is an error')).toBeInTheDocument();
   });
 
-  it('should prioritize error message over helper text', async () => {
-    await renderSuspense(
+  it('should prioritize error message over helper text', () => {
+    render(
       <RadioGroup label="Test Group" name="test" textHelper="Helper text" errorMessage="Error message">
         {defaultChildren}
       </RadioGroup>,
@@ -145,8 +144,8 @@ describe('RadioGroup', () => {
     expect(screen.queryByText('Helper text')).not.toBeInTheDocument();
   });
 
-  it('should set aria-invalid when errorMessage is provided', async () => {
-    await renderSuspense(
+  it('should set aria-invalid when errorMessage is provided', () => {
+    render(
       <RadioGroup label="Test Group" name="test" errorMessage="Error message">
         {defaultChildren}
       </RadioGroup>,
@@ -192,8 +191,8 @@ describe('RadioGroup', () => {
     });
   });
 
-  it('should pass isInvalid prop to all radio options when errorMessage is present', async () => {
-    await renderSuspense(
+  it('should pass isInvalid prop to all radio options when errorMessage is present', () => {
+    render(
       <RadioGroup label="Test Group" name="test" errorMessage="Error">
         {defaultChildren}
       </RadioGroup>,
@@ -244,8 +243,8 @@ describe('RadioGroup', () => {
     expect(screen.getByText('Test Group')).toHaveAttribute('id', 'test-group-legend');
   });
 
-  it('should set aria-describedby when helper text is present', async () => {
-    await renderSuspense(
+  it('should set aria-describedby when helper text is present', () => {
+    render(
       <RadioGroup label="Test Group" name="test" id="test-group" textHelper="Helper">
         {defaultChildren}
       </RadioGroup>,
@@ -254,8 +253,8 @@ describe('RadioGroup', () => {
     expect(screen.getByRole('radiogroup')).toHaveAccessibleDescription('Helper');
   });
 
-  it('should set aria-errormessage when error message is present', async () => {
-    await renderSuspense(
+  it('should set aria-errormessage when error message is present', () => {
+    render(
       <RadioGroup label="Test Group" name="test" id="test-group" errorMessage="Error">
         {defaultChildren}
       </RadioGroup>,
