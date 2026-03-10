@@ -1,50 +1,102 @@
-# Copilot Instructions
+# Copilot instructions for pplancq/shelter-ui
 
-## Language Policy
+Purpose: help Copilot-powered sessions quickly understand how to build, test, lint, and navigate this monorepo.
 
-All instructions and prompts in this repository must be written in English. This applies to:
+---
 
-- All rule and instruction files in `.github/instructions/`
-- All prompt files in `.github/prompts/`
-- All documentation and code comments intended for contributors
+## Quick commands (root)
 
-## Development Code Generation
+- Start all local dev servers (concurrently):
+  - npm run dev
+  - single-target dev: npm run dev:react | npm run dev:css | npm run dev:storybook
+- Build everything (workspaces):
+  - npm run build
+- Lint everything (workspaces):
+  - npm run lint
+- Run tests (non-watch):
+  - npm run test
+- Prepare git hooks (Husky):
+  - npm run prepare
 
-When working with TypeScript, React, and other technologies in this project, follow these instructions very carefully.
+Notes: many root scripts forward to a specific workspace (e.g. `npm run dev --workspace=packages/react`). You can also cd into a package and run its scripts directly.
 
-It is **EXTREMELY important that you follow the instructions in the rule files very carefully.**
+---
 
-### Workflow Implementation
+## Per-package common scripts (examples)
 
-**IMPORTANT:** Always follow these steps when implementing new features or making changes:
+- packages/react
+  - build: rslib build
+  - dev: rslib build --watch
+  - lint: npm run lint (runs eslint + tsc)
+  - test: vitest run
+  - test:watch: vitest
+- packages/css
+  - build: rslib build
+  - dev: rslib build --watch
+  - lint: stylelint + eslint
+  - test: vitest run
+- apps/storybook
+  - dev: storybook dev --port 8000 --no-open
+  - build: storybook build --output-dir build
+  - test: vitest run
 
-1. **Instruction Selection**: Consult any relevant instruction files listed in `.github/instructions/` and start by listing which rule files have been used to guide the implementation (e.g., `Instructions used: [a11y.instructions.md, vitest.instructions.md]`).
+Use `npm run <script> --workspace=packages/<name>` from the repo root to target a workspace without changing directories.
 
-2. **Prompt Execution**: If the user requests execution of a specific prompt from `.github/prompts/`, read the prompt file and execute EXCLUSIVELY what it contains. Start by indicating which prompt is being used (e.g., `Prompt used: [open_pull_request.prompt.md]`).
+---
 
-3. **Error Resolution**: Fix any compiler warnings and errors after each file modification using the `get_errors` tool.
+## Running a single test (examples)
 
-4. **Test Execution**: Always run tests via the command `npm run test` to ensure code quality and functionality.
+- Run a single test file directly (non-watch):
+  - npm run test -- ./packages/react/src/components/MyComponent.test.tsx
+  - or: npx vitest run ./packages/react/src/components/MyComponent.test.tsx
+- Run a single test by name (watch mode):
+  - cd packages/react && npm run test:watch -- -t "test name substring"
+- Generate coverage locally (vitest config enables coverage in CI):
+  - CI=true npm run test
+  - or: npx vitest run --coverage
 
-5. **Code Quality**: Ensure all changes follow the established coding standards and accessibility guidelines.
+Vitest outputs in CI: junit-report.xml and sonar-report.xml (see vitest.config.mts). Coverage reporter is v8 and thresholds are defined in the root vitest config.
 
-## Rule Priority
+---
 
-- When executing a prompt from `.github/prompts/`, the prompt instructions take precedence over general instructions
-- For all other development work, strictly follow the instructions in `.github/instructions/`
-- Always indicate which instructions or prompt is being used at the beginning of your response
+## High-level architecture
 
-## Error Handling and Testing Workflow
+- Monorepo managed with npm workspaces (root package.json: `packages/*`, `apps/*`).
+- Packages:
+  - @pplancq/shelter-ui-react — TypeScript React component library; built with rslib; publishes `dist` with types and `exports` entry.
+  - @pplancq/shelter-ui-css — Sass/CSS tokens and compiled CSS; provides `sass` and `style` entry points.
+  - @pplancq/shelter-ui-icon — SVG assets (icons, logos).
+- Apps:
+  - apps/storybook — Storybook site that consumes the workspace packages for interactive docs.
+- Tooling:
+  - Build: rslib (package-level), Storybook (app)
+  - Testing: Vitest (root vitest.config.mts delegates to per-package configs)
+  - Linting: ESLint (JS/TS), Stylelint (CSS/Sass), Prettier
+  - CI: reporters (junit, vitest-sonar-reporter) generate junit-report.xml and sonar-report.xml
+  - Release: semantic-release and conventional commits
 
-After every file modification:
+---
 
-1. Run `get_errors` to check for compilation issues
-2. Fix any warnings or errors immediately
-3. Run `npm run test` to ensure all tests pass
-4. Verify accessibility compliance if UI components are involved
+## Key repo conventions and gotchas
 
-## Best Practices
+- Commit messages: follow Conventional Commits. Allowed scopes: `shelter-ui`, `react`, `css`, `icon`, `storybook`. (`deps` and `release` reserved for maintainers.)
+- Branch names: prefix with `feature/` or `bugfix/`.
+- Node / npm: package.json specifies `engines.node >= 22` and `packageManager: npm@11.11.0`—use the configured Node and npm when possible.
+- Pre-commit: husky + lint-staged. Running `npm run prepare` installs hooks. lint-staged runs Prettier, tsc-files checks and stylelint/eslint fixes depending on file type.
+- Workspace targeting: many root scripts forward to the workspace via `--workspace=packages/<name>`; this is the recommended way to run workspace targets from repo root.
+- Exports & packaging: packages set `files` and `exports` (React package exposes types and import). Built artifacts live in `dist/` for packages that publish.
+- Tests & CI: root vitest config defines coverage thresholds and reporters; local runs may not enable coverage unless `CI=true` or `--coverage` is passed.
+- Storybook build: apps/storybook depends on packages; some scripts run package builds first (see `prelint` in storybook package.json).
 
-- Always use English for code, documentation, tests, and comments
-- Follow the established file and directory structure
-- Maintain consistency with existing codebase patterns
+---
+
+## Where to look (short pointers)
+
+- Root package.json — workspace scripts, versions, tooling.
+- vitest.config.mts — centralized test config and reporters.
+- packages/<react|css|icon> — package-level package.json (scripts, build), README for package-specific docs.
+- apps/storybook — example app and Storybook configuration.
+
+---
+
+If you want additions (for example: explicitly documenting test locations, per-package TypeScript paths, or common refactors Copilot should prefer), say which area to expand.
