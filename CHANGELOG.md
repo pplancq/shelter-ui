@@ -1,3 +1,9 @@
+## [1.0.0-alpha.7](https://github.com/pplancq/shelter-ui/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2026-03-13)
+
+### Bug Fixes
+
+* **css:** remove width property from input styles ([6b80865](https://github.com/pplancq/shelter-ui/commit/6b808652752a306d28bd315a1fe8ed0c6f4063f6))
+
 ## [1.0.0-alpha.6](https://github.com/pplancq/shelter-ui/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2026-03-10)
 
 ### Bug Fixes
