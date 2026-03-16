@@ -1,4 +1,4 @@
-import bookmarkIcon from '@pplancq/shelter-ui-icon/icon/bookmark.svg?no-inline';
+import bookmarkIcon from '@pplancq/shelter-ui-icon/icon/bookmark.svg?url';
 import { Icon, Title, type TitleProps } from '@pplancq/shelter-ui-react';
 import type { Meta, StoryObj } from '@storybook/react';
 

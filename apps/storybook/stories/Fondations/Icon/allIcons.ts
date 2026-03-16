@@ -2,32 +2,23 @@ export const iconList: Record<string, string> = {};
 export const flagList: Record<string, string> = {};
 export const logoList: Record<string, string> = {};
 
-const icons = import.meta.glob('../../../../../packages/icon/icon/*.svg', {
-  import: 'default',
-  eager: true,
-  query: 'inline',
+type SvgContext = ((key: string) => string) & { keys(): string[] };
+
+// require.context is a webpack/rspack API for dynamic module imports
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const req = require as any;
+
+const icons: SvgContext = req.context('../../../../../packages/icon/icon/', false, /\.svg$/);
+icons.keys().forEach((key: string) => {
+  iconList[(key.split('/').pop() ?? '').replace('.svg', '')] = icons(key);
 });
 
-Object.keys(icons).forEach((key: string) => {
-  iconList[(key.split('/').pop() ?? '').replace('.svg', '')] = icons[key] as string;
+const flags: SvgContext = req.context('../../../../../packages/icon/flag/', false, /\.svg$/);
+flags.keys().forEach((key: string) => {
+  flagList[(key.split('/').pop() ?? '').replace('.svg', '')] = flags(key);
 });
 
-const flags = import.meta.glob('../../../../../packages/icon/flag/*.svg', {
-  import: 'default',
-  eager: true,
-  query: 'inline',
-});
-
-Object.keys(flags).forEach((key: string) => {
-  flagList[(key.split('/').pop() ?? '').replace('.svg', '')] = flags[key] as string;
-});
-
-const logos = import.meta.glob('../../../../../packages/icon/logo/*.svg', {
-  import: 'default',
-  eager: true,
-  query: 'inline',
-});
-
-Object.keys(logos).forEach((key: string) => {
-  logoList[(key.split('/').pop() ?? '').replace('.svg', '')] = logos[key] as string;
+const logos: SvgContext = req.context('../../../../../packages/icon/logo/', false, /\.svg$/);
+logos.keys().forEach((key: string) => {
+  logoList[(key.split('/').pop() ?? '').replace('.svg', '')] = logos(key);
 });
