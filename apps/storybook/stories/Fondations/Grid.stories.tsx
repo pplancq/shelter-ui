@@ -1,5 +1,5 @@
 import { Grid, type GridProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import './Grid.scss';
 

@@ -3,7 +3,7 @@ import arrowLeftIcon from '@pplancq/shelter-ui-icon/icon/arrow-left.svg?no-inlin
 import arrowRightIcon from '@pplancq/shelter-ui-icon/icon/arrow-right.svg?no-inline';
 import editIcon from '@pplancq/shelter-ui-icon/icon/edit-alt.svg?no-inline';
 import { Button, type ButtonProps, Icon } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 import type { JSX } from 'react';
 import { fn } from 'storybook/test';
 

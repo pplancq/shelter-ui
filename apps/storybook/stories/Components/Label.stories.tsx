@@ -1,5 +1,5 @@
 import { Label, type LabelProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 Label.displayName = 'Label';
 

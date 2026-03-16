@@ -1,5 +1,5 @@
 import { CheckboxInput, type CheckboxInputProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 CheckboxInput.displayName = 'CheckboxInput';
 

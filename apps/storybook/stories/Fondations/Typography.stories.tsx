@@ -1,5 +1,5 @@
 import { Typography, type TypographyProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 Typography.displayName = 'Typography';
 

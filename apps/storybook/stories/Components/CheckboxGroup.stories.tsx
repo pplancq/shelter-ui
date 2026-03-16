@@ -4,7 +4,7 @@ import {
   CheckboxGroup,
   type CheckboxGroupProps,
 } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 CheckboxGroup.displayName = 'CheckboxGroup';
 CheckboxField.displayName = 'CheckboxField';

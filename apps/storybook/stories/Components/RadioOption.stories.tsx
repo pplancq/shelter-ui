@@ -1,5 +1,5 @@
 import { RadioOption, type RadioOptionProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 RadioOption.displayName = 'RadioOption';
 

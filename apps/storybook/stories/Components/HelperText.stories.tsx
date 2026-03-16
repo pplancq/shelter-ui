@@ -1,5 +1,5 @@
 import { HelperText, type HelperTextProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 HelperText.displayName = 'HelperText';
 
