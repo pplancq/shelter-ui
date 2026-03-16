@@ -59,6 +59,18 @@
     "*.(scss|css)": "stylelint --fix",
     "*.!(js|jsx|ts|tsx|scss|css)": "prettier --write --ignore-unknown"
   },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "overrides": {
     "storybook": "$storybook"
   }
