@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Setup Node
-        uses: pplancq/actions/setup-node@50666cfc130e795ac2e954635e0bbbd467672c9a # main
+        uses: pplancq/actions/setup-node@4277436aba0e2fbd5fbd79c3308a90bc48cae8f0 # v1.0.1
         with:
           use-mise: 'true'
 
@@ -44,7 +44,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node
-        uses: pplancq/actions/setup-node@50666cfc130e795ac2e954635e0bbbd467672c9a # main
+        uses: pplancq/actions/setup-node@4277436aba0e2fbd5fbd79c3308a90bc48cae8f0 # v1.0.1
         with:
           use-mise: 'true'
 
@@ -62,7 +62,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Setup Node
-        uses: pplancq/actions/setup-node@50666cfc130e795ac2e954635e0bbbd467672c9a # main
+        uses: pplancq/actions/setup-node@4277436aba0e2fbd5fbd79c3308a90bc48cae8f0 # v1.0.1
         with:
           use-mise: 'true'
 
@@ -86,7 +86,7 @@ jobs:
           CHROMATIC_SLUG: ${{ github.repository }}
 
       - name: Setup Node
-        uses: pplancq/actions/setup-node@50666cfc130e795ac2e954635e0bbbd467672c9a # main
+        uses: pplancq/actions/setup-node@4277436aba0e2fbd5fbd79c3308a90bc48cae8f0 # v1.0.1
         with:
           use-mise: 'true'
 
@@ -113,7 +113,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Setup Node
-        uses: pplancq/actions/setup-node@50666cfc130e795ac2e954635e0bbbd467672c9a # main
+        uses: pplancq/actions/setup-node@4277436aba0e2fbd5fbd79c3308a90bc48cae8f0 # v1.0.1
         with:
           use-mise: 'true'
 
@@ -160,7 +160,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Setup Node
-        uses: pplancq/actions/setup-node@50666cfc130e795ac2e954635e0bbbd467672c9a # main
+        uses: pplancq/actions/setup-node@4277436aba0e2fbd5fbd79c3308a90bc48cae8f0 # v1.0.1
         with:
           use-mise: 'true'
 
