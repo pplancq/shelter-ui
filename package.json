@@ -27,6 +27,9 @@
     "prepare": "husky",
     "release": "semantic-release"
   },
+  "overrides": {
+    "vite": "^8.0.3"
+  },
   "devDependencies": {
     "@commitlint/cli": "^20.5.0",
     "@pplancq/commitlint-config": "^3.0.6",
