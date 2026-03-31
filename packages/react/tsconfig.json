@@ -10,8 +10,7 @@
     "moduleResolution": "bundler",
     "useDefineForClassFields": true,
     "types": ["@rslib/core/types", "vitest/globals", "@testing-library/jest-dom/vitest"],
-    "baseUrl": ".",
-    "paths": { "@/*": ["src/*"] }
+    "paths": { "@/*": ["./src/*"] }
   },
   "include": ["src", "vitest.setup.ts", "tests"]
 }

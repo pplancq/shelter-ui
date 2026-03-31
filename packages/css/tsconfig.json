@@ -8,8 +8,7 @@
     "resolveJsonModule": true,
     "moduleResolution": "bundler",
     "useDefineForClassFields": true,
-    "types": ["vitest/globals"],
-    "baseUrl": "."
+    "types": ["vitest/globals"]
   },
   "include": ["tests"]
 }
