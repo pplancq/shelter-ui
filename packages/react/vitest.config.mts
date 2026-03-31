@@ -1,13 +1,15 @@
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react';
 import { loadEnv } from 'vite';
-import viteTsconfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
-    plugins: [react(), viteTsconfigPaths()],
+    plugins: [react()],
+    resolve: {
+      tsconfigPaths: true,
+    },
     test: {
       name: 'React Tests',
       environment: 'jsdom',
