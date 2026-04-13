@@ -28,7 +28,7 @@
     "release": "semantic-release"
   },
   "overrides": {
-    "vite": "^8.0.3"
+    "vite": "^8.0.8"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.5.0",
