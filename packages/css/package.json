@@ -58,7 +58,7 @@
     "sass-true": "^10.1.0",
     "stylelint": "^17.6.0",
     "stylelint-prettier": "^5.0.3",
-    "vitest": "^4.1.2"
+    "vitest": "^4.1.4"
   },
   "browserslist": {
     "production": [
