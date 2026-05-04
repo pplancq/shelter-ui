@@ -1,24 +1,35 @@
-export const iconList: Record<string, string> = {};
-export const flagList: Record<string, string> = {};
-export const logoList: Record<string, string> = {};
-
 type SvgContext = ((key: string) => string) & { keys(): string[] };
 
-// require.context is a webpack/rspack API for dynamic module imports
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const req = require as any;
+function createIconList(context: SvgContext): Record<string, string> {
+  const iconList: Record<string, string> = {};
 
-const icons: SvgContext = req.context('../../../../../packages/icon/icon/', false, /\.svg$/);
-icons.keys().forEach((key: string) => {
-  iconList[(key.split('/').pop() ?? '').replace('.svg', '')] = icons(key);
-});
+  context.keys().forEach(key => {
+    iconList[(key.split('/').pop() ?? '').replace('.svg', '')] = context(key);
+  });
 
-const flags: SvgContext = req.context('../../../../../packages/icon/flag/', false, /\.svg$/);
-flags.keys().forEach((key: string) => {
-  flagList[(key.split('/').pop() ?? '').replace('.svg', '')] = flags(key);
-});
+  return iconList;
+}
 
-const logos: SvgContext = req.context('../../../../../packages/icon/logo/', false, /\.svg$/);
-logos.keys().forEach((key: string) => {
-  logoList[(key.split('/').pop() ?? '').replace('.svg', '')] = logos(key);
-});
+export const iconList = createIconList(
+  import.meta.webpackContext('../../../../../packages/icon/icon/', {
+    recursive: false,
+    regExp: /\.svg$/,
+    mode: 'sync',
+  }) as SvgContext,
+);
+
+export const flagList = createIconList(
+  import.meta.webpackContext('../../../../../packages/icon/flag/', {
+    recursive: false,
+    regExp: /\.svg$/,
+    mode: 'sync',
+  }) as SvgContext,
+);
+
+export const logoList = createIconList(
+  import.meta.webpackContext('../../../../../packages/icon/logo/', {
+    recursive: false,
+    regExp: /\.svg$/,
+    mode: 'sync',
+  }) as SvgContext,
+);
