@@ -94,7 +94,7 @@ jobs:
         run: npm run build --workspace=@pplancq/shelter-ui-react --workspace=@pplancq/shelter-ui-css
 
       - name: Run Chromatic
-        uses: chromaui/action@a200f3ba3ff81232c47ac7942347fb212b1a67dc # v16.8.0
+        uses: chromaui/action@84e0c70520cf012d7cbcd0d9677b4240f893e25e # v16.9.0
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           buildScriptName: 'build'
