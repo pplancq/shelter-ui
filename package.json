@@ -28,7 +28,7 @@
     "release": "semantic-release"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.0.0",
+    "@commitlint/cli": "^21.0.1",
     "@pplancq/commitlint-config": "^4.0.0",
     "@pplancq/prettier-config": "^2.0.1",
     "@semantic-release/changelog": "^6.0.3",
