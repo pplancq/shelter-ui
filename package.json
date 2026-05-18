@@ -30,7 +30,7 @@
   "devDependencies": {
     "@commitlint/cli": "^21.0.1",
     "@pplancq/commitlint-config": "^4.0.0",
-    "@pplancq/prettier-config": "^2.0.1",
+    "@pplancq/prettier-config": "^2.0.2",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.1.0",
