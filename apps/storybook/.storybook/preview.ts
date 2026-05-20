@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/react-vite';
+import type { Preview } from 'storybook-react-rsbuild';
 import { light } from './theme';
 import { viewPorts } from './viewPort';
 

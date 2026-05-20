@@ -7,6 +7,11 @@ import type { StorybookConfig } from 'storybook-react-rsbuild';
 
 const require = createRequire(import.meta.url);
 
+const { homepage } = require('../package.json') as { homepage?: string };
+
+const publicUrl = homepage ?? '/';
+const publicPath = new URL(publicUrl.endsWith('/') ? publicUrl : `${publicUrl}/`, 'http://localhost').pathname;
+
 function getAbsolutePath<T extends string>(value: T): T {
   return dirname(require.resolve(join(value, 'package.json'))) as T;
 }
@@ -32,7 +37,16 @@ const config: StorybookConfig = {
   },
   framework: 'storybook-react-rsbuild',
   rsbuildFinal: rsbuildConfig => {
-    return mergeRsbuildConfig(rsbuildConfig, {});
+    const assetPrefix = process.env.RELEASE ? publicPath : '/';
+
+    return mergeRsbuildConfig(rsbuildConfig, {
+      dev: {
+        assetPrefix,
+      },
+      output: {
+        assetPrefix,
+      },
+    });
   },
   typescript: {
     reactDocgen: 'react-docgen-typescript',
