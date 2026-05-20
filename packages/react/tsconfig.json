@@ -12,5 +12,5 @@
     "types": ["@rslib/core/types", "vitest/globals", "@testing-library/jest-dom/vitest"],
     "paths": { "@/*": ["./src/*"] }
   },
-  "include": ["src", "vitest.setup.ts", "tests"]
+  "include": ["src", "tests"]
 }

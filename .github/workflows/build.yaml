@@ -128,6 +128,89 @@ jobs:
             coverage/lcov.info
             sonar-report.xml
 
+  test-browser-visual:
+    name: Visual Regression Tests
+    needs:
+      - install
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - name: Setup Node
+        uses: pplancq/actions/setup-node@8f236c363bc3d53023c5386a510c3532959554e1 # v1.0.2
+        with:
+          use-mise: 'true'
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Build CSS package
+        run: npm run build --workspace=@pplancq/shelter-ui-css
+
+      - name: Run visual regression tests
+        id: visual-tests
+        run: npm run test:visual --workspace=packages/react
+        continue-on-error: true
+
+      - name: Upload screenshot artifacts
+        if: steps.visual-tests.outcome == 'failure'
+        id: upload-screenshots
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: visual-regression-screenshots
+          path: |
+            packages/react/tests/visual/**/__screenshots__/**
+            packages/react/.vitest-attachments/**
+          if-no-files-found: ignore
+
+      - name: Comment on PR about visual regression failure
+        if: steps.visual-tests.outcome == 'failure' && github.event_name == 'pull_request'
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          ARTIFACT_URL: ${{ steps.upload-screenshots.outputs.artifact-url }}
+        with:
+          script: |
+            const artifactUrl = process.env.ARTIFACT_URL;
+            const artifactSection = artifactUrl
+              ? `\n\n📦 **[Download screenshot artifacts](${artifactUrl})** to compare actual vs. reference screenshots.`
+              : '';
+
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: [
+                '## ⚠️ Visual Regression Tests Failed',
+                artifactSection,
+                '',
+                'The visual regression tests failed on this PR. This may indicate:',
+                '',
+                '- 🔴 **Visual regression** — a UI component has changed unexpectedly.',
+                '- 🆕 **New reference screenshots needed** — Linux reference screenshots have not been committed yet for this environment.',
+                '',
+                '### Next steps',
+                '',
+                '**If the visual changes are intentional**, update the reference screenshots to match the Linux CI environment using Docker:',
+                '```bash',
+                'docker run --rm \\',
+                '  -v $(pwd):/app -w /app \\',
+                '  mcr.microsoft.com/playwright:v1.59.1-jammy \\',
+                '  npm run test:visual --workspace=packages/react -- --update',
+                '```',
+                'Then commit the updated files under `packages/react/tests/visual/**/__screenshots__/`.',
+                '',
+                '**If the visual changes are unintentional**, investigate and fix the regression before merging.',
+              ].filter(Boolean).join('\n'),
+            });
+
+      - name: Fail job if visual tests failed
+        if: steps.visual-tests.outcome == 'failure'
+        run: exit 1
+
   sonarcloud:
     name: SonarCloud Scan
     needs:
