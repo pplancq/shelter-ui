@@ -34,7 +34,7 @@
     "@storybook/addon-docs": "^10.4.0",
     "@storybook/addon-links": "^10.4.0",
     "@storybook/addon-onboarding": "^10.4.0",
-    "@types/react": "^19.2.14",
+    "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
     "chromatic": "^16.10.1",
     "concurrently": "^9.2.1",
