@@ -36,7 +36,7 @@
     "@storybook/addon-onboarding": "^10.4.2",
     "@types/react": "^19.2.16",
     "@types/react-dom": "^19.2.3",
-    "chromatic": "^17.1.0",
+    "chromatic": "^17.3.0",
     "concurrently": "^10.0.3",
     "eslint": "^9.39.4",
     "eslint-plugin-prettier": "^5.5.6",
