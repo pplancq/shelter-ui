@@ -47,7 +47,7 @@
     "react": "^19.0.0"
   },
   "dependencies": {
-    "@pplancq/svg-react": "^3.0.7"
+    "@pplancq/svg-react": "^3.0.8"
   },
   "devDependencies": {
     "@pplancq/eslint-config": "^6.0.16",
