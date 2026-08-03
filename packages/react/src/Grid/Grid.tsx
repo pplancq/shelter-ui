@@ -1,8 +1,8 @@
-import { clsx } from '@/utils/clsx';
-import type { PolymorphicComponent } from '@/utils/types';
-import { type ElementType, type PropsWithChildren } from 'react';
-import { getGridItemToken } from './getGridItemToken';
-import type { Breakpoint, ColSpan, ColStart } from './types';
+import { clsx } from "@/utils/clsx";
+import type { PolymorphicComponent } from "@/utils/types";
+import { type ElementType, type PropsWithChildren } from "react";
+import { getGridItemToken } from "./getGridItemToken";
+import type { Breakpoint, ColSpan, ColStart } from "./types";
 
 export type GridProps<C extends ElementType> = PolymorphicComponent<
   C,
@@ -13,7 +13,7 @@ export type GridProps<C extends ElementType> = PolymorphicComponent<
   }
 >;
 
-export const Grid = <C extends ElementType = 'div'>({
+export const Grid = <C extends ElementType = "div">({
   as,
   container,
   className,
@@ -23,15 +23,15 @@ export const Grid = <C extends ElementType = 'div'>({
   style,
   ...props
 }: PropsWithChildren<GridProps<C>>) => {
-  const Component = as || 'div';
+  const Component = as || "div";
 
   return (
     <Component
-      className={clsx(container && 'grid', (colSpan || colStart) && 'grid-item', className)}
+      className={clsx(container && "grid", (colSpan || colStart) && "grid-item", className)}
       style={{
         ...{
-          ...getGridItemToken('col', colSpan ?? {}),
-          ...getGridItemToken('start', colStart ?? {}),
+          ...getGridItemToken("col", colSpan ?? {}),
+          ...getGridItemToken("start", colStart ?? {}),
         },
         ...style,
       }}
@@ -42,6 +42,6 @@ export const Grid = <C extends ElementType = 'div'>({
   );
 };
 
-if (process.env.NODE_ENV !== 'production') {
-  Grid.displayName = 'Grid';
+if (process.env.NODE_ENV !== "production") {
+  Grid.displayName = "Grid";
 }

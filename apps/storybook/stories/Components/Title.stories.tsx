@@ -1,32 +1,32 @@
-import bookmarkIcon from '@pplancq/shelter-ui-icon/icon/bookmark.svg?url';
-import { Icon, Title, type TitleProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react';
+import bookmarkIcon from "@pplancq/shelter-ui-icon/icon/bookmark.svg?url";
+import { Icon, Title, type TitleProps } from "@pplancq/shelter-ui-react";
+import type { Meta, StoryObj } from "@storybook/react";
 
-Title.displayName = 'Title';
-Icon.displayName = 'Icon';
+Title.displayName = "Title";
+Icon.displayName = "Icon";
 
 const meta = {
-  title: 'Components/Title',
+  title: "Components/Title",
   component: Title,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['!autodocs', '!dev'],
+  tags: ["!autodocs", "!dev"],
   args: {
     level: 1,
-    title: 'Title',
-    subtitle: 'Subtitle',
-    layout: 'inline',
+    title: "Title",
+    subtitle: "Subtitle",
+    layout: "inline",
     icon: true,
   },
   argTypes: {
     level: {
-      control: 'select',
+      control: "select",
       options: [1, 2, 3, 4, 5, 6],
     },
     layout: {
-      control: 'select',
-      options: ['inline', 'stacked'],
+      control: "select",
+      options: ["inline", "stacked"],
     },
   },
 } satisfies Meta<TitleProps>;
@@ -36,6 +36,6 @@ export default meta;
 type Story = StoryObj<TitleProps>;
 
 export const Playground: Story = {
-  tags: ['dev'],
+  tags: ["dev"],
   render: ({ icon, ...args }) => <Title {...args} icon={icon ? <Icon icon={bookmarkIcon} /> : undefined} />,
 };

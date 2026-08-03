@@ -1,5 +1,5 @@
-import { clsx } from '@/utils/clsx';
-import type { LabelHTMLAttributes } from 'react';
+import { clsx } from "@/utils/clsx";
+import type { LabelHTMLAttributes } from "react";
 
 export type LabelProps = {
   required?: boolean;
@@ -7,13 +7,13 @@ export type LabelProps = {
 
 export const Label = ({ required, children, className, htmlFor, ...props }: LabelProps) => {
   return (
-    <label className={clsx('label', className)} htmlFor={htmlFor} {...props}>
+    <label className={clsx("label", className)} htmlFor={htmlFor} {...props}>
       {children}
       {required ? <span aria-hidden>*</span> : null}
     </label>
   );
 };
 
-if (process.env.NODE_ENV !== 'production') {
-  Label.displayName = 'Label';
+if (process.env.NODE_ENV !== "production") {
+  Label.displayName = "Label";
 }

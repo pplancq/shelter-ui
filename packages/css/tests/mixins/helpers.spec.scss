@@ -1,9 +1,9 @@
-@use 'true' as *;
-@use 'sass:meta';
-@use '../../sass/mixins/helpers';
+@use "true" as *;
+@use "sass:meta";
+@use "../../sass/mixins/helpers";
 
-@include describe('px-to-rem') {
-  @include it('should convert px to rem') {
+@include describe("px-to-rem") {
+  @include it("should convert px to rem") {
     @include assert {
       @include output {
         .rem-16 {
@@ -17,7 +17,7 @@
       }
     }
   }
-  @include it('should convert number to rem') {
+  @include it("should convert number to rem") {
     @include assert {
       @include output {
         .rem-32 {
@@ -33,8 +33,8 @@
   }
 }
 
-@include describe('split-list') {
-  @include it('should split a list up to the limit') {
+@include describe("split-list") {
+  @include it("should split a list up to the limit") {
     @include assert {
       @include output {
         $result: helpers.split-list((a, b, c, d), 2);

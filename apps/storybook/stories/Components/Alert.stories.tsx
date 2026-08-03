@@ -1,31 +1,31 @@
-import { Alert, type AlertProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from 'storybook/test';
+import { Alert, type AlertProps } from "@pplancq/shelter-ui-react";
+import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "storybook/test";
 
-Alert.displayName = 'Alert';
+Alert.displayName = "Alert";
 
 const meta = {
-  title: 'Components/Alert',
+  title: "Components/Alert",
   component: Alert,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['!autodocs', '!dev'],
+  tags: ["!autodocs", "!dev"],
   args: {
-    variant: 'info',
-    title: 'Alert Title',
+    variant: "info",
+    title: "Alert Title",
     children:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     onClose: fn(),
     hasCloseButton: true,
   },
   argTypes: {
     variant: {
-      control: 'select',
-      options: ['info', 'warning', 'error', 'success'],
+      control: "select",
+      options: ["info", "warning", "error", "success"],
     },
     children: {
-      control: 'text',
+      control: "text",
     },
     onClose: {
       table: {
@@ -33,7 +33,7 @@ const meta = {
       },
     },
     hasCloseButton: {
-      control: 'boolean',
+      control: "boolean",
     },
   },
 } satisfies Meta<AlertProps & { hasCloseButton: boolean }>;
@@ -43,42 +43,42 @@ export default meta;
 type Story = StoryObj<AlertProps & { hasCloseButton: boolean }>;
 
 export const Playground: Story = {
-  tags: ['dev'],
+  tags: ["dev"],
   render: ({ variant, onClose, hasCloseButton, children, ...args }) => (
     <Alert
       {...args}
-      variant={variant !== 'info' ? variant : undefined}
+      variant={variant !== "info" ? variant : undefined}
       onClose={hasCloseButton ? onClose : undefined}
       // eslint-disable-next-line react/no-children-prop
-      children={children !== '' ? children : undefined}
+      children={children !== "" ? children : undefined}
     />
   ),
 };
 
 export const Info: Story = {
   args: {
-    variant: 'info',
-    title: 'Information Alert',
+    variant: "info",
+    title: "Information Alert",
   },
 };
 
 export const Warning: Story = {
   args: {
-    variant: 'warning',
-    title: 'Warning Alert',
+    variant: "warning",
+    title: "Warning Alert",
   },
 };
 
 export const Error: Story = {
   args: {
-    variant: 'error',
-    title: 'Error Alert',
+    variant: "error",
+    title: "Error Alert",
   },
 };
 
 export const Success: Story = {
   args: {
-    variant: 'success',
-    title: 'Success Alert',
+    variant: "success",
+    title: "Success Alert",
   },
 };

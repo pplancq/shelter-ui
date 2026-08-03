@@ -1,19 +1,19 @@
-import { Label, type LabelProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Label, type LabelProps } from "@pplancq/shelter-ui-react";
+import type { Meta, StoryObj } from "@storybook/react";
 
-Label.displayName = 'Label';
+Label.displayName = "Label";
 
 const meta = {
-  title: 'Components/Label',
+  title: "Components/Label",
   component: Label,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
   args: {
-    children: 'Label',
+    children: "Label",
     required: false,
   },
-  tags: ['!autodocs', '!dev'],
+  tags: ["!autodocs", "!dev"],
 } satisfies Meta<LabelProps>;
 
 export default meta;
@@ -21,6 +21,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
-  tags: ['dev'],
+  tags: ["dev"],
   render: ({ ...args }) => <Label {...args} />,
 };

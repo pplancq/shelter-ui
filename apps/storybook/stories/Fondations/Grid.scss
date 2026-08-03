@@ -46,7 +46,7 @@
   }
 }
 
-[data-name='Nesting'] > .grid > [class*='grid-item'] {
+[data-name="Nesting"] > .grid > [class*="grid-item"] {
   position: relative;
   padding-top: 2rem;
 
@@ -55,7 +55,7 @@
     top: 0.4rem;
     right: 0;
     left: 0;
-    content: 'colSpan={6}';
+    content: "colSpan={6}";
   }
 }
 

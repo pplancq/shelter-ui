@@ -1,13 +1,13 @@
-@forward '../variables/typography';
-@forward '../variables/dimension';
-@forward '../variables/border';
-@forward '../themes/light';
-@forward '../themes/dark';
+@forward "../variables/typography";
+@forward "../variables/dimension";
+@forward "../variables/border";
+@forward "../themes/light";
+@forward "../themes/dark";
 
-@use '../mixins/typography';
-@use '../mixins/outline-on-focus-visible';
+@use "../mixins/typography";
+@use "../mixins/outline-on-focus-visible";
 
-@import '@fontsource/oswald/600.css'; /* semi-bold */
+@import "@fontsource/oswald/600.css"; /* semi-bold */
 
 .button {
   --button-padding-vertical: var(--padding-1);
@@ -36,7 +36,7 @@
     fill: var(--button-color-on);
   }
 
-  &[class*='-ghost'] {
+  &[class*="-ghost"] {
     --button-padding-horizontal: var(--padding-1);
 
     text-transform: initial;
@@ -200,7 +200,7 @@
 
     cursor: not-allowed;
 
-    &[class*='-ghost'] {
+    &[class*="-ghost"] {
       --button-color-background: transparent;
 
       text-decoration: none;

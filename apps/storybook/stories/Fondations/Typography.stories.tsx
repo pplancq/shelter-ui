@@ -1,87 +1,87 @@
-import { Typography, type TypographyProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Typography, type TypographyProps } from "@pplancq/shelter-ui-react";
+import type { Meta, StoryObj } from "@storybook/react";
 
-Typography.displayName = 'Typography';
+Typography.displayName = "Typography";
 
 const meta = {
-  title: 'Foundations/Typography',
+  title: "Foundations/Typography",
   component: Typography,
 
   parameters: {
-    layout: 'padded',
+    layout: "padded",
   },
-  tags: ['!autodocs', 'dev'],
+  tags: ["!autodocs", "dev"],
   args: {
-    variant: 'text',
-    color: 'primary',
+    variant: "text",
+    color: "primary",
     sizeHeading: 1,
     sizeDisplay: 1,
-    sizeText: 'medium',
-    sizeLabel: 'medium',
-    sizeCode: 'medium',
+    sizeText: "medium",
+    sizeLabel: "medium",
+    sizeCode: "medium",
   },
   argTypes: {
     variant: {
-      control: 'select',
-      options: ['display', 'heading', 'text', 'label', 'code'],
+      control: "select",
+      options: ["display", "heading", "text", "label", "code"],
     },
     color: {
-      control: 'select',
-      options: ['primary', 'secondary', 'hint', 'disabled'],
+      control: "select",
+      options: ["primary", "secondary", "hint", "disabled"],
     },
     sizeHeading: {
-      name: 'size',
+      name: "size",
       if: {
-        arg: 'variant',
-        eq: 'heading',
+        arg: "variant",
+        eq: "heading",
       },
-      control: 'select',
+      control: "select",
       options: [1, 2, 3, 4, 5, 6],
     },
     sizeDisplay: {
-      name: 'size',
+      name: "size",
       if: {
-        arg: 'variant',
-        eq: 'display',
+        arg: "variant",
+        eq: "display",
       },
-      control: 'select',
+      control: "select",
       options: [1, 2, 3, 4, 5, 6],
     },
     sizeText: {
-      name: 'size',
+      name: "size",
       if: {
-        arg: 'variant',
-        eq: 'text',
+        arg: "variant",
+        eq: "text",
       },
-      control: 'select',
-      options: ['smallest', 'smaller', 'small', 'medium', 'large'],
+      control: "select",
+      options: ["smallest", "smaller", "small", "medium", "large"],
     },
     sizeLabel: {
-      name: 'size',
+      name: "size",
       if: {
-        arg: 'variant',
-        eq: 'label',
+        arg: "variant",
+        eq: "label",
       },
-      control: 'select',
-      options: ['small', 'medium', 'large'],
+      control: "select",
+      options: ["small", "medium", "large"],
     },
     sizeCode: {
-      name: 'size',
+      name: "size",
       if: {
-        arg: 'variant',
-        eq: 'code',
+        arg: "variant",
+        eq: "code",
       },
-      control: 'select',
-      options: ['small', 'medium', 'large'],
+      control: "select",
+      options: ["small", "medium", "large"],
     },
   },
 } satisfies Meta<
-  TypographyProps<'p'> & {
+  TypographyProps<"p"> & {
     sizeHeading: 1 | 2 | 3 | 4 | 5 | 6;
     sizeDisplay: 1 | 2 | 3 | 4 | 5 | 6;
-    sizeText: 'smallest' | 'smaller' | 'small' | 'medium' | 'large';
-    sizeLabel: 'small' | 'medium' | 'large';
-    sizeCode: 'small' | 'medium' | 'large';
+    sizeText: "smallest" | "smaller" | "small" | "medium" | "large";
+    sizeLabel: "small" | "medium" | "large";
+    sizeCode: "small" | "medium" | "large";
   }
 >;
 
@@ -90,7 +90,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const ExampleLayout: Story = {
-  name: 'Typography',
+  name: "Typography",
   render: ({ sizeHeading, sizeDisplay, sizeText, sizeLabel, sizeCode, ...args }) => {
     const size = {
       display: sizeDisplay,
@@ -100,7 +100,7 @@ export const ExampleLayout: Story = {
       code: sizeCode,
     };
     return (
-      <Typography {...args} size={size[(args.variant as keyof typeof size) ?? 'text']}>
+      <Typography {...args} size={size[(args.variant as keyof typeof size) ?? "text"]}>
         Lorem ipsum dolor sit amet
       </Typography>
     );

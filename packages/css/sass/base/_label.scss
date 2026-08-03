@@ -1,11 +1,11 @@
-@forward '../variables/dimension';
-@forward '../variables/typography';
-@forward '../themes/light';
-@forward '../themes/dark';
+@forward "../variables/dimension";
+@forward "../variables/typography";
+@forward "../themes/light";
+@forward "../themes/dark";
 
-@use '../mixins/typography';
+@use "../mixins/typography";
 
-@import '@fontsource/nunito/400.css'; /* regular */
+@import "@fontsource/nunito/400.css"; /* regular */
 
 %label {
   --label-color-asterisk: var(--color-tertiary-main-light);
@@ -16,7 +16,7 @@
 
   @include typography.text(medium);
 
-  span[aria-hidden='true'] {
+  span[aria-hidden="true"] {
     color: var(--label-color-asterisk);
   }
 }

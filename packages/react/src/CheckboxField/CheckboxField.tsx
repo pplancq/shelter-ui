@@ -1,10 +1,10 @@
-import { CheckboxInput, type CheckboxInputProps } from '@/CheckboxInput/CheckboxInput';
-import { HelperText } from '@/HelperText/HelperText';
-import { Label } from '@/Label/Label';
-import { clsx } from '@/utils/clsx';
-import { type ReactNode, useId } from 'react';
+import { CheckboxInput, type CheckboxInputProps } from "@/CheckboxInput/CheckboxInput";
+import { HelperText } from "@/HelperText/HelperText";
+import { Label } from "@/Label/Label";
+import { clsx } from "@/utils/clsx";
+import { type ReactNode, useId } from "react";
 
-export type CheckboxFieldProps = Omit<CheckboxInputProps, 'indeterminate'> & {
+export type CheckboxFieldProps = Omit<CheckboxInputProps, "indeterminate"> & {
   label: ReactNode;
   textHelper?: ReactNode;
   errorMessage?: ReactNode;
@@ -24,7 +24,7 @@ export const CheckboxField = ({
   const helperTextId = `text-helper-${id ?? generatedId}`;
 
   return (
-    <div className={clsx('checkbox-field', className)}>
+    <div className={clsx("checkbox-field", className)}>
       <Label htmlFor={checkboxId} required={required}>
         <CheckboxInput
           id={checkboxId}
@@ -45,6 +45,6 @@ export const CheckboxField = ({
   );
 };
 
-if (process.env.NODE_ENV !== 'production') {
-  CheckboxField.displayName = 'CheckboxField';
+if (process.env.NODE_ENV !== "production") {
+  CheckboxField.displayName = "CheckboxField";
 }

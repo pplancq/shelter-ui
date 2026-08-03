@@ -1,5 +1,5 @@
-import { clsx } from '@/utils/clsx';
-import { type InputHTMLAttributes, type ReactNode } from 'react';
+import { clsx } from "@/utils/clsx";
+import { type InputHTMLAttributes, type ReactNode } from "react";
 
 export type InputProps = {
   error?: boolean;
@@ -9,7 +9,7 @@ export type InputProps = {
 
 export const Input = ({ className, error, startAdornment, endAdornment, ...props }: InputProps) => {
   return (
-    <div className={clsx('input', error && 'input--error', className)}>
+    <div className={clsx("input", error && "input--error", className)}>
       {startAdornment}
       <input type="text" aria-invalid={error} placeholder=" " {...props} />
       {endAdornment}
@@ -17,6 +17,6 @@ export const Input = ({ className, error, startAdornment, endAdornment, ...props
   );
 };
 
-if (process.env.NODE_ENV !== 'production') {
-  Input.displayName = 'Input';
+if (process.env.NODE_ENV !== "production") {
+  Input.displayName = "Input";
 }

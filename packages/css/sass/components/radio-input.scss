@@ -1,9 +1,9 @@
-@forward '../variables/border';
-@forward '../themes/light';
-@forward '../themes/dark';
+@forward "../variables/border";
+@forward "../themes/light";
+@forward "../themes/dark";
 
-@use '../mixins/outline-on-focus-visible';
-@use '../mixins/helpers';
+@use "../mixins/outline-on-focus-visible";
+@use "../mixins/helpers";
 
 .radio-input {
   --radio-input-background-color: var(--color-neutral-light);
@@ -35,7 +35,7 @@
     height: helpers.px-to-rem(14);
     border-radius: var(--radio-input-border-radius);
     background-color: var(--radio-input-checked-background-color);
-    content: '';
+    content: "";
   }
 
   &:checked {

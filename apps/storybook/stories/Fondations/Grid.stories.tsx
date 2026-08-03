@@ -1,34 +1,34 @@
-import { Grid, type GridProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Grid, type GridProps } from "@pplancq/shelter-ui-react";
+import type { Meta, StoryObj } from "@storybook/react";
 
-import './Grid.scss';
+import "./Grid.scss";
 
-Grid.displayName = 'Grid';
+Grid.displayName = "Grid";
 
 const meta = {
-  title: 'Foundations/Grid',
+  title: "Foundations/Grid",
   component: Grid,
   parameters: {
-    layout: 'padded',
+    layout: "padded",
   },
-  tags: ['!autodocs', '!dev'],
+  tags: ["!autodocs", "!dev"],
   args: {},
-} satisfies Meta<GridProps<'div'>>;
+} satisfies Meta<GridProps<"div">>;
 
 export default meta;
 
-type Story = StoryObj<GridProps<'div'>>;
+type Story = StoryObj<GridProps<"div">>;
 
 export const ExampleLayout: Story = {
-  tags: ['dev'],
+  tags: ["dev"],
   // eslint-disable-next-line no-empty-pattern
   render: ({}) => (
     <Grid container>
-      <Grid colSpan={{ mobile: 4, tablet: 8, 'desktop-small': 12 }} as="header">
+      <Grid colSpan={{ mobile: 4, tablet: 8, "desktop-small": 12 }} as="header">
         Header
       </Grid>
-      <Grid container colSpan={{ mobile: 4, tablet: 8, 'desktop-small': 9 }} as="main">
-        <Grid colSpan={{ mobile: 4, tablet: 4, 'desktop-small': 3 }} as="article">
+      <Grid container colSpan={{ mobile: 4, tablet: 8, "desktop-small": 9 }} as="main">
+        <Grid colSpan={{ mobile: 4, tablet: 4, "desktop-small": 3 }} as="article">
           <h2>Article 1</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique felis et neque volutpat, eu posuere
@@ -36,7 +36,7 @@ export const ExampleLayout: Story = {
             convallis.
           </p>
         </Grid>
-        <Grid colSpan={{ mobile: 4, tablet: 4, 'desktop-small': 3 }} as="article">
+        <Grid colSpan={{ mobile: 4, tablet: 4, "desktop-small": 3 }} as="article">
           <h2>Article 2</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique felis et neque volutpat, eu posuere
@@ -44,7 +44,7 @@ export const ExampleLayout: Story = {
             convallis.
           </p>
         </Grid>
-        <Grid colSpan={{ mobile: 4, tablet: 4, 'desktop-small': 3 }} as="article">
+        <Grid colSpan={{ mobile: 4, tablet: 4, "desktop-small": 3 }} as="article">
           <h2>Article 3</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique felis et neque volutpat, eu posuere
@@ -52,7 +52,7 @@ export const ExampleLayout: Story = {
             convallis.
           </p>
         </Grid>
-        <Grid colSpan={{ mobile: 4, tablet: 4, 'desktop-small': 3 }} as="article">
+        <Grid colSpan={{ mobile: 4, tablet: 4, "desktop-small": 3 }} as="article">
           <h2>Article 4</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique felis et neque volutpat, eu posuere
@@ -61,10 +61,10 @@ export const ExampleLayout: Story = {
           </p>
         </Grid>
       </Grid>
-      <Grid colSpan={{ mobile: 4, tablet: 8, 'desktop-small': 3 }} as="section">
+      <Grid colSpan={{ mobile: 4, tablet: 8, "desktop-small": 3 }} as="section">
         Side Panel
       </Grid>
-      <Grid colSpan={{ mobile: 4, tablet: 8, 'desktop-small': 12 }} as="footer">
+      <Grid colSpan={{ mobile: 4, tablet: 8, "desktop-small": 12 }} as="footer">
         Footer
       </Grid>
     </Grid>

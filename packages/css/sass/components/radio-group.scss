@@ -1,22 +1,22 @@
-@forward '../base/label';
-@forward '../variables/dimension';
+@forward "../base/label";
+@forward "../variables/dimension";
 
-@use '../mixins/helpers';
+@use "../mixins/helpers";
 
 .radio-group {
   all: unset;
   display: grid;
   grid-template-areas:
-    'legend'
-    'input-options';
+    "legend"
+    "input-options";
   align-items: center;
   gap: helpers.px-to-rem(6);
 
   &:has(.helper-text) {
     grid-template-areas:
-      'legend'
-      'input-options'
-      'helper-text';
+      "legend"
+      "input-options"
+      "helper-text";
   }
 
   &__legend {
@@ -41,12 +41,12 @@
   }
 
   &--inline {
-    grid-template-areas: 'legend input-options';
+    grid-template-areas: "legend input-options";
 
     &:has(.helper-text) {
       grid-template-areas:
-        'legend input-options'
-        'empty helper-text';
+        "legend input-options"
+        "empty helper-text";
     }
 
     & .radio-group__legend {

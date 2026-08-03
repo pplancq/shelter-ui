@@ -1,10 +1,10 @@
-@forward '../variables/border';
-@forward '../themes/light';
-@forward '../themes/dark';
+@forward "../variables/border";
+@forward "../themes/light";
+@forward "../themes/dark";
 
-@use '../mixins/outline-on-focus-visible';
-@use '../mixins/helpers';
-@use '../variables/color';
+@use "../mixins/outline-on-focus-visible";
+@use "../mixins/helpers";
+@use "../variables/color";
 
 @function checkbox-icon($color, $undetermined: false) {
   @if $undetermined {
@@ -66,7 +66,7 @@
     --checkbox-input-border-color: var(--color-primary-main-light);
   }
 
-  &[aria-invalid='true']:not(:disabled) {
+  &[aria-invalid="true"]:not(:disabled) {
     --checkbox-input-border-color: var(--color-tertiary-main-light);
 
     &:checked {
@@ -89,7 +89,7 @@
     &:not(:disabled) {
       --checkbox-input-background-image: #{checkbox-icon(color.$color-blue-500)};
 
-      &[aria-invalid='true'] {
+      &[aria-invalid="true"] {
         --checkbox-input-background-image: #{checkbox-icon(color.$color-red-500)};
       }
     }
@@ -103,7 +103,7 @@
     &:not(:disabled) {
       --checkbox-input-background-image: #{checkbox-icon(color.$color-blue-500, true)};
 
-      &[aria-invalid='true'] {
+      &[aria-invalid="true"] {
         --checkbox-input-background-image: #{checkbox-icon(color.$color-red-500, true)};
       }
     }
@@ -119,7 +119,7 @@
     &:not(:disabled) {
       --checkbox-input-background-image: #{checkbox-icon(color.$color-blue-700)};
 
-      &[aria-invalid='true'] {
+      &[aria-invalid="true"] {
         --checkbox-input-background-image: #{checkbox-icon(color.$color-red-700)};
       }
     }
@@ -133,7 +133,7 @@
     &:not(:disabled) {
       --checkbox-input-background-image: #{checkbox-icon(color.$color-blue-700, true)};
 
-      &[aria-invalid='true'] {
+      &[aria-invalid="true"] {
         --checkbox-input-background-image: #{checkbox-icon(color.$color-red-700, true)};
       }
     }
