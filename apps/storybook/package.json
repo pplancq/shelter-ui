@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^5.2.1",
-    "@pplancq/eslint-config": "^6.0.17",
+    "@pplancq/eslint-config": "^6.0.18",
     "@pplancq/prettier-config": "^4.0.0",
     "@pplancq/stylelint-config": "^5.0.3",
     "@rsbuild/core": "^2.1.9",
