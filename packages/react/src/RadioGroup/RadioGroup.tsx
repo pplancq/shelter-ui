@@ -1,19 +1,19 @@
-import { HelperText } from '@/HelperText/HelperText';
-import type { RadioOptionProps } from '@/RadioOption/RadioOption';
-import { clsx } from '@/utils/clsx';
-import { Children, cloneElement, type ComponentProps, type ReactElement, type ReactNode, useId, useMemo } from 'react';
+import { HelperText } from "@/HelperText/HelperText";
+import type { RadioOptionProps } from "@/RadioOption/RadioOption";
+import { clsx } from "@/utils/clsx";
+import { Children, cloneElement, type ComponentProps, type ReactElement, type ReactNode, useId, useMemo } from "react";
 
-type ChildrenProps = Pick<RadioOptionProps, 'name' | 'value' | 'required' | 'isInvalid' | 'id'>;
+type ChildrenProps = Pick<RadioOptionProps, "name" | "value" | "required" | "isInvalid" | "id">;
 
-export type RadioGroupProps = Omit<ComponentProps<'div'>, 'role' | 'children'> & {
-  layout?: 'stacked' | 'inline';
-  itemsLayout?: 'stacked' | 'inline';
+export type RadioGroupProps = Omit<ComponentProps<"div">, "role" | "children"> & {
+  layout?: "stacked" | "inline";
+  itemsLayout?: "stacked" | "inline";
   required?: boolean;
   label: ReactNode;
   textHelper?: ReactNode;
   errorMessage?: ReactNode;
   children: ReactElement<ChildrenProps>[];
-} & Pick<RadioOptionProps, 'name'>;
+} & Pick<RadioOptionProps, "name">;
 
 export const RadioGroup = ({
   children,
@@ -35,7 +35,7 @@ export const RadioGroup = ({
 
   const radioOptions = useMemo(
     () =>
-      Children.map(children, child =>
+      Children.map(children, (child) =>
         cloneElement(child, {
           name,
           required,
@@ -49,7 +49,7 @@ export const RadioGroup = ({
 
   return (
     <div
-      className={clsx('radio-group', layout === 'inline' && 'radio-group--inline', className)}
+      className={clsx("radio-group", layout === "inline" && "radio-group--inline", className)}
       role="radiogroup"
       id={groupId}
       aria-labelledby={legendId}
@@ -63,7 +63,7 @@ export const RadioGroup = ({
         {label}
         {required ? <span aria-hidden>*</span> : null}
       </div>
-      <div className={clsx('radio-group__options', itemsLayout === 'stacked' && 'radio-group__options--stacked')}>
+      <div className={clsx("radio-group__options", itemsLayout === "stacked" && "radio-group__options--stacked")}>
         {radioOptions}
       </div>
       {Boolean(errorMessage || textHelper) && (
@@ -75,6 +75,6 @@ export const RadioGroup = ({
   );
 };
 
-if (process.env.NODE_ENV !== 'production') {
-  RadioGroup.displayName = 'RadioGroup';
+if (process.env.NODE_ENV !== "production") {
+  RadioGroup.displayName = "RadioGroup";
 }

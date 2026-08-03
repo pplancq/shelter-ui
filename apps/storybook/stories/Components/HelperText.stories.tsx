@@ -1,19 +1,19 @@
-import { HelperText, type HelperTextProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { HelperText, type HelperTextProps } from "@pplancq/shelter-ui-react";
+import type { Meta, StoryObj } from "@storybook/react";
 
-HelperText.displayName = 'HelperText';
+HelperText.displayName = "HelperText";
 
 const meta = {
-  title: 'Components/HelperText',
+  title: "Components/HelperText",
   component: HelperText,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
   args: {
-    children: 'HelperText',
+    children: "HelperText",
     error: false,
   },
-  tags: ['!autodocs', '!dev'],
+  tags: ["!autodocs", "!dev"],
 } satisfies Meta<HelperTextProps>;
 
 export default meta;
@@ -21,6 +21,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
-  tags: ['dev'],
+  tags: ["dev"],
   render: ({ ...args }) => <HelperText {...args} />,
 };

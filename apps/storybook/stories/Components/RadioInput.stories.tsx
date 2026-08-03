@@ -1,15 +1,15 @@
-import { RadioInput, type RadioInputProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { RadioInput, type RadioInputProps } from "@pplancq/shelter-ui-react";
+import type { Meta, StoryObj } from "@storybook/react";
 
-RadioInput.displayName = 'RadioInput';
+RadioInput.displayName = "RadioInput";
 
 const meta = {
-  title: 'Components/RadioInput',
+  title: "Components/RadioInput",
   component: RadioInput,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['!autodocs', '!dev'],
+  tags: ["!autodocs", "!dev"],
   args: {
     checked: false,
     isInvalid: false,
@@ -23,6 +23,6 @@ export default meta;
 type Story = StoryObj<RadioInputProps>;
 
 export const Playground: Story = {
-  tags: ['dev'],
+  tags: ["dev"],
   render: ({ ...args }) => <RadioInput {...args} />,
 };

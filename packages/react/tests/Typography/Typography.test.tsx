@@ -1,17 +1,17 @@
-import { render, screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
-import { type Color, Typography } from '../../src/Typography/Typography';
+import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
+import { type Color, Typography } from "../../src/Typography/Typography";
 
-describe('Typography component', () => {
+describe("Typography component", () => {
   it('should render the correct tag for the "heading" variant', () => {
     render(
       <Typography variant="heading" size={2}>
         Demo Title for testing
       </Typography>,
     );
-    const element = screen.getByText('Demo Title for testing');
-    expect(element.tagName).toBe('H2');
-    expect(element).toHaveClass('typography', 'h2');
+    const element = screen.getByText("Demo Title for testing");
+    expect(element.tagName).toBe("H2");
+    expect(element).toHaveClass("typography", "h2");
   });
 
   it('should apply the correct classes for the "text" variant with bold', () => {
@@ -20,9 +20,9 @@ describe('Typography component', () => {
         Demo text for testing
       </Typography>,
     );
-    const element = screen.getByText('Demo text for testing');
-    expect(element.tagName).toBe('P');
-    expect(element).toHaveClass('typography', 'text-bold-large');
+    const element = screen.getByText("Demo text for testing");
+    expect(element.tagName).toBe("P");
+    expect(element).toHaveClass("typography", "text-bold-large");
   });
 
   it('should add ARIA attributes for the "display" variant', () => {
@@ -31,19 +31,19 @@ describe('Typography component', () => {
         Demo display title for testing
       </Typography>,
     );
-    const element = screen.getByText('Demo display title for testing');
-    expect(element).toHaveAttribute('role', 'heading');
-    expect(element).toHaveAttribute('aria-level', '1');
+    const element = screen.getByText("Demo display title for testing");
+    expect(element).toHaveAttribute("role", "heading");
+    expect(element).toHaveAttribute("aria-level", "1");
   });
 
-  it('should allow overriding HTML props', () => {
+  it("should allow overriding HTML props", () => {
     render(
       <Typography variant="text" size="medium" aria-label="Custom Label">
         Demo text for testing
       </Typography>,
     );
-    const element = screen.getByText('Demo text for testing');
-    expect(element).toHaveAttribute('aria-label', 'Custom Label');
+    const element = screen.getByText("Demo text for testing");
+    expect(element).toHaveAttribute("aria-label", "Custom Label");
   });
 
   it('should render with a custom component (e.g., Link) when the "as" prop is provided', () => {
@@ -52,17 +52,17 @@ describe('Typography component', () => {
         Demo link text
       </Typography>,
     );
-    const element = screen.getByText('Demo link text');
-    expect(element.tagName).toBe('A');
-    expect(element).toHaveAttribute('href', '/test-link');
-    expect(element).toHaveClass('typography', 'text-medium');
+    const element = screen.getByText("Demo link text");
+    expect(element.tagName).toBe("A");
+    expect(element).toHaveAttribute("href", "/test-link");
+    expect(element).toHaveClass("typography", "text-medium");
   });
 
   it.each([
-    ['primary', '--color-text-primary'],
-    ['secondary', '--color-text-secondary'],
-    ['hint', '--color-text-hint'],
-    ['disabled', '--color-text-disabled'],
+    ["primary", "--color-text-primary"],
+    ["secondary", "--color-text-secondary"],
+    ["hint", "--color-text-hint"],
+    ["disabled", "--color-text-disabled"],
   ])('should apply the correct color class for the "%s" color', (color: string, expectedVar: string) => {
     render(
       <Typography variant="text" size="medium" color={color as Color}>
@@ -73,30 +73,30 @@ describe('Typography component', () => {
     expect(element).toHaveStyle(`--typography-color: var(${expectedVar})`);
   });
 
-  describe('Typography style merging', () => {
-    it('preserves user-provided style and merges internal styles', () => {
+  describe("Typography style merging", () => {
+    it("preserves user-provided style and merges internal styles", () => {
       render(
-        <Typography variant="text" size="medium" style={{ marginTop: '10px' }}>
+        <Typography variant="text" size="medium" style={{ marginTop: "10px" }}>
           Styled text
         </Typography>,
       );
 
-      const el = screen.getByText('Styled text');
-      expect(el).toHaveStyle('margin-top: 10px');
-      expect(el).toHaveStyle('--typography-color: var(--color-text-primary)');
+      const el = screen.getByText("Styled text");
+      expect(el).toHaveStyle("margin-top: 10px");
+      expect(el).toHaveStyle("--typography-color: var(--color-text-primary)");
     });
 
     it('preserves user-provided style when using the polymorphic "as" prop', () => {
       render(
-        <Typography as="button" variant="label" size="medium" style={{ paddingLeft: '4px' }}>
+        <Typography as="button" variant="label" size="medium" style={{ paddingLeft: "4px" }}>
           Button text
         </Typography>,
       );
 
-      const el = screen.getByText('Button text');
-      expect(el.tagName).toBe('BUTTON');
-      expect(el).toHaveStyle('padding-left: 4px');
-      expect(el).toHaveStyle('--typography-color: var(--color-text-primary)');
+      const el = screen.getByText("Button text");
+      expect(el.tagName).toBe("BUTTON");
+      expect(el).toHaveStyle("padding-left: 4px");
+      expect(el).toHaveStyle("--typography-color: var(--color-text-primary)");
     });
   });
 });

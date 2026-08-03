@@ -1,6 +1,6 @@
-import type { CheckboxFieldProps } from '@/CheckboxField/CheckboxField';
-import { HelperText } from '@/HelperText/HelperText';
-import { clsx } from '@/utils/clsx';
+import type { CheckboxFieldProps } from "@/CheckboxField/CheckboxField";
+import { HelperText } from "@/HelperText/HelperText";
+import { clsx } from "@/utils/clsx";
 import {
   type ChangeEvent,
   Children,
@@ -13,22 +13,22 @@ import {
   useId,
   useMemo,
   useRef,
-} from 'react';
+} from "react";
 
 type ChildrenProps = Pick<
   CheckboxFieldProps,
-  'name' | 'value' | 'required' | 'aria-invalid' | 'aria-errormessage' | 'aria-describedby' | 'id' | 'onChange'
+  "name" | "value" | "required" | "aria-invalid" | "aria-errormessage" | "aria-describedby" | "id" | "onChange"
 >;
 
-export type CheckboxGroupProps = Omit<ComponentProps<'div'>, 'role' | 'children'> & {
+export type CheckboxGroupProps = Omit<ComponentProps<"div">, "role" | "children"> & {
   label: ReactNode;
-  layout?: 'stacked' | 'inline';
-  itemsLayout?: 'stacked' | 'inline';
+  layout?: "stacked" | "inline";
+  itemsLayout?: "stacked" | "inline";
   textHelper?: ReactNode;
   errorMessage?: ReactNode;
   required?: boolean;
   children: ReactElement<ChildrenProps>[];
-} & Pick<CheckboxFieldProps, 'name'>;
+} & Pick<CheckboxFieldProps, "name">;
 
 export const CheckboxGroup = ({
   children,
@@ -58,11 +58,11 @@ export const CheckboxGroup = ({
         if (cardCheckboxOptionsEl && required) {
           const nbCheckedElements = cardCheckboxOptionsEl.querySelectorAll("input[type='checkbox']:checked").length;
 
-          cardCheckboxOptionsEl.querySelectorAll("input[type='checkbox']").forEach(el => {
+          cardCheckboxOptionsEl.querySelectorAll("input[type='checkbox']").forEach((el) => {
             if (nbCheckedElements < 1 && !event.target.checked) {
-              el.setAttribute('required', 'true');
+              el.setAttribute("required", "true");
             } else {
-              el.removeAttribute('required');
+              el.removeAttribute("required");
             }
           });
         }
@@ -74,13 +74,13 @@ export const CheckboxGroup = ({
 
   const checkboxFields = useMemo(
     () =>
-      Children.map(children, child => {
+      Children.map(children, (child) => {
         return cloneElement(child, {
           name,
           required,
-          'aria-invalid': errorMessage ? true : undefined,
-          'aria-errormessage': errorMessage ? helperTextId : undefined,
-          'aria-describedby': !errorMessage && textHelper ? helperTextId : undefined,
+          "aria-invalid": errorMessage ? true : undefined,
+          "aria-errormessage": errorMessage ? helperTextId : undefined,
+          "aria-describedby": !errorMessage && textHelper ? helperTextId : undefined,
           id: `${groupId}-${child.props.value}`,
           onChange: handleChange(child.props.onChange),
           ...child.props,
@@ -91,7 +91,7 @@ export const CheckboxGroup = ({
 
   return (
     <div
-      className={clsx('checkbox-group', layout === 'inline' && 'checkbox-group--inline', className)}
+      className={clsx("checkbox-group", layout === "inline" && "checkbox-group--inline", className)}
       role="group"
       id={groupId}
       aria-labelledby={legendId}
@@ -102,7 +102,7 @@ export const CheckboxGroup = ({
         {required ? <span aria-hidden>*</span> : null}
       </div>
       <div
-        className={clsx('checkbox-group__options', itemsLayout === 'stacked' && 'checkbox-group__options--stacked')}
+        className={clsx("checkbox-group__options", itemsLayout === "stacked" && "checkbox-group__options--stacked")}
         ref={cardCheckboxOptionsRef}
       >
         {checkboxFields}
@@ -116,6 +116,6 @@ export const CheckboxGroup = ({
   );
 };
 
-if (process.env.NODE_ENV !== 'production') {
-  CheckboxGroup.displayName = 'CheckboxGroup';
+if (process.env.NODE_ENV !== "production") {
+  CheckboxGroup.displayName = "CheckboxGroup";
 }

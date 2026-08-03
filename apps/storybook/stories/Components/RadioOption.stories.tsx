@@ -1,17 +1,17 @@
-import { RadioOption, type RadioOptionProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { RadioOption, type RadioOptionProps } from "@pplancq/shelter-ui-react";
+import type { Meta, StoryObj } from "@storybook/react";
 
-RadioOption.displayName = 'RadioOption';
+RadioOption.displayName = "RadioOption";
 
 const meta = {
-  title: 'Components/RadioOption',
+  title: "Components/RadioOption",
   component: RadioOption,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['!autodocs', '!dev'],
+  tags: ["!autodocs", "!dev"],
   args: {
-    label: 'Radio Option',
+    label: "Radio Option",
     checked: false,
     isInvalid: false,
     disabled: false,
@@ -23,6 +23,6 @@ export default meta;
 type Story = StoryObj<RadioOptionProps>;
 
 export const Playground: Story = {
-  tags: ['dev'],
+  tags: ["dev"],
   render: ({ ...args }) => <RadioOption {...args} />,
 };

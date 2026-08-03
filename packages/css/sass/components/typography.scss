@@ -1,13 +1,13 @@
-@forward '../variables/typography';
+@forward "../variables/typography";
 
-@use '../mixins/typography';
+@use "../mixins/typography";
 
-@import '@fontsource/raleway/600.css'; /* semi-bold */
-@import '@fontsource/raleway/700.css'; /* bold */
-@import '@fontsource/nunito/400.css'; /* regular */
-@import '@fontsource/nunito/700.css'; /* bold */
-@import '@fontsource/oswald/600.css'; /* semi-bold */
-@import '@fontsource/jetbrains-mono/500.css'; /* medium */
+@import "@fontsource/raleway/600.css"; /* semi-bold */
+@import "@fontsource/raleway/700.css"; /* bold */
+@import "@fontsource/nunito/400.css"; /* regular */
+@import "@fontsource/nunito/700.css"; /* bold */
+@import "@fontsource/oswald/600.css"; /* semi-bold */
+@import "@fontsource/jetbrains-mono/500.css"; /* medium */
 
 .typography {
   color: var(--typography-color, inherit);

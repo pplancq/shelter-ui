@@ -1,8 +1,8 @@
-@use 'true' as *;
-@use '../../sass/mixins/typography';
+@use "true" as *;
+@use "../../sass/mixins/typography";
 
-@include describe('display mixins') {
-  @include it('should apply correct styles for display mixin, D1') {
+@include describe("display mixins") {
+  @include it("should apply correct styles for display mixin, D1") {
     @include assert {
       @include output {
         .display-large {
@@ -28,7 +28,7 @@
     }
   }
 
-  @include it('should apply correct styles for display mixin, D2') {
+  @include it("should apply correct styles for display mixin, D2") {
     @include assert {
       @include output {
         .display-medium {
@@ -54,7 +54,7 @@
     }
   }
 
-  @include it('should apply correct styles for display mixin, D3') {
+  @include it("should apply correct styles for display mixin, D3") {
     @include assert {
       @include output {
         .display-small {
@@ -80,7 +80,7 @@
     }
   }
 
-  @include it('should apply correct styles for display mixin, D4') {
+  @include it("should apply correct styles for display mixin, D4") {
     @include assert {
       @include output {
         .display-smaller {
@@ -106,7 +106,7 @@
     }
   }
 
-  @include it('should apply correct styles for display mixin, D5') {
+  @include it("should apply correct styles for display mixin, D5") {
     @include assert {
       @include output {
         .display-smallest {
@@ -132,7 +132,7 @@
     }
   }
 
-  @include it('should apply correct styles for display mixin, D6') {
+  @include it("should apply correct styles for display mixin, D6") {
     @include assert {
       @include output {
         .display-tiny {
@@ -159,8 +159,8 @@
   }
 }
 
-@include describe('heading mixins') {
-  @include it('should apply correct styles for heading mixin, H1') {
+@include describe("heading mixins") {
+  @include it("should apply correct styles for heading mixin, H1") {
     @include assert {
       @include output {
         .heading-large {
@@ -186,7 +186,7 @@
     }
   }
 
-  @include it('should apply correct styles for heading mixin, H2') {
+  @include it("should apply correct styles for heading mixin, H2") {
     @include assert {
       @include output {
         .heading-medium {
@@ -212,7 +212,7 @@
     }
   }
 
-  @include it('should apply correct styles for heading mixin, H3') {
+  @include it("should apply correct styles for heading mixin, H3") {
     @include assert {
       @include output {
         .heading-small {
@@ -238,7 +238,7 @@
     }
   }
 
-  @include it('should apply correct styles for heading mixin, H4') {
+  @include it("should apply correct styles for heading mixin, H4") {
     @include assert {
       @include output {
         .heading-smaller {
@@ -264,7 +264,7 @@
     }
   }
 
-  @include it('should apply correct styles for heading mixin, H5') {
+  @include it("should apply correct styles for heading mixin, H5") {
     @include assert {
       @include output {
         .heading-smallest {
@@ -290,7 +290,7 @@
     }
   }
 
-  @include it('should apply correct styles for heading mixin, H6') {
+  @include it("should apply correct styles for heading mixin, H6") {
     @include assert {
       @include output {
         .heading-tiny {
@@ -317,8 +317,8 @@
   }
 }
 
-@include describe('text mixins') {
-  @include it('should apply correct styles for text mixin, large regular') {
+@include describe("text mixins") {
+  @include it("should apply correct styles for text mixin, large regular") {
     @include assert {
       @include output {
         .text-regular {
@@ -337,7 +337,7 @@
     }
   }
 
-  @include it('should apply correct styles for text mixin, large bold') {
+  @include it("should apply correct styles for text mixin, large bold") {
     @include assert {
       @include output {
         .text-bold {
@@ -356,7 +356,7 @@
     }
   }
 
-  @include it('should apply correct styles for text mixin, medium regular') {
+  @include it("should apply correct styles for text mixin, medium regular") {
     @include assert {
       @include output {
         .text-regular {
@@ -375,7 +375,7 @@
     }
   }
 
-  @include it('should apply correct styles for text mixin, medium bold') {
+  @include it("should apply correct styles for text mixin, medium bold") {
     @include assert {
       @include output {
         .text-bold {
@@ -394,7 +394,7 @@
     }
   }
 
-  @include it('should apply correct styles for text mixin, small regular') {
+  @include it("should apply correct styles for text mixin, small regular") {
     @include assert {
       @include output {
         .text-regular {
@@ -413,7 +413,7 @@
     }
   }
 
-  @include it('should apply correct styles for text mixin, small bold') {
+  @include it("should apply correct styles for text mixin, small bold") {
     @include assert {
       @include output {
         .text-bold {
@@ -432,7 +432,7 @@
     }
   }
 
-  @include it('should apply correct styles for text mixin, smaller regular') {
+  @include it("should apply correct styles for text mixin, smaller regular") {
     @include assert {
       @include output {
         .text-regular {
@@ -451,7 +451,7 @@
     }
   }
 
-  @include it('should apply correct styles for text mixin, smaller bold') {
+  @include it("should apply correct styles for text mixin, smaller bold") {
     @include assert {
       @include output {
         .text-bold {
@@ -470,7 +470,7 @@
     }
   }
 
-  @include it('should apply correct styles for text mixin, smallest regular') {
+  @include it("should apply correct styles for text mixin, smallest regular") {
     @include assert {
       @include output {
         .text-regular {
@@ -489,7 +489,7 @@
     }
   }
 
-  @include it('should apply correct styles for text mixin, smallest bold') {
+  @include it("should apply correct styles for text mixin, smallest bold") {
     @include assert {
       @include output {
         .text-bold {
@@ -509,8 +509,8 @@
   }
 }
 
-@include describe('label mixins') {
-  @include it('should apply correct styles for label mixin') {
+@include describe("label mixins") {
+  @include it("should apply correct styles for label mixin") {
     @include assert {
       @include output {
         .label {
@@ -529,7 +529,7 @@
     }
   }
 
-  @include it('should apply correct styles for label mixin, medium') {
+  @include it("should apply correct styles for label mixin, medium") {
     @include assert {
       @include output {
         .label {
@@ -548,7 +548,7 @@
     }
   }
 
-  @include it('should apply correct styles for label mixin, small') {
+  @include it("should apply correct styles for label mixin, small") {
     @include assert {
       @include output {
         .label {
@@ -568,8 +568,8 @@
   }
 }
 
-@include describe('code mixins') {
-  @include it('should apply correct styles for code mixin') {
+@include describe("code mixins") {
+  @include it("should apply correct styles for code mixin") {
     @include assert {
       @include output {
         .code {
@@ -588,7 +588,7 @@
     }
   }
 
-  @include it('should apply correct styles for code mixin, medium') {
+  @include it("should apply correct styles for code mixin, medium") {
     @include assert {
       @include output {
         .code {
@@ -607,7 +607,7 @@
     }
   }
 
-  @include it('should apply correct styles for code mixin, small') {
+  @include it("should apply correct styles for code mixin, small") {
     @include assert {
       @include output {
         .code {

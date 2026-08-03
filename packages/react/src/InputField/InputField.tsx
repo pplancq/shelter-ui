@@ -1,11 +1,11 @@
-import { HelperText } from '@/HelperText/HelperText';
-import { Input, type InputProps } from '@/Input/Input';
-import { Label } from '@/Label/Label';
-import { clsx } from '@/utils/clsx';
-import { type ReactNode, useId } from 'react';
+import { HelperText } from "@/HelperText/HelperText";
+import { Input, type InputProps } from "@/Input/Input";
+import { Label } from "@/Label/Label";
+import { clsx } from "@/utils/clsx";
+import { type ReactNode, useId } from "react";
 
 export type InputFieldProps = {
-  layout?: 'stacked' | 'inline';
+  layout?: "stacked" | "inline";
   required?: boolean;
   label: ReactNode;
   textHelper?: ReactNode;
@@ -27,7 +27,7 @@ export const InputField = ({
   const helperTextId = `text-helper-${id ?? genericId}`;
 
   return (
-    <div className={clsx('input-field', layout === 'inline' && 'input-field--inline', className)}>
+    <div className={clsx("input-field", layout === "inline" && "input-field--inline", className)}>
       <Label required={required} htmlFor={inputId}>
         {label}
       </Label>
@@ -48,6 +48,6 @@ export const InputField = ({
   );
 };
 
-if (process.env.NODE_ENV !== 'production') {
-  InputField.displayName = 'InputField';
+if (process.env.NODE_ENV !== "production") {
+  InputField.displayName = "InputField";
 }

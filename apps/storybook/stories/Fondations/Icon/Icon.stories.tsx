@@ -1,40 +1,40 @@
-import frFlag from '@pplancq/shelter-ui-icon/flag/fr.svg?url';
-import homeIcon from '@pplancq/shelter-ui-icon/icon/home.svg?url';
-import reactLogo from '@pplancq/shelter-ui-icon/logo/react-original.svg?url';
-import { Icon, type IconProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react';
+import frFlag from "@pplancq/shelter-ui-icon/flag/fr.svg?url";
+import homeIcon from "@pplancq/shelter-ui-icon/icon/home.svg?url";
+import reactLogo from "@pplancq/shelter-ui-icon/logo/react-original.svg?url";
+import { Icon, type IconProps } from "@pplancq/shelter-ui-react";
+import type { Meta, StoryObj } from "@storybook/react";
 
-Icon.displayName = 'Icon';
+Icon.displayName = "Icon";
 
 const demoIconList: Record<string, string> = {
-  'fr.svg': frFlag,
-  'home.svg': homeIcon,
-  'react-original.svg': reactLogo,
+  "fr.svg": frFlag,
+  "home.svg": homeIcon,
+  "react-original.svg": reactLogo,
 };
 
 const meta = {
-  title: 'Foundations/Icon',
+  title: "Foundations/Icon",
   component: Icon,
   parameters: {
-    layout: 'padded',
+    layout: "padded",
   },
-  tags: ['!autodocs', 'dev'],
+  tags: ["!autodocs", "dev"],
   args: {
-    icon: 'react-original.svg',
-    size: 'medium',
+    icon: "react-original.svg",
+    size: "medium",
     isCircle: false,
   },
   argTypes: {
     icon: {
-      control: 'select',
-      options: ['fr.svg', 'home.svg', 'react-original.svg'],
+      control: "select",
+      options: ["fr.svg", "home.svg", "react-original.svg"],
     },
     size: {
-      control: 'select',
-      options: ['small', 'medium', 'large'],
+      control: "select",
+      options: ["small", "medium", "large"],
     },
     isCircle: {
-      control: 'boolean',
+      control: "boolean",
     },
   },
 } satisfies Meta<IconProps>;
@@ -44,9 +44,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const ExampleLayout: Story = {
-  name: 'Icon',
+  name: "Icon",
   render: ({ icon, ...props }) => {
     return <Icon icon={demoIconList[icon]} {...props} key={icon} />;
   },
-  tags: ['!dev'],
+  tags: ["!dev"],
 };

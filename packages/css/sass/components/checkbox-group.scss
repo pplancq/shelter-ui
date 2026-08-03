@@ -1,23 +1,23 @@
-@forward '../base/label';
-@forward '../variables/dimension';
+@forward "../base/label";
+@forward "../variables/dimension";
 
 .checkbox-group {
   all: unset;
   display: grid;
   grid-template-areas:
-    'legend'
-    'input-options';
+    "legend"
+    "input-options";
   align-items: center;
   gap: 6px;
 
   &:has(.helper-text) {
     grid-template-areas:
-      'legend'
-      'input-options'
-      'helper-text';
+      "legend"
+      "input-options"
+      "helper-text";
   }
 
-  & .checkbox-field .label span[aria-hidden='true'] {
+  & .checkbox-field .label span[aria-hidden="true"] {
     display: none;
   }
 
@@ -42,12 +42,12 @@
   }
 
   &--inline {
-    grid-template-areas: 'legend input-options';
+    grid-template-areas: "legend input-options";
 
     &:has(.helper-text) {
       grid-template-areas:
-        'legend input-options'
-        'empty helper-text';
+        "legend input-options"
+        "empty helper-text";
     }
 
     & .checkbox-group__legend {

@@ -1,8 +1,8 @@
-import type { Preview } from 'storybook-react-rsbuild';
-import { light } from './theme';
-import { viewPorts } from './viewPort';
+import type { Preview } from "storybook-react-rsbuild";
+import { light } from "./theme";
+import { viewPorts } from "./viewPort";
 
-import '@pplancq/shelter-ui-css/css/shelter-ui.css';
+import "@pplancq/shelter-ui-css/css/shelter-ui.css";
 
 const preview: Preview = {
   parameters: {
@@ -10,8 +10,8 @@ const preview: Preview = {
     docs: {
       theme: light,
       toc: {
-        title: 'On this page',
-        headingSelector: 'h2, h3',
+        title: "On this page",
+        headingSelector: "h2, h3",
       },
     },
     viewport: {
@@ -28,29 +28,29 @@ const preview: Preview = {
     options: {
       storySort: {
         order: [
-          'Welcome',
-          'Getting Started',
-          'ChangeLog',
-          'Foundations',
+          "Welcome",
+          "Getting Started",
+          "ChangeLog",
+          "Foundations",
           [
-            'Breakpoint',
-            'Grid',
-            'Spacing',
-            'Color',
-            'Theme',
-            'Typography',
-            'Border',
-            'Shadow',
-            'Interactive Elements',
-            'Icon',
+            "Breakpoint",
+            "Grid",
+            "Spacing",
+            "Color",
+            "Theme",
+            "Typography",
+            "Border",
+            "Shadow",
+            "Interactive Elements",
+            "Icon",
           ],
-          'Components',
-          ['Button'],
+          "Components",
+          ["Button"],
         ],
       },
     },
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 };
 
 export default preview;

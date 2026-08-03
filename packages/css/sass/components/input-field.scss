@@ -2,16 +2,16 @@
   all: unset;
   display: grid;
   grid-template-areas:
-    'label'
-    'input'
-    'helper-text';
+    "label"
+    "input"
+    "helper-text";
   align-items: center;
   gap: 6px;
 
   &--inline {
     grid-template-areas:
-      'label input'
-      'null helper-text';
+      "label input"
+      "null helper-text";
 
     & .label {
       min-width: 100px;

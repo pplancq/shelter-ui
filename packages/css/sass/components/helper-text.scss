@@ -1,12 +1,12 @@
-@forward '../variables/dimension';
-@forward '../variables/typography';
-@forward '../themes/light';
-@forward '../themes/dark';
+@forward "../variables/dimension";
+@forward "../variables/typography";
+@forward "../themes/light";
+@forward "../themes/dark";
 
-@use '../mixins/typography';
-@use '../mixins/helpers';
+@use "../mixins/typography";
+@use "../mixins/helpers";
 
-@import '@fontsource/nunito/400.css'; /* regular */
+@import "@fontsource/nunito/400.css"; /* regular */
 
 .helper-text {
   --helper-text-color: var(--color-text-hint);

@@ -1,26 +1,26 @@
-import { CheckboxInput, type CheckboxInputProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react';
+import { CheckboxInput, type CheckboxInputProps } from "@pplancq/shelter-ui-react";
+import type { Meta, StoryObj } from "@storybook/react";
 
-CheckboxInput.displayName = 'CheckboxInput';
+CheckboxInput.displayName = "CheckboxInput";
 
 const meta = {
-  title: 'Components/CheckboxInput',
+  title: "Components/CheckboxInput",
   component: CheckboxInput,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['!autodocs', '!dev'],
+  tags: ["!autodocs", "!dev"],
   args: {
-    name: 'checkbox',
-    value: 'checkbox',
+    name: "checkbox",
+    value: "checkbox",
     checked: undefined,
     indeterminate: false,
     disabled: false,
-    'aria-invalid': false,
+    "aria-invalid": false,
   },
   argTypes: {
     checked: {
-      control: 'boolean',
+      control: "boolean",
     },
   },
 } satisfies Meta<CheckboxInputProps>;
@@ -30,5 +30,5 @@ export default meta;
 type Story = StoryObj<CheckboxInputProps>;
 
 export const Playground: Story = {
-  tags: ['dev'],
+  tags: ["dev"],
 };

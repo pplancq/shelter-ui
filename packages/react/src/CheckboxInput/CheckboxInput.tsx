@@ -1,4 +1,4 @@
-import { clsx } from '@/utils/clsx';
+import { clsx } from "@/utils/clsx";
 import {
   type ChangeEvent,
   type ComponentProps,
@@ -6,9 +6,9 @@ import {
   useImperativeHandle,
   useLayoutEffect,
   useRef,
-} from 'react';
+} from "react";
 
-export type CheckboxInputProps = Omit<ComponentProps<'input'>, 'type'> & {
+export type CheckboxInputProps = Omit<ComponentProps<"input">, "type"> & {
   indeterminate?: boolean;
 };
 
@@ -34,8 +34,8 @@ export const CheckboxInput = ({
 
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
-      if (e.target.getAttribute('aria-checked') === 'mixed') {
-        e.target.removeAttribute('aria-checked');
+      if (e.target.getAttribute("aria-checked") === "mixed") {
+        e.target.removeAttribute("aria-checked");
       }
 
       onChange(e);
@@ -46,9 +46,9 @@ export const CheckboxInput = ({
   return (
     <input
       type="checkbox"
-      className={clsx('checkbox', className)}
+      className={clsx("checkbox", className)}
       checked={checked}
-      aria-checked={indeterminate ? 'mixed' : undefined}
+      aria-checked={indeterminate ? "mixed" : undefined}
       ref={checkboxRef}
       onChange={handleChange}
       {...props}
@@ -56,6 +56,6 @@ export const CheckboxInput = ({
   );
 };
 
-if (process.env.NODE_ENV !== 'production') {
-  CheckboxInput.displayName = 'CheckboxInput';
+if (process.env.NODE_ENV !== "production") {
+  CheckboxInput.displayName = "CheckboxInput";
 }

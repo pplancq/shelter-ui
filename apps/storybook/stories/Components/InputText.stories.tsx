@@ -1,52 +1,52 @@
-import eyeIcon from '@pplancq/shelter-ui-icon/icon/eye.svg?url';
-import searchIcon from '@pplancq/shelter-ui-icon/icon/search.svg?url';
-import timesIcon from '@pplancq/shelter-ui-icon/icon/times.svg?url';
-import { Icon, InputField, type InputFieldProps } from '@pplancq/shelter-ui-react';
-import type { Meta, StoryObj } from '@storybook/react';
-import type { JSX } from 'react';
+import eyeIcon from "@pplancq/shelter-ui-icon/icon/eye.svg?url";
+import searchIcon from "@pplancq/shelter-ui-icon/icon/search.svg?url";
+import timesIcon from "@pplancq/shelter-ui-icon/icon/times.svg?url";
+import { Icon, InputField, type InputFieldProps } from "@pplancq/shelter-ui-react";
+import type { Meta, StoryObj } from "@storybook/react";
+import type { JSX } from "react";
 
-Icon.displayName = 'Icon';
-InputField.displayName = 'InputField';
+Icon.displayName = "Icon";
+InputField.displayName = "InputField";
 
 const iconList: Record<string, JSX.Element | undefined> = {
-  'search.svg': <Icon icon={searchIcon} />,
-  'eye.svg': <Icon icon={eyeIcon} />,
-  'times.svg': <Icon icon={timesIcon} />,
+  "search.svg": <Icon icon={searchIcon} />,
+  "eye.svg": <Icon icon={eyeIcon} />,
+  "times.svg": <Icon icon={timesIcon} />,
   none: undefined,
 };
 
 const meta = {
-  title: 'Components/InputField',
+  title: "Components/InputField",
   component: InputField,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
   args: {
-    layout: 'stacked',
-    label: 'Label',
-    textHelper: 'Helper text',
-    errorMessage: '',
-    value: '',
-    placeholder: 'Placeholder',
+    layout: "stacked",
+    label: "Label",
+    textHelper: "Helper text",
+    errorMessage: "",
+    value: "",
+    placeholder: "Placeholder",
     required: false,
-    startAdornment: 'none',
-    endAdornment: 'none',
+    startAdornment: "none",
+    endAdornment: "none",
   },
   argTypes: {
     layout: {
-      control: 'select',
-      options: ['stacked', 'inline'],
+      control: "select",
+      options: ["stacked", "inline"],
     },
     startAdornment: {
-      control: 'select',
+      control: "select",
       options: Object.keys(iconList),
     },
     endAdornment: {
-      control: 'select',
+      control: "select",
       options: Object.keys(iconList),
     },
   },
-  tags: ['!autodocs', '!dev'],
+  tags: ["!autodocs", "!dev"],
 } satisfies Meta<InputFieldProps>;
 
 export default meta;
@@ -54,16 +54,16 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
-  tags: ['dev'],
+  tags: ["dev"],
   render: ({ placeholder, startAdornment, endAdornment, textHelper, errorMessage, value, ...args }) => (
     <InputField
       {...args}
-      placeholder={placeholder === '' ? ' ' : placeholder}
+      placeholder={placeholder === "" ? " " : placeholder}
       startAdornment={iconList[startAdornment as string]}
       endAdornment={iconList[endAdornment as string]}
-      textHelper={textHelper !== '' ? textHelper : undefined}
-      errorMessage={errorMessage !== '' ? errorMessage : undefined}
-      value={value !== '' ? value : undefined}
+      textHelper={textHelper !== "" ? textHelper : undefined}
+      errorMessage={errorMessage !== "" ? errorMessage : undefined}
+      value={value !== "" ? value : undefined}
     />
   ),
 };

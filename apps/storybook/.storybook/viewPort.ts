@@ -1,44 +1,44 @@
-import type { ViewportMap } from 'storybook/viewport';
+import type { ViewportMap } from "storybook/viewport";
 
 export const viewPorts: ViewportMap = {
   mobile: {
-    name: 'Mobile',
+    name: "Mobile",
     styles: {
-      width: '320px',
-      height: '100%',
+      width: "320px",
+      height: "100%",
     },
-    type: 'mobile',
+    type: "mobile",
   },
   tablet: {
-    name: 'Tablet',
+    name: "Tablet",
     styles: {
-      width: '668px',
-      height: '100%',
+      width: "668px",
+      height: "100%",
     },
-    type: 'tablet',
+    type: "tablet",
   },
   desktopSmall: {
-    name: 'Desktop Small',
+    name: "Desktop Small",
     styles: {
-      width: '1024px',
-      height: '100%',
+      width: "1024px",
+      height: "100%",
     },
-    type: 'desktop',
+    type: "desktop",
   },
   desktopMedium: {
-    name: 'Desktop Medium',
+    name: "Desktop Medium",
     styles: {
-      width: '1280px',
-      height: '100%',
+      width: "1280px",
+      height: "100%",
     },
-    type: 'desktop',
+    type: "desktop",
   },
   desktopLarge: {
-    name: 'Desktop Large',
+    name: "Desktop Large",
     styles: {
-      width: '1600px',
-      height: '100%',
+      width: "1600px",
+      height: "100%",
     },
-    type: 'desktop',
+    type: "desktop",
   },
 };
