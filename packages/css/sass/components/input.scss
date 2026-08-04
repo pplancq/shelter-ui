@@ -14,27 +14,27 @@
   --input-padding-horizontal: var(--padding-2);
   --input-border-radius: var(--border-radius-small);
   --input-border-color: var(--color-background-alt);
-  --input-border-width: #{helpers.px-to-rem(1)};
+  --input-border-width: #{helpers.pxToRem(1)};
   --input-color: var(--color-text-primary);
   --input-background-color: var(--color-neutral-light);
   --input-color-icon: var(--color-text-secondary);
 
   input {
     all: unset;
-    min-width: 0;
     flex: 1 1 auto;
+    min-width: 0;
   }
 
   all: unset;
   display: flex;
-  min-width: helpers.px-to-rem(150);
-  padding: var(--input-padding-vertical) var(--input-padding-horizontal);
-  border: var(--input-border-width) solid var(--input-border-color);
-  border-radius: var(--input-border-radius);
-  align-items: center;
   gap: var(--gap-1);
+  align-items: center;
+  min-width: helpers.pxToRem(150);
+  padding: var(--input-padding-vertical) var(--input-padding-horizontal);
   color: var(--input-color);
   background-color: var(--input-background-color);
+  border: var(--input-border-width) solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
 
   @include typography.text(medium);
 
@@ -66,8 +66,8 @@
     --input-background-color: var(--color-disabled-background);
     --input-color-icon: var(--color-text-disabled);
 
-    box-shadow: unset;
     cursor: not-allowed;
+    box-shadow: unset;
   }
 
   &--error {

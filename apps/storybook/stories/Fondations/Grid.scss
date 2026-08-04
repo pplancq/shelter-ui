@@ -2,26 +2,26 @@
   & > * {
     padding: 1rem 0;
     text-align: center;
-    background-color: #ff000010;
     outline: 1px solid red;
+    background-color: #ff000010;
   }
 
   header {
     padding: 1rem;
-    background-color: #00ff0010;
     outline: 1px solid green;
+    background-color: #00ff0010;
   }
 
   main {
     padding: 0;
-    background-color: #00ffff10;
     outline: 1px solid cyan;
+    background-color: #00ffff10;
   }
 
   article {
     padding: 1rem;
-    background-color: #0000ff20;
     outline: 1px solid blue;
+    background-color: #0000ff20;
 
     h2 {
       margin: 0;
@@ -35,14 +35,14 @@
 
   footer {
     padding: 1rem;
-    background-color: #ff00ff10;
     outline: 1px solid purple;
+    background-color: #ff00ff10;
   }
 
   section {
     padding: 1rem;
-    background-color: #ffff0010;
     outline: 1px solid yellow;
+    background-color: #ffff0010;
   }
 }
 

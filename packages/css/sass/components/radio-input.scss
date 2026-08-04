@@ -2,7 +2,7 @@
 @forward "../themes/light";
 @forward "../themes/dark";
 
-@use "../mixins/outline-on-focus-visible";
+@use "../mixins/outlineOnFocusVisible";
 @use "../mixins/helpers";
 
 .radio-input {
@@ -14,16 +14,16 @@
 
   all: unset;
   display: flex;
-  width: helpers.px-to-rem(24);
-  height: helpers.px-to-rem(24);
-  border-radius: var(--radio-input-border-radius);
   align-items: center;
   justify-content: center;
-  background-color: var(--radio-input-background-color);
-  box-shadow: 0 0 0 var(--radio-input-border-width) var(--radio-input-border-color) inset;
+  width: helpers.pxToRem(24);
+  height: helpers.pxToRem(24);
   cursor: pointer;
+  background-color: var(--radio-input-background-color);
+  border-radius: var(--radio-input-border-radius);
+  box-shadow: 0 0 0 var(--radio-input-border-width) var(--radio-input-border-color) inset;
 
-  @include outline-on-focus-visible.outline-on-focus-visible();
+  @include outlineOnFocusVisible.outlineOnFocusVisible;
 
   &:hover {
     --radio-input-border-width: 2px;
@@ -31,11 +31,11 @@
   }
 
   &::before {
-    width: helpers.px-to-rem(14);
-    height: helpers.px-to-rem(14);
-    border-radius: var(--radio-input-border-radius);
-    background-color: var(--radio-input-checked-background-color);
+    width: helpers.pxToRem(14);
+    height: helpers.pxToRem(14);
     content: "";
+    background-color: var(--radio-input-checked-background-color);
+    border-radius: var(--radio-input-border-radius);
   }
 
   &:checked {

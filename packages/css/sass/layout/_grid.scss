@@ -2,32 +2,32 @@
 @use "../mixins/spacing";
 @use "responsive";
 
-$responsive-grid: (
+$responsiveGrid: (
   tablet: (
     cols: 8,
-    margin-h: spacing.get-margin-horizontal(4),
-    gap: spacing.get-gap(4),
+    margin-h: spacing.getMarginHorizontal(4),
+    gap: spacing.getGap(4),
   ),
   desktop-small: (
     cols: 12,
     margin-h: var(--margin-8),
-    gap: spacing.get-gap(4),
+    gap: spacing.getGap(4),
   ),
   desktop-medium: (
     cols: 12,
     margin-h: var(--margin-10),
-    gap: spacing.get-gap(4),
+    gap: spacing.getGap(4),
   ),
   desktop-large: (
     cols: 12,
     margin-h: auto,
-    gap: spacing.get-gap(4),
+    gap: spacing.getGap(4),
   ),
 );
 
-@mixin generate-responsive-grid($responsive-grid) {
-  @each $breakpoint, $settings in $responsive-grid {
-    @include responsive.media-exceeds-width($breakpoint) {
+@mixin generateResponsiveGrid($responsiveGrid) {
+  @each $breakpoint, $settings in $responsiveGrid {
+    @include responsive.mediaExceedsWidth($breakpoint) {
       @each $property, $value in $settings {
         --#{$property}: #{$value};
       }
@@ -35,9 +35,9 @@ $responsive-grid: (
   }
 }
 
-@mixin generate-grid-item-classes() {
+@mixin generateGridItemClasses() {
   @each $breakpoint, $value in responsive.$breakpoints {
-    @include responsive.media-exceeds-width($breakpoint) {
+    @include responsive.mediaExceedsWidth($breakpoint) {
       [class*="grid-item"] {
         grid-column: var(--start-#{$breakpoint}, var(--start)) / span var(--col-#{$breakpoint}, var(--col, var(--cols)));
       }
@@ -49,23 +49,23 @@ $responsive-grid: (
   --cols: 4;
   --start: auto;
 
-  @include spacing.init-margin-horizontal("margin-h", 2);
-  @include spacing.init-gap("gap", 2);
+  @include spacing.initMarginHorizontal("margin-h", 2);
+  @include spacing.initGap("gap", 2);
 
   display: grid;
-  max-width: helpers.px-to-rem(1440);
   grid-template-columns: repeat(var(--cols), 1fr);
+  max-width: helpers.pxToRem(1440);
 
-  @include generate-responsive-grid($responsive-grid);
+  @include generateResponsiveGrid($responsiveGrid);
 
   & > * {
     --start: auto;
     --cols: 1;
-    --margin-h: spacing.get-margin-horizontal(0);
+    --margin-h: spacing.getMarginHorizontal(0);
 
     grid-template-columns: subgrid;
     grid-column: var(--start) / span var(--cols);
   }
 
-  @include generate-grid-item-classes();
+  @include generateGridItemClasses;
 }

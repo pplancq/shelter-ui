@@ -1,73 +1,73 @@
 @use "../variables/color";
 
-@mixin dark-Theme {
+@mixin darkTheme {
   /* primary */
-  --color-primary-main-light: #{color.$color-blue-700};
-  --color-primary-main-medium: #{color.$color-blue-650};
-  --color-primary-main-strong: #{color.$color-blue-600};
-  --color-primary-main-on: #{color.$color-blue-50};
-  --color-primary-alt-base: #{color.$color-blue-200};
-  --color-primary-alt-onbase: #{color.$color-blue-850};
-  --color-primary-alt-onstrong: #{color.$color-blue-800};
-  --color-primary-alt-onstronger: #{color.$color-blue-750};
+  --color-primary-main-light: #{color.$colorBlue700};
+  --color-primary-main-medium: #{color.$colorBlue650};
+  --color-primary-main-strong: #{color.$colorBlue600};
+  --color-primary-main-on: #{color.$colorBlue50};
+  --color-primary-alt-base: #{color.$colorBlue200};
+  --color-primary-alt-onbase: #{color.$colorBlue850};
+  --color-primary-alt-onstrong: #{color.$colorBlue800};
+  --color-primary-alt-onstronger: #{color.$colorBlue750};
 
   /* secondary */
-  --color-secondary-main-light: #{color.$color-purple-650};
-  --color-secondary-main-medium: #{color.$color-purple-600};
-  --color-secondary-main-strong: #{color.$color-purple-550};
-  --color-secondary-main-on: #{color.$color-purple-50};
-  --color-secondary-alt-base: #{color.$color-purple-200};
-  --color-secondary-alt-onbase: #{color.$color-purple-850};
-  --color-secondary-alt-onstrong: #{color.$color-purple-800};
-  --color-secondary-alt-onstronger: #{color.$color-purple-750};
+  --color-secondary-main-light: #{color.$colorPurple650};
+  --color-secondary-main-medium: #{color.$colorPurple600};
+  --color-secondary-main-strong: #{color.$colorPurple550};
+  --color-secondary-main-on: #{color.$colorPurple50};
+  --color-secondary-alt-base: #{color.$colorPurple200};
+  --color-secondary-alt-onbase: #{color.$colorPurple850};
+  --color-secondary-alt-onstrong: #{color.$colorPurple800};
+  --color-secondary-alt-onstronger: #{color.$colorPurple750};
 
   /* tertiary */
-  --color-tertiary-main-light: #{color.$color-red-700};
-  --color-tertiary-main-medium: #{color.$color-red-650};
-  --color-tertiary-main-strong: #{color.$color-red-600};
-  --color-tertiary-main-on: #{color.$color-red-50};
-  --color-tertiary-alt-base: #{color.$color-red-200};
-  --color-tertiary-alt-onbase: #{color.$color-red-900};
-  --color-tertiary-alt-onstrong: #{color.$color-red-850};
-  --color-tertiary-alt-onstronger: #{color.$color-red-800};
+  --color-tertiary-main-light: #{color.$colorRed700};
+  --color-tertiary-main-medium: #{color.$colorRed650};
+  --color-tertiary-main-strong: #{color.$colorRed600};
+  --color-tertiary-main-on: #{color.$colorRed50};
+  --color-tertiary-alt-base: #{color.$colorRed200};
+  --color-tertiary-alt-onbase: #{color.$colorRed900};
+  --color-tertiary-alt-onstrong: #{color.$colorRed850};
+  --color-tertiary-alt-onstronger: #{color.$colorRed800};
 
   /* signal */
-  --color-signal-info-background: #{color.$color-cyan-250};
-  --color-signal-info-foreground: #{color.$color-cyan-950};
-  --color-signal-warning-background: #{color.$color-orange-250};
-  --color-signal-warning-foreground: #{color.$color-orange-950};
-  --color-signal-success-background: #{color.$color-green-250};
-  --color-signal-success-foreground: #{color.$color-green-950};
-  --color-signal-critical-background: #{color.$color-red-250};
-  --color-signal-critical-foreground: #{color.$color-red-950};
+  --color-signal-info-background: #{color.$colorCyan250};
+  --color-signal-info-foreground: #{color.$colorCyan950};
+  --color-signal-warning-background: #{color.$colorOrange250};
+  --color-signal-warning-foreground: #{color.$colorOrange950};
+  --color-signal-success-background: #{color.$colorGreen250};
+  --color-signal-success-foreground: #{color.$colorGreen950};
+  --color-signal-critical-background: #{color.$colorRed250};
+  --color-signal-critical-foreground: #{color.$colorRed950};
 
   /* background */
-  --color-background-body: #{color.$color-gray-850};
-  --color-background-surface: #{color.$color-gray-800};
-  --color-background-alt: #{color.$color-gray-750};
-  --color-background-overlay: #{color.$color-gray-A20};
+  --color-background-body: #{color.$colorGray850};
+  --color-background-surface: #{color.$colorGray800};
+  --color-background-alt: #{color.$colorGray750};
+  --color-background-overlay: #{color.$colorGrayA20};
 
   /* text */
-  --color-text-primary: #{color.$color-gray-50};
-  --color-text-secondary: #{color.$color-gray-200};
-  --color-text-hint: #{color.$color-gray-400};
-  --color-text-disabled: #{color.$color-gray-100};
+  --color-text-primary: #{color.$colorGray50};
+  --color-text-secondary: #{color.$colorGray200};
+  --color-text-hint: #{color.$colorGray400};
+  --color-text-disabled: #{color.$colorGray100};
 
   /* disabled */
-  --color-disabled-foreground: #{color.$color-gray-100};
-  --color-disabled-background: #{color.$color-gray-450};
+  --color-disabled-foreground: #{color.$colorGray100};
+  --color-disabled-background: #{color.$colorGray450};
 
   /* neutral */
-  --color-neutral-light: #{color.$color-neutral-1000};
-  --color-neutral-dark: #{color.$color-neutral-00};
+  --color-neutral-light: #{color.$colorNeutral1000};
+  --color-neutral-dark: #{color.$colorNeutral00};
 }
 
 .dark-theme {
-  @include dark-Theme;
+  @include darkTheme;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    @include dark-Theme;
+    @include darkTheme;
   }
 }

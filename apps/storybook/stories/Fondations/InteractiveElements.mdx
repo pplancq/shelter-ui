@@ -1,6 +1,6 @@
-import icons from '@pplancq/shelter-ui-icon/icon/align-center.svg';
-import { Button, Icon } from '@pplancq/shelter-ui-react';
-import { Meta } from '@storybook/addon-docs/blocks';
+import icons from "@pplancq/shelter-ui-icon/icon/align-center.svg";
+import { Button, Icon } from "@pplancq/shelter-ui-react";
+import { Meta } from "@storybook/addon-docs/blocks";
 
 <Meta title="Foundations/Interactive Elements" />
 
@@ -47,15 +47,15 @@ textarea:focus-visible {
 
 Here is an example of a button, link, and input field with the focus style applied:
 
-<div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+<div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
   <Button
     className="sb-unstyled"
     style={{
-      outline: '2px solid var(--color-primary-main-light)',
-      outlineOffset: '2px',
+      outline: "2px solid var(--color-primary-main-light)",
+      outlineOffset: "2px",
     }}
   >
-    {'Button'}
+    {"Button"}
   </Button>
   <Button
     className="sb-unstyled"
@@ -63,12 +63,12 @@ Here is an example of a button, link, and input field with the focus style appli
     variant="ghost"
     href="#"
     style={{
-      outline: '2px solid var(--color-primary-main-light)',
-      outlineOffset: '2px',
+      outline: "2px solid var(--color-primary-main-light)",
+      outlineOffset: "2px",
     }}
-    onClick={e => e.preventDefault()}
+    onClick={(e) => e.preventDefault()}
   >
-    {'Link'}
+    {"Link"}
   </Button>
   <Button
     className="sb-unstyled"
@@ -77,8 +77,8 @@ Here is an example of a button, link, and input field with the focus style appli
     isCircle
     startIcon={<Icon icon={icons} />}
     style={{
-      outline: '2px solid var(--color-primary-main-light)',
-      outlineOffset: '2px',
+      outline: "2px solid var(--color-primary-main-light)",
+      outlineOffset: "2px",
     }}
   />
 </div>
@@ -89,21 +89,21 @@ Here is an example of a button, link, and input field with the focus style appli
 - Use the CSS variable `--color-primary-main-light` to ensure consistency with the design system.
 - Test keyboard navigation (Tab, Shift+Tab) to verify focus visibility.
 
-## Using the `outline-on-focus-visible` mixin
+## Using the `outlineOnFocusVisible` mixin
 
 To easily apply the focus style in your Sass components, use the provided mixin:
 
 ```scss
-@use '@pplancq/shelter-ui-css/sass/mixins/outline-on-focus-visible';
+@use "@pplancq/shelter-ui-css/sass/mixins/outlineOnFocusVisible";
 
-@include outline-on-focus-visible.outline-on-focus-visible();
+@include outlineOnFocusVisible.outlineOnFocusVisible();
 ```
 
 You can also add additional styles inside the mixin using `@content`:
 
 ```scss
 .my-button {
-  @include outline-on-focus-visible.outline-on-focus-visible() {
+  @include outlineOnFocusVisible.outlineOnFocusVisible() {
     // Additional styles on focus-visible
     box-shadow: 0 0 0 4px rgba(32, 76, 207, 0.15);
   }

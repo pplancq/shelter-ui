@@ -1,13 +1,13 @@
 /* stylelint-disable order/properties-order */
 @use "true" as *;
-@use "../../sass/mixins/outline-on-focus-visible" as outline;
+@use "../../sass/mixins/outlineOnFocusVisible" as outline;
 
-@include describe("outline-on-focus-visible") {
+@include describe("outlineOnFocusVisible") {
   @include it("should generate :focus-visible selector with outline styles") {
     @include assert {
       @include output {
         .test-button {
-          @include outline.outline-on-focus-visible();
+          @include outline.outlineOnFocusVisible;
         }
       }
       @include expect {
@@ -23,7 +23,7 @@
     @include assert {
       @include output {
         .test-input {
-          @include outline.outline-on-focus-visible() {
+          @include outline.outlineOnFocusVisible {
             border-color: var(--color-primary-main);
             background-color: var(--color-background-light);
           }
@@ -45,7 +45,7 @@
       @include output {
         .form-group {
           input {
-            @include outline.outline-on-focus-visible() {
+            @include outline.outlineOnFocusVisible {
               box-shadow: 0 0 0 3px rgb(0 123 255 / 25%);
             }
           }

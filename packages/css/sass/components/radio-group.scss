@@ -9,8 +9,8 @@
   grid-template-areas:
     "legend"
     "input-options";
+  gap: helpers.pxToRem(6);
   align-items: center;
-  gap: helpers.px-to-rem(6);
 
   &:has(.helper-text) {
     grid-template-areas:
@@ -28,7 +28,7 @@
   &__options {
     display: flex;
     grid-area: input-options;
-    gap: helpers.px-to-rem(6);
+    gap: helpers.pxToRem(6);
 
     &--stacked {
       flex-direction: column;
@@ -50,7 +50,7 @@
     }
 
     & .radio-group__legend {
-      min-width: helpers.px-to-rem(100);
+      min-width: helpers.pxToRem(100);
     }
 
     &:has(.radio-group__options--stacked) {

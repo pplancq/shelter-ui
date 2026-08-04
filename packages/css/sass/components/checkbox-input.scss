@@ -2,11 +2,11 @@
 @forward "../themes/light";
 @forward "../themes/dark";
 
-@use "../mixins/outline-on-focus-visible";
+@use "../mixins/outlineOnFocusVisible";
 @use "../mixins/helpers";
 @use "../variables/color";
 
-@function checkbox-icon($color, $undetermined: false) {
+@function checkboxIcon($color, $undetermined: false) {
   @if $undetermined {
     @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='#{$color}'%3E%3Cpath d='M19,11H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z'/%3E%3C/svg%3E");
   }
@@ -22,26 +22,26 @@
 
   all: unset;
   display: block;
-  width: helpers.px-to-rem(24);
-  height: helpers.px-to-rem(24);
-  border-radius: var(--checkbox-input-border-radius);
-  background-color: var(--checkbox-input-background-color);
-  box-shadow: 0 0 0 var(--checkbox-input-border-width) var(--checkbox-input-border-color) inset;
+  width: helpers.pxToRem(24);
+  height: helpers.pxToRem(24);
   cursor: pointer;
+  background-color: var(--checkbox-input-background-color);
+  border-radius: var(--checkbox-input-border-radius);
+  box-shadow: 0 0 0 var(--checkbox-input-border-width) var(--checkbox-input-border-color) inset;
 
-  @include outline-on-focus-visible.outline-on-focus-visible();
+  @include outlineOnFocusVisible.outlineOnFocusVisible;
 
   &:indeterminate,
   &:checked {
     --checkbox-input-border-width: 1px;
     --checkbox-input-border-color: var(--color-primary-main-light);
-    --checkbox-input-background-image: #{checkbox-icon(color.$color-blue-500)};
+    --checkbox-input-background-image: #{checkboxIcon(color.$colorBlue500)};
 
     background-image: var(--checkbox-input-background-image);
   }
 
   &:indeterminate {
-    --checkbox-input-background-image: #{checkbox-icon(color.$color-blue-500, true)};
+    --checkbox-input-background-image: #{checkboxIcon(color.$colorBlue500, true)};
   }
 
   &:disabled {
@@ -52,11 +52,11 @@
     cursor: not-allowed;
 
     &:checked {
-      --checkbox-input-background-image: #{checkbox-icon(color.$color-gray-450)};
+      --checkbox-input-background-image: #{checkboxIcon(color.$colorGray450)};
     }
 
     &:indeterminate {
-      --checkbox-input-background-image: #{checkbox-icon(color.$color-gray-450, true)};
+      --checkbox-input-background-image: #{checkboxIcon(color.$colorGray450, true)};
     }
   }
 
@@ -70,11 +70,11 @@
     --checkbox-input-border-color: var(--color-tertiary-main-light);
 
     &:checked {
-      --checkbox-input-background-image: #{checkbox-icon(color.$color-red-500)};
+      --checkbox-input-background-image: #{checkboxIcon(color.$colorRed500)};
     }
 
     &:indeterminate {
-      --checkbox-input-background-image: #{checkbox-icon(color.$color-red-500, true)};
+      --checkbox-input-background-image: #{checkboxIcon(color.$colorRed500, true)};
     }
 
     &:hover,
@@ -87,67 +87,67 @@
 .light-theme {
   .checkbox:checked {
     &:not(:disabled) {
-      --checkbox-input-background-image: #{checkbox-icon(color.$color-blue-500)};
+      --checkbox-input-background-image: #{checkboxIcon(color.$colorBlue500)};
 
       &[aria-invalid="true"] {
-        --checkbox-input-background-image: #{checkbox-icon(color.$color-red-500)};
+        --checkbox-input-background-image: #{checkboxIcon(color.$colorRed500)};
       }
     }
 
     &:disabled {
-      --checkbox-input-background-image: #{checkbox-icon(color.$color-gray-450)};
+      --checkbox-input-background-image: #{checkboxIcon(color.$colorGray450)};
     }
   }
 
   .checkbox:indeterminate {
     &:not(:disabled) {
-      --checkbox-input-background-image: #{checkbox-icon(color.$color-blue-500, true)};
+      --checkbox-input-background-image: #{checkboxIcon(color.$colorBlue500, true)};
 
       &[aria-invalid="true"] {
-        --checkbox-input-background-image: #{checkbox-icon(color.$color-red-500, true)};
+        --checkbox-input-background-image: #{checkboxIcon(color.$colorRed500, true)};
       }
     }
 
     &:disabled {
-      --checkbox-input-background-image: #{checkbox-icon(color.$color-gray-450, true)};
+      --checkbox-input-background-image: #{checkboxIcon(color.$colorGray450, true)};
     }
   }
 }
 
-@mixin dark-Theme {
+@mixin darkTheme {
   .checkbox:checked {
     &:not(:disabled) {
-      --checkbox-input-background-image: #{checkbox-icon(color.$color-blue-700)};
+      --checkbox-input-background-image: #{checkboxIcon(color.$colorBlue700)};
 
       &[aria-invalid="true"] {
-        --checkbox-input-background-image: #{checkbox-icon(color.$color-red-700)};
+        --checkbox-input-background-image: #{checkboxIcon(color.$colorRed700)};
       }
     }
 
     &:disabled {
-      --checkbox-input-background-image: #{checkbox-icon(color.$color-gray-100)};
+      --checkbox-input-background-image: #{checkboxIcon(color.$colorGray100)};
     }
   }
 
   .checkbox:indeterminate {
     &:not(:disabled) {
-      --checkbox-input-background-image: #{checkbox-icon(color.$color-blue-700, true)};
+      --checkbox-input-background-image: #{checkboxIcon(color.$colorBlue700, true)};
 
       &[aria-invalid="true"] {
-        --checkbox-input-background-image: #{checkbox-icon(color.$color-red-700, true)};
+        --checkbox-input-background-image: #{checkboxIcon(color.$colorRed700, true)};
       }
     }
 
     &:disabled {
-      --checkbox-input-background-image: #{checkbox-icon(color.$color-gray-100, true)};
+      --checkbox-input-background-image: #{checkboxIcon(color.$colorGray100, true)};
     }
   }
 }
 
 .dark-theme {
-  @include dark-Theme;
+  @include darkTheme;
 }
 
 @media (prefers-color-scheme: dark) {
-  @include dark-Theme;
+  @include darkTheme;
 }

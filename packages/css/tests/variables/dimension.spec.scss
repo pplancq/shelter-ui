@@ -1,15 +1,15 @@
 @use "true" as *;
 @use "../../sass/variables/dimension";
 
-@include describe("generate-dimension-variables mixin") {
+@include describe("generateDimensionVariables mixin") {
   @include it("should generate margin variables for primitives and additional values") {
     @include assert {
       @include output {
         :root {
-          @include dimension.generate-dimension-variables(
+          @include dimension.generateDimensionVariables(
             "margin",
             dimension.$margins,
-            dimension.$primitive-additional-value
+            dimension.$primitiveAdditionalValue
           );
         }
       }
@@ -43,10 +43,10 @@
     @include assert {
       @include output {
         :root {
-          @include dimension.generate-dimension-variables(
+          @include dimension.generateDimensionVariables(
             "padding",
             dimension.$paddings,
-            dimension.$primitive-additional-value
+            dimension.$primitiveAdditionalValue
           );
         }
       }
@@ -69,11 +69,7 @@
     @include assert {
       @include output {
         :root {
-          @include dimension.generate-dimension-variables(
-            "gap",
-            dimension.$gaps,
-            dimension.$primitive-additional-value
-          );
+          @include dimension.generateDimensionVariables("gap", dimension.$gaps, dimension.$primitiveAdditionalValue);
         }
       }
       @include expect {

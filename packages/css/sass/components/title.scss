@@ -12,7 +12,7 @@
 @import "@fontsource/raleway/700.css"; /* bold */
 @import "@fontsource/nunito/700.css"; /* bold */
 
-@mixin title-group-heading($level, $subtitle-size) {
+@mixin titleGroupHeading($level, $subtitle-size) {
   &:has(h#{$level}) {
     .title__title {
       @include typography.heading($level);
@@ -31,33 +31,33 @@
   --title-padding-v: var(--padding-0-5);
   --title-padding-h: var(--padding-2);
   --title-gap: var(--gap-1);
-  --title-icon-size: #{helpers.px-to-rem(24)};
+  --title-icon-size: #{helpers.pxToRem(24)};
 
   all: unset;
   display: flex;
-  min-width: 100%;
-  padding-inline: var(--title-padding-h);
-  padding-block: var(--title-padding-v);
-  border-bottom: 1px solid var(--title-border-color);
-  align-items: end;
   gap: var(--title-gap);
+  align-items: end;
+  min-width: 100%;
+  padding-block: var(--title-padding-v);
+  padding-inline: var(--title-padding-h);
+  border-bottom: 1px solid var(--title-border-color);
 
-  @include responsive.media-exceeds-width(tablet) {
-    min-width: helpers.px-to-rem(500);
+  @include responsive.mediaExceedsWidth(tablet) {
+    min-width: helpers.pxToRem(500);
   }
 
   &__group {
     all: unset;
     display: flex;
-    align-items: end;
     gap: var(--gap-2);
+    align-items: end;
 
-    @include title-group-heading(1, large);
-    @include title-group-heading(2, medium);
-    @include title-group-heading(3, small);
-    @include title-group-heading(4, small);
-    @include title-group-heading(5, smaller);
-    @include title-group-heading(6, smallest);
+    @include titleGroupHeading(1, large);
+    @include titleGroupHeading(2, medium);
+    @include titleGroupHeading(3, small);
+    @include titleGroupHeading(4, small);
+    @include titleGroupHeading(5, smaller);
+    @include titleGroupHeading(6, smallest);
   }
 
   & svg {
@@ -68,7 +68,7 @@
 
   &:has(h4, h5, h6) {
     & svg {
-      --title-icon-size: #{helpers.px-to-rem(20)};
+      --title-icon-size: #{helpers.pxToRem(20)};
     }
   }
 
