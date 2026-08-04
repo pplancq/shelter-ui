@@ -13,14 +13,14 @@
 
   all: unset;
   display: inline-flex;
-  align-items: end;
   gap: var(--gap-0-5);
+  align-items: end;
   color: var(--helper-text-color);
 
   @include typography.text(smallest);
 
   svg {
-    --icon-size: #{helpers.px-to-rem(14)};
+    --icon-size: #{helpers.pxToRem(14)};
 
     fill: var(--helper-text-color);
   }

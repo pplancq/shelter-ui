@@ -2,12 +2,12 @@
 @use "../../sass/layout/grid";
 @use "../../sass/layout/responsive";
 
-@include describe("generate-responsive-grid") {
+@include describe("generateResponsiveGrid") {
   @include it("should generate CSS variables for tablet breakpoint") {
     @include assert {
       @include output {
         .test-grid {
-          @include grid.generate-responsive-grid(
+          @include grid.generateResponsiveGrid(
             (
               tablet: (
                 cols: 8,
@@ -31,12 +31,12 @@
   }
 }
 
-@include describe("generate-grid-item-classes") {
+@include describe("generateGridItemClasses") {
   @include it("should generate grid-column for grid-item at all breakpoints") {
     @include assert {
       @include output {
         .test-output {
-          @include grid.generate-grid-item-classes();
+          @include grid.generateGridItemClasses;
         }
       }
       @include expect {

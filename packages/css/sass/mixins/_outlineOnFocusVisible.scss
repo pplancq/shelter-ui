@@ -1,4 +1,4 @@
-@mixin outline-on-focus-visible() {
+@mixin outlineOnFocusVisible() {
   :focus-visible {
     outline: 2px solid var(--color-primary-main-light);
     outline-offset: 2px;

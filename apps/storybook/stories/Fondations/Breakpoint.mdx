@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta } from "@storybook/addon-docs/blocks";
 
 <Meta title="Foundations/Breakpoint" />
 
@@ -77,36 +77,36 @@ They guarantee a consistent and optimal user experience on the most common devic
 
 ShelterUI provides three SCSS mixins to easily handle responsive media queries:
 
-### `media-exceeds-width`
+### `mediaExceedsWidth`
 
 Use this mixin to target screens wider than a specific breakpoint.
 
 ```scss
-@include media-exceeds-width(tablet) {
+@include mediaExceedsWidth(tablet) {
   .my-element {
     display: flex;
   }
 }
 ```
 
-### `media-less-than-width`
+### `mediaLessThanWidth`
 
 Use this mixin to target screens smaller than a specific breakpoint.
 
 ```scss
-@include media-less-than-width(desktop-small) {
+@include mediaLessThanWidth(desktop-small) {
   .my-element {
     flex-direction: column;
   }
 }
 ```
 
-### `media-between-widths`
+### `mediaBetweenWidths`
 
 Use this mixin to target screens between two breakpoints.
 
 ```scss
-@include media-between-widths(tablet, desktop-medium) {
+@include mediaBetweenWidths(tablet, desktop-medium) {
   .my-element {
     margin: 2rem;
   }

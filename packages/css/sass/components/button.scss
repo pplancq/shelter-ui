@@ -5,7 +5,7 @@
 @forward "../themes/dark";
 
 @use "../mixins/typography";
-@use "../mixins/outline-on-focus-visible";
+@use "../mixins/outlineOnFocusVisible";
 
 @import "@fontsource/oswald/600.css"; /* semi-bold */
 
@@ -17,18 +17,18 @@
 
   all: unset;
   display: flex;
-  height: var(--button-height);
-  padding: var(--button-padding-vertical) var(--button-padding-horizontal);
-  border-radius: var(--button-border-radius);
+  gap: var(--button-gap);
   align-items: center;
   justify-content: center;
-  gap: var(--button-gap);
-  text-transform: uppercase;
+  height: var(--button-height);
+  padding: var(--button-padding-vertical) var(--button-padding-horizontal);
   color: var(--button-color-on);
-  background-color: var(--button-color-background);
+  text-transform: uppercase;
   cursor: pointer;
+  background-color: var(--button-color-background);
+  border-radius: var(--button-border-radius);
 
-  @include outline-on-focus-visible.outline-on-focus-visible();
+  @include outlineOnFocusVisible.outlineOnFocusVisible;
 
   & svg {
     width: var(--button-height);

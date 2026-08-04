@@ -2,9 +2,9 @@
 @use "sass:math";
 @use "sass:list";
 
-$root-font-size: 16px;
+$rootFontSize: 16px;
 
-@function px-to-rem($value) {
+@function pxToRem($value) {
   @if meta.type-of($value) != "number" and meta.type-of($value) != "dimension" {
     @error "The value #{$value} is not a valid number or dimension.";
   }
@@ -17,10 +17,10 @@ $root-font-size: 16px;
     $number: $value;
   }
 
-  @return #{math.div($number, math.div($root-font-size, 1px))}rem;
+  @return #{math.div($number, math.div($rootFontSize, 1px))}rem;
 }
 
-@function split-list($list, $limit) {
+@function splitList($list, $limit) {
   @if meta.type-of($list) != "list" {
     @error "The value #{$list} is not a valid list.";
   }

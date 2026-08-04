@@ -1,11 +1,11 @@
 @use "true" as *;
 @use "../../sass/layout/responsive";
 
-@include describe("media-exceeds-width") {
+@include describe("mediaExceedsWidth") {
   @include it("should apply styles for width >= breakpoint") {
     @include assert {
       @include output {
-        @include responsive.media-exceeds-width(tablet) {
+        @include responsive.mediaExceedsWidth(tablet) {
           .test {
             color: red;
           }
@@ -22,11 +22,11 @@
   }
 }
 
-@include describe("media-less-than-width") {
+@include describe("mediaLessThanWidth") {
   @include it("should apply styles for width < breakpoint") {
     @include assert {
       @include output {
-        @include responsive.media-less-than-width(desktop-small) {
+        @include responsive.mediaLessThanWidth(desktop-small) {
           .test {
             color: blue;
           }
@@ -43,11 +43,11 @@
   }
 }
 
-@include describe("media-between-widths") {
+@include describe("mediaBetweenWidths") {
   @include it("should apply styles between two breakpoints") {
     @include assert {
       @include output {
-        @include responsive.media-between-widths(tablet, desktop-small) {
+        @include responsive.mediaBetweenWidths(tablet, desktop-small) {
           .test {
             color: green;
           }

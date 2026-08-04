@@ -2,12 +2,12 @@
 @use "sass:meta";
 @use "../../sass/mixins/helpers";
 
-@include describe("px-to-rem") {
+@include describe("pxToRem") {
   @include it("should convert px to rem") {
     @include assert {
       @include output {
         .rem-16 {
-          font-size: helpers.px-to-rem(16px);
+          font-size: helpers.pxToRem(16px);
         }
       }
       @include expect {
@@ -21,7 +21,7 @@
     @include assert {
       @include output {
         .rem-32 {
-          font-size: helpers.px-to-rem(32);
+          font-size: helpers.pxToRem(32);
         }
       }
       @include expect {
@@ -33,11 +33,11 @@
   }
 }
 
-@include describe("split-list") {
+@include describe("splitList") {
   @include it("should split a list up to the limit") {
     @include assert {
       @include output {
-        $result: helpers.split-list((a, b, c, d), 2);
+        $result: helpers.splitList((a, b, c, d), 2);
 
         .split-list {
           content: meta.inspect($result);
