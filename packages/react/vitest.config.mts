@@ -1,4 +1,3 @@
-import react from '@vitejs/plugin-react';
 import { loadEnv } from 'vite';
 import { defineConfig } from 'vitest/config';
 
@@ -6,17 +5,12 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
-    plugins: [react()],
-    resolve: {
-      tsconfigPaths: true,
-    },
     test: {
-      name: 'React Tests',
-      environment: 'jsdom',
-      setupFiles: 'vitest.setup.ts',
-      clearMocks: true,
-      css: false,
-      include: ['tests/**/*.{test,spec}.[jt]s?(x)'],
+      projects: [
+        './tests/unit/vitest.config.mts',
+        './tests/browser/vitest.config.mts',
+        './tests/visual/vitest.config.mts',
+      ],
       reporters: ['default', 'junit', 'vitest-sonar-reporter'],
       outputFile: {
         'vitest-sonar-reporter': 'sonar-report.xml',
