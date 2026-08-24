@@ -29,8 +29,8 @@
     "lint": "concurrently --prefix-colors auto \"npm:stylelint\" \"npm:eslint\"",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "eslint:fix": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",
-    "stylelint": "stylelint \"{sass,tests}/**/*.{scss,css}\"",
-    "stylelint:fix": "stylelint \"{sass,tests}/**/*.{scss,css}\" --fix",
+    "stylelint": "stylelint \"**/*.{scss,css}\"",
+    "stylelint:fix": "stylelint \"**/*.{scss,css}\" --fix",
     "test": "vitest run",
     "test:watch": "vitest"
   },
@@ -47,7 +47,7 @@
     "@pplancq/eslint-config": "^6.1.0",
     "@pplancq/postcss-config": "^3.0.6",
     "@pplancq/prettier-config": "^4.0.1",
-    "@pplancq/stylelint-config": "^6.0.0",
+    "@pplancq/stylelint-config": "^6.1.0",
     "@rsbuild/plugin-sass": "^2.0.1",
     "@rslib/core": "^0.23.2",
     "concurrently": "^10.0.5",
@@ -76,6 +76,6 @@
   "lint-staged": {
     "*.(js|jsx|ts|tsx)": "eslint --fix",
     "*.(scss|css)": "stylelint --fix",
-    "*.!(scss|css)": "prettier --write --ignore-unknown"
+    "*": "prettier --write --ignore-unknown"
   }
 }
