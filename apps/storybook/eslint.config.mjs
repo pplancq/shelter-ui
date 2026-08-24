@@ -1,26 +1,26 @@
-import { defineConfig } from '@pplancq/eslint-config';
+import { defineConfig } from "@pplancq/eslint-config";
 
 export default defineConfig({
   enableReact: true,
-  enablePrettier: 'on',
+  enablePrettier: "disableStyleOnly",
   extendConfig: [
     {
       files: [
-        '**/*.{config,stories}.{js,jsx,ts,tsx,mjs,cjs,cts,mts}',
-        '.storybook/**/*.{js,jsx,ts,tsx,mjs,cjs,cts,mts}',
+        "**/*.{config,stories}.{js,jsx,ts,tsx,mjs,cjs,cts,mts}",
+        ".storybook/**/*.{js,jsx,ts,tsx,mjs,cjs,cts,mts}",
       ],
       rules: {
-        'import/no-extraneous-dependencies': 'off',
-        'import/no-default-export': 'off',
+        "import/no-extraneous-dependencies": "off",
+        "import/no-default-export": "off",
       },
     },
     {
       rules: {
-        'import/no-unresolved': ['error', { ignore: ['@pplancq/shelter-ui-react'] }],
+        "import/no-unresolved": ["error", { ignore: ["@pplancq/shelter-ui-react"] }],
       },
     },
     {
-      ignores: ['build'],
+      ignores: ["build"],
     },
   ],
 });

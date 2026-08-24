@@ -1,5 +1,5 @@
-import { Canvas, Controls, Meta } from '@storybook/addon-docs/blocks';
-import * as AlertStories from './Alert.stories';
+import { Canvas, Controls, Meta } from "@storybook/addon-docs/blocks";
+import * as AlertStories from "./Alert.stories";
 
 <Meta of={AlertStories} name="Alert" />
 
@@ -10,11 +10,11 @@ The `Alert` component is a versatile UI element used to display important messag
 ## Usage of the Alert Component
 
 ```tsx
-import { Alert } from '@pplancq/shelter-ui-react';
+import { Alert } from "@pplancq/shelter-ui-react";
 
 const MyComponent = () => {
   return (
-    <Alert variant="info" title="Information" onClose={() => console.log('Alert closed')}>
+    <Alert variant="info" title="Information" onClose={() => console.log("Alert closed")}>
       This is an informational message for the user.
     </Alert>
   );

@@ -20,7 +20,7 @@ These styles ensure a consistent base across browsers.
 
 /* _typography.scss */
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   line-height: 1.5;
 }
 h1 {

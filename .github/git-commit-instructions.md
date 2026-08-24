@@ -1,5 +1,5 @@
 ---
-applyTo: '*'
+applyTo: "*"
 ---
 
 # Git Commit Instructions

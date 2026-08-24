@@ -1,5 +1,5 @@
-import { Button, Typography } from '@pplancq/shelter-ui-react';
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Button, Typography } from "@pplancq/shelter-ui-react";
+import { Meta } from "@storybook/addon-docs/blocks";
 
 <Meta title="Foundations/Polymorphic Components" />
 
@@ -51,14 +51,14 @@ The `as` prop is the key to polymorphism. It accepts:
 
 When you need a button that looks like a button but behaves like a link:
 
-<div style={{ marginBottom: '2rem' }}>
+<div style={{ marginBottom: "2rem" }}>
   <Button as="a" href="https://github.com" target="_blank" rel="noopener noreferrer">
     Visit GitHub
   </Button>
 </div>
 
 ```tsx
-import { Button } from '@pplancq/shelter-ui-react';
+import { Button } from "@pplancq/shelter-ui-react";
 
 function MyComponent() {
   return (
@@ -74,8 +74,8 @@ function MyComponent() {
 Integrate seamlessly with routing libraries:
 
 ```tsx
-import { Button } from '@pplancq/shelter-ui-react';
-import { Link } from 'react-router';
+import { Button } from "@pplancq/shelter-ui-react";
+import { Link } from "react-router";
 
 function Navigation() {
   return (
@@ -90,18 +90,18 @@ function Navigation() {
 
 Create a styled button using Typography component:
 
-<div style={{ marginBottom: '2rem' }}>
+<div style={{ marginBottom: "2rem" }}>
   <Typography
     as="button"
     variant="label"
     size="large"
-    onClick={() => alert('Clicked!')}
+    onClick={() => alert("Clicked!")}
     style={{
-      padding: '0.5rem 1rem',
-      border: '1px solid currentColor',
-      borderRadius: '4px',
-      cursor: 'pointer',
-      background: 'transparent',
+      padding: "0.5rem 1rem",
+      border: "1px solid currentColor",
+      borderRadius: "4px",
+      cursor: "pointer",
+      background: "transparent",
     }}
   >
     Custom Button
@@ -109,11 +109,11 @@ Create a styled button using Typography component:
 </div>
 
 ```tsx
-import { Typography } from '@pplancq/shelter-ui-react';
+import { Typography } from "@pplancq/shelter-ui-react";
 
 function CustomButton() {
   return (
-    <Typography as="button" variant="label" size="large" onClick={() => alert('Clicked!')}>
+    <Typography as="button" variant="label" size="large" onClick={() => alert("Clicked!")}>
       Custom Button
     </Typography>
   );
@@ -125,7 +125,7 @@ function CustomButton() {
 Use semantic HTML while keeping Title styling:
 
 ```tsx
-import { Title } from '@pplancq/shelter-ui-react';
+import { Title } from "@pplancq/shelter-ui-react";
 
 function PageSection() {
   return <Title as="section" title="About Us" subtitle="Learn more about our company" level={2} />;
@@ -240,7 +240,7 @@ import { Link, LinkProps } from 'react-router-dom';
 When you need buttons that navigate:
 
 ```tsx
-import { Button } from '@pplancq/shelter-ui-react';
+import { Button } from "@pplancq/shelter-ui-react";
 
 function Header() {
   return (
@@ -281,8 +281,8 @@ function Hero() {
 For single-page applications:
 
 ```tsx
-import { Button } from '@pplancq/shelter-ui-react';
-import { Link } from 'react-router-dom';
+import { Button } from "@pplancq/shelter-ui-react";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   return (
@@ -309,13 +309,13 @@ Polymorphic components maintain accessibility, but you must use them correctly:
 
 All interactive polymorphic components support proper focus styles:
 
-<div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
-  <Button style={{ outline: '2px solid var(--color-primary-main-light)', outlineOffset: '2px' }}>Button Focus</Button>
+<div style={{ display: "flex", gap: "1rem", marginBottom: "2rem" }}>
+  <Button style={{ outline: "2px solid var(--color-primary-main-light)", outlineOffset: "2px" }}>Button Focus</Button>
   <Button
     as="a"
     href="#"
-    onClick={e => e.preventDefault()}
-    style={{ outline: '2px solid var(--color-primary-main-light)', outlineOffset: '2px' }}
+    onClick={(e) => e.preventDefault()}
+    style={{ outline: "2px solid var(--color-primary-main-light)", outlineOffset: "2px" }}
   >
     Link Focus
   </Button>
@@ -362,31 +362,31 @@ Want to create your own polymorphic component? ShelterUI exports the `Polymorphi
 ShelterUI provides a `PolymorphicComponent` type that handles all the TypeScript complexity for you:
 
 ```tsx
-import { type PolymorphicComponent } from '@pplancq/shelter-ui-react';
-import { type ElementType } from 'react';
+import { type PolymorphicComponent } from "@pplancq/shelter-ui-react";
+import { type ElementType } from "react";
 
 // Define your component's specific props
 type MyComponentProps<T extends ElementType> = PolymorphicComponent<
   T,
   {
-    variant?: 'primary' | 'secondary';
-    size?: 'small' | 'medium' | 'large';
+    variant?: "primary" | "secondary";
+    size?: "small" | "medium" | "large";
     children: React.ReactNode;
   }
 >;
 
 // Create your component
-function MyComponent<T extends ElementType = 'div'>({
+function MyComponent<T extends ElementType = "div">({
   as,
-  variant = 'primary',
-  size = 'medium',
+  variant = "primary",
+  size = "medium",
   children,
   className,
   ...props
 }: MyComponentProps<T>) {
-  const Component = as || 'div';
+  const Component = as || "div";
 
-  const componentClassName = `my-component my-component--${variant} my-component--${size} ${className || ''}`;
+  const componentClassName = `my-component my-component--${variant} my-component--${size} ${className || ""}`;
 
   return (
     <Component className={componentClassName} {...props}>

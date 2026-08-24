@@ -74,8 +74,8 @@ export const CheckboxGroup = ({
 
   const checkboxFields = useMemo(
     () =>
-      Children.map(children, (child) => {
-        return cloneElement(child, {
+      Children.map(children, (child) =>
+        cloneElement(child, {
           name,
           required,
           "aria-invalid": errorMessage ? true : undefined,
@@ -84,8 +84,8 @@ export const CheckboxGroup = ({
           id: `${groupId}-${child.props.value}`,
           onChange: handleChange(child.props.onChange),
           ...child.props,
-        });
-      }),
+        }),
+      ),
     [children, errorMessage, groupId, handleChange, helperTextId, name, required, textHelper],
   );
 

@@ -7,15 +7,13 @@ export type InputProps = {
   endAdornment?: ReactNode;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export const Input = ({ className, error, startAdornment, endAdornment, ...props }: InputProps) => {
-  return (
-    <div className={clsx("input", error && "input--error", className)}>
-      {startAdornment}
-      <input type="text" aria-invalid={error} placeholder=" " {...props} />
-      {endAdornment}
-    </div>
-  );
-};
+export const Input = ({ className, error, startAdornment, endAdornment, ...props }: InputProps) => (
+  <div className={clsx("input", error && "input--error", className)}>
+    {startAdornment}
+    <input type="text" aria-invalid={error} placeholder=" " {...props} />
+    {endAdornment}
+  </div>
+);
 
 if (process.env.NODE_ENV !== "production") {
   Input.displayName = "Input";

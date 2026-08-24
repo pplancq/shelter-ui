@@ -45,8 +45,6 @@ type Story = StoryObj<typeof meta>;
 
 export const ExampleLayout: Story = {
   name: "Icon",
-  render: ({ icon, ...props }) => {
-    return <Icon icon={demoIconList[icon]} {...props} key={icon} />;
-  },
+  render: ({ icon, ...props }) => <Icon icon={demoIconList[icon]} {...props} key={icon} />,
   tags: ["!dev"],
 };

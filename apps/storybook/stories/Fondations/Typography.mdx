@@ -1,5 +1,5 @@
-import { Canvas, Controls, Meta, Typeset } from '@storybook/addon-docs/blocks';
-import * as TypographyStories from './Typography.stories';
+import { Canvas, Controls, Meta, Typeset } from "@storybook/addon-docs/blocks";
+import * as TypographyStories from "./Typography.stories";
 
 <Meta of={TypographyStories} name="Typography" />
 
@@ -11,7 +11,7 @@ This typography guide describes the styles used for display texts, headings, and
 ## Usage of the Typography Component
 
 ```tsx
-import { Typography } from '@pplancq/shelter-ui-react';
+import { Typography } from "@pplancq/shelter-ui-react";
 
 const MyComponent = () => {
   return (
@@ -146,7 +146,7 @@ This is particularly useful when integrating `Typography` into other components.
 For example, here is how you can use the `Typography` component with the `label` variant inside a custom `Button` component:
 
 ```tsx
-import { Typography } from '@pplancq/shelter-ui-react';
+import { Typography } from "@pplancq/shelter-ui-react";
 
 const Button = ({ children, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
@@ -157,7 +157,7 @@ const Button = ({ children, ...props }: React.ButtonHTMLAttributes<HTMLButtonEle
 };
 
 // Usage
-<Button onClick={() => alert('Clicked!')}>Click Me</Button>;
+<Button onClick={() => alert("Clicked!")}>Click Me</Button>;
 ```
 
 In this example:

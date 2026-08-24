@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node
         uses: pplancq/actions/setup-node@b248bd44a83e2d0c9f9334aff7e33771fdd77c76 # v1.1.2
         with:
-          use-mise: 'true'
+          use-mise: "true"
 
       - name: Install package
         run: npm ci
@@ -48,8 +48,8 @@ jobs:
           GIT_AUTHOR_NAME: release[bot]
           GIT_COMMITTER_EMAIL: release[bot]@users.noreply.github.com
           GIT_COMMITTER_NAME: release[bot]
-          GITHUB_DISABLED_SUCCESS_COMMENT: 'true'
-          GITHUB_DISABLED_RELEASED_LABELS: 'true'
+          GITHUB_DISABLED_SUCCESS_COMMENT: "true"
+          GITHUB_DISABLED_RELEASED_LABELS: "true"
         run: npm run release
 
   deploy:
@@ -64,7 +64,7 @@ jobs:
       pages: write
       id-token: write
     concurrency:
-      group: 'pages'
+      group: "pages"
       cancel-in-progress: false
     steps:
       - name: Checkout repository
@@ -73,7 +73,7 @@ jobs:
       - name: Setup Node
         uses: pplancq/actions/setup-node@b248bd44a83e2d0c9f9334aff7e33771fdd77c76 # v1.1.2
         with:
-          use-mise: 'true'
+          use-mise: "true"
 
       - name: Run build
         run: npm run build
@@ -84,7 +84,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
-          path: 'apps/storybook/build'
+          path: "apps/storybook/build"
 
       - name: Deploy to GitHub Pages
         id: deployment

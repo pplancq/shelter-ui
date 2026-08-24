@@ -45,19 +45,17 @@ type Story = StoryObj<RadioGroupProps>;
 
 export const Playground: Story = {
   tags: ["dev"],
-  render: ({ layout, itemsLayout, errorMessage, textHelper, ...args }) => {
-    return (
-      <RadioGroup
-        layout={layout === "inline" ? layout : undefined}
-        itemsLayout={itemsLayout === "stacked" ? itemsLayout : undefined}
-        errorMessage={errorMessage || undefined}
-        textHelper={textHelper || undefined}
-        {...args}
-      >
-        {radioOptions.map((option) => (
-          <RadioOption key={`${option.value}`} {...option} />
-        ))}
-      </RadioGroup>
-    );
-  },
+  render: ({ layout, itemsLayout, errorMessage, textHelper, ...args }) => (
+    <RadioGroup
+      layout={layout === "inline" ? layout : undefined}
+      itemsLayout={itemsLayout === "stacked" ? itemsLayout : undefined}
+      errorMessage={errorMessage || undefined}
+      textHelper={textHelper || undefined}
+      {...args}
+    >
+      {radioOptions.map((option) => (
+        <RadioOption key={`${option.value}`} {...option} />
+      ))}
+    </RadioGroup>
+  ),
 };

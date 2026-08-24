@@ -13,12 +13,12 @@ npm install @pplancq/shelter-ui-react
 ## Example of usage in a React project
 
 ```javascript
-import { Button } from '@pplancq/shelter-ui-react';
+import { Button } from "@pplancq/shelter-ui-react";
 
 export const App = () => {
   return (
     <div>
-      <Button label="Click me" onClick={() => alert('Button clicked!')} />
+      <Button label="Click me" onClick={() => alert("Button clicked!")} />
     </div>
   );
 };
@@ -34,7 +34,7 @@ Because Vite's dependency pre-bundler (esbuild) does not handle `.svg` imports n
 export default defineConfig({
   server: {
     deps: {
-      inline: ['@pplancq/shelter-ui-react'],
+      inline: ["@pplancq/shelter-ui-react"],
     },
   },
 });
@@ -46,7 +46,7 @@ export default defineConfig({
   test: {
     server: {
       deps: {
-        inline: ['@pplancq/shelter-ui-react'],
+        inline: ["@pplancq/shelter-ui-react"],
       },
     },
   },
