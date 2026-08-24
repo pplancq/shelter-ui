@@ -1,14 +1,14 @@
-import { Icon } from '@pplancq/shelter-ui-react';
-import { IconGallery, IconItem, Meta } from '@storybook/addon-docs/blocks';
-import { flagList } from './allIcons';
-import * as IconStories from './Icon.stories';
+import { Icon } from "@pplancq/shelter-ui-react";
+import { IconGallery, IconItem, Meta } from "@storybook/addon-docs/blocks";
+import { flagList } from "./allIcons";
+import * as IconStories from "./Icon.stories";
 
 <Meta of={IconStories} name="Gallery Flag" />
 
 # Icon gallery
 
 <IconGallery>
-  {Object.keys(flagList).map(icon => (
+  {Object.keys(flagList).map((icon) => (
     <IconItem name={icon}>
       <Icon icon={flagList[icon]} />
     </IconItem>

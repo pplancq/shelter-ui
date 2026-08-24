@@ -82,8 +82,8 @@ For details on how the default styles are applied in practice, please refer to o
 ### **Example Usage**
 
 ```tsx
-import '@pplancq/shelter-ui-css/css/shelter-ui.css';
-import { Button } from '@pplancq/shelter-ui-react';
+import "@pplancq/shelter-ui-css/css/shelter-ui.css";
+import { Button } from "@pplancq/shelter-ui-react";
 
 export default function App() {
   return <Button>Click Me</Button>;

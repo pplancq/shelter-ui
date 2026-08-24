@@ -21,7 +21,7 @@ Include the CSS file in your project:
 Or import it in your JavaScript/TypeScript project:
 
 ```javascript
-import '@pplancq/shelter-ui-css/css/shelter-ui.css';
+import "@pplancq/shelter-ui-css/css/shelter-ui.css";
 ```
 
 ## Css package structure

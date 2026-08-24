@@ -1,16 +1,19 @@
-import { defineConfig } from '@pplancq/eslint-config';
+import { defineConfig } from "@pplancq/eslint-config";
 
 export default defineConfig({
   enableReact: true,
   enableVitest: true,
-  enablePrettier: 'on',
+  enablePrettier: "disableStyleOnly",
   extendConfig: [
     {
+      ignores: ["dist"],
+    },
+    {
       rules: {
-        'jsx-a11y/no-noninteractive-element-to-interactive-role': [
-          'error',
+        "jsx-a11y/no-noninteractive-element-to-interactive-role": [
+          "error",
           {
-            fieldset: ['radiogroup'],
+            fieldset: ["radiogroup"],
           },
         ],
       },

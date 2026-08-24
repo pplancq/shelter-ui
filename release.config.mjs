@@ -3,64 +3,64 @@
  */
 export default {
   branches: [
-    '+([0-9])?(.{+([0-9]),x}).x',
-    'master',
-    'main',
-    'next',
-    'next-major',
-    { name: 'beta', prerelease: true },
-    { name: 'alpha', prerelease: true },
+    "+([0-9])?(.{+([0-9]),x}).x",
+    "master",
+    "main",
+    "next",
+    "next-major",
+    { name: "beta", prerelease: true },
+    { name: "alpha", prerelease: true },
   ],
   plugins: [
     [
-      '@semantic-release/commit-analyzer',
+      "@semantic-release/commit-analyzer",
       {
-        preset: 'conventionalcommits',
+        preset: "conventionalcommits",
         parserOpts: {
-          noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES'],
+          noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"],
         },
       },
     ],
     [
-      '@semantic-release/release-notes-generator',
+      "@semantic-release/release-notes-generator",
       {
-        preset: 'conventionalcommits',
+        preset: "conventionalcommits",
         parserOpts: {
-          noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES'],
+          noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"],
         },
         writerOpts: {
-          commitsSort: ['subject', 'scope'],
+          commitsSort: ["subject", "scope"],
         },
       },
     ],
     [
-      '@semantic-release/changelog',
+      "@semantic-release/changelog",
       {
-        changelogFile: 'CHANGELOG.md',
+        changelogFile: "CHANGELOG.md",
       },
     ],
     [
-      '@semantic-release/npm',
+      "@semantic-release/npm",
       {
         npmPublish: false,
       },
     ],
     [
-      '@semantic-release/exec',
+      "@semantic-release/exec",
       {
-        prepareCmd: 'npm version ${nextRelease.version} --workspace packages',
-        publishCmd: 'npm publish --workspace packages --tag ${nextRelease.channel}',
+        prepareCmd: "npm version ${nextRelease.version} --workspace packages",
+        publishCmd: "npm publish --workspace packages --tag ${nextRelease.channel}",
       },
     ],
     [
-      '@semantic-release/git',
+      "@semantic-release/git",
       {
-        assets: ['package.json', 'package-lock.json', 'CHANGELOG.md', 'packages/*/package.json'],
+        assets: ["package.json", "package-lock.json", "CHANGELOG.md", "packages/*/package.json"],
         // eslint-disable-next-line no-template-curly-in-string
-        message: 'chore(release): ${nextRelease.name} [skip ci]\n\n${nextRelease.notes}',
+        message: "chore(release): ${nextRelease.name} [skip ci]\n\n${nextRelease.notes}",
       },
     ],
-    ['@semantic-release/github'],
+    ["@semantic-release/github"],
   ],
-  repositoryUrl: 'https://github.com/pplancq/shelter-ui',
+  repositoryUrl: "https://github.com/pplancq/shelter-ui",
 };

@@ -27,8 +27,8 @@
     "dev": "rslib build --watch",
     "build": "rslib build",
     "lint": "concurrently --prefix-colors auto \"npm:stylelint\" \"npm:eslint\"",
-    "eslint": "eslint \"tests/**/*.{js,jsx,ts,tsx}\"",
-    "eslint:fix": "eslint \"tests/**/*.{js,jsx,ts,tsx}\" --fix",
+    "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
+    "eslint:fix": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",
     "stylelint": "stylelint \"{sass,tests}/**/*.{scss,css}\"",
     "stylelint:fix": "stylelint \"{sass,tests}/**/*.{scss,css}\" --fix",
     "test": "vitest run",
@@ -44,7 +44,7 @@
     "@fontsource/raleway": "^5.3.0"
   },
   "devDependencies": {
-    "@pplancq/eslint-config": "^6.0.19",
+    "@pplancq/eslint-config": "^6.1.0",
     "@pplancq/postcss-config": "^3.0.6",
     "@pplancq/prettier-config": "^4.0.1",
     "@pplancq/stylelint-config": "^6.0.0",
@@ -74,6 +74,7 @@
   },
   "prettier": "@pplancq/prettier-config",
   "lint-staged": {
+    "*.(js|jsx|ts|tsx)": "eslint --fix",
     "*.(scss|css)": "stylelint --fix",
     "*.!(scss|css)": "prettier --write --ignore-unknown"
   }

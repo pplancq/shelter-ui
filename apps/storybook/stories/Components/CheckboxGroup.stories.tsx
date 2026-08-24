@@ -51,18 +51,16 @@ type Story = StoryObj<CheckboxGroupProps>;
 
 export const Playground: Story = {
   tags: ["dev"],
-  render: ({ layout, errorMessage, textHelper, ...args }) => {
-    return (
-      <CheckboxGroup
-        layout={layout === "inline" ? layout : undefined}
-        errorMessage={errorMessage || undefined}
-        textHelper={textHelper || undefined}
-        {...args}
-      >
-        {checkboxOptions.map((option) => (
-          <CheckboxField key={`${option.value}`} {...option} />
-        ))}
-      </CheckboxGroup>
-    );
-  },
+  render: ({ layout, errorMessage, textHelper, ...args }) => (
+    <CheckboxGroup
+      layout={layout === "inline" ? layout : undefined}
+      errorMessage={errorMessage || undefined}
+      textHelper={textHelper || undefined}
+      {...args}
+    >
+      {checkboxOptions.map((option) => (
+        <CheckboxField key={`${option.value}`} {...option} />
+      ))}
+    </CheckboxGroup>
+  ),
 };

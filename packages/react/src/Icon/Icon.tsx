@@ -8,16 +8,14 @@ export type IconProps = Omit<ComponentProps<typeof Svg>, "src"> & {
   isCircle?: boolean;
 };
 
-export const Icon = ({ size = "medium", className, icon, isCircle, ...iconProps }: IconProps) => {
-  return (
-    <Svg
-      {...iconProps}
-      className={clsx("icon", `icon--${size}`, isCircle && "icon--circle", className)}
-      src={icon}
-      role={iconProps.role ?? "presentation"}
-    />
-  );
-};
+export const Icon = ({ size = "medium", className, icon, isCircle, ...iconProps }: IconProps) => (
+  <Svg
+    {...iconProps}
+    className={clsx("icon", `icon--${size}`, isCircle && "icon--circle", className)}
+    src={icon}
+    role={iconProps.role ?? "presentation"}
+  />
+);
 
 if (process.env.NODE_ENV !== "production") {
   Icon.displayName = "Icon";

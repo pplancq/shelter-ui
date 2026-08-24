@@ -32,8 +32,8 @@
     "build": "rslib build",
     "dev": "rslib build --watch",
     "lint": "concurrently --prefix-colors auto \"npm:eslint\" \"npm:tsc\"",
-    "eslint": "eslint \"{src,tests}/**/*.{js,jsx,ts,tsx}\"",
-    "eslint:fix": "eslint \"{src,tests}/**/*.{js,jsx,ts,tsx}\" --fix",
+    "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
+    "eslint:fix": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",
     "tsc": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -50,7 +50,7 @@
     "@pplancq/svg-react": "^3.0.12"
   },
   "devDependencies": {
-    "@pplancq/eslint-config": "^6.0.19",
+    "@pplancq/eslint-config": "^6.1.0",
     "@pplancq/prettier-config": "^4.0.1",
     "@rsbuild/plugin-react": "^2.1.0",
     "@rslib/core": "^0.23.2",
@@ -75,6 +75,6 @@
   "lint-staged": {
     "*.(js|jsx|ts|tsx)": "eslint --fix",
     "*.{ts,tsx}": "tsc-files --noEmit",
-    "*.!(js|jsx|ts|tsx)": "prettier --write --ignore-unknown"
+    "*": "prettier --write --ignore-unknown"
   }
 }

@@ -13,7 +13,7 @@ npm install @pplancq/shelter-ui-icon
 ## Example of usage in a React project
 
 ```javascript
-import homeIcon from '@pplancq/shelter-ui-icon/icon/home.svg';
+import homeIcon from "@pplancq/shelter-ui-icon/icon/home.svg";
 
 export const App = () => {
   return (

@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node
         uses: pplancq/actions/setup-node@b248bd44a83e2d0c9f9334aff7e33771fdd77c76 # v1.1.2
         with:
-          use-mise: 'true'
+          use-mise: "true"
 
       - name: Check package-lock.json
         run: npm run package:check
@@ -46,7 +46,7 @@ jobs:
       - name: Setup Node
         uses: pplancq/actions/setup-node@b248bd44a83e2d0c9f9334aff7e33771fdd77c76 # v1.1.2
         with:
-          use-mise: 'true'
+          use-mise: "true"
 
       # https://commitlint.js.org/guides/ci-setup.html#github-actions
       - name: Validate PR commits with commitlint
@@ -64,7 +64,7 @@ jobs:
       - name: Setup Node
         uses: pplancq/actions/setup-node@b248bd44a83e2d0c9f9334aff7e33771fdd77c76 # v1.1.2
         with:
-          use-mise: 'true'
+          use-mise: "true"
 
       - name: Run lint
         run: npm run lint -- -- --max-processes 1
@@ -88,7 +88,7 @@ jobs:
       - name: Setup Node
         uses: pplancq/actions/setup-node@b248bd44a83e2d0c9f9334aff7e33771fdd77c76 # v1.1.2
         with:
-          use-mise: 'true'
+          use-mise: "true"
 
       - name: Build package
         run: npm run build --workspace=@pplancq/shelter-ui-react --workspace=@pplancq/shelter-ui-css
@@ -97,11 +97,11 @@ jobs:
         uses: chromaui/action@534eebfc19023579541d106f7b61d5ad70ed65c7 # v18.5.0
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          buildScriptName: 'build'
-          workingDir: 'apps/storybook'
+          buildScriptName: "build"
+          workingDir: "apps/storybook"
           onlyChanged: true
           zip: true
-          skip: '@(renovate/**|dependabot/**)'
+          skip: "@(renovate/**|dependabot/**)"
 
   test:
     name: Test
@@ -115,7 +115,7 @@ jobs:
       - name: Setup Node
         uses: pplancq/actions/setup-node@b248bd44a83e2d0c9f9334aff7e33771fdd77c76 # v1.1.2
         with:
-          use-mise: 'true'
+          use-mise: "true"
 
       - name: Run test
         run: npm run test
@@ -162,7 +162,7 @@ jobs:
       - name: Setup Node
         uses: pplancq/actions/setup-node@b248bd44a83e2d0c9f9334aff7e33771fdd77c76 # v1.1.2
         with:
-          use-mise: 'true'
+          use-mise: "true"
 
       - name: Run build
         run: npm run build

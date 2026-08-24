@@ -8,18 +8,16 @@ export type HelperTextProps = {
   error?: boolean;
 } & HTMLAttributes<HTMLElement>;
 
-export const HelperText = ({ className, error, children, ...props }: HelperTextProps) => {
-  return (
-    <small
-      className={clsx("helper-text", error && "helper-text--error", className)}
-      role={error ? "alert" : undefined}
-      {...props}
-    >
-      <Icon icon={error ? exclamationCircleIcon : infoCircleIcon} size="small" />
-      {children}
-    </small>
-  );
-};
+export const HelperText = ({ className, error, children, ...props }: HelperTextProps) => (
+  <small
+    className={clsx("helper-text", error && "helper-text--error", className)}
+    role={error ? "alert" : undefined}
+    {...props}
+  >
+    <Icon icon={error ? exclamationCircleIcon : infoCircleIcon} size="small" />
+    {children}
+  </small>
+);
 
 if (process.env.NODE_ENV !== "production") {
   HelperText.displayName = "HelperText";
