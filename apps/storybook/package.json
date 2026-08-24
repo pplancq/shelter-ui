@@ -57,7 +57,7 @@
     "*.(js|jsx|ts|tsx)": "eslint --fix",
     "*.{ts,tsx}": "tsc-files --noEmit",
     "*.(scss|css)": "stylelint --fix",
-    "*.!(scss|css)": "prettier --write --ignore-unknown"
+    "*": "prettier --write --ignore-unknown"
   },
   "browserslist": {
     "production": [

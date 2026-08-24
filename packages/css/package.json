@@ -29,8 +29,8 @@
     "lint": "concurrently --prefix-colors auto \"npm:stylelint\" \"npm:eslint\"",
     "eslint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "eslint:fix": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",
-    "stylelint": "stylelint \"{sass,tests}/**/*.{scss,css}\"",
-    "stylelint:fix": "stylelint \"{sass,tests}/**/*.{scss,css}\" --fix",
+    "stylelint": "stylelint \"**/*.{scss,css}\"",
+    "stylelint:fix": "stylelint \"**/*.{scss,css}\" --fix",
     "test": "vitest run",
     "test:watch": "vitest"
   },
@@ -76,6 +76,6 @@
   "lint-staged": {
     "*.(js|jsx|ts|tsx)": "eslint --fix",
     "*.(scss|css)": "stylelint --fix",
-    "*.!(scss|css)": "prettier --write --ignore-unknown"
+    "*": "prettier --write --ignore-unknown"
   }
 }
