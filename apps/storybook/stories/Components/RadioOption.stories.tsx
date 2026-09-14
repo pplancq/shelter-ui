@@ -24,5 +24,5 @@ type Story = StoryObj<RadioOptionProps>;
 
 export const Playground: Story = {
   tags: ["dev"],
-  render: ({ ...args }) => <RadioOption {...args} />,
+  render: (args: RadioOptionProps) => <RadioOption {...args} />,
 };

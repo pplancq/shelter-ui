@@ -10,6 +10,11 @@ import { fn } from "storybook/test";
 Button.displayName = "Button";
 Icon.displayName = "Icon";
 
+type ButtonStoryArgs = Omit<ButtonProps, "startIcon" | "endIcon"> & {
+  startIcon?: keyof typeof iconList;
+  endIcon?: keyof typeof iconList;
+};
+
 const iconList: Record<string, JSX.Element | undefined> = {
   "align-left.svg": <Icon icon={alignLeftIcon} />,
   "arrow-left.svg": <Icon icon={arrowLeftIcon} />,
@@ -74,34 +79,42 @@ const meta = {
       },
     },
   },
-} satisfies Meta<ButtonProps>;
+} satisfies Meta<ButtonStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<ButtonStoryArgs>;
 
 export const Playground: Story = {
   tags: ["dev"],
-  render: ({ startIcon, endIcon, ...props }) => (
-    <Button {...props} startIcon={iconList[startIcon as string]} endIcon={iconList[endIcon as string]} />
+  render: ({ startIcon, endIcon, ...props }: ButtonStoryArgs) => (
+    <Button
+      {...props}
+      startIcon={startIcon ? iconList[startIcon] : undefined}
+      endIcon={endIcon ? iconList[endIcon] : undefined}
+    />
   ),
 };
 
 export const IconOnly: Story = {
   args: {
-    startIcon: iconList["edit-alt.svg"],
+    startIcon: "edit-alt.svg",
     "aria-label": "Edit",
     children: undefined,
   },
-  render: ({ startIcon, ...props }) => <Button {...props} startIcon={startIcon} />,
+  render: ({ startIcon, ...props }: ButtonStoryArgs) => (
+    <Button {...props} startIcon={startIcon ? iconList[startIcon] : undefined} />
+  ),
 };
 
 export const CircularIconOnly: Story = {
   args: {
     isCircle: true,
-    startIcon: iconList["arrow-left.svg"],
+    startIcon: "arrow-left.svg",
     "aria-label": "Go Back",
     children: undefined,
   },
-  render: ({ startIcon, ...props }) => <Button {...props} startIcon={startIcon} />,
+  render: ({ startIcon, ...props }: ButtonStoryArgs) => (
+    <Button {...props} startIcon={startIcon ? iconList[startIcon] : undefined} />
+  ),
 };

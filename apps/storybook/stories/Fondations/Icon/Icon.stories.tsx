@@ -1,7 +1,7 @@
 import frFlag from "@pplancq/shelter-ui-icon/flag/fr.svg?url";
 import homeIcon from "@pplancq/shelter-ui-icon/icon/home.svg?url";
 import reactLogo from "@pplancq/shelter-ui-icon/logo/react-original.svg?url";
-import { Icon, type IconProps } from "@pplancq/shelter-ui-react";
+import { Icon } from "@pplancq/shelter-ui-react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 Icon.displayName = "Icon";
@@ -20,14 +20,15 @@ const meta = {
   },
   tags: ["!autodocs", "dev"],
   args: {
-    icon: "react-original.svg",
+    icon: demoIconList["react-original.svg"],
     size: "medium",
     isCircle: false,
   },
   argTypes: {
     icon: {
       control: "select",
-      options: ["fr.svg", "home.svg", "react-original.svg"],
+      options: Object.keys(demoIconList),
+      mapping: demoIconList,
     },
     size: {
       control: "select",
@@ -37,7 +38,7 @@ const meta = {
       control: "boolean",
     },
   },
-} satisfies Meta<IconProps>;
+} satisfies Meta<typeof Icon>;
 
 export default meta;
 
@@ -45,6 +46,11 @@ type Story = StoryObj<typeof meta>;
 
 export const ExampleLayout: Story = {
   name: "Icon",
-  render: ({ icon, ...props }) => <Icon icon={demoIconList[icon]} {...props} key={icon} />,
+  args: {
+    icon: demoIconList["react-original.svg"],
+    size: "medium",
+    isCircle: false,
+  },
+  render: ({ icon, ...props }) => <Icon icon={icon ?? demoIconList["react-original.svg"]} {...props} key={icon} />,
   tags: ["!dev"],
 };

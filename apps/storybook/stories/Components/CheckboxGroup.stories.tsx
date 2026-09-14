@@ -1,9 +1,4 @@
-import {
-  CheckboxField,
-  type CheckboxFieldProps,
-  CheckboxGroup,
-  type CheckboxGroupProps,
-} from "@pplancq/shelter-ui-react";
+import { CheckboxField, type CheckboxFieldProps, CheckboxGroup } from "@pplancq/shelter-ui-react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 CheckboxGroup.displayName = "CheckboxGroup";
@@ -23,6 +18,7 @@ const meta = {
   },
   tags: ["!autodocs", "!dev"],
   args: {
+    children: [],
     label: "Checkbox Label",
     required: false,
     name: "checkbox",
@@ -32,6 +28,11 @@ const meta = {
     itemsLayout: "inline",
   },
   argTypes: {
+    children: {
+      table: {
+        disable: true,
+      },
+    },
     layout: {
       control: "select",
       options: ["stacked", "inline"],
@@ -43,24 +44,42 @@ const meta = {
       description: "Layout of the radio options",
     },
   },
-} satisfies Meta<CheckboxGroupProps>;
+} satisfies Meta<typeof CheckboxGroup>;
 
 export default meta;
 
-type Story = StoryObj<CheckboxGroupProps>;
+type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
   tags: ["dev"],
-  render: ({ layout, errorMessage, textHelper, ...args }) => (
-    <CheckboxGroup
-      layout={layout === "inline" ? layout : undefined}
-      errorMessage={errorMessage || undefined}
-      textHelper={textHelper || undefined}
-      {...args}
-    >
-      {checkboxOptions.map((option) => (
-        <CheckboxField key={`${option.value}`} {...option} />
-      ))}
-    </CheckboxGroup>
-  ),
+  args: {
+    children: [],
+    label: "Checkbox Label",
+    required: false,
+    name: "checkbox",
+    errorMessage: "",
+    textHelper: "Helper text",
+    layout: "stacked",
+    itemsLayout: "inline",
+  },
+  render: ({ label, name, required, layout, errorMessage, textHelper, ...args }) => {
+    const storyArgs: Partial<typeof args> = { ...args };
+    delete storyArgs.children;
+
+    return (
+      <CheckboxGroup
+        label={label}
+        name={name}
+        required={required}
+        layout={layout === "inline" ? layout : undefined}
+        errorMessage={errorMessage || undefined}
+        textHelper={textHelper || undefined}
+        {...storyArgs}
+      >
+        {checkboxOptions.map((option) => (
+          <CheckboxField key={`${option.value}`} {...option} />
+        ))}
+      </CheckboxGroup>
+    );
+  },
 };

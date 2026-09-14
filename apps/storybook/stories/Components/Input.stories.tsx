@@ -8,6 +8,12 @@ import type { JSX } from "react";
 Icon.displayName = "Icon";
 Input.displayName = "Input";
 
+type InputStoryArgs = Omit<InputProps, "startAdornment" | "endAdornment" | "value"> & {
+  startAdornment?: keyof typeof iconList;
+  endAdornment?: keyof typeof iconList;
+  value?: string;
+};
+
 const iconList: Record<string, JSX.Element | undefined> = {
   "search.svg": <Icon icon={searchIcon} />,
   "eye.svg": <Icon icon={eyeIcon} />,
@@ -39,20 +45,20 @@ const meta = {
       options: Object.keys(iconList),
     },
   },
-} satisfies Meta<InputProps>;
+} satisfies Meta<InputStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<InputStoryArgs>;
 
 export const Playground: Story = {
   tags: ["dev"],
-  render: ({ startAdornment, endAdornment, placeholder, value, ...args }) => (
+  render: ({ startAdornment, endAdornment, placeholder, value, ...args }: InputStoryArgs) => (
     <Input
       {...args}
       placeholder={placeholder === "" ? " " : placeholder}
-      startAdornment={iconList[startAdornment as string]}
-      endAdornment={iconList[endAdornment as string]}
+      startAdornment={startAdornment ? iconList[startAdornment] : undefined}
+      endAdornment={endAdornment ? iconList[endAdornment] : undefined}
       value={value !== "" ? value : undefined}
     />
   ),
