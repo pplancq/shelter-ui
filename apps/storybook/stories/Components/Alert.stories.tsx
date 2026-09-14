@@ -4,6 +4,8 @@ import { fn } from "storybook/test";
 
 Alert.displayName = "Alert";
 
+type AlertStoryArgs = AlertProps & { hasCloseButton: boolean };
+
 const meta = {
   title: "Components/Alert",
   component: Alert,
@@ -36,15 +38,15 @@ const meta = {
       control: "boolean",
     },
   },
-} satisfies Meta<AlertProps & { hasCloseButton: boolean }>;
+} satisfies Meta<AlertStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<AlertProps & { hasCloseButton: boolean }>;
+type Story = StoryObj<AlertStoryArgs>;
 
 export const Playground: Story = {
   tags: ["dev"],
-  render: ({ variant, onClose, hasCloseButton, children, ...args }) => (
+  render: ({ variant, onClose, hasCloseButton, children, ...args }: AlertStoryArgs) => (
     <Alert
       {...args}
       variant={variant !== "info" ? variant : undefined}

@@ -8,6 +8,12 @@ import type { JSX } from "react";
 Icon.displayName = "Icon";
 InputField.displayName = "InputField";
 
+type InputTextStoryArgs = Omit<InputFieldProps, "startAdornment" | "endAdornment" | "value"> & {
+  startAdornment?: keyof typeof iconList;
+  endAdornment?: keyof typeof iconList;
+  value?: string;
+};
+
 const iconList: Record<string, JSX.Element | undefined> = {
   "search.svg": <Icon icon={searchIcon} />,
   "eye.svg": <Icon icon={eyeIcon} />,
@@ -47,20 +53,28 @@ const meta = {
     },
   },
   tags: ["!autodocs", "!dev"],
-} satisfies Meta<InputFieldProps>;
+} satisfies Meta<InputTextStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<InputTextStoryArgs>;
 
 export const Playground: Story = {
   tags: ["dev"],
-  render: ({ placeholder, startAdornment, endAdornment, textHelper, errorMessage, value, ...args }) => (
+  render: ({
+    placeholder,
+    startAdornment,
+    endAdornment,
+    textHelper,
+    errorMessage,
+    value,
+    ...args
+  }: InputTextStoryArgs) => (
     <InputField
       {...args}
       placeholder={placeholder === "" ? " " : placeholder}
-      startAdornment={iconList[startAdornment as string]}
-      endAdornment={iconList[endAdornment as string]}
+      startAdornment={startAdornment ? iconList[startAdornment] : undefined}
+      endAdornment={endAdornment ? iconList[endAdornment] : undefined}
       textHelper={textHelper !== "" ? textHelper : undefined}
       errorMessage={errorMessage !== "" ? errorMessage : undefined}
       value={value !== "" ? value : undefined}

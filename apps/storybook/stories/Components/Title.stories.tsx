@@ -5,6 +5,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 Title.displayName = "Title";
 Icon.displayName = "Icon";
 
+type TitleStoryArgs = Omit<TitleProps, "icon"> & { icon?: boolean };
+
 const meta = {
   title: "Components/Title",
   component: Title,
@@ -29,13 +31,15 @@ const meta = {
       options: ["inline", "stacked"],
     },
   },
-} satisfies Meta<TitleProps>;
+} satisfies Meta<TitleStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<TitleProps>;
+type Story = StoryObj<TitleStoryArgs>;
 
 export const Playground: Story = {
   tags: ["dev"],
-  render: ({ icon, ...args }) => <Title {...args} icon={icon ? <Icon icon={bookmarkIcon} /> : undefined} />,
+  render: ({ icon, ...args }: TitleStoryArgs) => (
+    <Title {...args} icon={icon ? <Icon icon={bookmarkIcon} /> : undefined} />
+  ),
 };

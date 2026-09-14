@@ -1,4 +1,4 @@
-import { RadioGroup, type RadioGroupProps, RadioOption, type RadioOptionProps } from "@pplancq/shelter-ui-react";
+import { RadioGroup, RadioOption, type RadioOptionProps } from "@pplancq/shelter-ui-react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 RadioGroup.displayName = "RadioGroup";
@@ -17,6 +17,7 @@ const meta = {
   },
   tags: ["!autodocs", "!dev"],
   args: {
+    children: [],
     label: "Radio Group",
     required: false,
     name: "radio-group",
@@ -26,6 +27,11 @@ const meta = {
     itemsLayout: "inline",
   },
   argTypes: {
+    children: {
+      table: {
+        disable: true,
+      },
+    },
     layout: {
       control: "select",
       options: ["stacked", "inline"],
@@ -37,25 +43,43 @@ const meta = {
       description: "Layout of the radio options",
     },
   },
-} satisfies Meta<RadioGroupProps>;
+} satisfies Meta<typeof RadioGroup>;
 
 export default meta;
 
-type Story = StoryObj<RadioGroupProps>;
+type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
   tags: ["dev"],
-  render: ({ layout, itemsLayout, errorMessage, textHelper, ...args }) => (
-    <RadioGroup
-      layout={layout === "inline" ? layout : undefined}
-      itemsLayout={itemsLayout === "stacked" ? itemsLayout : undefined}
-      errorMessage={errorMessage || undefined}
-      textHelper={textHelper || undefined}
-      {...args}
-    >
-      {radioOptions.map((option) => (
-        <RadioOption key={`${option.value}`} {...option} />
-      ))}
-    </RadioGroup>
-  ),
+  args: {
+    children: [],
+    label: "Radio Group",
+    required: false,
+    name: "radio-group",
+    errorMessage: "",
+    textHelper: "Text helper",
+    layout: "stacked",
+    itemsLayout: "inline",
+  },
+  render: ({ label, name, required, layout, itemsLayout, errorMessage, textHelper, ...args }) => {
+    const storyArgs: Partial<typeof args> = { ...args };
+    delete storyArgs.children;
+
+    return (
+      <RadioGroup
+        label={label}
+        name={name}
+        required={required}
+        layout={layout === "inline" ? layout : undefined}
+        itemsLayout={itemsLayout === "stacked" ? itemsLayout : undefined}
+        errorMessage={errorMessage || undefined}
+        textHelper={textHelper || undefined}
+        {...storyArgs}
+      >
+        {radioOptions.map((option) => (
+          <RadioOption key={`${option.value}`} {...option} />
+        ))}
+      </RadioGroup>
+    );
+  },
 };

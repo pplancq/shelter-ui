@@ -1,7 +1,24 @@
-import { Typography, type TypographyProps } from "@pplancq/shelter-ui-react";
+import { Typography } from "@pplancq/shelter-ui-react";
 import type { Meta, StoryObj } from "@storybook/react";
+import type { CSSProperties, ElementType, ReactNode } from "react";
 
 Typography.displayName = "Typography";
+
+type TypographyStoryArgs = {
+  variant?: "display" | "heading" | "text" | "label" | "code";
+  color?: "primary" | "secondary" | "hint" | "disabled";
+  className?: string;
+  style?: CSSProperties;
+  as?: ElementType;
+  role?: string;
+  "aria-level"?: number;
+  children?: ReactNode;
+  sizeHeading?: 1 | 2 | 3 | 4 | 5 | 6;
+  sizeDisplay?: 1 | 2 | 3 | 4 | 5 | 6;
+  sizeText?: "smallest" | "smaller" | "small" | "medium" | "large";
+  sizeLabel?: "small" | "medium" | "large";
+  sizeCode?: "small" | "medium" | "large";
+};
 
 const meta = {
   title: "Foundations/Typography",
@@ -75,34 +92,49 @@ const meta = {
       options: ["small", "medium", "large"],
     },
   },
-} satisfies Meta<
-  TypographyProps<"p"> & {
-    sizeHeading: 1 | 2 | 3 | 4 | 5 | 6;
-    sizeDisplay: 1 | 2 | 3 | 4 | 5 | 6;
-    sizeText: "smallest" | "smaller" | "small" | "medium" | "large";
-    sizeLabel: "small" | "medium" | "large";
-    sizeCode: "small" | "medium" | "large";
-  }
->;
+} satisfies Meta<TypographyStoryArgs>;
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<TypographyStoryArgs>;
 
 export const ExampleLayout: Story = {
   name: "Typography",
-  render: ({ sizeHeading, sizeDisplay, sizeText, sizeLabel, sizeCode, ...args }) => {
-    const size = {
-      display: sizeDisplay,
-      heading: sizeHeading,
-      text: sizeText,
-      label: sizeLabel,
-      code: sizeCode,
-    };
-    return (
-      <Typography {...args} size={size[(args.variant as keyof typeof size) ?? "text"]}>
-        Lorem ipsum dolor sit amet
-      </Typography>
-    );
+  render: ({ sizeHeading, sizeDisplay, sizeText, sizeLabel, sizeCode, ...args }: TypographyStoryArgs) => {
+    const { variant, ...restArgs } = args;
+    const resolvedVariant = variant ?? "text";
+
+    switch (resolvedVariant) {
+      case "display":
+        return (
+          <Typography {...restArgs} variant="display" size={sizeDisplay ?? 1}>
+            Lorem ipsum dolor sit amet
+          </Typography>
+        );
+      case "heading":
+        return (
+          <Typography {...restArgs} variant="heading" size={sizeHeading ?? 1}>
+            Lorem ipsum dolor sit amet
+          </Typography>
+        );
+      case "label":
+        return (
+          <Typography {...restArgs} variant="label" size={sizeLabel ?? "medium"}>
+            Lorem ipsum dolor sit amet
+          </Typography>
+        );
+      case "code":
+        return (
+          <Typography {...restArgs} variant="code" size={sizeCode ?? "medium"}>
+            Lorem ipsum dolor sit amet
+          </Typography>
+        );
+      default:
+        return (
+          <Typography {...restArgs} variant="text" size={sizeText ?? "medium"}>
+            Lorem ipsum dolor sit amet
+          </Typography>
+        );
+    }
   },
 };
