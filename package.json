@@ -41,7 +41,7 @@
     "concurrently": "^10.0.5",
     "conventional-changelog-conventionalcommits": "^10.4.0",
     "husky": "^9.1.7",
-    "lint-staged": "^17.5.1",
+    "lint-staged": "^17.6.0",
     "prettier": "^3.9.9",
     "semantic-release": "^25.0.9",
     "tsc-files": "^1.1.4"
