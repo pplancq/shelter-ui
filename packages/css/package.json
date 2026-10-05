@@ -55,7 +55,7 @@
     "postcss-discard-duplicates": "^9.0.4",
     "prettier": "^3.9.9",
     "sass-true": "^10.1.0",
-    "stylelint": "^17.15.0",
+    "stylelint": "^17.16.0",
     "stylelint-prettier": "^5.0.3",
     "vitest": "^5.0.3"
   },
