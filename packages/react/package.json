@@ -36,8 +36,7 @@
     "eslint:fix": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",
     "tsc": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest",
-    "postversion": "npm i --save-peer @pplancq/shelter-ui-icon@$npm_package_version"
+    "test:watch": "vitest"
   },
   "engines": {
     "node": ">= 22"

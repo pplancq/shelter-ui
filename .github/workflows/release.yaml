@@ -2,6 +2,27 @@ name: Release
 
 on:
   workflow_dispatch:
+    inputs:
+      releaseType:
+        description: Release type
+        required: true
+        type: choice
+        default: stable
+        options:
+          - stable
+          - alpha
+          - beta
+          - rc
+      dryRun:
+        description: Dry run
+        required: false
+        type: boolean
+        default: false
+      debug:
+        description: Debug mode
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -48,11 +69,27 @@ jobs:
           GIT_AUTHOR_NAME: release[bot]
           GIT_COMMITTER_EMAIL: release[bot]@users.noreply.github.com
           GIT_COMMITTER_NAME: release[bot]
-          GITHUB_DISABLED_SUCCESS_COMMENT: "true"
-          GITHUB_DISABLED_RELEASED_LABELS: "true"
-        run: npm run release
+        run: |
+          RELEASE_TYPE="${{ github.event.inputs.releaseType }}"
+          ARGS=("--yes")
+
+          if [ "$RELEASE_TYPE" != "stable" ]; then
+            ARGS=("prerelease" "${ARGS[@]}")
+            ARGS+=("--preid" "$RELEASE_TYPE")
+          fi
+
+          if [ "${{ github.event.inputs.dryRun }}" = "true" ]; then
+            ARGS+=("--dry-run")
+          fi
+
+          if [ "${{ github.event.inputs.debug }}" = "true" ]; then
+            ARGS+=("--verbose")
+          fi
+
+          npx nx release "${ARGS[@]}"
 
   deploy:
+    if: ${{ !github.event.inputs.dryRun }}
     needs:
       - release
     environment:
@@ -64,7 +101,7 @@ jobs:
       pages: write
       id-token: write
     concurrency:
-      group: "pages"
+      group: pages
       cancel-in-progress: false
     steps:
       - name: Checkout repository
@@ -84,7 +121,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
-          path: "apps/storybook/build"
+          path: apps/storybook/build
 
       - name: Deploy to GitHub Pages
         id: deployment
