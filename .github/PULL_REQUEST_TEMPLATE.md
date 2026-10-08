@@ -85,7 +85,7 @@ Call out any architecture decisions, trade-offs, or areas needing attention (sec
 
 ## Release / Changelog
 
-If this PR should drive a release note, indicate it here. (This repo uses `semantic-release`; the commit messages determine changelog entries.)
+If this PR should drive a release note, indicate it here. (This repo uses Nx Release with synchronized package versions and a global changelog; the commit messages determine changelog entries.)
 
 ---
 

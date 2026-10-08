@@ -1,0 +1,101 @@
+{
+  "$schema": "https://unpkg.com/nx@23/schemas/nx-schema.json",
+  "analytics": false,
+  "release": {
+    "version": {
+      "conventionalCommits": true,
+      "updateDependents": "auto",
+      "applyPreidToDependents": true,
+      "preserveMatchingDependencyRanges": false,
+      "versionPrefix": "auto"
+    },
+    "git": {
+      "commit": true,
+      "commitMessage": "chore(release): release v{version} [skip ci]",
+      "tag": true,
+      "push": true,
+      "stageChanges": true
+    },
+    "changelog": {
+      "workspaceChangelog": {
+        "createRelease": "github",
+        "file": "CHANGELOG.md",
+        "entryWhenNoChanges": false,
+        "renderer": "@pplancq/nx-release-plugin/changelog-renderer.cjs"
+      },
+      "projectChangelogs": false
+    },
+    "conventionalCommits": {
+      "types": {
+        "feat": {
+          "semverBump": "minor",
+          "changelog": {
+            "title": "🎉 Features"
+          }
+        },
+        "fix": {
+          "semverBump": "patch",
+          "changelog": {
+            "title": "🐞 Bug Fixes"
+          }
+        },
+        "docs": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": true
+          }
+        },
+        "style": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": true
+          }
+        },
+        "refactor": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": true
+          }
+        },
+        "perf": {
+          "semverBump": "patch",
+          "changelog": {
+            "title": "🚀 Performance Improvements"
+          }
+        },
+        "test": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": true
+          }
+        },
+        "build": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": true
+          }
+        },
+        "ci": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": true
+          }
+        },
+        "chore": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": true
+          }
+        },
+        "revert": {
+          "semverBump": "patch",
+          "changelog": {
+            "title": "⏪ Reverts"
+          }
+        }
+      }
+    },
+    "projects": ["packages/*"],
+    "projectsRelationship": "fixed"
+  }
+}

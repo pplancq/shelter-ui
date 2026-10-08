@@ -1,6 +1,5 @@
 {
   "name": "@pplancq/shelter-ui",
-  "version": "1.0.0-alpha.7",
   "license": "MIT",
   "private": true,
   "type": "module",
@@ -25,25 +24,17 @@
     "test": "vitest run",
     "package:check": "node ./script/package-check.mjs",
     "prepare": "husky",
-    "release": "semantic-release"
+    "release": "nx release"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.3",
     "@pplancq/commitlint-config": "^4.0.9",
+    "@pplancq/nx-release-plugin": "^1.0.8",
     "@pplancq/prettier-config": "^5.0.1",
-    "@semantic-release/changelog": "^7.0.0",
-    "@semantic-release/commit-analyzer": "^13.0.1",
-    "@semantic-release/exec": "^7.1.0",
-    "@semantic-release/git": "^11.0.1",
-    "@semantic-release/github": "^12.0.10",
-    "@semantic-release/npm": "^13.2.0",
-    "@semantic-release/release-notes-generator": "^14.1.1",
     "concurrently": "^10.0.5",
-    "conventional-changelog-conventionalcommits": "^10.4.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
     "prettier": "^3.9.9",
-    "semantic-release": "^25.0.9",
     "tsc-files": "^1.1.4"
   },
   "workspaces": [

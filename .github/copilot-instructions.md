@@ -73,7 +73,7 @@ Vitest outputs in CI: junit-report.xml and sonar-report.xml (see vitest.config.m
   - Testing: Vitest (root vitest.config.mts delegates to per-package configs)
   - Linting: ESLint (JS/TS), Stylelint (CSS/Sass), Prettier
   - CI: reporters (junit, vitest-sonar-reporter) generate junit-report.xml and sonar-report.xml
-  - Release: semantic-release and conventional commits
+  - Release: Nx Release with `@pplancq/nx-release-plugin` (`monorepo-fixed`), synchronized package versions, a global changelog, and conventional commits. See `RELEASE.md`.
 
 ---
 
@@ -81,7 +81,7 @@ Vitest outputs in CI: junit-report.xml and sonar-report.xml (see vitest.config.m
 
 - Commit messages: follow Conventional Commits. Allowed scopes: `shelter-ui`, `react`, `css`, `icon`, `storybook`. (`deps` and `release` reserved for maintainers.)
 - Branch names: prefix with `feature/` or `bugfix/`.
-- Node / npm: package.json specifies `engines.node >= 22` and `packageManager: npm@11.11.0`—use the configured Node and npm when possible.
+- Node / npm: use the versions configured in `mise.toml` and `packageManager` in the root `package.json`.
 - Pre-commit: husky + lint-staged. Running `npm run prepare` installs hooks. lint-staged runs Prettier, tsc-files checks and stylelint/eslint fixes depending on file type.
 - Workspace targeting: many root scripts forward to the workspace via `--workspace=packages/<name>`; this is the recommended way to run workspace targets from repo root.
 - Exports & packaging: packages set `files` and `exports` (React package exposes types and import). Built artifacts live in `dist/` for packages that publish.
