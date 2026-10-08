@@ -1,6 +1,6 @@
 {
   "name": "@pplancq/shelter-ui-react",
-  "version": "1.0.0-alpha.7",
+  "version": "1.0.0-alpha.8",
   "license": "MIT",
   "description": "Modular, scalable React components",
   "author": "pplancq <paul.plancq@outlook.fr>",
@@ -42,7 +42,7 @@
     "node": ">= 22"
   },
   "peerDependencies": {
-    "@pplancq/shelter-ui-icon": "^1.0.0-alpha.7",
+    "@pplancq/shelter-ui-icon": "^1.0.0-alpha.8",
     "react": "^19.0.0"
   },
   "dependencies": {

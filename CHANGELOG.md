@@ -1,3 +1,32 @@
+## 1.0.0-alpha.8 (2026-10-08)
+
+### 🐞 Bug Fixes
+
+- **icon:** update icon imports to use 'url' query parameter ([d79fd1a](https://github.com/pplancq/shelter-ui/commit/d79fd1a))
+- **react,storybook:** rollback TypeScript from v7 to v6 ([#984](https://github.com/pplancq/shelter-ui/pull/984), [#983](https://github.com/pplancq/shelter-ui/issues/983))
+
+### 📦 Dependencies
+
+- **deps:** update dependency @pplancq/svg-react to ^3.0.15 ([#1138](https://github.com/pplancq/shelter-ui/pull/1138))
+- **deps:** update dependency @pplancq/svg-react to ^3.0.14 ([#1094](https://github.com/pplancq/shelter-ui/pull/1094))
+- **deps:** update dependency @pplancq/svg-react to ^3.0.13 ([#1077](https://github.com/pplancq/shelter-ui/pull/1077))
+- **deps:** update fontsource monorepo to ^5.3.0 ([#997](https://github.com/pplancq/shelter-ui/pull/997))
+- **deps:** update dependency @pplancq/svg-react to ^3.0.12 ([#989](https://github.com/pplancq/shelter-ui/pull/989))
+- **deps:** update dependency @pplancq/svg-react to ^3.0.10 ([#948](https://github.com/pplancq/shelter-ui/pull/948))
+- **deps:** update dependency @pplancq/svg-react to ^3.0.9 ([#933](https://github.com/pplancq/shelter-ui/pull/933))
+- **deps:** update dependency @pplancq/svg-react to ^3.0.8 ([#915](https://github.com/pplancq/shelter-ui/pull/915))
+- **deps:** update dependency @pplancq/svg-react to ^3.0.7 ([#903](https://github.com/pplancq/shelter-ui/pull/903))
+- **deps:** update dependency @pplancq/svg-react to ^3.0.6 ([#884](https://github.com/pplancq/shelter-ui/pull/884))
+- **deps:** update dependency @pplancq/svg-react to ^3.0.5 ([#876](https://github.com/pplancq/shelter-ui/pull/876))
+- **deps:** update dependency @pplancq/svg-react to ^3.0.4 ([#833](https://github.com/pplancq/shelter-ui/pull/833))
+- **deps:** update dependency @pplancq/svg-react to ^3.0.3 ([#823](https://github.com/pplancq/shelter-ui/pull/823))
+- **deps:** update dependency @pplancq/svg-react to ^3.0.2 ([#791](https://github.com/pplancq/shelter-ui/pull/791))
+- **deps:** update dependency @pplancq/svg-react to ^3.0.1 ([#724](https://github.com/pplancq/shelter-ui/pull/724))
+
+### ❤️ Thank You
+
+- Paul PLANCQ
+
 ## [1.0.0-alpha.7](https://github.com/pplancq/shelter-ui/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2026-03-13)
 
 ### Bug Fixes
