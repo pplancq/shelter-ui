@@ -72,10 +72,12 @@ jobs:
         run: |
           RELEASE_TYPE="${{ github.event.inputs.releaseType }}"
           ARGS=("--yes")
+          export NPM_CONFIG_TAG=latest
 
           if [ "$RELEASE_TYPE" != "stable" ]; then
             ARGS=("prerelease" "${ARGS[@]}")
             ARGS+=("--preid" "$RELEASE_TYPE")
+            export NPM_CONFIG_TAG="$RELEASE_TYPE"
           fi
 
           if [ "${{ github.event.inputs.dryRun }}" = "true" ]; then

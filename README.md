@@ -53,6 +53,11 @@ ShelterUI is divided into multiple packages to provide modularity and flexibilit
 
 For version updates and detailed changes, see the **[CHANGELOG.md](./CHANGELOG.md)**.
 
+### **Releases**
+
+The [Release workflow](./.github/workflows/release.yaml) publishes stable releases to the npm `latest` tag and prereleases to the matching `alpha`, `beta`, or `rc` tag.
+It sets `NPM_CONFIG_TAG` explicitly because Nx's `--preid` controls the version suffix, not the npm distribution tag.
+
 ## **Storybook Documentation**
 
 ShelterUI features **interactive documentation** powered by Storybook, allowing developers to explore and test components in isolation.
