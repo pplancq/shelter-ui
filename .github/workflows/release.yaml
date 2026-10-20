@@ -13,6 +13,11 @@ on:
           - alpha
           - beta
           - rc
+      firstRelease:
+        description: First release (allow missing previous release reference)
+        required: false
+        type: boolean
+        default: false
       dryRun:
         description: Dry run
         required: false
@@ -45,6 +50,7 @@ jobs:
         uses: pplancq/actions/nx-release@2c562638cd9f0ca64f237af46f6052e71b2536b8 # v1.1.5
         with:
           release-type: ${{ github.event.inputs.releaseType }}
+          first-release: ${{ github.event.inputs.firstRelease }}
           dry-run: ${{ github.event.inputs.dryRun }}
           debug: ${{ github.event.inputs.debug }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
