@@ -27,7 +27,7 @@
     "release": "nx release"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.2.3",
+    "@commitlint/cli": "^21.2.4",
     "@pplancq/commitlint-config": "^4.0.10",
     "@pplancq/nx-release-plugin": "^1.0.8",
     "@pplancq/prettier-config": "^5.0.2",
