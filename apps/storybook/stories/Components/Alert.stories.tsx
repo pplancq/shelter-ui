@@ -51,7 +51,7 @@ export const Playground: Story = {
       {...args}
       variant={variant !== "info" ? variant : undefined}
       onClose={hasCloseButton ? onClose : undefined}
-      // eslint-disable-next-line react/no-children-prop
+      // eslint-disable-next-line react-jsx/no-children-prop
       children={children !== "" ? children : undefined}
     />
   ),
