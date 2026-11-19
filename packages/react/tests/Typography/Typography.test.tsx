@@ -88,7 +88,7 @@ describe("Typography component", () => {
 
     it('preserves user-provided style when using the polymorphic "as" prop', () => {
       render(
-        <Typography as="button" variant="label" size="medium" style={{ paddingLeft: "4px" }}>
+        <Typography as="button" type="button" variant="label" size="medium" style={{ paddingLeft: "4px" }}>
           Button text
         </Typography>,
       );
