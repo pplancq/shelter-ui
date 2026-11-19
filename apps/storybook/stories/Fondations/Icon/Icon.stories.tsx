@@ -51,6 +51,6 @@ export const ExampleLayout: Story = {
     size: "medium",
     isCircle: false,
   },
-  render: ({ icon, ...props }) => <Icon icon={icon ?? demoIconList["react-original.svg"]} {...props} key={icon} />,
+  render: ({ icon, ...props }) => <Icon key={icon} icon={icon ?? demoIconList["react-original.svg"]} {...props} />,
   tags: ["!dev"],
 };

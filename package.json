@@ -21,6 +21,7 @@
     "dev:storybook": "npm run dev --workspace=apps/storybook",
     "build": "npm run build --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
+    "lint:eslint:fix": "npm run eslint:fix --workspaces --if-present",
     "test": "vitest run",
     "package:check": "node ./script/package-check.mjs",
     "prepare": "husky",
