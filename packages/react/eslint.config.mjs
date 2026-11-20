@@ -3,6 +3,7 @@ import { defineConfig } from "@pplancq/eslint-config";
 export default defineConfig({
   enableReact: true,
   enableVitest: true,
+  rulesNaming: "modern",
   enablePrettier: "disableStyleOnly",
   extendConfig: [
     {
@@ -10,7 +11,7 @@ export default defineConfig({
     },
     {
       rules: {
-        "jsx-a11y/no-noninteractive-element-to-interactive-role": [
+        "jsx-a11y-x/no-noninteractive-element-to-interactive-role": [
           "error",
           {
             fieldset: ["radiogroup"],
