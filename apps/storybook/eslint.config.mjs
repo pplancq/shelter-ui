@@ -2,6 +2,7 @@ import { defineConfig } from "@pplancq/eslint-config";
 
 export default defineConfig({
   enableReact: true,
+  rulesNaming: "modern",
   enablePrettier: "disableStyleOnly",
   extendConfig: [
     {
@@ -10,13 +11,13 @@ export default defineConfig({
         ".storybook/**/*.{js,jsx,ts,tsx,mjs,cjs,cts,mts}",
       ],
       rules: {
-        "import/no-extraneous-dependencies": "off",
-        "import/no-default-export": "off",
+        "import-x/no-extraneous-dependencies": "off",
+        "import-x/no-default-export": "off",
       },
     },
     {
       rules: {
-        "import/no-unresolved": ["error", { ignore: ["@pplancq/shelter-ui-react"] }],
+        "import-x/no-unresolved": ["error", { ignore: ["@pplancq/shelter-ui-react"] }],
       },
     },
     {
