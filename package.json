@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/pplancq/shelter-ui/issues"
   },
-  "packageManager": "npm@12.2.1",
+  "packageManager": "npm@12.2.3",
   "homepage": "https://pplancq.github.io/shelter-ui/",
   "scripts": {
     "dev": "concurrently --prefix-colors auto \"npm:dev:*\"",
